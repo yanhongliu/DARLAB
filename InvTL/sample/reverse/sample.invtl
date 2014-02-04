@@ -1,0 +1,69 @@
+
+/////////////
+//This is the generic pseudocode for detecting invariants that
+//are of the form:
+//For a variable X, there exists a variable Y, such that:
+//  operation O_1 on X is always followed by O_1' on Y
+//  operation O_2 on X is always followed by O_2' on Y
+//  ...
+//  operation O_n on X is always followed by O_n' on Y
+//It first detects all following things, and then
+// detects miscoordination
+//Thus, it reports only coordinated updates.
+//I am still working on making InvTL code out of this
+//It looks like it will work.
+
+//As far as discussion, we really should go over
+//this over a printout :)
+
+//This is to be done per pair O_k, O_k'
+//For this example, O_1 is =set and O_1' is =multimap
+//This step takes all A=set and B=multimap, and
+//converts them to preliminary(...)
+//for all A=... that are followed by B=...
+//preliminary is the records all possible mappings between
+//A and B, assuming A and B are metavariables.
+inv py{$A=set()}
+  at py{$B=multimap()}
+  if mustfollow($B,$A") and part("$A_",
+       at="py{$A_=set()}",
+       if="""
+          $A_==$A and 
+          part($B_,
+             at="py{$B_=multimap()}",
+             if="mustfollow($B_,$A_) and $B_==$B",
+             doinstead="""
+               py{
+                 preliminary($B_,multimap(),"$B_=multimap()",$A_,set(),"$A_=set()")
+               }"""
+          """),
+        doinstead="""py{
+          preliminary($A_,set(),"$A_=set()",$B_,multimap(),"$B_=multimap()")
+        }"""
+         
+  ::do instead py{
+    preliminary(A,set(),"A=set()",B,multimap(),"B=multimap()")
+  }
+  do instead py{
+    preliminary($B,multimap(),"$B=multimap()",$A,set(),"$A=set()")
+  }
+
+/*
+at A=set
+  at B=multimap
+  if B mustfollow A
+  ::do instead
+    preliminary(A,set,"A=set",B,multimap,"B=multimap")
+  do instead
+    preliminary(B,multimap,"B=multimap",A,set,"A=set")
+    at A'=set
+    if A'==A
+    do instead
+      at B'=multimap and B'==B
+      if B' mustfollow A'
+      ::do instead
+        preliminary(A',set,"A'=set",B',multimap,"B'=multimap")
+      do instead
+        preliminary(B',multimap,"B'=multimap",A',set,"A'=set")
+
+*/

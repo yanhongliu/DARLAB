@@ -1,0 +1,2 @@
+match py{set(u for heir in self.ROLES for u in self.USERS if (heir,role) in self.trans(self.INH) and (u,heir) in self.UR)}
+

@@ -1,0 +1,122 @@
+
+E:\projects\School\Research\Annie\workspaces\Python\InvTS\InvTL\lm_gcc\elsa\elsa-2005.08.22b\elsa>ccparse -tr c_lang,printAST,stopAfterParse a.c  
+tree = TranslationUnit:
+  topForms:
+    topForms[0] = TF_decl:
+      loc = a.c:1:1
+      decl = Declaration:
+        dflags = 
+        spec = TS_name:
+          loc = a.c:1:1
+          cv = 
+          name = PQ_name:
+            loc = a.c:1:1
+            name = "type_EXPR"
+          typenameUsed = false
+        decllist:
+          decllist[0] = Declarator:
+            context = DC_UNKNOWN
+            decl = D_name:
+              loc = a.c:1:11
+              name = PQ_name:
+                loc = a.c:1:11
+                name = "a"
+            init is null
+            ctorStatement is null
+            dtorStatement is null
+    topForms[1] = TF_decl:
+      loc = a.c:2:1
+      decl = Declaration:
+        dflags = 
+        spec = TS_simple:
+          loc = a.c:2:1
+          cv = 
+          id = <implicit-int>
+        decllist:
+          decllist[0] = Declarator:
+            context = DC_UNKNOWN
+            decl = D_name:
+              loc = a.c:2:1
+              name = PQ_name:
+                loc = a.c:2:1
+                name = "blah"
+            init = IN_expr:
+              loc = a.c:2:6
+              e = E_funCall:
+                func = E_fieldAcc:
+                  field: NULL
+                  obj = E_variable:
+                    var: NULL
+                    name = PQ_name:
+                      loc = a.c:2:6
+                      name = "c_expr"
+                  fieldName = PQ_name:
+                    loc = a.c:2:13
+                    name = "d_expr"
+                args:
+                  args[0] = ArgExpression:
+                    expr = E_arrow:
+                      obj = E_variable:
+                        var: NULL
+                        name = PQ_name:
+                          loc = a.c:2:20
+                          name = "c_expr"
+                      fieldName = PQ_name:
+                        loc = a.c:2:28
+                        name = "x"
+                  args[1] = ArgExpression:
+                    expr = E_intLit:
+                      i: 0
+                      text = "12"
+                retObj is null
+            ctorStatement is null
+            dtorStatement is null
+    topForms[2] = TF_decl:
+      loc = a.c:3:1
+      decl = Declaration:
+        dflags = 
+        spec = TS_name:
+          loc = a.c:3:1
+          cv = 
+          name = PQ_name:
+            loc = a.c:3:1
+            name = "TYPE_IMPLICIT"
+          typenameUsed = false
+        decllist:
+          decllist[0] = Declarator:
+            context = DC_UNKNOWN
+            decl = D_name:
+              loc = a.c:3:15
+              name = PQ_name:
+                loc = a.c:3:15
+                name = "VAR_IMPLICIT"
+            init = IN_expr:
+              loc = a.c:3:28
+              e = E_binary:
+                e1 = E_binary:
+                  e1 = E_intLit:
+                    i: 0
+                    text = "5"
+                  op = *
+                  e2 = E_intLit:
+                    i: 0
+                    text = "6"
+                op = *
+                e2 = E_variable:
+                  var: NULL
+                  name = PQ_name:
+                    loc = a.c:3:32
+                    name = "a"
+            ctorStatement is null
+            dtorStatement is null
+
+E:\projects\School\Research\Annie\workspaces\Python\InvTS\InvTL\lm_gcc\elsa\elsa-2005.08.22b\elsa>ccparse -tr c_lang,printElabAST a.c  
+a.c:1:1: error: there is no type called `type_EXPR'
+a.c:2:6: error: there is no variable called `c_expr'
+a.c:2:20: error: there is no variable called `c_expr'
+a.c:2:20: error: there is no variable called `c_expr'
+a.c:3:1: error: there is no type called `TYPE_IMPLICIT'
+a.c:3:32: error: there is no variable called `a'
+typechecking results:
+  errors:   6
+  warnings: 0

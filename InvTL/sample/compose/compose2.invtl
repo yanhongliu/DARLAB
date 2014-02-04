@@ -1,0 +1,71 @@
+inv py{$I} = py{intersect($sent, $recv)}
+de in (Class("bitTorrent")) py{
+  def __init__(self):
+    $I=set()
+}
+at py{$recv.append($p)}
+do before py{
+  if $p in $sent:
+    if $p not in $I:
+      $I.add($p)
+}
+
+at py{$sent.append($p)}
+do before py{
+  if $p in $recv:
+    if $p not in $I:
+      $I.add($p)
+}
+at py{$recv.remove($p)}
+do before py{
+  if $p in $sent:
+    if $p in $I:
+      $I.remove($p)
+}
+
+at py{$sent.remove($p)}
+do before py{
+  if $p in $recv:
+    if $p in $I:
+      $I.remove($p)
+}
+
+
+inv py{$P[$ip]} = py{
+      set(p for p in $I if
+       (p.dst==$ip or p.src==$ip))}
+de in (Class("bitTorrent")) py{
+  def __init__(self):
+    $P=defaultdict(set)
+}
+at py{$I.add($p)}
+do before py{
+  if $p not in $P[$p.dst]:
+    $P[$p.dst].add($p)
+  if $p not in $P[$p.src]:
+    $P[$p.src].add($p)
+}
+at py{$I.remove($p)}
+do before py{
+  if $p in $P[$p.dst]:
+    $P[$p.dst].remove($p)
+  if $p not in $P[$p.src]:
+    $P[$p.src].remove($p)
+}
+
+inv py{$M[$ip]} = py{len($P[$ip])}
+de in (Class("bitTorrent")) py{
+  def __init__(self):
+    $M=defaultdict(int)
+}
+at py{$P[$p.$d].add($p)} 
+do before py{
+  $M[$p.$d]+=1 
+}
+at py{$P[$p.$d].remove($p)} 
+do before py{
+  $M[$p.$d]-=1 
+}
+
+
+

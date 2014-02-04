@@ -1,0 +1,237 @@
+CheckSSD
+
+Initial:
+{u: u in USERS, [name,c] in SsdNC | len({r: r in AssignedRoles(u)| [name,r] in SsdNR})>c}
+not bool(set(True for u in self.USERS for (name,c) in SsdNC if not len(set(r for r in self.AssignedRoles(u) if (name,r) in SsdNR)) <= c)) 
+
+
+Becomes:
+{u: u in USERS, [name,c] in SsdNC | len({r: r in {R: R in ROLES | [u,R] in UR}| [name,r] in SsdNR})>c}
+
+============================================================================================================
+
+Maintain:
+    {u: u in USERS, [name,c] in SsdNC | len({r: r in {R: R in ROLES | [u,R] in UR}| [name,r] in SsdNR})>c}
+Rewritten as:
+    {u: u in USERS, [name,c] in SsdNC | len(MapUN2R[u,name])>c}
+id:
+    SetRes
+General Maintenance:
+    for u in USERS:
+        for [name,c] in SsdNC:
+            if len(MapUN2R[u,name])>c:
+                SetRes+={u}
+
+Maintain:
+    {r: r in {r: r in ROLES | [u,r] in UR} | [name,r] in SsdNR} : u in USERS, name in first(SsdNC)
+Rewritten as:    
+    {r: r in MapU2R[u] | [name,r] in SsdNR} : u in dom_MapU2R, name in dom_SsdNC
+id:
+    MapUN2R
+General Maintenance:
+for u in dom_MapU2R:
+    for name in dom_SsdNC:
+        for r in MapU2R[u]:
+            for [name,r] in SsdNR:
+                MapUN2R[u,name]+={r}
+
+
+Maintain:
+    dom(SsdNC)
+id:
+    dom_SsdNC
+General Maintenance:
+    for [f,s] in SsdNC:
+        f_SsdNC+={f}
+
+
+Maintain:
+    {r: r in ROLES | [u,r] in UR} : u in USERS
+id:
+    MapU2R
+General Maintenance:
+    for u in USERS:
+        for R in ROLES:
+            for [u,R] in UR:
+                MapU2R[u]+={R}
+
+
+
+
+
+=============================================
+=============================================
+Maintaining:
+    MapU2R
+Auxillary Maps:
+_MapR2U
+
+inv MapU2R={r: r in ROLES | [u,r] in UR} 
+at USERS+={user}
+do     
+    for role in _MapU2R[user]:
+        MapU2R[user]+={role}
+
+at ROLES+={role}
+do
+    for user in _MapR2U[role]:
+        MapU2R[user]+={role}
+
+at UR+={[user,role]}
+do
+    if user in USERS:
+        if role in ROLES:
+            MapU2R[user]+={role}
+    _MapR2U[role]+={user}
+
+Maintaining:
+    dom_SsdNC
+at SsdNC+={[name,c]}
+do
+    dom_SsdNC+={name}
+
+Maintaining:
+    dom_MapU2R
+at MapU2R+={user}
+do
+    dom_MapU2R+={user}
+
+
+Maintaining:
+    MapUN2R
+
+inv MapUN2R={r: r in MapU2R[u] | [name,r] in SsdNR} | u in dom_MapU2R, name in dom_SsdNC
+
+at dom_MapU2R+={user}
+do     
+    for name in dom_SsdNC:
+        for r in MapU2R[user]:
+            if [name,r] in SsdNR:
+                MapUN2R[user,name]+={r}
+
+at dom_SsdNC+={name}
+do     
+    for u in dom_MapU2R:
+            for r in MapU2R[u]:
+                if [name,r] in SsdNR:
+                    MapUN2R[u,name]+={r}
+
+at MapU2R[user]+={role}
+do     
+    if user in dom_MapU2R:
+        for name in dom_SsdNC:
+            if [name,role] in SsdNR:
+                MapUN2R[user,name]+={role}
+
+at SsdNR+={[name,role]}
+do     
+    for user in dom_MapU2R:
+        if name in dom_SsdNC:
+            if role in MapU2R[user]:
+                MapUN2R[user,name]+={role}
+
+Maintaining:
+    SetRes
+Auxillary Maps:
+    MapC2N : Maps Cs to Names in SsdNC
+    MapN2C : Maps Cs to Names in SsdNC
+
+inv SetRes={u: u in USERS, [name,c] in SsdNC | len(MapUN2R[u,name])>c}
+at USERS+={user}
+do     
+    for [name,c] in SsdNC:
+        if len(MapUN2R[user,name])>c:
+            SetRes+={user}
+
+
+at SsdNC+={[name,c]}
+do     
+    MapC2N[c]+={name}
+    MapN2C[name]+={c}
+    for u in USERS:
+        for name in MapC2N[c]:
+            if len(MapUN2R[u,name])>c:
+                SetRes+={u}
+    
+at MapUN2R[user,name]+={role}
+do
+    for c in MapN2C[name]:    
+        if len(MapUN2R[user,name])>c:
+            SetRes+={u}
+
+
+********************************************************************************************
+AuthorizedUsers(role):
+
+Initial:
+    {u : u in USERS, heir in ROLES | [heir,role] in trans(INH) , [u,heir] in UR}
+Becomes:
+    MapR2U[role]
+============================================================================================================
+Maintain:
+    trans(INH)
+id:
+    TRANS
+
+inv TRANS=trans(INH)
+at INH.add(x)
+do
+    NEW=trans(INH)
+    DIFF=NEW-TRANS
+    for [h,r] in DIFF:
+        TRANS+={[h,r]}
+
+at ROLES.add(x)
+do
+    NEW=trans(INH)
+    DIFF=NEW-TRANS
+    for [h,r] in DIFF:
+        TRANS+={[h,r]}
+
+
+============================================================================================================
+Maintain:
+    {u : u in USERS, heir in ROLES | [heir,role] in trans(INH) , [u,heir] in UR}
+As:
+    {u : u in USERS, heir in ROLES | [heir,role] in TRANS , [u,heir] in UR}
+id:
+    MapR2U
+Auxillary Maps:
+    MapH2R : Maps Heirs to Roles
+
+inv R={u : u in USERS, heir in ROLES | [heir,role] in TRANS , [u,heir] in UR}
+do instead
+    MapR2U[role]
+
+at USERS.add(u)
+do
+    for heir in ROLES
+        for role in MapH2R[heir]:
+            if [u,heir] in UR:
+                if u not in MapR2U[role]:
+                    MapR2U[role]+=u
+
+at UR.add([u,heir])
+do
+    if u in USERS:
+        if heir in ROLES
+            for role in MapH2R[heir]:
+                if u not in MapR2U[role]:
+                    MapR2U[role]+=u
+
+at ROLES.add(heir)
+do
+    for u in USERS:
+        for role in MapH2R[heir]:
+            if [u,heir] in UR:
+                if u not in MapR2U[role]:
+                    MapR2U[role]+=u
+
+at TRANS.add([heir,role])
+do
+    for u in USERS:
+        if heir in ROLES
+            if [u,heir] in UR:
+                if u not in MapR2U[role]:
+                    MapR2U[role]+=u
+    MapH2R[role]+={heir}

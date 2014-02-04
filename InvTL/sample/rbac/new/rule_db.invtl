@@ -1,0 +1,108 @@
+inv $r = py{self.UR -= set((user,r) for r in self.ROLES)}
+do instead py{
+    for r in self.URMapU2R.get(user).copy():
+        self.UR.remove((user, r))
+}
+(
+)	
+
+inv $r=py{self.UR -= set((u,role) for u in self.USERS)}
+	do instead py{
+        for u in self.URMapR2U.get(role).copy():
+		    self.UR.remove((u, role))
+	}
+(
+)	
+
+inv $r = py{self.PR -= set(((op,obj),role) for op in self.OPS for obj in self.OBJS)}
+	do instead py{
+        for (op,obj) in self.PRMapR2P.get(role).copy():
+	    	self.PR.remove(((op,obj), role))
+	}
+(
+)	
+
+inv $r = py{self.SR -= set((session,r) for r in self.ROLES)}
+	do instead py{
+	    for r in self.SRMapS2R.get(session).copy():
+		    self.SR.remove((session,r))
+	}
+(
+)
+
+inv $RES = py{set($Q for $Q in self.$ROLES if ($session,$Q) in self.$SR and (($operation,$object),$Q) in self.$PR)}
+if (isVar($session))
+do instead py{
+    self.MapSP2R.get(($session,$operation,$object))
+}
+(
+        at py{self.$ROLES = set() }
+        do py {
+            self.MapSP2R = MultiMap()
+        }
+
+        at py{self.$SR = set() }
+        do py {
+            self.MapSP2R = MultiMap()
+            self.SRMapR2S = MultiMap()
+        }
+
+        at py{self.$PR = set() }
+        do py {
+            self.MapSP2R = MultiMap()
+            self.PRMapR2P = MultiMap()
+        }
+
+        at py{self.$ROLES.add($r) }
+        do py {
+            for s in self.SRMapR2S.get($r):
+                for (op,obj) in self.PRMapR2P.get($r):
+                    if $r not in self.MapSP2R.get((s,op,obj)):
+                        self.MapSP2R.add((s,op,obj),$r)
+        }
+
+        at py{self.$ROLES.remove($r) }
+        do before py {
+            for s in self.SRMapR2S.get($r):
+                for (op,obj) in self.PRMapR2P.get($r):
+                    if $r in self.MapSP2R.get((s,op,obj)):
+                        self.MapSP2R.remove((s,op,obj),$r)
+        } 
+
+        at py{self.$SR.add(($s,$r))}
+        do py {
+            if $r in self.$ROLES:                
+                for (op,obj) in self.PRMapR2P.get($r):
+                    if $r not in self.MapSP2R.get(($s,op,obj)):
+                        self.MapSP2R.add(($s,op,obj),$r)
+            self.SRMapR2S.add($r,$s)
+        }
+
+        at py{self.$PR.add((($op,$obj),$r))}
+        do py {
+            if $r in self.ROLES:
+                for s in self.SRMapR2S.get($r):
+                    if $r not in self.MapSP2R.get((s,$op,$obj)):
+                        self.MapSP2R.add((s,$op,$obj),$r)
+            self.PRMapR2P.add($r,($op,$obj))
+        }
+
+        at py{self.$PR.remove((($op,$obj),$r))}
+        do before py {
+            if $r in self.ROLES:
+                for s in self.SRMapR2S.get($r):
+                    if $r in self.MapSP2R.get((s,$op,$obj)):
+                        self.MapSP2R.add((s,$op,$obj),$r)
+            self.PRMapR2P.remove($r,($op,$obj))
+        }
+        at py{self.$SR.remove(($s,$r))}
+        do before py {
+            if $r in self.$ROLES:                
+                for (op,obj) in self.PRMapR2P.get($r):
+                    if $r in self.MapSP2R.get(($s,op,obj)):
+                        self.MapSP2R.remove(($s,op,obj),$r)
+            self.SRMapR2S.remove($r,$s)
+        }
+)
+
+

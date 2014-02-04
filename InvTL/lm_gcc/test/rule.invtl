@@ -1,0 +1,3 @@
+#matches ONE literal pattern
+match C{$int $zog}
+

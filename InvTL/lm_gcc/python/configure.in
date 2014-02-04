@@ -1,0 +1,70 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ(2.59)
+AC_INIT(FULL-PACKAGE-NAME, VERSION, BUG-REPORT-ADDRESS)
+AC_CONFIG_SRCDIR([plugin/plugin.c])
+AC_CONFIG_SRCDIR([scripts/py2s.c])
+#AC_CONFIG_HEADER([config.h])
+AC_CONFIG_AUX_DIR(config)
+
+m4_include(autoconf/python.m4)
+
+AM_INIT_AUTOMAKE(plugin, 0.0.1)
+
+# Checks for programs.
+AM_PROG_AS
+AC_PROG_CC
+AC_PROG_LIBTOOL
+
+# Checks for libraries.
+AC_PYTHON_DEVEL(>= '2.4')
+AC_CHECK_LIB(m,main)
+
+# Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS([stdlib.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+AC_FUNC_MALLOC
+
+AC_ARG_WITH(
+  [gcc_source],
+  AC_HELP_STRING([--with-gcc-source],
+                 [Set GCC source directory]),
+  [gcc_source=$withval],
+  AC_MSG_FAILURE([You must specify --with-gcc-source]))
+
+case "$gcc_source" in
+  /*) ;;
+  *) gcc_source=`pwd`/$gcc_source ;;
+esac
+
+AC_SUBST([gcc_source], [$gcc_source])
+
+AC_DEFINE_UNQUOTED([GCC_SOURCE], [$gcc_source],
+                   [Define to GCC source directory.])
+
+AC_ARG_WITH(
+  [gcc_build],
+  AC_HELP_STRING([--with-gcc-build],
+                 [Set GCC build directory]),
+  [gcc_build=$withval],
+  AC_MSG_FAILURE([You must specify --with-gcc-build]))
+
+case "$gcc_build" in
+  /*) ;;
+  *) gcc_build=`pwd`/$gcc_build ;;
+esac
+
+AC_SUBST([gcc_build], [$gcc_build])
+
+AC_DEFINE_UNQUOTED([GCC_SOURCE], [$gcc_source],
+                   [Define to GCC source directory.])
+AC_CONFIG_FILES([Makefile
+                 plugin/Makefile
+                 scripts/Makefile])
+
+AC_OUTPUT

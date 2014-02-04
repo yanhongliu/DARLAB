@@ -1,0 +1,22 @@
+def F(a,b):
+    if not a:
+        return b
+    else:
+        return F(a-1,b)
+class C:
+    def __init__(self,t):
+        self.R=t
+        pass
+    def giveR(self):
+        return F(2,self.R)
+    def giveT(self):
+        return F(2,self.T)
+y=()
+r=()
+x=C(y)
+x.T=r
+a=x.giveT()
+t=1
+a=x.giveR()
+t=2
+pass

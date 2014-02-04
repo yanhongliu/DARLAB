@@ -1,0 +1,2415 @@
+[InvTS:lm_py:analysis:source:process_name] processing analysis\lib\sets.py ...done
+newslice: 1 -> 2, lineno None -> None f: import sets \n class co ... 90208 ... Session', 'sub', 3) \n  
+         Module(None, Stmt([I ... 178373 ... 3)], None, None))]))
+newslice: 10 -> 11, lineno 222 -> 408 f: def DeleteRole(self, ... 7929 ... u, s) \n          \n      \n  
+         Function(None, 'Dele ... 16296 ... , None))]), None)]))
+newslice: 1013 -> 1013, lineno 1216 -> 1216 f: C.AddRole('Restore Operator') 
+         CallFunc(Getattr(Nam ... 80 ... ator')], None, None)
+newslice: 1017 -> 1017, lineno 1217 -> 1217 f: C.AddRole('Grr') 
+         CallFunc(Getattr(Nam ... 67 ... 'Grr')], None, None)
+newslice: 102 -> 108, lineno 14 -> 15 f: self.MapR2SU_12_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 129 ... '), [], None, None))
+newslice: 1021 -> 1021, lineno 1218 -> 1218 f: C.AddObject(3) 
+         CallFunc(Getattr(Nam ... 65 ... nst(3)], None, None)
+newslice: 1025 -> 1025, lineno None -> None f: temp1 = self.OBJS  \n temp1.add(OBJ, b, c) \n  
+         Stmt([Assign([AssNam ... 177 ... c')], None, None))])
+newslice: 1025 -> 1026, lineno None -> 1207 f: temp1 = self.OBJS  \n temp1.add(OBJ, b, c) \n  
+         Stmt([Assign([AssNam ... 177 ... c')], None, None))])
+newslice: 1026 -> 1030, lineno 1207 -> 1208 f: temp1 = self.OBJS  \n  
+         Assign([AssName('tem ... 70 ... me('self'), 'OBJS'))
+newslice: 1030 -> 1113, lineno 1208 -> 1219 f: temp1.add(OBJ, b, c) 
+         CallFunc(Getattr(Nam ... 88 ... e('c')], None, None)
+newslice: 1030 -> 1117, lineno 1208 -> 1220 f: temp1.add(OBJ, b, c) 
+         CallFunc(Getattr(Nam ... 88 ... e('c')], None, None)
+newslice: 108 -> 114, lineno 15 -> 16 f: self.MapR2U_7_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 127 ... '), [], None, None))
+newslice: 11 -> 12, lineno 408 -> 453 f: def AssignUser(self, ... 1600 ... dd(role, user) \n      \n  
+         Function(None, 'Assi ... 3713 ... ')], None, None))]))
+newslice: 1113 -> 1025, lineno 1219 -> None f: C.AddObject(2) 
+         CallFunc(Getattr(Nam ... 65 ... nst(2)], None, None)
+newslice: 1113 -> 1113, lineno 1219 -> 1219 f: C.AddObject(2) 
+         CallFunc(Getattr(Nam ... 65 ... nst(2)], None, None)
+newslice: 1117 -> 1117, lineno 1220 -> 1220 f: C.AddOperation('add') 
+         CallFunc(Getattr(Nam ... 72 ... 'add')], None, None)
+newslice: 1117 -> 1121, lineno 1220 -> None f: C.AddOperation('add') 
+         CallFunc(Getattr(Nam ... 72 ... 'add')], None, None)
+newslice: 1121 -> 1121, lineno None -> None f: temp658 = self.OPS  \n temp658.add(operation) \n  
+         Stmt([Assign([AssNam ... 164 ... n')], None, None))])
+newslice: 1121 -> 1122, lineno None -> 1199 f: temp658 = self.OPS  \n temp658.add(operation) \n  
+         Stmt([Assign([AssNam ... 164 ... n')], None, None))])
+newslice: 1122 -> 1126, lineno 1199 -> 1200 f: temp658 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 1126 -> 1130, lineno 1200 -> 1221 f: temp658.add(operation) 
+         CallFunc(Getattr(Nam ... 74 ... tion')], None, None)
+newslice: 1126 -> 1134, lineno 1200 -> 1222 f: temp658.add(operation) 
+         CallFunc(Getattr(Nam ... 74 ... tion')], None, None)
+newslice: 1130 -> 1121, lineno 1221 -> None f: C.AddOperation('sub') 
+         CallFunc(Getattr(Nam ... 72 ... 'sub')], None, None)
+newslice: 1130 -> 1130, lineno 1221 -> 1221 f: C.AddOperation('sub') 
+         CallFunc(Getattr(Nam ... 72 ... 'sub')], None, None)
+newslice: 1134 -> 1134, lineno 1222 -> 1222 f: C.GrantPermission('add', 2, 'Restore Operator') 
+         CallFunc(Getattr(Nam ... 112 ... ator')], None, None)
+newslice: 1134 -> 1140, lineno 1222 -> None f: C.GrantPermission('add', 2, 'Restore Operator') 
+         CallFunc(Getattr(Nam ... 112 ... ator')], None, None)
+newslice: 114 -> 120, lineno 16 -> 17 f: self.ROLES = sets.Set()  \n  
+         Assign([AssAttr(Name ... 109 ... '), [], None, None))
+newslice: 1140 -> 1141, lineno None -> 503 f: temp251 = self.OPS  \n  ... 3202 ... .add(role, temp308) \n  
+         Stmt([Assign([AssNam ... 7792 ... 8')], None, None))])
+newslice: 1141 -> 1145, lineno 503 -> 504 f: temp251 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 1145 -> 1151, lineno 504 -> 505 f: temp252 = operation in temp251  \n  
+         Assign([AssName('tem ... 96 ...  Name('temp251'))]))
+newslice: 1151 -> 1155, lineno 505 -> 506 f: temp253 = self.OBJS  \n  
+         Assign([AssName('tem ... 72 ... me('self'), 'OBJS'))
+newslice: 1155 -> 1164, lineno 506 -> 508 f: temp254 = object in temp253  \n  
+         Assign([AssName('tem ... 93 ...  Name('temp253'))]))
+newslice: 1164 -> 1172, lineno 508 -> 510 f: temp255 = self.ROLES  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'ROLES'))
+newslice: 1172 -> 1219, lineno 510 -> 511 f: temp256 = ((operation,object),role)  \n  
+         Assign([AssName('tem ... 108 ... )]), Name('role')]))
+newslice: 12 -> 13, lineno 453 -> 502 f: def DeassignUser(sel ... 1755 ... r, s) \n          \n      \n  
+         Function(None, 'Deas ... 4108 ... , None))]), None)]))
+newslice: 120 -> 126, lineno 17 -> 18 f: self.MapS2P_14_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 128 ... '), [], None, None))
+newslice: 1219 -> 1227, lineno 511 -> 513 f: temp257 = self.PR  \n  
+         Assign([AssName('tem ... 70 ... Name('self'), 'PR'))
+newslice: 1227 -> 1231, lineno 513 -> 514 f: temp258 = self.PR  \n  
+         Assign([AssName('tem ... 70 ... Name('self'), 'PR'))
+newslice: 1231 -> 1238, lineno 514 -> 515 f: temp259 = ((operation,object),role)  \n  
+         Assign([AssName('tem ... 108 ... )]), Name('role')]))
+newslice: 1238 -> 1307, lineno 515 -> 516 f: temp258.add(temp259) 
+         CallFunc(Getattr(Nam ... 72 ... p259')], None, None)
+newslice: 126 -> 132, lineno 18 -> 19 f: self.SRMapR2S_14_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 130 ... '), [], None, None))
+newslice: 13 -> 14, lineno 502 -> 594 f: def GrantPermission( ... 3695 ... role, temp308) \n      \n  
+         Function(None, 'Gran ... 7881 ... ')], None, None))]))
+newslice: 1307 -> 1307, lineno 516 -> 516 f: temp260 = self.ROLES  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'ROLES'))
+newslice: 1307 -> 1311, lineno 516 -> 517 f: temp260 = self.ROLES  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'ROLES'))
+newslice: 1311 -> 1316, lineno 517 -> None f: if role in temp260: \n  ... 727 ... role, temp270) \n      \n  
+         If([(Compare(Name('r ... 1487 ... e, None))]))], None)
+newslice: 1311 -> 1405, lineno 517 -> 534 f: if role in temp260: \n  ... 727 ... role, temp270) \n      \n  
+         If([(Compare(Name('r ... 1487 ... e, None))]))], None)
+newslice: 1316 -> 1317, lineno None -> 518 f: temp261 = self.SRMap ... 622 ... .add(role, temp270) \n  
+         Stmt([Assign([AssNam ... 1423 ... 0')], None, None))])
+newslice: 1317 -> 1321, lineno 518 -> 519 f: temp261 = self.SRMapR2S_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2S_14_1__EXPR__'))
+newslice: 132 -> 138, lineno 19 -> 20 f: self.PRMapR2P_14_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 130 ... '), [], None, None))
+newslice: 1321 -> 1327, lineno 519 -> None f: for s in temp261.get ... 489 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 1049 ... ]))], None)]), None)
+newslice: 1321 -> 1391, lineno 519 -> 531 f: for s in temp261.get ... 489 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 1049 ... ]))], None)]), None)
+newslice: 1327 -> 1327, lineno None -> None f: temp262 = self.OPS  \n  ... 400 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 940 ... , None)]))], None)])
+newslice: 1327 -> 1328, lineno None -> 520 f: temp262 = self.OPS  \n  ... 400 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 940 ... , None)]))], None)])
+newslice: 1328 -> 1332, lineno 520 -> 521 f: temp262 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 1332 -> 1327, lineno 521 -> None f: if operation in temp ... 380 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 859 ... )], None)]))], None)
+newslice: 1332 -> 1337, lineno 521 -> None f: if operation in temp ... 380 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 859 ... )], None)]))], None)
+newslice: 1337 -> 1338, lineno None -> 522 f: temp263 = self.OBJS  ... 306 ... p268) \n          \n      \n  
+         Stmt([Assign([AssNam ... 790 ... , None)]))], None)])
+newslice: 1338 -> 1342, lineno 522 -> 523 f: temp263 = self.OBJS  \n  
+         Assign([AssName('tem ... 72 ... me('self'), 'OBJS'))
+newslice: 1342 -> 1347, lineno 523 -> None f: if object in temp263 ... 285 ... p268) \n          \n      \n  
+         If([(Compare(Name('o ... 708 ... )], None)]))], None)
+newslice: 1347 -> 1348, lineno None -> 524 f: temp265 = (operation ... 226 ... dd(s, temp268) \n      \n  
+         Stmt([Assign([AssNam ... 642 ...  None))]))], None)])
+newslice: 1348 -> 1353, lineno 524 -> 525 f: temp265 = (operation,object)  \n  
+         Assign([AssName('tem ... 85 ... ), Name('object')]))
+newslice: 1353 -> 1357, lineno 525 -> 526 f: temp264 = self.MapS2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pS2P_14_1__EXPR__'))
+newslice: 1357 -> 1367, lineno 526 -> 527 f: temp266 = temp264.get(s)  \n  
+         Assign([AssName('tem ... 109 ... ('s')], None, None))
+newslice: 1367 -> 1327, lineno 527 -> None f: if temp265 not in te ... 134 ... dd(s, temp268) \n      \n  
+         If([(Compare(Name('t ... 347 ... e, None))]))], None)
+newslice: 1367 -> 1372, lineno 527 -> None f: if temp265 not in te ... 134 ... dd(s, temp268) \n      \n  
+         If([(Compare(Name('t ... 347 ... e, None))]))], None)
+newslice: 1367 -> 1395, lineno 527 -> 532 f: if temp265 not in te ... 134 ... dd(s, temp268) \n      \n  
+         If([(Compare(Name('t ... 347 ... e, None))]))], None)
+newslice: 1372 -> 1373, lineno None -> 528 f: temp267 = self.MapS2 ... 90 ... 267.add(s, temp268) \n  
+         Stmt([Assign([AssNam ... 276 ... 8')], None, None))])
+newslice: 1373 -> 1377, lineno 528 -> 529 f: temp267 = self.MapS2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pS2P_14_1__EXPR__'))
+newslice: 1377 -> 1382, lineno 529 -> 530 f: temp268 = (operation,object)  \n  
+         Assign([AssName('tem ... 85 ... ), Name('object')]))
+newslice: 138 -> 144, lineno 20 -> 21 f: self.MapU2P_13_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 128 ... '), [], None, None))
+newslice: 1391 -> 1391, lineno 531 -> 531 f: temp269 = self.PRMapR2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2P_14_1__EXPR__'))
+newslice: 1395 -> 1400, lineno 532 -> 533 f: temp270 = (operation,object)  \n  
+         Assign([AssName('tem ... 85 ... ), Name('object')]))
+newslice: 14 -> 15, lineno 594 -> 686 f: def RevokePermission ... 3695 ... emove(temp366) \n      \n  
+         Function(None, 'Revo ... 7881 ... ')], None, None))]))
+newslice: 1405 -> 1405, lineno 534 -> 534 f: temp271 = self.URMapR2U  \n  
+         Assign([AssName('tem ... 76 ... self'), 'URMapR2U'))
+newslice: 1405 -> 1409, lineno 534 -> 535 f: temp271 = self.URMapR2U  \n  
+         Assign([AssName('tem ... 76 ... self'), 'URMapR2U'))
+newslice: 1409 -> 1415, lineno 535 -> None f: for u in temp271.get ... 489 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1049 ... ]))], None)]), None)
+newslice: 1409 -> 1471, lineno 535 -> 547 f: for u in temp271.get ... 489 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1049 ... ]))], None)]), None)
+newslice: 1415 -> 1415, lineno None -> None f: temp272 = self.OPS  \n  ... 400 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 940 ... , None)]))], None)])
+newslice: 1415 -> 1416, lineno None -> 536 f: temp272 = self.OPS  \n  ... 400 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 940 ... , None)]))], None)])
+newslice: 1416 -> 1420, lineno 536 -> 537 f: temp272 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 1420 -> 1415, lineno 537 -> None f: if operation in temp ... 380 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 859 ... )], None)]))], None)
+newslice: 1420 -> 1425, lineno 537 -> None f: if operation in temp ... 380 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 859 ... )], None)]))], None)
+newslice: 1425 -> 1426, lineno None -> 538 f: temp273 = self.OBJS  ... 306 ... p278) \n          \n      \n  
+         Stmt([Assign([AssNam ... 790 ... , None)]))], None)])
+newslice: 1426 -> 1430, lineno 538 -> 539 f: temp273 = self.OBJS  \n  
+         Assign([AssName('tem ... 72 ... me('self'), 'OBJS'))
+newslice: 1430 -> 1435, lineno 539 -> None f: if object in temp273 ... 285 ... p278) \n          \n      \n  
+         If([(Compare(Name('o ... 708 ... )], None)]))], None)
+newslice: 1435 -> 1436, lineno None -> 540 f: temp275 = (operation ... 226 ... dd(u, temp278) \n      \n  
+         Stmt([Assign([AssNam ... 642 ...  None))]))], None)])
+newslice: 1436 -> 1441, lineno 540 -> 541 f: temp275 = (operation,object)  \n  
+         Assign([AssName('tem ... 85 ... ), Name('object')]))
+newslice: 144 -> 150, lineno 21 -> 22 f: self.URMapR2U = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 117 ... '), [], None, None))
+newslice: 1441 -> 1445, lineno 541 -> 542 f: temp274 = self.MapU2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2P_13_1__EXPR__'))
+newslice: 1445 -> 1451, lineno 542 -> 543 f: temp276 = temp274.get(u)  \n  
+         Assign([AssName('tem ... 109 ... ('u')], None, None))
+newslice: 1451 -> 1415, lineno 543 -> None f: if temp275 not in te ... 134 ... dd(u, temp278) \n      \n  
+         If([(Compare(Name('t ... 347 ... e, None))]))], None)
+newslice: 1451 -> 1456, lineno 543 -> None f: if temp275 not in te ... 134 ... dd(u, temp278) \n      \n  
+         If([(Compare(Name('t ... 347 ... e, None))]))], None)
+newslice: 1451 -> 1475, lineno 543 -> 548 f: if temp275 not in te ... 134 ... dd(u, temp278) \n      \n  
+         If([(Compare(Name('t ... 347 ... e, None))]))], None)
+newslice: 1456 -> 1457, lineno None -> 544 f: temp277 = self.MapU2 ... 90 ... 277.add(u, temp278) \n  
+         Stmt([Assign([AssNam ... 276 ... 8')], None, None))])
+newslice: 1457 -> 1461, lineno 544 -> 545 f: temp277 = self.MapU2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2P_13_1__EXPR__'))
+newslice: 1461 -> 1466, lineno 545 -> 546 f: temp278 = (operation,object)  \n  
+         Assign([AssName('tem ... 85 ... ), Name('object')]))
+newslice: 1471 -> 1471, lineno 547 -> 547 f: temp279 = self.PRMapR2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2P_13_1__EXPR__'))
+newslice: 1475 -> 1480, lineno 548 -> 549 f: temp280 = (operation,object)  \n  
+         Assign([AssName('tem ... 85 ... ), Name('object')]))
+newslice: 1480 -> 1485, lineno 549 -> 550 f: temp279.add(role, temp280) 
+         CallFunc(Getattr(Nam ... 86 ... p280')], None, None)
+newslice: 1485 -> 1489, lineno 550 -> 551 f: temp281 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 1489 -> 1494, lineno 551 -> None f: if operation in temp ... 294 ... tion) \n          \n      \n  
+         If([(Compare(Name('o ... 717 ... )], None)]))], None)
+newslice: 1489 -> 1530, lineno 551 -> 559 f: if operation in temp ... 294 ... tion) \n          \n      \n  
+         If([(Compare(Name('o ... 717 ... )], None)]))], None)
+newslice: 1494 -> 1495, lineno None -> 552 f: temp282 = self.MapRO ... 232 ... 86, operation) \n      \n  
+         Stmt([Assign([AssNam ... 648 ...  None))]))], None)])
+newslice: 1495 -> 1499, lineno 552 -> 553 f: temp282 = self.MapRO2A_9_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pRO2A_9_1__EXPR__'))
+newslice: 1499 -> 1504, lineno 553 -> 554 f: temp283 = (role,object)  \n  
+         Assign([AssName('tem ... 80 ... ), Name('object')]))
+newslice: 15 -> 16, lineno 686 -> 830 f: def CreateSession(se ... 6063 ...       \n          \n      \n  
+         Function(None, 'Crea ... 12798 ... ], None)]), None)]))
+newslice: 150 -> 156, lineno 22 -> 23 f: self.PRMapR2P_13_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 130 ... '), [], None, None))
+newslice: 1504 -> 1510, lineno 554 -> 555 f: temp284 = temp282.get(temp283)  \n  
+         Assign([AssName('tem ... 115 ... 283')], None, None))
+newslice: 1510 -> 1515, lineno 555 -> None f: if operation not in  ... 139 ... 86, operation) \n      \n  
+         If([(Compare(Name('o ... 352 ... e, None))]))], None)
+newslice: 1510 -> 1534, lineno 555 -> 560 f: if operation not in  ... 139 ... 86, operation) \n      \n  
+         If([(Compare(Name('o ... 352 ... e, None))]))], None)
+newslice: 1515 -> 1516, lineno None -> 556 f: temp285 = self.MapRO ... 93 ... temp286, operation) \n  
+         Stmt([Assign([AssNam ... 279 ... n')], None, None))])
+newslice: 1516 -> 1520, lineno 556 -> 557 f: temp285 = self.MapRO2A_9_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pRO2A_9_1__EXPR__'))
+newslice: 1520 -> 1525, lineno 557 -> 558 f: temp286 = (role,object)  \n  
+         Assign([AssName('tem ... 80 ... ), Name('object')]))
+newslice: 1530 -> 1530, lineno 559 -> 559 f: temp287 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 1534 -> 1539, lineno 560 -> None f: if operation in temp ... 294 ... tion) \n          \n      \n  
+         If([(Compare(Name('o ... 717 ... )], None)]))], None)
+newslice: 1534 -> 1575, lineno 560 -> 568 f: if operation in temp ... 294 ... tion) \n          \n      \n  
+         If([(Compare(Name('o ... 717 ... )], None)]))], None)
+newslice: 1539 -> 1540, lineno None -> 561 f: temp288 = self.MapRO ... 232 ... 92, operation) \n      \n  
+         Stmt([Assign([AssNam ... 648 ...  None))]))], None)])
+newslice: 1540 -> 1544, lineno 561 -> 562 f: temp288 = self.MapRO2A_9_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pRO2A_9_1__EXPR__'))
+newslice: 1544 -> 1549, lineno 562 -> 563 f: temp289 = (role,object)  \n  
+         Assign([AssName('tem ... 80 ... ), Name('object')]))
+newslice: 1549 -> 1555, lineno 563 -> 564 f: temp290 = temp288.get(temp289)  \n  
+         Assign([AssName('tem ... 115 ... 289')], None, None))
+newslice: 1555 -> 1560, lineno 564 -> None f: if operation not in  ... 139 ... 92, operation) \n      \n  
+         If([(Compare(Name('o ... 352 ... e, None))]))], None)
+newslice: 1555 -> 1579, lineno 564 -> 569 f: if operation not in  ... 139 ... 92, operation) \n      \n  
+         If([(Compare(Name('o ... 352 ... e, None))]))], None)
+newslice: 156 -> 162, lineno 23 -> 24 f: self.MapS2R_6_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 127 ... '), [], None, None))
+newslice: 1560 -> 1561, lineno None -> 565 f: temp291 = self.MapRO ... 93 ... temp292, operation) \n  
+         Stmt([Assign([AssNam ... 279 ... n')], None, None))])
+newslice: 1561 -> 1565, lineno 565 -> 566 f: temp291 = self.MapRO2A_9_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pRO2A_9_1__EXPR__'))
+newslice: 1565 -> 1570, lineno 566 -> 567 f: temp292 = (role,object)  \n  
+         Assign([AssName('tem ... 80 ... ), Name('object')]))
+newslice: 1575 -> 1575, lineno 568 -> 568 f: temp293 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 1579 -> 1584, lineno 569 -> None f: if operation in temp ... 384 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 863 ... )], None)]))], None)
+newslice: 1579 -> 1630, lineno 569 -> 579 f: if operation in temp ... 384 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 863 ... )], None)]))], None)
+newslice: 1584 -> 1585, lineno None -> 570 f: temp294 = self.OBJS  ... 310 ... p299) \n          \n      \n  
+         Stmt([Assign([AssNam ... 794 ... , None)]))], None)])
+newslice: 1585 -> 1589, lineno 570 -> 571 f: temp294 = self.OBJS  \n  
+         Assign([AssName('tem ... 72 ... me('self'), 'OBJS'))
+newslice: 1589 -> 1594, lineno 571 -> None f: if object in temp294 ... 289 ... p299) \n          \n      \n  
+         If([(Compare(Name('o ... 712 ... )], None)]))], None)
+newslice: 1594 -> 1595, lineno None -> 572 f: temp296 = (operation ... 230 ... role, temp299) \n      \n  
+         Stmt([Assign([AssNam ... 646 ...  None))]))], None)])
+newslice: 1595 -> 1600, lineno 572 -> 573 f: temp296 = (operation,object)  \n  
+         Assign([AssName('tem ... 85 ... ), Name('object')]))
+newslice: 16 -> 17, lineno 830 -> 977 f: def DeleteSession(se ... 6162 ... emove(session) \n      \n  
+         Function(None, 'Dele ... 13063 ... ')], None, None))]))
+newslice: 1600 -> 1604, lineno 573 -> 574 f: temp295 = self.MapR2P_8_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apR2P_8_1__EXPR__'))
+newslice: 1604 -> 1610, lineno 574 -> 575 f: temp297 = temp295.get(role)  \n  
+         Assign([AssName('tem ... 112 ... ole')], None, None))
+newslice: 1610 -> 1615, lineno 575 -> None f: if temp296 not in te ... 136 ... role, temp299) \n      \n  
+         If([(Compare(Name('t ... 349 ... e, None))]))], None)
+newslice: 1610 -> 1634, lineno 575 -> 580 f: if temp296 not in te ... 136 ... role, temp299) \n      \n  
+         If([(Compare(Name('t ... 349 ... e, None))]))], None)
+newslice: 1615 -> 1616, lineno None -> 576 f: temp298 = self.MapR2 ... 92 ... .add(role, temp299) \n  
+         Stmt([Assign([AssNam ... 278 ... 9')], None, None))])
+newslice: 1616 -> 1620, lineno 576 -> 577 f: temp298 = self.MapR2P_8_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apR2P_8_1__EXPR__'))
+newslice: 162 -> 168, lineno 24 -> 25 f: self.MapU2R_5_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 127 ... '), [], None, None))
+newslice: 1620 -> 1625, lineno 577 -> 578 f: temp299 = (operation,object)  \n  
+         Assign([AssName('tem ... 85 ... ), Name('object')]))
+newslice: 1630 -> 1630, lineno 579 -> 579 f: temp300 = self.ROLES  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'ROLES'))
+newslice: 1634 -> 1639, lineno 580 -> None f: if role in temp300: \n  ... 371 ...       \n          \n      \n  
+         If([(Compare(Name('r ... 905 ... ]), None)]))], None)
+newslice: 1634 -> 1708, lineno 580 -> 590 f: if role in temp300: \n  ... 371 ...       \n          \n      \n  
+         If([(Compare(Name('r ... 905 ... ]), None)]))], None)
+newslice: 1639 -> 1640, lineno None -> 581 f: temp301 = self.SRMap ... 302 ... role) \n          \n      \n  
+         Stmt([Assign([AssNam ... 841 ... )], None)]), None)])
+newslice: 1640 -> 1644, lineno 581 -> 582 f: temp301 = self.SRMapR2S  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SRMapR2S'))
+newslice: 1644 -> 1650, lineno 582 -> None f: for s in temp301.get ... 277 ... role) \n          \n      \n  
+         For(AssName('s', 'OP ... 755 ... ]))], None)]), None)
+newslice: 1650 -> 1650, lineno None -> None f: temp302 = self.MapSP ... 212 ... temp306, role) \n      \n  
+         Stmt([Assign([AssNam ... 646 ...  None))]))], None)])
+newslice: 1650 -> 1651, lineno None -> 583 f: temp302 = self.MapSP ... 212 ... temp306, role) \n      \n  
+         Stmt([Assign([AssNam ... 646 ...  None))]))], None)])
+newslice: 1651 -> 1655, lineno 583 -> 584 f: temp302 = self.MapSP2R  \n  
+         Assign([AssName('tem ... 75 ... 'self'), 'MapSP2R'))
+newslice: 1655 -> 1681, lineno 584 -> 585 f: temp303 = (s,operation,object)  \n  
+         Assign([AssName('tem ... 96 ... ), Name('object')]))
+newslice: 168 -> 174, lineno 25 -> 26 f: self.MapSP2R = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 116 ... '), [], None, None))
+newslice: 1681 -> 1687, lineno 585 -> 586 f: temp304 = temp302.get(temp303)  \n  
+         Assign([AssName('tem ... 115 ... 303')], None, None))
+newslice: 1687 -> 1650, lineno 586 -> None f: if role not in temp3 ... 124 ... temp306, role) \n      \n  
+         If([(Compare(Name('r ... 346 ... e, None))]))], None)
+newslice: 1687 -> 1692, lineno 586 -> None f: if role not in temp3 ... 124 ... temp306, role) \n      \n  
+         If([(Compare(Name('r ... 346 ... e, None))]))], None)
+newslice: 1687 -> 1712, lineno 586 -> 591 f: if role not in temp3 ... 124 ... temp306, role) \n      \n  
+         If([(Compare(Name('r ... 346 ... e, None))]))], None)
+newslice: 1692 -> 1693, lineno None -> 587 f: temp305 = self.MapSP ... 83 ... .add(temp306, role) \n  
+         Stmt([Assign([AssNam ... 278 ... e')], None, None))])
+newslice: 1693 -> 1697, lineno 587 -> 588 f: temp305 = self.MapSP2R  \n  
+         Assign([AssName('tem ... 75 ... 'self'), 'MapSP2R'))
+newslice: 1697 -> 1703, lineno 588 -> 589 f: temp306 = (s,operation,object)  \n  
+         Assign([AssName('tem ... 96 ... ), Name('object')]))
+newslice: 17 -> 18, lineno 977 -> 1055 f: def AddActiveRole(se ... 2981 ... role, session) \n      \n  
+         Function(None, 'AddA ... 6735 ... ')], None, None))]))
+newslice: 1708 -> 1708, lineno 590 -> 590 f: temp307 = self.PRMapR2P  \n  
+         Assign([AssName('tem ... 76 ... self'), 'PRMapR2P'))
+newslice: 1712 -> 1717, lineno 591 -> 592 f: temp308 = (operation,object)  \n  
+         Assign([AssName('tem ... 85 ... ), Name('object')]))
+newslice: 1717 -> 1722, lineno 592 -> 1223 f: temp307.add(role, temp308) 
+         CallFunc(Getattr(Nam ... 86 ... p308')], None, None)
+newslice: 1717 -> 1728, lineno 592 -> 1224 f: temp307.add(role, temp308) 
+         CallFunc(Getattr(Nam ... 86 ... p308')], None, None)
+newslice: 1717 -> 1734, lineno 592 -> 1225 f: temp307.add(role, temp308) 
+         CallFunc(Getattr(Nam ... 86 ... p308')], None, None)
+newslice: 1717 -> 1740, lineno 592 -> 1226 f: temp307.add(role, temp308) 
+         CallFunc(Getattr(Nam ... 86 ... p308')], None, None)
+newslice: 1722 -> 1140, lineno 1223 -> None f: C.GrantPermission('add', 3, 'Backup Operator') 
+         CallFunc(Getattr(Nam ... 111 ... ator')], None, None)
+newslice: 1728 -> 1140, lineno 1224 -> None f: C.GrantPermission('add', 3, 'Restore Operator') 
+         CallFunc(Getattr(Nam ... 112 ... ator')], None, None)
+newslice: 1734 -> 1140, lineno 1225 -> None f: C.GrantPermission('sub', 2, 'Backup Operator') 
+         CallFunc(Getattr(Nam ... 111 ... ator')], None, None)
+newslice: 174 -> 180, lineno 26 -> 27 f: self.PR = sets.Set()  \n  
+         Assign([AssAttr(Name ... 106 ... '), [], None, None))
+newslice: 1740 -> 1745, lineno 1226 -> None f: C.AssignUser('mickg', 'Backup Operator') 
+         CallFunc(Getattr(Nam ... 98 ... ator')], None, None)
+newslice: 1745 -> 1746, lineno None -> 409 f: temp199 = self.USERS ... 1357 ... 223.add(role, user) \n  
+         Stmt([Assign([AssNam ... 3644 ... r')], None, None))])
+newslice: 1746 -> 1754, lineno 409 -> 411 f: temp199 = self.USERS  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'USERS'))
+newslice: 1754 -> 1762, lineno 411 -> 413 f: temp200 = self.ROLES  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'ROLES'))
+newslice: 1762 -> 1767, lineno 413 -> 414 f: temp201 = (user,role)  \n  
+         Assign([AssName('tem ... 78 ... r'), Name('role')]))
+newslice: 1767 -> 1775, lineno 414 -> 416 f: temp202 = self.UR  \n  
+         Assign([AssName('tem ... 70 ... Name('self'), 'UR'))
+newslice: 1775 -> 1779, lineno 416 -> 417 f: temp203 = self.UR  \n  
+         Assign([AssName('tem ... 70 ... Name('self'), 'UR'))
+newslice: 1779 -> 1784, lineno 417 -> 418 f: temp204 = (user,role)  \n  
+         Assign([AssName('tem ... 78 ... r'), Name('role')]))
+newslice: 1784 -> 1788, lineno 418 -> 419 f: temp203.add(temp204) 
+         CallFunc(Getattr(Nam ... 72 ... p204')], None, None)
+newslice: 1788 -> 1788, lineno 419 -> 419 f: temp205 = self.PRMapR2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2P_13_1__EXPR__'))
+newslice: 1788 -> 1792, lineno 419 -> 420 f: temp205 = self.PRMapR2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2P_13_1__EXPR__'))
+newslice: 1792 -> 1838, lineno 420 -> None f: for (op,obj,) in tem ... 473 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1067 ... ]))], None)]), None)
+newslice: 1792 -> 1894, lineno 420 -> 432 f: for (op,obj,) in tem ... 473 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1067 ... ]))], None)]), None)
+newslice: 18 -> 19, lineno 1055 -> 1131 f: def DropActiveRole(s ... 2921 ... emove(temp630) \n      \n  
+         Function(None, 'Drop ... 6557 ... ')], None, None))]))
+newslice: 180 -> 186, lineno 27 -> 28 f: self.MapS2P_14_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 128 ... '), [], None, None))
+newslice: 1838 -> 1838, lineno None -> None f: temp206 = self.OPS  \n  ... 376 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 916 ... , None)]))], None)])
+newslice: 1838 -> 1839, lineno None -> 421 f: temp206 = self.OPS  \n  ... 376 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 916 ... , None)]))], None)])
+newslice: 1839 -> 1843, lineno 421 -> 422 f: temp206 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 1843 -> 1838, lineno 422 -> None f: if op in temp206: \n    ... 356 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 835 ... )], None)]))], None)
+newslice: 1843 -> 1848, lineno 422 -> None f: if op in temp206: \n    ... 356 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 835 ... )], None)]))], None)
+newslice: 1848 -> 1849, lineno None -> 423 f: temp207 = self.OBJS  ... 289 ... p212) \n          \n      \n  
+         Stmt([Assign([AssNam ... 773 ... , None)]))], None)])
+newslice: 1849 -> 1853, lineno 423 -> 424 f: temp207 = self.OBJS  \n  
+         Assign([AssName('tem ... 72 ... me('self'), 'OBJS'))
+newslice: 1853 -> 1858, lineno 424 -> None f: if obj in temp207: \n   ... 268 ... p212) \n          \n      \n  
+         If([(Compare(Name('o ... 691 ... )], None)]))], None)
+newslice: 1858 -> 1859, lineno None -> 425 f: temp209 = (op,obj)  \n  ... 212 ... user, temp212) \n      \n  
+         Stmt([Assign([AssNam ... 628 ...  None))]))], None)])
+newslice: 1859 -> 1864, lineno 425 -> 426 f: temp209 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 186 -> 192, lineno 28 -> 29 f: self.PRMapR2P_14_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 130 ... '), [], None, None))
+newslice: 1864 -> 1868, lineno 426 -> 427 f: temp208 = self.MapU2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2P_13_1__EXPR__'))
+newslice: 1868 -> 1874, lineno 427 -> 428 f: temp210 = temp208.get(user)  \n  
+         Assign([AssName('tem ... 112 ... ser')], None, None))
+newslice: 1874 -> 1838, lineno 428 -> None f: if temp209 not in te ... 127 ... user, temp212) \n      \n  
+         If([(Compare(Name('t ... 340 ... e, None))]))], None)
+newslice: 1874 -> 1879, lineno 428 -> None f: if temp209 not in te ... 127 ... user, temp212) \n      \n  
+         If([(Compare(Name('t ... 340 ... e, None))]))], None)
+newslice: 1874 -> 1898, lineno 428 -> 433 f: if temp209 not in te ... 127 ... user, temp212) \n      \n  
+         If([(Compare(Name('t ... 340 ... e, None))]))], None)
+newslice: 1879 -> 1880, lineno None -> 429 f: temp211 = self.MapU2 ... 83 ... .add(user, temp212) \n  
+         Stmt([Assign([AssNam ... 269 ... 2')], None, None))])
+newslice: 1880 -> 1884, lineno 429 -> 430 f: temp211 = self.MapU2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2P_13_1__EXPR__'))
+newslice: 1884 -> 1889, lineno 430 -> 431 f: temp212 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 1894 -> 1894, lineno 432 -> 432 f: temp213 = self.URMapR2U  \n  
+         Assign([AssName('tem ... 76 ... self'), 'URMapR2U'))
+newslice: 1898 -> 1903, lineno 433 -> 434 f: temp213.add(role, user) 
+         CallFunc(Getattr(Nam ... 83 ... user')], None, None)
+newslice: 19 -> 20, lineno 1131 -> 1144 f: def CheckAccess(self ... 378 ... return temp637 != 0 \n  
+         Function(None, 'Chec ... 970 ... !=', Const(0))]))]))
+newslice: 1903 -> 1907, lineno 434 -> 435 f: temp214 = self.USERS  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'USERS'))
+newslice: 1907 -> 1912, lineno 435 -> None f: if user in temp214: \n  ... 209 ... user) \n          \n      \n  
+         If([(Compare(Name('u ... 530 ... )], None)]))], None)
+newslice: 1907 -> 1938, lineno 435 -> 441 f: if user in temp214: \n  ... 209 ... user) \n          \n      \n  
+         If([(Compare(Name('u ... 530 ... )], None)]))], None)
+newslice: 1912 -> 1913, lineno None -> 436 f: temp215 = self.MapR2 ... 160 ... dd(role, user) \n      \n  
+         Stmt([Assign([AssNam ... 466 ...  None))]))], None)])
+newslice: 1913 -> 1917, lineno 436 -> 437 f: temp215 = self.MapR2U_7_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apR2U_7_1__EXPR__'))
+newslice: 1917 -> 1923, lineno 437 -> 438 f: temp216 = temp215.get(role)  \n  
+         Assign([AssName('tem ... 112 ... ole')], None, None))
+newslice: 192 -> 198, lineno 29 -> 30 f: self.MapU2P_13_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 128 ... '), [], None, None))
+newslice: 1923 -> 1928, lineno 438 -> None f: if user not in temp2 ... 96 ... dd(role, user) \n      \n  
+         If([(Compare(Name('u ... 256 ... e, None))]))], None)
+newslice: 1923 -> 1942, lineno 438 -> 442 f: if user not in temp2 ... 96 ... dd(role, user) \n      \n  
+         If([(Compare(Name('u ... 256 ... e, None))]))], None)
+newslice: 1928 -> 1929, lineno None -> 439 f: temp217 = self.MapR2 ... 59 ... 217.add(role, user) \n  
+         Stmt([Assign([AssNam ... 188 ... r')], None, None))])
+newslice: 1929 -> 1933, lineno 439 -> 440 f: temp217 = self.MapR2U_7_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apR2U_7_1__EXPR__'))
+newslice: 1938 -> 1938, lineno 441 -> 441 f: temp218 = self.URMapU2R_7_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... apU2R_7_1__EXPR__'))
+newslice: 1942 -> 1947, lineno 442 -> 443 f: temp218.add(user, role) 
+         CallFunc(Getattr(Nam ... 83 ... role')], None, None)
+newslice: 1947 -> 1951, lineno 443 -> 444 f: temp219 = self.ROLES  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'ROLES'))
+newslice: 1951 -> 1956, lineno 444 -> None f: if role in temp219: \n  ... 209 ... role) \n          \n      \n  
+         If([(Compare(Name('r ... 530 ... )], None)]))], None)
+newslice: 1951 -> 1982, lineno 444 -> 450 f: if role in temp219: \n  ... 209 ... role) \n          \n      \n  
+         If([(Compare(Name('r ... 530 ... )], None)]))], None)
+newslice: 1956 -> 1957, lineno None -> 445 f: temp220 = self.MapU2 ... 160 ... dd(user, role) \n      \n  
+         Stmt([Assign([AssNam ... 466 ...  None))]))], None)])
+newslice: 1957 -> 1961, lineno 445 -> 446 f: temp220 = self.MapU2R_5_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apU2R_5_1__EXPR__'))
+newslice: 1961 -> 1967, lineno 446 -> 447 f: temp221 = temp220.get(user)  \n  
+         Assign([AssName('tem ... 112 ... ser')], None, None))
+newslice: 1967 -> 1972, lineno 447 -> None f: if role not in temp2 ... 96 ... dd(user, role) \n      \n  
+         If([(Compare(Name('r ... 256 ... e, None))]))], None)
+newslice: 1967 -> 1986, lineno 447 -> 451 f: if role not in temp2 ... 96 ... dd(user, role) \n      \n  
+         If([(Compare(Name('r ... 256 ... e, None))]))], None)
+newslice: 1972 -> 1973, lineno None -> 448 f: temp222 = self.MapU2 ... 59 ... 222.add(user, role) \n  
+         Stmt([Assign([AssNam ... 188 ... e')], None, None))])
+newslice: 1973 -> 1977, lineno 448 -> 449 f: temp222 = self.MapU2R_5_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apU2R_5_1__EXPR__'))
+newslice: 198 -> 204, lineno 30 -> 31 f: self.PRMapR2P_13_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 130 ... '), [], None, None))
+newslice: 1982 -> 1982, lineno 450 -> 450 f: temp223 = self.URMapR2U  \n  
+         Assign([AssName('tem ... 76 ... self'), 'URMapR2U'))
+newslice: 1986 -> 1991, lineno 451 -> 1227 f: temp223.add(role, user) 
+         CallFunc(Getattr(Nam ... 83 ... user')], None, None)
+newslice: 1986 -> 1996, lineno 451 -> 1228 f: temp223.add(role, user) 
+         CallFunc(Getattr(Nam ... 83 ... user')], None, None)
+newslice: 1986 -> 2001, lineno 451 -> 1229 f: temp223.add(role, user) 
+         CallFunc(Getattr(Nam ... 83 ... user')], None, None)
+newslice: 1991 -> 1745, lineno 1227 -> None f: C.AssignUser('mickg', 'Restore Operator') 
+         CallFunc(Getattr(Nam ... 99 ... ator')], None, None)
+newslice: 1996 -> 1745, lineno 1228 -> None f: C.AssignUser('zog', 'Restore Operator') 
+         CallFunc(Getattr(Nam ... 97 ... ator')], None, None)
+newslice: 2 -> 3, lineno None -> 1 f: import sets \n class co ... 90208 ... Session', 'sub', 3) \n  
+         Stmt([Import([('sets ... 178359 ... (3)], None, None))])
+newslice: 20 -> 21, lineno 1144 -> 1150 f: def AssignedUsers(se ... 152 ... n temp639.get(role) \n  
+         Function(None, 'Assi ... 376 ... ')], None, None))]))
+newslice: 2001 -> 2034, lineno 1229 -> 1230 f: temp660 = ['Backup Operator']  \n  
+         Assign([AssName('tem ... 75 ... Backup Operator')]))
+newslice: 2034 -> 2046, lineno 1230 -> None f: temp661 = sets.Set(temp660)  \n  
+         Assign([AssName('tem ... 112 ... 660')], None, None))
+newslice: 204 -> 210, lineno 31 -> 32 f: self.MapRO2A_9_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 128 ... '), [], None, None))
+newslice: 2046 -> 2046, lineno None -> None f: temp367 = self.USERS ... 5317 ... sion) \n          \n      \n  
+         Stmt([Assign([AssNam ... 12716 ... )], None)]), None)])
+newslice: 2046 -> 2047, lineno None -> 687 f: temp367 = self.USERS ... 5317 ... sion) \n          \n      \n  
+         Stmt([Assign([AssNam ... 12716 ... )], None)]), None)])
+newslice: 2047 -> 2047, lineno 687 -> 687 f: temp367 = self.USERS  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'USERS'))
+newslice: 2047 -> 2055, lineno 687 -> 689 f: temp367 = self.USERS  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'USERS'))
+newslice: 2055 -> 2063, lineno 689 -> 691 f: temp368 = self.SESSIONS  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SESSIONS'))
+newslice: 2063 -> 2069, lineno 691 -> 1151 f: temp369 = self.AssignedRoles(user)  \n  
+         Assign([AssName('tem ... 119 ... ser')], None, None))
+newslice: 2069 -> 2077, lineno 1151 -> 1153 f: temp640 = self.USERS  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'USERS'))
+newslice: 2077 -> 2081, lineno 1153 -> 1154 f: temp641 = self.MapU2R_5_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apU2R_5_1__EXPR__'))
+newslice: 2081 -> 2095, lineno 1154 -> 693 f: return temp641.get(user) 
+         Return(CallFunc(Geta ... 77 ... ser')], None, None))
+newslice: 2095 -> 2099, lineno 693 -> 694 f: temp370 = self.SU  \n  
+         Assign([AssName('tem ... 70 ... Name('self'), 'SU'))
+newslice: 2099 -> 2104, lineno 694 -> 695 f: temp371 = (session,user)  \n  
+         Assign([AssName('tem ... 81 ... n'), Name('user')]))
+newslice: 21 -> 22, lineno 1150 -> 1156 f: def AssignedRoles(se ... 152 ... n temp641.get(user) \n  
+         Function(None, 'Assi ... 376 ... ')], None, None))]))
+newslice: 210 -> 216, lineno 32 -> 33 f: self.MapRO2A_9_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 128 ... '), [], None, None))
+newslice: 2104 -> 2108, lineno 695 -> 696 f: temp370.add(temp371) 
+         CallFunc(Getattr(Nam ... 72 ... p371')], None, None)
+newslice: 2108 -> 2108, lineno 696 -> 696 f: temp372 = self.SESSIONS  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SESSIONS'))
+newslice: 2108 -> 2112, lineno 696 -> 697 f: temp372 = self.SESSIONS  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SESSIONS'))
+newslice: 2112 -> 2117, lineno 697 -> None f: if session in temp37 ... 488 ...       \n          \n      \n  
+         If([(Compare(Name('s ... 1048 ... )], None)]))], None)
+newslice: 2112 -> 2174, lineno 697 -> 709 f: if session in temp37 ... 488 ...       \n          \n      \n  
+         If([(Compare(Name('s ... 1048 ... )], None)]))], None)
+newslice: 2117 -> 2118, lineno None -> 698 f: temp373 = self.USERS ... 404 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 981 ... , None)]))], None)])
+newslice: 2118 -> 2122, lineno 698 -> 699 f: temp373 = self.USERS  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'USERS'))
+newslice: 2122 -> 2127, lineno 699 -> None f: if user in temp373: \n  ... 382 ...       \n          \n      \n  
+         If([(Compare(Name('u ... 898 ... ]), None)]))], None)
+newslice: 2127 -> 2128, lineno None -> 700 f: temp374 = self.SRMap ... 313 ... p379) \n          \n      \n  
+         Stmt([Assign([AssNam ... 834 ... )], None)]), None)])
+newslice: 2128 -> 2132, lineno 700 -> 701 f: temp374 = self.SRMapS2R  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SRMapS2R'))
+newslice: 2132 -> 2138, lineno 701 -> None f: for r in temp374.get ... 288 ... p379) \n          \n      \n  
+         For(AssName('r', 'OP ... 748 ... ]))], None)]), None)
+newslice: 2138 -> 2138, lineno None -> None f: temp376 = (session,u ... 220 ... dd(r, temp379) \n      \n  
+         Stmt([Assign([AssNam ... 636 ...  None))]))], None)])
+newslice: 2138 -> 2139, lineno None -> 702 f: temp376 = (session,u ... 220 ... dd(r, temp379) \n      \n  
+         Stmt([Assign([AssNam ... 636 ...  None))]))], None)])
+newslice: 2139 -> 2144, lineno 702 -> 703 f: temp376 = (session,user)  \n  
+         Assign([AssName('tem ... 81 ... n'), Name('user')]))
+newslice: 2144 -> 2148, lineno 703 -> 704 f: temp375 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... R2SU_12_1__EXPR__'))
+newslice: 2148 -> 2154, lineno 704 -> 705 f: temp377 = temp375.get(r)  \n  
+         Assign([AssName('tem ... 109 ... ('r')], None, None))
+newslice: 2154 -> 2138, lineno 705 -> None f: if temp376 not in te ... 131 ... dd(r, temp379) \n      \n  
+         If([(Compare(Name('t ... 344 ... e, None))]))], None)
+newslice: 2154 -> 2159, lineno 705 -> None f: if temp376 not in te ... 131 ... dd(r, temp379) \n      \n  
+         If([(Compare(Name('t ... 344 ... e, None))]))], None)
+newslice: 2154 -> 2178, lineno 705 -> 710 f: if temp376 not in te ... 131 ... dd(r, temp379) \n      \n  
+         If([(Compare(Name('t ... 344 ... e, None))]))], None)
+newslice: 2159 -> 2160, lineno None -> 706 f: temp378 = self.MapR2 ... 87 ... 378.add(r, temp379) \n  
+         Stmt([Assign([AssNam ... 273 ... 9')], None, None))])
+newslice: 216 -> 222, lineno 33 -> 34 f: self.MapR2P_8_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 127 ... '), [], None, None))
+newslice: 2160 -> 2164, lineno 706 -> 707 f: temp378 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... R2SU_12_1__EXPR__'))
+newslice: 2164 -> 2169, lineno 707 -> 708 f: temp379 = (session,user)  \n  
+         Assign([AssName('tem ... 81 ... n'), Name('user')]))
+newslice: 2174 -> 2174, lineno 709 -> 709 f: temp380 = self.SUMapS2U_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_12_1__EXPR__'))
+newslice: 2178 -> 2183, lineno 710 -> 711 f: temp380.add(session, user) 
+         CallFunc(Getattr(Nam ... 86 ... user')], None, None)
+newslice: 2183 -> 2187, lineno 711 -> 712 f: temp381 = self.SUMapU2S_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pU2S_12_1__EXPR__'))
+newslice: 2187 -> 2192, lineno 712 -> 713 f: temp381.add(user, session) 
+         CallFunc(Getattr(Nam ... 86 ... sion')], None, None)
+newslice: 2192 -> 2196, lineno 713 -> 714 f: temp382 = self.SRMapS2R  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SRMapS2R'))
+newslice: 2196 -> 2202, lineno 714 -> None f: for r in temp382.get ... 288 ... sion) \n          \n      \n  
+         For(AssName('r', 'OP ... 748 ... ]))], None)]), None)
+newslice: 2196 -> 2238, lineno 714 -> 722 f: for r in temp382.get ... 288 ... sion) \n          \n      \n  
+         For(AssName('r', 'OP ... 748 ... ]))], None)]), None)
+newslice: 22 -> 23, lineno 1156 -> 1162 f: def RolePermissions( ... 154 ... n temp643.get(role) \n  
+         Function(None, 'Role ... 378 ... ')], None, None))]))
+newslice: 2202 -> 2202, lineno None -> None f: temp383 = self.MapUR ... 220 ... p387, session) \n      \n  
+         Stmt([Assign([AssNam ... 636 ...  None))]))], None)])
+newslice: 2202 -> 2203, lineno None -> 715 f: temp383 = self.MapUR ... 220 ... p387, session) \n      \n  
+         Stmt([Assign([AssNam ... 636 ...  None))]))], None)])
+newslice: 2203 -> 2207, lineno 715 -> 716 f: temp383 = self.MapUR2S_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... UR2S_11_1__EXPR__'))
+newslice: 2207 -> 2212, lineno 716 -> 717 f: temp384 = (user,r)  \n  
+         Assign([AssName('tem ... 75 ... user'), Name('r')]))
+newslice: 2212 -> 2218, lineno 717 -> 718 f: temp385 = temp383.get(temp384)  \n  
+         Assign([AssName('tem ... 115 ... 384')], None, None))
+newslice: 2218 -> 2202, lineno 718 -> None f: if session not in te ... 131 ... p387, session) \n      \n  
+         If([(Compare(Name('s ... 344 ... e, None))]))], None)
+newslice: 2218 -> 2223, lineno 718 -> None f: if session not in te ... 131 ... p387, session) \n      \n  
+         If([(Compare(Name('s ... 344 ... e, None))]))], None)
+newslice: 2218 -> 2242, lineno 718 -> 723 f: if session not in te ... 131 ... p387, session) \n      \n  
+         If([(Compare(Name('s ... 344 ... e, None))]))], None)
+newslice: 222 -> 228, lineno 34 -> 35 f: self.MapSP2R = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 116 ... '), [], None, None))
+newslice: 2223 -> 2224, lineno None -> 719 f: temp386 = self.MapUR ... 87 ... d(temp387, session) \n  
+         Stmt([Assign([AssNam ... 273 ... n')], None, None))])
+newslice: 2224 -> 2228, lineno 719 -> 720 f: temp386 = self.MapUR2S_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... UR2S_11_1__EXPR__'))
+newslice: 2228 -> 2233, lineno 720 -> 721 f: temp387 = (user,r)  \n  
+         Assign([AssName('tem ... 75 ... user'), Name('r')]))
+newslice: 2238 -> 2238, lineno 722 -> 722 f: temp388 = self.SUMapS2U_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_11_1__EXPR__'))
+newslice: 2242 -> 2247, lineno 723 -> 724 f: temp388.add(session, user) 
+         CallFunc(Getattr(Nam ... 86 ... user')], None, None)
+newslice: 2247 -> 2251, lineno 724 -> 725 f: temp389 = self.SESSIONS  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SESSIONS'))
+newslice: 2251 -> 2256, lineno 725 -> None f: if session in temp38 ... 220 ... sion) \n          \n      \n  
+         If([(Compare(Name('s ... 541 ... )], None)]))], None)
+newslice: 2251 -> 2282, lineno 725 -> 731 f: if session in temp38 ... 220 ... sion) \n          \n      \n  
+         If([(Compare(Name('s ... 541 ... )], None)]))], None)
+newslice: 2256 -> 2257, lineno None -> 726 f: temp390 = self.MapU2 ... 168 ... user, session) \n      \n  
+         Stmt([Assign([AssNam ... 474 ...  None))]))], None)])
+newslice: 2257 -> 2261, lineno 726 -> 727 f: temp390 = self.MapU2S_10_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2S_10_1__EXPR__'))
+newslice: 2261 -> 2267, lineno 727 -> 728 f: temp391 = temp390.get(user)  \n  
+         Assign([AssName('tem ... 112 ... ser')], None, None))
+newslice: 2267 -> 2272, lineno 728 -> None f: if session not in te ... 103 ... user, session) \n      \n  
+         If([(Compare(Name('s ... 263 ... e, None))]))], None)
+newslice: 2267 -> 2286, lineno 728 -> 732 f: if session not in te ... 103 ... user, session) \n      \n  
+         If([(Compare(Name('s ... 263 ... e, None))]))], None)
+newslice: 2272 -> 2273, lineno None -> 729 f: temp392 = self.MapU2 ... 63 ... .add(user, session) \n  
+         Stmt([Assign([AssNam ... 192 ... n')], None, None))])
+newslice: 2273 -> 2277, lineno 729 -> 730 f: temp392 = self.MapU2S_10_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2S_10_1__EXPR__'))
+newslice: 228 -> 234, lineno 35 -> 36 f: self.PRMapR2P = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 117 ... '), [], None, None))
+newslice: 2282 -> 2282, lineno 731 -> 731 f: temp393 = self.SUMapS2U_10_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_10_1__EXPR__'))
+newslice: 2286 -> 2291, lineno 732 -> 733 f: temp393.add(session, user) 
+         CallFunc(Getattr(Nam ... 86 ... user')], None, None)
+newslice: 2291 -> 2294, lineno 733 -> None f: for r in ars: \n     te ... 2499 ... dd(r, session) \n      \n  
+         For(AssName('r', 'OP ... 5599 ... one, None))]), None)
+newslice: 2291 -> 2621, lineno 733 -> 796 f: for r in ars: \n     te ... 2499 ... dd(r, session) \n      \n  
+         For(AssName('r', 'OP ... 5599 ... one, None))]), None)
+newslice: 2294 -> 2294, lineno None -> None f: temp394 = self.SR  \n t ... 2176 ... 431.add(r, session) \n  
+         Stmt([Assign([AssNam ... 5548 ... n')], None, None))])
+newslice: 2294 -> 2295, lineno None -> 734 f: temp394 = self.SR  \n t ... 2176 ... 431.add(r, session) \n  
+         Stmt([Assign([AssNam ... 5548 ... n')], None, None))])
+newslice: 2295 -> 2299, lineno 734 -> 735 f: temp394 = self.SR  \n  
+         Assign([AssName('tem ... 70 ... Name('self'), 'SR'))
+newslice: 2299 -> 2304, lineno 735 -> 736 f: temp395 = (session,r)  \n  
+         Assign([AssName('tem ... 78 ... sion'), Name('r')]))
+newslice: 23 -> 24, lineno 1162 -> 1168 f: def UserPermissions( ... 155 ... n temp645.get(user) \n  
+         Function(None, 'User ... 379 ... ')], None, None))]))
+newslice: 2304 -> 2308, lineno 736 -> 737 f: temp394.add(temp395) 
+         CallFunc(Getattr(Nam ... 72 ... p395')], None, None)
+newslice: 2308 -> 2308, lineno 737 -> 737 f: temp396 = self.PRMapR2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2P_14_1__EXPR__'))
+newslice: 2308 -> 2312, lineno 737 -> 738 f: temp396 = self.PRMapR2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2P_14_1__EXPR__'))
+newslice: 2312 -> 2320, lineno 738 -> None f: for (op,obj,) in tem ... 476 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1070 ... ]))], None)]), None)
+newslice: 2312 -> 2376, lineno 738 -> 750 f: for (op,obj,) in tem ... 476 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1070 ... ]))], None)]), None)
+newslice: 2320 -> 2320, lineno None -> None f: temp397 = self.OPS  \n  ... 382 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 922 ... , None)]))], None)])
+newslice: 2320 -> 2321, lineno None -> 739 f: temp397 = self.OPS  \n  ... 382 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 922 ... , None)]))], None)])
+newslice: 2321 -> 2325, lineno 739 -> 740 f: temp397 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 2325 -> 2320, lineno 740 -> None f: if op in temp397: \n    ... 362 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 841 ... )], None)]))], None)
+newslice: 2325 -> 2330, lineno 740 -> None f: if op in temp397: \n    ... 362 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 841 ... )], None)]))], None)
+newslice: 2330 -> 2331, lineno None -> 741 f: temp398 = self.OBJS  ... 295 ... p403) \n          \n      \n  
+         Stmt([Assign([AssNam ... 779 ... , None)]))], None)])
+newslice: 2331 -> 2335, lineno 741 -> 742 f: temp398 = self.OBJS  \n  
+         Assign([AssName('tem ... 72 ... me('self'), 'OBJS'))
+newslice: 2335 -> 2340, lineno 742 -> None f: if obj in temp398: \n   ... 274 ... p403) \n          \n      \n  
+         If([(Compare(Name('o ... 697 ... )], None)]))], None)
+newslice: 234 -> 240, lineno 36 -> 37 f: self.UR = sets.Set()  \n  
+         Assign([AssAttr(Name ... 106 ... '), [], None, None))
+newslice: 2340 -> 2341, lineno None -> 743 f: temp400 = (op,obj)  \n  ... 218 ... sion, temp403) \n      \n  
+         Stmt([Assign([AssNam ... 634 ...  None))]))], None)])
+newslice: 2341 -> 2346, lineno 743 -> 744 f: temp400 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 2346 -> 2350, lineno 744 -> 745 f: temp399 = self.MapS2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pS2P_14_1__EXPR__'))
+newslice: 2350 -> 2356, lineno 745 -> 746 f: temp401 = temp399.get(session)  \n  
+         Assign([AssName('tem ... 115 ... ion')], None, None))
+newslice: 2356 -> 2320, lineno 746 -> None f: if temp400 not in te ... 130 ... sion, temp403) \n      \n  
+         If([(Compare(Name('t ... 343 ... e, None))]))], None)
+newslice: 2356 -> 2361, lineno 746 -> None f: if temp400 not in te ... 130 ... sion, temp403) \n      \n  
+         If([(Compare(Name('t ... 343 ... e, None))]))], None)
+newslice: 2356 -> 2380, lineno 746 -> 751 f: if temp400 not in te ... 130 ... sion, temp403) \n      \n  
+         If([(Compare(Name('t ... 343 ... e, None))]))], None)
+newslice: 2361 -> 2362, lineno None -> 747 f: temp402 = self.MapS2 ... 86 ... d(session, temp403) \n  
+         Stmt([Assign([AssNam ... 272 ... 3')], None, None))])
+newslice: 2362 -> 2366, lineno 747 -> 748 f: temp402 = self.MapS2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pS2P_14_1__EXPR__'))
+newslice: 2366 -> 2371, lineno 748 -> 749 f: temp403 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 2376 -> 2376, lineno 750 -> 750 f: temp404 = self.SRMapR2S_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2S_14_1__EXPR__'))
+newslice: 2380 -> 2389, lineno 751 -> 752 f: temp404.add(r, session) 
+         CallFunc(Getattr(Nam ... 83 ... sion')], None, None)
+newslice: 2389 -> 2393, lineno 752 -> 753 f: temp405 = self.SUMapS2U_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_12_1__EXPR__'))
+newslice: 2393 -> 2399, lineno 753 -> None f: for u in temp405.get ... 479 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1039 ... ]))], None)]), None)
+newslice: 2393 -> 2455, lineno 753 -> 765 f: for u in temp405.get ... 479 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1039 ... ]))], None)]), None)
+newslice: 2399 -> 2399, lineno None -> None f: temp406 = self.SESSI ... 387 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 927 ... , None)]))], None)])
+newslice: 2399 -> 2400, lineno None -> 754 f: temp406 = self.SESSI ... 387 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 927 ... , None)]))], None)])
+newslice: 24 -> 25, lineno 1168 -> 1174 f: def SessionRoles(sel ... 163 ... emp647.get(session) \n  
+         Function(None, 'Sess ... 387 ... ')], None, None))]))
+newslice: 240 -> 246, lineno 37 -> 38 f: self.MapU2P_13_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 128 ... '), [], None, None))
+newslice: 2400 -> 2404, lineno 754 -> 755 f: temp406 = self.SESSIONS  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SESSIONS'))
+newslice: 2404 -> 2399, lineno 755 -> None f: if session in temp40 ... 362 ...       \n          \n      \n  
+         If([(Compare(Name('s ... 841 ... )], None)]))], None)
+newslice: 2404 -> 2409, lineno 755 -> None f: if session in temp40 ... 362 ...       \n          \n      \n  
+         If([(Compare(Name('s ... 841 ... )], None)]))], None)
+newslice: 2409 -> 2410, lineno None -> 756 f: temp407 = self.USERS ... 290 ... p412) \n          \n      \n  
+         Stmt([Assign([AssNam ... 774 ... , None)]))], None)])
+newslice: 2410 -> 2414, lineno 756 -> 757 f: temp407 = self.USERS  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'USERS'))
+newslice: 2414 -> 2419, lineno 757 -> None f: if u in temp407: \n     ... 268 ... p412) \n          \n      \n  
+         If([(Compare(Name('u ... 691 ... )], None)]))], None)
+newslice: 2419 -> 2420, lineno None -> 758 f: temp409 = (session,u ... 214 ... dd(r, temp412) \n      \n  
+         Stmt([Assign([AssNam ... 630 ...  None))]))], None)])
+newslice: 2420 -> 2425, lineno 758 -> 759 f: temp409 = (session,u)  \n  
+         Assign([AssName('tem ... 78 ... sion'), Name('u')]))
+newslice: 2425 -> 2429, lineno 759 -> 760 f: temp408 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... R2SU_12_1__EXPR__'))
+newslice: 2429 -> 2435, lineno 760 -> 761 f: temp410 = temp408.get(r)  \n  
+         Assign([AssName('tem ... 109 ... ('r')], None, None))
+newslice: 2435 -> 2399, lineno 761 -> None f: if temp409 not in te ... 128 ... dd(r, temp412) \n      \n  
+         If([(Compare(Name('t ... 341 ... e, None))]))], None)
+newslice: 2435 -> 2440, lineno 761 -> None f: if temp409 not in te ... 128 ... dd(r, temp412) \n      \n  
+         If([(Compare(Name('t ... 341 ... e, None))]))], None)
+newslice: 2435 -> 2459, lineno 761 -> 766 f: if temp409 not in te ... 128 ... dd(r, temp412) \n      \n  
+         If([(Compare(Name('t ... 341 ... e, None))]))], None)
+newslice: 2440 -> 2441, lineno None -> 762 f: temp411 = self.MapR2 ... 84 ... 411.add(r, temp412) \n  
+         Stmt([Assign([AssNam ... 270 ... 2')], None, None))])
+newslice: 2441 -> 2445, lineno 762 -> 763 f: temp411 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... R2SU_12_1__EXPR__'))
+newslice: 2445 -> 2450, lineno 763 -> 764 f: temp412 = (session,u)  \n  
+         Assign([AssName('tem ... 78 ... sion'), Name('u')]))
+newslice: 2455 -> 2455, lineno 765 -> 765 f: temp413 = self.SUMapS2U_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_11_1__EXPR__'))
+newslice: 2459 -> 2465, lineno 766 -> None f: for u in temp413.get ... 282 ... sion) \n          \n      \n  
+         For(AssName('u', 'OP ... 742 ... ]))], None)]), None)
+newslice: 2459 -> 2501, lineno 766 -> 774 f: for u in temp413.get ... 282 ... sion) \n          \n      \n  
+         For(AssName('u', 'OP ... 742 ... ]))], None)]), None)
+newslice: 246 -> 252, lineno 38 -> 39 f: self.URMapR2U = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 117 ... '), [], None, None))
+newslice: 2465 -> 2465, lineno None -> None f: temp414 = self.MapUR ... 214 ... p418, session) \n      \n  
+         Stmt([Assign([AssNam ... 630 ...  None))]))], None)])
+newslice: 2465 -> 2466, lineno None -> 767 f: temp414 = self.MapUR ... 214 ... p418, session) \n      \n  
+         Stmt([Assign([AssNam ... 630 ...  None))]))], None)])
+newslice: 2466 -> 2470, lineno 767 -> 768 f: temp414 = self.MapUR2S_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... UR2S_11_1__EXPR__'))
+newslice: 2470 -> 2475, lineno 768 -> 769 f: temp415 = (u,r)  \n  
+         Assign([AssName('tem ... 72 ... e('u'), Name('r')]))
+newslice: 2475 -> 2481, lineno 769 -> 770 f: temp416 = temp414.get(temp415)  \n  
+         Assign([AssName('tem ... 115 ... 415')], None, None))
+newslice: 2481 -> 2465, lineno 770 -> None f: if session not in te ... 128 ... p418, session) \n      \n  
+         If([(Compare(Name('s ... 341 ... e, None))]))], None)
+newslice: 2481 -> 2486, lineno 770 -> None f: if session not in te ... 128 ... p418, session) \n      \n  
+         If([(Compare(Name('s ... 341 ... e, None))]))], None)
+newslice: 2481 -> 2505, lineno 770 -> 775 f: if session not in te ... 128 ... p418, session) \n      \n  
+         If([(Compare(Name('s ... 341 ... e, None))]))], None)
+newslice: 2486 -> 2487, lineno None -> 771 f: temp417 = self.MapUR ... 84 ... d(temp418, session) \n  
+         Stmt([Assign([AssNam ... 270 ... n')], None, None))])
+newslice: 2487 -> 2491, lineno 771 -> 772 f: temp417 = self.MapUR2S_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... UR2S_11_1__EXPR__'))
+newslice: 2491 -> 2496, lineno 772 -> 773 f: temp418 = (u,r)  \n  
+         Assign([AssName('tem ... 72 ... e('u'), Name('r')]))
+newslice: 25 -> 26, lineno 1174 -> 1180 f: def SessionPermissio ... 170 ... emp649.get(session) \n  
+         Function(None, 'Sess ... 394 ... ')], None, None))]))
+newslice: 2501 -> 2501, lineno 774 -> 774 f: temp419 = self.SRMapS2R  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SRMapS2R'))
+newslice: 2505 -> 2514, lineno 775 -> 776 f: temp419.add(session, r) 
+         CallFunc(Getattr(Nam ... 83 ... e('r')], None, None)
+newslice: 2514 -> 2518, lineno 776 -> 777 f: temp420 = self.MapS2R_6_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apS2R_6_1__EXPR__'))
+newslice: 2518 -> 2524, lineno 777 -> 778 f: temp421 = temp420.get(session)  \n  
+         Assign([AssName('tem ... 115 ... ion')], None, None))
+newslice: 252 -> 258, lineno 39 -> 40 f: self.MapR2U_7_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 127 ... '), [], None, None))
+newslice: 2524 -> 2529, lineno 778 -> None f: if r not in temp421: ... 93 ... dd(session, r) \n      \n  
+         If([(Compare(Name('r ... 253 ... e, None))]))], None)
+newslice: 2524 -> 2539, lineno 778 -> 781 f: if r not in temp421: ... 93 ... dd(session, r) \n      \n  
+         If([(Compare(Name('r ... 253 ... e, None))]))], None)
+newslice: 2529 -> 2530, lineno None -> 779 f: temp422 = self.MapS2 ... 59 ... 422.add(session, r) \n  
+         Stmt([Assign([AssNam ... 188 ... r')], None, None))])
+newslice: 2530 -> 2534, lineno 779 -> 780 f: temp422 = self.MapS2R_6_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apS2R_6_1__EXPR__'))
+newslice: 2539 -> 2539, lineno 781 -> 781 f: temp423 = self.SRMapR2S_6_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... apR2S_6_1__EXPR__'))
+newslice: 2539 -> 2543, lineno 781 -> 782 f: temp423 = self.SRMapR2S_6_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... apR2S_6_1__EXPR__'))
+newslice: 2543 -> 2548, lineno 782 -> 783 f: temp423.add(r, session) 
+         CallFunc(Getattr(Nam ... 83 ... sion')], None, None)
+newslice: 2548 -> 2552, lineno 783 -> 784 f: temp424 = self.ROLES  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'ROLES'))
+newslice: 2552 -> 2557, lineno 784 -> None f: if r in temp424: \n     ... 359 ...       \n          \n      \n  
+         If([(Compare(Name('r ... 927 ... ]), None)]))], None)
+newslice: 2552 -> 2612, lineno 784 -> 794 f: if r in temp424: \n     ... 359 ...       \n          \n      \n  
+         If([(Compare(Name('r ... 927 ... ]), None)]))], None)
+newslice: 2557 -> 2558, lineno None -> 785 f: temp425 = self.PRMap ... 293 ... 0, r) \n          \n      \n  
+         Stmt([Assign([AssNam ... 866 ... )], None)]), None)])
+newslice: 2558 -> 2562, lineno 785 -> 786 f: temp425 = self.PRMapR2P  \n  
+         Assign([AssName('tem ... 76 ... self'), 'PRMapR2P'))
+newslice: 2562 -> 2570, lineno 786 -> None f: for (op,obj,) in tem ... 268 ... 0, r) \n          \n      \n  
+         For(AssTuple([AssNam ... 780 ... ]))], None)]), None)
+newslice: 2570 -> 2570, lineno None -> None f: temp426 = self.MapSP ... 198 ... dd(temp430, r) \n      \n  
+         Stmt([Assign([AssNam ... 632 ...  None))]))], None)])
+newslice: 2570 -> 2571, lineno None -> 787 f: temp426 = self.MapSP ... 198 ... dd(temp430, r) \n      \n  
+         Stmt([Assign([AssNam ... 632 ...  None))]))], None)])
+newslice: 2571 -> 2575, lineno 787 -> 788 f: temp426 = self.MapSP2R  \n  
+         Assign([AssName('tem ... 75 ... 'self'), 'MapSP2R'))
+newslice: 2575 -> 2581, lineno 788 -> 789 f: temp427 = (session,op,obj)  \n  
+         Assign([AssName('tem ... 92 ... op'), Name('obj')]))
+newslice: 258 -> 264, lineno 40 -> 41 f: self.URMapU2R_7_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 129 ... '), [], None, None))
+newslice: 2581 -> 2587, lineno 789 -> 790 f: temp428 = temp426.get(temp427)  \n  
+         Assign([AssName('tem ... 115 ... 427')], None, None))
+newslice: 2587 -> 2570, lineno 790 -> None f: if r not in temp428: ... 114 ... dd(temp430, r) \n      \n  
+         If([(Compare(Name('r ... 336 ... e, None))]))], None)
+newslice: 2587 -> 2592, lineno 790 -> None f: if r not in temp428: ... 114 ... dd(temp430, r) \n      \n  
+         If([(Compare(Name('r ... 336 ... e, None))]))], None)
+newslice: 2587 -> 2616, lineno 790 -> 795 f: if r not in temp428: ... 114 ... dd(temp430, r) \n      \n  
+         If([(Compare(Name('r ... 336 ... e, None))]))], None)
+newslice: 2592 -> 2593, lineno None -> 791 f: temp429 = self.MapSP ... 76 ... 429.add(temp430, r) \n  
+         Stmt([Assign([AssNam ... 271 ... r')], None, None))])
+newslice: 2593 -> 2597, lineno 791 -> 792 f: temp429 = self.MapSP2R  \n  
+         Assign([AssName('tem ... 75 ... 'self'), 'MapSP2R'))
+newslice: 2597 -> 2603, lineno 792 -> 793 f: temp430 = (session,op,obj)  \n  
+         Assign([AssName('tem ... 92 ... op'), Name('obj')]))
+newslice: 26 -> 27, lineno 1180 -> 1189 f: def RoleOperationsOn ... 250 ... emp652.get(temp653) \n  
+         Function(None, 'Role ... 615 ... ')], None, None))]))
+newslice: 2612 -> 2612, lineno 794 -> 794 f: temp431 = self.SRMapR2S  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SRMapR2S'))
+newslice: 2616 -> 2294, lineno 795 -> None f: temp431.add(r, session) 
+         CallFunc(Getattr(Nam ... 83 ... sion')], None, None)
+newslice: 2621 -> 2621, lineno 796 -> 796 f: temp432 = self.SESSIONS  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SESSIONS'))
+newslice: 2621 -> 2625, lineno 796 -> 797 f: temp432 = self.SESSIONS  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SESSIONS'))
+newslice: 2625 -> 2629, lineno 797 -> 798 f: temp432.add(session) 
+         CallFunc(Getattr(Nam ... 72 ... sion')], None, None)
+newslice: 2629 -> 2629, lineno 798 -> 798 f: temp433 = self.SUMapS2U_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_12_1__EXPR__'))
+newslice: 2629 -> 2633, lineno 798 -> 799 f: temp433 = self.SUMapS2U_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_12_1__EXPR__'))
+newslice: 2633 -> 2639, lineno 799 -> None f: for u in temp433.get ... 487 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1084 ... ]))], None)]), None)
+newslice: 2633 -> 2696, lineno 799 -> 811 f: for u in temp433.get ... 487 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1084 ... ]))], None)]), None)
+newslice: 2639 -> 2639, lineno None -> None f: temp434 = self.USERS ... 395 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 972 ... , None)]))], None)])
+newslice: 2639 -> 2640, lineno None -> 800 f: temp434 = self.USERS ... 395 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 972 ... , None)]))], None)])
+newslice: 264 -> 270, lineno 41 -> 42 f: self.MapU2R_5_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 127 ... '), [], None, None))
+newslice: 2640 -> 2644, lineno 800 -> 801 f: temp434 = self.USERS  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'USERS'))
+newslice: 2644 -> 2639, lineno 801 -> None f: if u in temp434: \n     ... 373 ...       \n          \n      \n  
+         If([(Compare(Name('u ... 889 ... ]), None)]))], None)
+newslice: 2644 -> 2649, lineno 801 -> None f: if u in temp434: \n     ... 373 ...       \n          \n      \n  
+         If([(Compare(Name('u ... 889 ... ]), None)]))], None)
+newslice: 2649 -> 2650, lineno None -> 802 f: temp435 = self.SRMap ... 307 ... p440) \n          \n      \n  
+         Stmt([Assign([AssNam ... 828 ... )], None)]), None)])
+newslice: 2650 -> 2654, lineno 802 -> 803 f: temp435 = self.SRMapS2R  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SRMapS2R'))
+newslice: 2654 -> 2660, lineno 803 -> None f: for r in temp435.get ... 282 ... p440) \n          \n      \n  
+         For(AssName('r', 'OP ... 742 ... ]))], None)]), None)
+newslice: 2660 -> 2660, lineno None -> None f: temp437 = (session,u ... 214 ... dd(r, temp440) \n      \n  
+         Stmt([Assign([AssNam ... 630 ...  None))]))], None)])
+newslice: 2660 -> 2661, lineno None -> 804 f: temp437 = (session,u ... 214 ... dd(r, temp440) \n      \n  
+         Stmt([Assign([AssNam ... 630 ...  None))]))], None)])
+newslice: 2661 -> 2666, lineno 804 -> 805 f: temp437 = (session,u)  \n  
+         Assign([AssName('tem ... 78 ... sion'), Name('u')]))
+newslice: 2666 -> 2670, lineno 805 -> 806 f: temp436 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... R2SU_12_1__EXPR__'))
+newslice: 2670 -> 2676, lineno 806 -> 807 f: temp438 = temp436.get(r)  \n  
+         Assign([AssName('tem ... 109 ... ('r')], None, None))
+newslice: 2676 -> 2639, lineno 807 -> None f: if temp437 not in te ... 128 ... dd(r, temp440) \n      \n  
+         If([(Compare(Name('t ... 341 ... e, None))]))], None)
+newslice: 2676 -> 2660, lineno 807 -> None f: if temp437 not in te ... 128 ... dd(r, temp440) \n      \n  
+         If([(Compare(Name('t ... 341 ... e, None))]))], None)
+newslice: 2676 -> 2681, lineno 807 -> None f: if temp437 not in te ... 128 ... dd(r, temp440) \n      \n  
+         If([(Compare(Name('t ... 341 ... e, None))]))], None)
+newslice: 2676 -> 2700, lineno 807 -> 812 f: if temp437 not in te ... 128 ... dd(r, temp440) \n      \n  
+         If([(Compare(Name('t ... 341 ... e, None))]))], None)
+newslice: 2681 -> 2682, lineno None -> 808 f: temp439 = self.MapR2 ... 84 ... 439.add(r, temp440) \n  
+         Stmt([Assign([AssNam ... 270 ... 0')], None, None))])
+newslice: 2682 -> 2686, lineno 808 -> 809 f: temp439 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... R2SU_12_1__EXPR__'))
+newslice: 2686 -> 2691, lineno 809 -> 810 f: temp440 = (session,u)  \n  
+         Assign([AssName('tem ... 78 ... sion'), Name('u')]))
+newslice: 2696 -> 2696, lineno 811 -> 811 f: temp441 = self.SUMapS2U_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_11_1__EXPR__'))
+newslice: 27 -> 28, lineno 1189 -> 1198 f: def UserOperationsOn ... 250 ... emp656.get(temp657) \n  
+         Function(None, 'User ... 615 ... ')], None, None))]))
+newslice: 270 -> 276, lineno 42 -> 43 f: self.URMapR2U = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 117 ... '), [], None, None))
+newslice: 2700 -> 2706, lineno 812 -> None f: for u in temp441.get ... 387 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 940 ... e)]), None)]), None)
+newslice: 2700 -> 2753, lineno 812 -> 822 f: for u in temp441.get ... 387 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 940 ... e)]), None)]), None)
+newslice: 2706 -> 2706, lineno None -> None f: temp442 = self.SRMap ... 307 ... sion) \n          \n      \n  
+         Stmt([Assign([AssNam ... 828 ... )], None)]), None)])
+newslice: 2706 -> 2707, lineno None -> 813 f: temp442 = self.SRMap ... 307 ... sion) \n          \n      \n  
+         Stmt([Assign([AssNam ... 828 ... )], None)]), None)])
+newslice: 2707 -> 2711, lineno 813 -> 814 f: temp442 = self.SRMapS2R  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SRMapS2R'))
+newslice: 2711 -> 2706, lineno 814 -> None f: for r in temp442.get ... 282 ... sion) \n          \n      \n  
+         For(AssName('r', 'OP ... 742 ... ]))], None)]), None)
+newslice: 2711 -> 2717, lineno 814 -> None f: for r in temp442.get ... 282 ... sion) \n          \n      \n  
+         For(AssName('r', 'OP ... 742 ... ]))], None)]), None)
+newslice: 2717 -> 2717, lineno None -> None f: temp443 = self.MapUR ... 214 ... p447, session) \n      \n  
+         Stmt([Assign([AssNam ... 630 ...  None))]))], None)])
+newslice: 2717 -> 2718, lineno None -> 815 f: temp443 = self.MapUR ... 214 ... p447, session) \n      \n  
+         Stmt([Assign([AssNam ... 630 ...  None))]))], None)])
+newslice: 2718 -> 2722, lineno 815 -> 816 f: temp443 = self.MapUR2S_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... UR2S_11_1__EXPR__'))
+newslice: 2722 -> 2727, lineno 816 -> 817 f: temp444 = (u,r)  \n  
+         Assign([AssName('tem ... 72 ... e('u'), Name('r')]))
+newslice: 2727 -> 2733, lineno 817 -> 818 f: temp445 = temp443.get(temp444)  \n  
+         Assign([AssName('tem ... 115 ... 444')], None, None))
+newslice: 2733 -> 2706, lineno 818 -> None f: if session not in te ... 128 ... p447, session) \n      \n  
+         If([(Compare(Name('s ... 341 ... e, None))]))], None)
+newslice: 2733 -> 2717, lineno 818 -> None f: if session not in te ... 128 ... p447, session) \n      \n  
+         If([(Compare(Name('s ... 341 ... e, None))]))], None)
+newslice: 2733 -> 2738, lineno 818 -> None f: if session not in te ... 128 ... p447, session) \n      \n  
+         If([(Compare(Name('s ... 341 ... e, None))]))], None)
+newslice: 2733 -> 2757, lineno 818 -> 823 f: if session not in te ... 128 ... p447, session) \n      \n  
+         If([(Compare(Name('s ... 341 ... e, None))]))], None)
+newslice: 2738 -> 2739, lineno None -> 819 f: temp446 = self.MapUR ... 84 ... d(temp447, session) \n  
+         Stmt([Assign([AssNam ... 270 ... n')], None, None))])
+newslice: 2739 -> 2743, lineno 819 -> 820 f: temp446 = self.MapUR2S_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... UR2S_11_1__EXPR__'))
+newslice: 2743 -> 2748, lineno 820 -> 821 f: temp447 = (u,r)  \n  
+         Assign([AssName('tem ... 72 ... e('u'), Name('r')]))
+newslice: 2753 -> 2753, lineno 822 -> 822 f: temp448 = self.SUMapS2U_10_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_10_1__EXPR__'))
+newslice: 2757 -> 2763, lineno 823 -> None f: for u in temp448.get ... 222 ... sion) \n          \n      \n  
+         For(AssName('u', 'OP ... 580 ... ]))], None)]), None)
+newslice: 2757 -> 2789, lineno 823 -> 1232 f: for u in temp448.get ... 222 ... sion) \n          \n      \n  
+         For(AssName('u', 'OP ... 580 ... ]))], None)]), None)
+newslice: 2757 -> 2805, lineno 823 -> 1235 f: for u in temp448.get ... 222 ... sion) \n          \n      \n  
+         For(AssName('u', 'OP ... 580 ... ]))], None)]), None)
+newslice: 276 -> 282, lineno 43 -> 44 f: self.SESSIONS = sets.Set()  \n  
+         Assign([AssAttr(Name ... 112 ... '), [], None, None))
+newslice: 2763 -> 2763, lineno None -> None f: temp449 = self.MapU2 ... 162 ... dd(u, session) \n      \n  
+         Stmt([Assign([AssNam ... 468 ...  None))]))], None)])
+newslice: 2763 -> 2764, lineno None -> 824 f: temp449 = self.MapU2 ... 162 ... dd(u, session) \n      \n  
+         Stmt([Assign([AssNam ... 468 ...  None))]))], None)])
+newslice: 2764 -> 2768, lineno 824 -> 825 f: temp449 = self.MapU2S_10_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2S_10_1__EXPR__'))
+newslice: 2768 -> 2774, lineno 825 -> 826 f: temp450 = temp449.get(u)  \n  
+         Assign([AssName('tem ... 109 ... ('u')], None, None))
+newslice: 2774 -> 2047, lineno 826 -> 687 f: if session not in te ... 100 ... dd(u, session) \n      \n  
+         If([(Compare(Name('s ... 260 ... e, None))]))], None)
+newslice: 2774 -> 2763, lineno 826 -> None f: if session not in te ... 100 ... dd(u, session) \n      \n  
+         If([(Compare(Name('s ... 260 ... e, None))]))], None)
+newslice: 2774 -> 2779, lineno 826 -> None f: if session not in te ... 100 ... dd(u, session) \n      \n  
+         If([(Compare(Name('s ... 260 ... e, None))]))], None)
+newslice: 2774 -> 2793, lineno 826 -> 1233 f: if session not in te ... 100 ... dd(u, session) \n      \n  
+         If([(Compare(Name('s ... 260 ... e, None))]))], None)
+newslice: 2774 -> 2809, lineno 826 -> None f: if session not in te ... 100 ... dd(u, session) \n      \n  
+         If([(Compare(Name('s ... 260 ... e, None))]))], None)
+newslice: 2779 -> 2780, lineno None -> 827 f: temp451 = self.MapU2 ... 60 ... 451.add(u, session) \n  
+         Stmt([Assign([AssNam ... 189 ... n')], None, None))])
+newslice: 2780 -> 2784, lineno 827 -> 828 f: temp451 = self.MapU2S_10_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2S_10_1__EXPR__'))
+newslice: 2789 -> 2789, lineno 1232 -> 1232 f: temp662 = ['Restore Operator']  \n  
+         Assign([AssName('tem ... 76 ... estore Operator')]))
+newslice: 2793 -> 2046, lineno 1233 -> None f: temp663 = sets.Set(temp662)  \n  
+         Assign([AssName('tem ... 112 ... 662')], None, None))
+newslice: 28 -> 29, lineno 1198 -> 1202 f: def AddOperation(sel ... 91 ... add(operation) \n      \n  
+         Function(None, 'AddO ... 232 ... ')], None, None))]))
+newslice: 2805 -> 2805, lineno 1235 -> 1235 f: C.DeleteRole('Grr') 
+         CallFunc(Getattr(Nam ... 70 ... 'Grr')], None, None)
+newslice: 2809 -> 2809, lineno None -> None f: temp87 = self.ROLES  ... 6972 ... eSession(u, s) \n      \n  
+         Stmt([Assign([AssNam ... 16235 ... e, None))]), None)])
+newslice: 2809 -> 2810, lineno None -> 223 f: temp87 = self.ROLES  ... 6972 ... eSession(u, s) \n      \n  
+         Stmt([Assign([AssNam ... 16235 ... e, None))]), None)])
+newslice: 2810 -> 2818, lineno 223 -> 225 f: temp87 = self.ROLES  \n  
+         Assign([AssName('tem ... 72 ... e('self'), 'ROLES'))
+newslice: 2818 -> 2822, lineno 225 -> 226 f: temp88 = self.SRMapR2S  \n  
+         Assign([AssName('tem ... 75 ... self'), 'SRMapR2S'))
+newslice: 282 -> 288, lineno 44 -> 45 f: self.MapR2SU_12_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 129 ... '), [], None, None))
+newslice: 2822 -> 2828, lineno 226 -> None f: for s in temp88.get( ... 353 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 958 ... e)]), None)]), None)
+newslice: 2822 -> 2880, lineno 226 -> 236 f: for s in temp88.get( ... 353 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 958 ... e)]), None)]), None)
+newslice: 2828 -> 2828, lineno None -> None f: temp89 = self.PRMapR ... 277 ... role) \n          \n      \n  
+         Stmt([Assign([AssNam ... 850 ... )], None)]), None)])
+newslice: 2828 -> 2829, lineno None -> 227 f: temp89 = self.PRMapR ... 277 ... role) \n          \n      \n  
+         Stmt([Assign([AssNam ... 850 ... )], None)]), None)])
+newslice: 2829 -> 2833, lineno 227 -> 228 f: temp89 = self.PRMapR2P  \n  
+         Assign([AssName('tem ... 75 ... self'), 'PRMapR2P'))
+newslice: 2833 -> 2828, lineno 228 -> None f: for (op,obj,) in tem ... 253 ... role) \n          \n      \n  
+         For(AssTuple([AssNam ... 765 ... ]))], None)]), None)
+newslice: 2833 -> 2841, lineno 228 -> None f: for (op,obj,) in tem ... 253 ... role) \n          \n      \n  
+         For(AssTuple([AssNam ... 765 ... ]))], None)]), None)
+newslice: 2841 -> 2841, lineno None -> None f: temp90 = self.MapSP2 ... 181 ... (temp94, role) \n      \n  
+         Stmt([Assign([AssNam ... 615 ...  None))]))], None)])
+newslice: 2841 -> 2842, lineno None -> 229 f: temp90 = self.MapSP2 ... 181 ... (temp94, role) \n      \n  
+         Stmt([Assign([AssNam ... 615 ...  None))]))], None)])
+newslice: 2842 -> 2846, lineno 229 -> 230 f: temp90 = self.MapSP2R  \n  
+         Assign([AssName('tem ... 74 ... 'self'), 'MapSP2R'))
+newslice: 2846 -> 2852, lineno 230 -> 231 f: temp91 = (s,op,obj)  \n  
+         Assign([AssName('tem ... 85 ... op'), Name('obj')]))
+newslice: 2852 -> 2858, lineno 231 -> 232 f: temp92 = temp90.get(temp91)  \n  
+         Assign([AssName('tem ... 112 ... p91')], None, None))
+newslice: 2858 -> 2828, lineno 232 -> None f: if role in temp92: \n   ... 108 ... (temp94, role) \n      \n  
+         If([(Compare(Name('r ... 330 ... e, None))]))], None)
+newslice: 2858 -> 2841, lineno 232 -> None f: if role in temp92: \n   ... 108 ... (temp94, role) \n      \n  
+         If([(Compare(Name('r ... 330 ... e, None))]))], None)
+newslice: 2858 -> 2863, lineno 232 -> None f: if role in temp92: \n   ... 108 ... (temp94, role) \n      \n  
+         If([(Compare(Name('r ... 330 ... e, None))]))], None)
+newslice: 2858 -> 2884, lineno 232 -> 237 f: if role in temp92: \n   ... 108 ... (temp94, role) \n      \n  
+         If([(Compare(Name('r ... 330 ... e, None))]))], None)
+newslice: 2863 -> 2864, lineno None -> 233 f: temp93 = self.MapSP2 ... 72 ... emove(temp94, role) \n  
+         Stmt([Assign([AssNam ... 267 ... e')], None, None))])
+newslice: 2864 -> 2868, lineno 233 -> 234 f: temp93 = self.MapSP2R  \n  
+         Assign([AssName('tem ... 74 ... 'self'), 'MapSP2R'))
+newslice: 2868 -> 2874, lineno 234 -> 235 f: temp94 = (s,op,obj)  \n  
+         Assign([AssName('tem ... 85 ... op'), Name('obj')]))
+newslice: 288 -> 294, lineno 45 -> 46 f: self.MapUR2S_11_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 129 ... '), [], None, None))
+newslice: 2880 -> 2880, lineno 236 -> 236 f: temp95 = self.URMapR2U  \n  
+         Assign([AssName('tem ... 75 ... self'), 'URMapR2U'))
+newslice: 2884 -> 2890, lineno 237 -> None f: for u in temp95.get( ... 203 ... role) \n          \n      \n  
+         For(AssName('u', 'OP ... 561 ... ]))], None)]), None)
+newslice: 2884 -> 2917, lineno 237 -> 243 f: for u in temp95.get( ... 203 ... role) \n          \n      \n  
+         For(AssName('u', 'OP ... 561 ... ]))], None)]), None)
+newslice: 2890 -> 2890, lineno None -> None f: temp96 = self.MapU2R ... 147 ... emove(u, role) \n      \n  
+         Stmt([Assign([AssNam ... 453 ...  None))]))], None)])
+newslice: 2890 -> 2891, lineno None -> 238 f: temp96 = self.MapU2R ... 147 ... emove(u, role) \n      \n  
+         Stmt([Assign([AssNam ... 453 ...  None))]))], None)])
+newslice: 2891 -> 2895, lineno 238 -> 239 f: temp96 = self.MapU2R_5_1__EXPR__  \n  
+         Assign([AssName('tem ... 85 ... apU2R_5_1__EXPR__'))
+newslice: 2895 -> 2901, lineno 239 -> 240 f: temp97 = temp96.get(u)  \n  
+         Assign([AssName('tem ... 107 ... ('u')], None, None))
+newslice: 29 -> 30, lineno 1202 -> 1206 f: def AddObject(self,  ... 83 ... add(OBJ, b, c) \n      \n  
+         Function(None, 'AddO ... 240 ... ')], None, None))]))
+newslice: 2901 -> 2890, lineno 240 -> None f: if role in temp97: \n   ... 89 ... emove(u, role) \n      \n  
+         If([(Compare(Name('r ... 249 ... e, None))]))], None)
+newslice: 2901 -> 2906, lineno 240 -> None f: if role in temp97: \n   ... 89 ... emove(u, role) \n      \n  
+         If([(Compare(Name('r ... 249 ... e, None))]))], None)
+newslice: 2901 -> 2921, lineno 240 -> 244 f: if role in temp97: \n   ... 89 ... emove(u, role) \n      \n  
+         If([(Compare(Name('r ... 249 ... e, None))]))], None)
+newslice: 2906 -> 2907, lineno None -> 241 f: temp98 = self.MapU2R ... 57 ... p98.remove(u, role) \n  
+         Stmt([Assign([AssNam ... 186 ... e')], None, None))])
+newslice: 2907 -> 2911, lineno 241 -> 242 f: temp98 = self.MapU2R_5_1__EXPR__  \n  
+         Assign([AssName('tem ... 85 ... apU2R_5_1__EXPR__'))
+newslice: 2917 -> 2917, lineno 243 -> 243 f: temp99 = self.SRMapR2S_6_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... apR2S_6_1__EXPR__'))
+newslice: 2921 -> 2927, lineno 244 -> None f: for s in temp99.get( ... 209 ... role) \n          \n      \n  
+         For(AssName('s', 'OP ... 567 ... ]))], None)]), None)
+newslice: 2921 -> 2953, lineno 244 -> 250 f: for s in temp99.get( ... 209 ... role) \n          \n      \n  
+         For(AssName('s', 'OP ... 567 ... ]))], None)]), None)
+newslice: 2927 -> 2927, lineno None -> None f: temp100 = self.MapS2 ... 153 ... emove(s, role) \n      \n  
+         Stmt([Assign([AssNam ... 459 ...  None))]))], None)])
+newslice: 2927 -> 2928, lineno None -> 245 f: temp100 = self.MapS2 ... 153 ... emove(s, role) \n      \n  
+         Stmt([Assign([AssNam ... 459 ...  None))]))], None)])
+newslice: 2928 -> 2932, lineno 245 -> 246 f: temp100 = self.MapS2R_6_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apS2R_6_1__EXPR__'))
+newslice: 2932 -> 2938, lineno 246 -> 247 f: temp101 = temp100.get(s)  \n  
+         Assign([AssName('tem ... 109 ... ('s')], None, None))
+newslice: 2938 -> 2927, lineno 247 -> None f: if role in temp101: \n  ... 92 ... emove(s, role) \n      \n  
+         If([(Compare(Name('r ... 252 ... e, None))]))], None)
+newslice: 2938 -> 2943, lineno 247 -> None f: if role in temp101: \n  ... 92 ... emove(s, role) \n      \n  
+         If([(Compare(Name('r ... 252 ... e, None))]))], None)
+newslice: 2938 -> 2957, lineno 247 -> 251 f: if role in temp101: \n  ... 92 ... emove(s, role) \n      \n  
+         If([(Compare(Name('r ... 252 ... e, None))]))], None)
+newslice: 294 -> 300, lineno 46 -> 47 f: self.MapU2S_10_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 128 ... '), [], None, None))
+newslice: 2943 -> 2944, lineno None -> 248 f: temp102 = self.MapS2 ... 59 ... 102.remove(s, role) \n  
+         Stmt([Assign([AssNam ... 188 ... e')], None, None))])
+newslice: 2944 -> 2948, lineno 248 -> 249 f: temp102 = self.MapS2R_6_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apS2R_6_1__EXPR__'))
+newslice: 2953 -> 2953, lineno 250 -> 250 f: temp103 = self.PRMapR2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2P_13_1__EXPR__'))
+newslice: 2957 -> 2965, lineno 251 -> None f: for (op,obj,) in tem ... 592 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1255 ... e)]), None)]), None)
+newslice: 2957 -> 3033, lineno 251 -> 265 f: for (op,obj,) in tem ... 592 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1255 ... e)]), None)]), None)
+newslice: 2965 -> 2965, lineno None -> None f: temp104 = self.URMap ... 483 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 1104 ... )], None)]), None)])
+newslice: 2965 -> 2966, lineno None -> 252 f: temp104 = self.URMap ... 483 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 1104 ... )], None)]), None)])
+newslice: 2966 -> 2970, lineno 252 -> 253 f: temp104 = self.URMapR2U  \n  
+         Assign([AssName('tem ... 76 ... self'), 'URMapR2U'))
+newslice: 2970 -> 2965, lineno 253 -> None f: for u in temp104.get ... 458 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1018 ... ]))], None)]), None)
+newslice: 2970 -> 2976, lineno 253 -> None f: for u in temp104.get ... 458 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1018 ... ]))], None)]), None)
+newslice: 2976 -> 2976, lineno None -> None f: temp105 = self.OPS  \n  ... 369 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 909 ... , None)]))], None)])
+newslice: 2976 -> 2977, lineno None -> 254 f: temp105 = self.OPS  \n  ... 369 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 909 ... , None)]))], None)])
+newslice: 2977 -> 2981, lineno 254 -> 255 f: temp105 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 2981 -> 2976, lineno 255 -> None f: if op in temp105: \n    ... 349 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 828 ... )], None)]))], None)
+newslice: 2981 -> 2986, lineno 255 -> None f: if op in temp105: \n    ... 349 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 828 ... )], None)]))], None)
+newslice: 2986 -> 2987, lineno None -> 256 f: temp106 = self.OBJS  ... 282 ... p111) \n          \n      \n  
+         Stmt([Assign([AssNam ... 766 ... , None)]))], None)])
+newslice: 2987 -> 2991, lineno 256 -> 257 f: temp106 = self.OBJS  \n  
+         Assign([AssName('tem ... 72 ... me('self'), 'OBJS'))
+newslice: 2991 -> 2996, lineno 257 -> None f: if obj in temp106: \n   ... 261 ... p111) \n          \n      \n  
+         If([(Compare(Name('o ... 684 ... )], None)]))], None)
+newslice: 2996 -> 2997, lineno None -> 258 f: temp108 = (op,obj)  \n  ... 205 ... ve(u, temp111) \n      \n  
+         Stmt([Assign([AssNam ... 621 ...  None))]))], None)])
+newslice: 2997 -> 3002, lineno 258 -> 259 f: temp108 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 3 -> 4, lineno 1 -> 4 f: import sets \n  
+         Import([('sets', None)])
+newslice: 30 -> 31, lineno 1206 -> 1210 f: def AddObject(self,  ... 79 ... add(OBJ, b, c) \n      \n  
+         Function(None, 'AddO ... 236 ... ')], None, None))]))
+newslice: 300 -> 306, lineno 47 -> 48 f: self.SU = sets.Set()  \n  
+         Assign([AssAttr(Name ... 106 ... '), [], None, None))
+newslice: 3002 -> 3006, lineno 259 -> 260 f: temp107 = self.MapU2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2P_13_1__EXPR__'))
+newslice: 3006 -> 3012, lineno 260 -> 261 f: temp109 = temp107.get(u)  \n  
+         Assign([AssName('tem ... 109 ... ('u')], None, None))
+newslice: 3012 -> 2965, lineno 261 -> None f: if temp108 in temp10 ... 123 ... ve(u, temp111) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3012 -> 2976, lineno 261 -> None f: if temp108 in temp10 ... 123 ... ve(u, temp111) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3012 -> 3017, lineno 261 -> None f: if temp108 in temp10 ... 123 ... ve(u, temp111) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3012 -> 3037, lineno 261 -> 266 f: if temp108 in temp10 ... 123 ... ve(u, temp111) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3017 -> 3018, lineno None -> 262 f: temp110 = self.MapU2 ... 83 ... .remove(u, temp111) \n  
+         Stmt([Assign([AssNam ... 269 ... 1')], None, None))])
+newslice: 3018 -> 3022, lineno 262 -> 263 f: temp110 = self.MapU2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2P_13_1__EXPR__'))
+newslice: 3022 -> 3027, lineno 263 -> 264 f: temp111 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 3033 -> 3033, lineno 265 -> 265 f: temp112 = self.PRMapR2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2P_14_1__EXPR__'))
+newslice: 3037 -> 3037, lineno 266 -> 266 f: for (op,obj,) in tem ... 605 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1268 ... e)]), None)]), None)
+newslice: 3037 -> 3045, lineno 266 -> None f: for (op,obj,) in tem ... 605 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1268 ... e)]), None)]), None)
+newslice: 3037 -> 3112, lineno 266 -> 280 f: for (op,obj,) in tem ... 605 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1268 ... e)]), None)]), None)
+newslice: 3045 -> 3045, lineno None -> None f: temp113 = self.SRMap ... 496 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 1117 ... )], None)]), None)])
+newslice: 3045 -> 3046, lineno None -> 267 f: temp113 = self.SRMap ... 496 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 1117 ... )], None)]), None)])
+newslice: 3046 -> 3050, lineno 267 -> 268 f: temp113 = self.SRMapR2S_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2S_14_1__EXPR__'))
+newslice: 3050 -> 3045, lineno 268 -> None f: for s in temp113.get ... 458 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 1018 ... ]))], None)]), None)
+newslice: 3050 -> 3056, lineno 268 -> None f: for s in temp113.get ... 458 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 1018 ... ]))], None)]), None)
+newslice: 3056 -> 3056, lineno None -> None f: temp114 = self.OPS  \n  ... 369 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 909 ... , None)]))], None)])
+newslice: 3056 -> 3057, lineno None -> 269 f: temp114 = self.OPS  \n  ... 369 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 909 ... , None)]))], None)])
+newslice: 3057 -> 3061, lineno 269 -> 270 f: temp114 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 306 -> 312, lineno 48 -> 49 f: self.SUMapS2U_12_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 130 ... '), [], None, None))
+newslice: 3061 -> 3056, lineno 270 -> None f: if op in temp114: \n    ... 349 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 828 ... )], None)]))], None)
+newslice: 3061 -> 3066, lineno 270 -> None f: if op in temp114: \n    ... 349 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 828 ... )], None)]))], None)
+newslice: 3066 -> 3067, lineno None -> 271 f: temp115 = self.OBJS  ... 282 ... p120) \n          \n      \n  
+         Stmt([Assign([AssNam ... 766 ... , None)]))], None)])
+newslice: 3067 -> 3071, lineno 271 -> 272 f: temp115 = self.OBJS  \n  
+         Assign([AssName('tem ... 72 ... me('self'), 'OBJS'))
+newslice: 3071 -> 3076, lineno 272 -> None f: if obj in temp115: \n   ... 261 ... p120) \n          \n      \n  
+         If([(Compare(Name('o ... 684 ... )], None)]))], None)
+newslice: 3076 -> 3077, lineno None -> 273 f: temp117 = (op,obj)  \n  ... 205 ... ve(s, temp120) \n      \n  
+         Stmt([Assign([AssNam ... 621 ...  None))]))], None)])
+newslice: 3077 -> 3082, lineno 273 -> 274 f: temp117 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 3082 -> 3086, lineno 274 -> 275 f: temp116 = self.MapS2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pS2P_14_1__EXPR__'))
+newslice: 3086 -> 3092, lineno 275 -> 276 f: temp118 = temp116.get(s)  \n  
+         Assign([AssName('tem ... 109 ... ('s')], None, None))
+newslice: 3092 -> 3045, lineno 276 -> None f: if temp117 in temp11 ... 123 ... ve(s, temp120) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3092 -> 3056, lineno 276 -> None f: if temp117 in temp11 ... 123 ... ve(s, temp120) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3092 -> 3097, lineno 276 -> None f: if temp117 in temp11 ... 123 ... ve(s, temp120) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3092 -> 3116, lineno 276 -> 281 f: if temp117 in temp11 ... 123 ... ve(s, temp120) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3097 -> 3098, lineno None -> 277 f: temp119 = self.MapS2 ... 83 ... .remove(s, temp120) \n  
+         Stmt([Assign([AssNam ... 269 ... 0')], None, None))])
+newslice: 3098 -> 3102, lineno 277 -> 278 f: temp119 = self.MapS2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pS2P_14_1__EXPR__'))
+newslice: 31 -> 32, lineno 1210 -> 1212 f: def AddPermission(se ... 51 ... on, obj): \n     pass  \n  
+         Function(None, 'AddP ... 90 ... one, Stmt([Pass()]))
+newslice: 3102 -> 3107, lineno 278 -> 279 f: temp120 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 3112 -> 3112, lineno 280 -> 280 f: temp121 = self.ROLES  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'ROLES'))
+newslice: 3116 -> 3116, lineno 281 -> 281 f: temp121.remove(role) 
+         CallFunc(Getattr(Nam ... 72 ... role')], None, None)
+newslice: 3116 -> 3121, lineno 281 -> 282 f: temp121.remove(role) 
+         CallFunc(Getattr(Nam ... 72 ... role')], None, None)
+newslice: 312 -> 318, lineno 49 -> 50 f: self.SUMapU2S_12_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 130 ... '), [], None, None))
+newslice: 3121 -> 3125, lineno 282 -> 283 f: temp122 = self.PRMapR2P  \n  
+         Assign([AssName('tem ... 76 ... self'), 'PRMapR2P'))
+newslice: 3125 -> 3131, lineno 283 -> 284 f: temp123 = temp122.get(role)  \n  
+         Assign([AssName('tem ... 112 ... ole')], None, None))
+newslice: 3131 -> 3141, lineno 284 -> None f: for (op,obj,) in tem ... 3175 ... emove(temp174) \n      \n  
+         For(AssTuple([AssNam ... 6944 ... one, None))]), None)
+newslice: 3131 -> 3547, lineno 284 -> 365 f: for (op,obj,) in tem ... 3175 ... emove(temp174) \n      \n  
+         For(AssTuple([AssNam ... 6944 ... one, None))]), None)
+newslice: 3141 -> 3141, lineno None -> None f: temp124 = self.ROLES ... 2741 ... 173.remove(temp174) \n  
+         Stmt([Assign([AssNam ... 6804 ... 4')], None, None))])
+newslice: 3141 -> 3142, lineno None -> 285 f: temp124 = self.ROLES ... 2741 ... 173.remove(temp174) \n  
+         Stmt([Assign([AssNam ... 6804 ... 4')], None, None))])
+newslice: 3142 -> 3146, lineno 285 -> 286 f: temp124 = self.ROLES  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'ROLES'))
+newslice: 3146 -> 3151, lineno 286 -> None f: if role in temp124: \n  ... 347 ...       \n          \n      \n  
+         If([(Compare(Name('r ... 881 ... ]), None)]))], None)
+newslice: 3146 -> 3200, lineno 286 -> 296 f: if role in temp124: \n  ... 347 ...       \n          \n      \n  
+         If([(Compare(Name('r ... 881 ... ]), None)]))], None)
+newslice: 3151 -> 3152, lineno None -> 287 f: temp125 = self.SRMap ... 278 ... role) \n          \n      \n  
+         Stmt([Assign([AssNam ... 817 ... )], None)]), None)])
+newslice: 3152 -> 3156, lineno 287 -> 288 f: temp125 = self.SRMapR2S  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SRMapR2S'))
+newslice: 3156 -> 3162, lineno 288 -> None f: for s in temp125.get ... 253 ... role) \n          \n      \n  
+         For(AssName('s', 'OP ... 731 ... ]))], None)]), None)
+newslice: 3162 -> 3162, lineno None -> None f: temp126 = self.MapSP ... 188 ... temp130, role) \n      \n  
+         Stmt([Assign([AssNam ... 622 ...  None))]))], None)])
+newslice: 3162 -> 3163, lineno None -> 289 f: temp126 = self.MapSP ... 188 ... temp130, role) \n      \n  
+         Stmt([Assign([AssNam ... 622 ...  None))]))], None)])
+newslice: 3163 -> 3167, lineno 289 -> 290 f: temp126 = self.MapSP2R  \n  
+         Assign([AssName('tem ... 75 ... 'self'), 'MapSP2R'))
+newslice: 3167 -> 3173, lineno 290 -> 291 f: temp127 = (s,op,obj)  \n  
+         Assign([AssName('tem ... 86 ... op'), Name('obj')]))
+newslice: 3173 -> 3179, lineno 291 -> 292 f: temp128 = temp126.get(temp127)  \n  
+         Assign([AssName('tem ... 115 ... 127')], None, None))
+newslice: 3179 -> 3162, lineno 292 -> None f: if role in temp128: \n  ... 110 ... temp130, role) \n      \n  
+         If([(Compare(Name('r ... 332 ... e, None))]))], None)
+newslice: 3179 -> 3184, lineno 292 -> None f: if role in temp128: \n  ... 110 ... temp130, role) \n      \n  
+         If([(Compare(Name('r ... 332 ... e, None))]))], None)
+newslice: 3179 -> 3204, lineno 292 -> 297 f: if role in temp128: \n  ... 110 ... temp130, role) \n      \n  
+         If([(Compare(Name('r ... 332 ... e, None))]))], None)
+newslice: 318 -> 324, lineno 50 -> 51 f: self.MapR2SU_12_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 129 ... '), [], None, None))
+newslice: 3184 -> 3185, lineno None -> 293 f: temp129 = self.MapSP ... 73 ... .add(temp130, role) \n  
+         Stmt([Assign([AssNam ... 268 ... e')], None, None))])
+newslice: 3185 -> 3189, lineno 293 -> 294 f: temp129 = self.MapSP2R  \n  
+         Assign([AssName('tem ... 75 ... 'self'), 'MapSP2R'))
+newslice: 3189 -> 3195, lineno 294 -> 295 f: temp130 = (s,op,obj)  \n  
+         Assign([AssName('tem ... 86 ... op'), Name('obj')]))
+newslice: 32 -> 35, lineno 1212 -> None f: C = coreRBAC()  \n  
+         Assign([AssName('C', ... 79 ... '), [], None, None))
+newslice: 3200 -> 3200, lineno 296 -> 296 f: temp131 = self.PRMapR2P  \n  
+         Assign([AssName('tem ... 76 ... self'), 'PRMapR2P'))
+newslice: 3204 -> 3209, lineno 297 -> 298 f: temp132 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 3209 -> 3215, lineno 298 -> 299 f: temp131.remove(role, temp132) 
+         CallFunc(Getattr(Nam ... 89 ... p132')], None, None)
+newslice: 3215 -> 3219, lineno 299 -> 300 f: temp133 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 3219 -> 3224, lineno 300 -> None f: if op in temp133: \n    ... 353 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 832 ... )], None)]))], None)
+newslice: 3219 -> 3270, lineno 300 -> 310 f: if op in temp133: \n    ... 353 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 832 ... )], None)]))], None)
+newslice: 3224 -> 3225, lineno None -> 301 f: temp134 = self.OBJS  ... 286 ... p139) \n          \n      \n  
+         Stmt([Assign([AssNam ... 770 ... , None)]))], None)])
+newslice: 3225 -> 3229, lineno 301 -> 302 f: temp134 = self.OBJS  \n  
+         Assign([AssName('tem ... 72 ... me('self'), 'OBJS'))
+newslice: 3229 -> 3234, lineno 302 -> None f: if obj in temp134: \n   ... 265 ... p139) \n          \n      \n  
+         If([(Compare(Name('o ... 688 ... )], None)]))], None)
+newslice: 3234 -> 3235, lineno None -> 303 f: temp136 = (op,obj)  \n  ... 209 ... role, temp139) \n      \n  
+         Stmt([Assign([AssNam ... 625 ...  None))]))], None)])
+newslice: 3235 -> 3240, lineno 303 -> 304 f: temp136 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 324 -> 330, lineno 51 -> 52 f: self.MapUR2S_11_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 129 ... '), [], None, None))
+newslice: 3240 -> 3244, lineno 304 -> 305 f: temp135 = self.MapR2P_8_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apR2P_8_1__EXPR__'))
+newslice: 3244 -> 3250, lineno 305 -> 306 f: temp137 = temp135.get(role)  \n  
+         Assign([AssName('tem ... 112 ... ole')], None, None))
+newslice: 3250 -> 3255, lineno 306 -> None f: if temp136 in temp13 ... 125 ... role, temp139) \n      \n  
+         If([(Compare(Name('t ... 338 ... e, None))]))], None)
+newslice: 3250 -> 3274, lineno 306 -> 311 f: if temp136 in temp13 ... 125 ... role, temp139) \n      \n  
+         If([(Compare(Name('t ... 338 ... e, None))]))], None)
+newslice: 3255 -> 3256, lineno None -> 307 f: temp138 = self.MapR2 ... 85 ... move(role, temp139) \n  
+         Stmt([Assign([AssNam ... 271 ... 9')], None, None))])
+newslice: 3256 -> 3260, lineno 307 -> 308 f: temp138 = self.MapR2P_8_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apR2P_8_1__EXPR__'))
+newslice: 3260 -> 3265, lineno 308 -> 309 f: temp139 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 3270 -> 3270, lineno 310 -> 310 f: temp140 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 3274 -> 3279, lineno 311 -> None f: if op in temp140: \n    ... 266 ... , op) \n          \n      \n  
+         If([(Compare(Name('o ... 689 ... )], None)]))], None)
+newslice: 3274 -> 3316, lineno 311 -> 319 f: if op in temp140: \n    ... 266 ... , op) \n          \n      \n  
+         If([(Compare(Name('o ... 689 ... )], None)]))], None)
+newslice: 3279 -> 3280, lineno None -> 312 f: temp141 = self.MapRO ... 211 ... e(temp145, op) \n      \n  
+         Stmt([Assign([AssNam ... 627 ...  None))]))], None)])
+newslice: 3280 -> 3284, lineno 312 -> 313 f: temp141 = self.MapRO2A_9_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pRO2A_9_1__EXPR__'))
+newslice: 3284 -> 3289, lineno 313 -> 314 f: temp142 = (role,obj)  \n  
+         Assign([AssName('tem ... 77 ... le'), Name('obj')]))
+newslice: 3289 -> 3295, lineno 314 -> 315 f: temp143 = temp141.get(temp142)  \n  
+         Assign([AssName('tem ... 115 ... 142')], None, None))
+newslice: 3295 -> 3300, lineno 315 -> None f: if op in temp143: \n    ... 121 ... e(temp145, op) \n      \n  
+         If([(Compare(Name('o ... 334 ... e, None))]))], None)
+newslice: 3295 -> 3320, lineno 315 -> 320 f: if op in temp143: \n    ... 121 ... e(temp145, op) \n      \n  
+         If([(Compare(Name('o ... 334 ... e, None))]))], None)
+newslice: 330 -> 336, lineno 52 -> 53 f: self.SUMapS2U_11_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 130 ... '), [], None, None))
+newslice: 3300 -> 3301, lineno None -> 316 f: temp144 = self.MapRO ... 86 ... remove(temp145, op) \n  
+         Stmt([Assign([AssNam ... 272 ... p')], None, None))])
+newslice: 3301 -> 3305, lineno 316 -> 317 f: temp144 = self.MapRO2A_9_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pRO2A_9_1__EXPR__'))
+newslice: 3305 -> 3310, lineno 317 -> 318 f: temp145 = (role,obj)  \n  
+         Assign([AssName('tem ... 77 ... le'), Name('obj')]))
+newslice: 3316 -> 3316, lineno 319 -> 319 f: temp146 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 3320 -> 3325, lineno 320 -> None f: if op in temp146: \n    ... 266 ... , op) \n          \n      \n  
+         If([(Compare(Name('o ... 689 ... )], None)]))], None)
+newslice: 3320 -> 3361, lineno 320 -> 328 f: if op in temp146: \n    ... 266 ... , op) \n          \n      \n  
+         If([(Compare(Name('o ... 689 ... )], None)]))], None)
+newslice: 3325 -> 3326, lineno None -> 321 f: temp147 = self.MapRO ... 211 ... e(temp151, op) \n      \n  
+         Stmt([Assign([AssNam ... 627 ...  None))]))], None)])
+newslice: 3326 -> 3330, lineno 321 -> 322 f: temp147 = self.MapRO2A_9_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pRO2A_9_1__EXPR__'))
+newslice: 3330 -> 3335, lineno 322 -> 323 f: temp148 = (role,obj)  \n  
+         Assign([AssName('tem ... 77 ... le'), Name('obj')]))
+newslice: 3335 -> 3341, lineno 323 -> 324 f: temp149 = temp147.get(temp148)  \n  
+         Assign([AssName('tem ... 115 ... 148')], None, None))
+newslice: 3341 -> 3346, lineno 324 -> None f: if op in temp149: \n    ... 121 ... e(temp151, op) \n      \n  
+         If([(Compare(Name('o ... 334 ... e, None))]))], None)
+newslice: 3341 -> 3365, lineno 324 -> 329 f: if op in temp149: \n    ... 121 ... e(temp151, op) \n      \n  
+         If([(Compare(Name('o ... 334 ... e, None))]))], None)
+newslice: 3346 -> 3347, lineno None -> 325 f: temp150 = self.MapRO ... 86 ... remove(temp151, op) \n  
+         Stmt([Assign([AssNam ... 272 ... p')], None, None))])
+newslice: 3347 -> 3351, lineno 325 -> 326 f: temp150 = self.MapRO2A_9_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pRO2A_9_1__EXPR__'))
+newslice: 3351 -> 3356, lineno 326 -> 327 f: temp151 = (role,obj)  \n  
+         Assign([AssName('tem ... 77 ... le'), Name('obj')]))
+newslice: 336 -> 342, lineno 53 -> 54 f: self.MapU2S_10_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 128 ... '), [], None, None))
+newslice: 3361 -> 3361, lineno 328 -> 328 f: temp152 = self.URMapR2U  \n  
+         Assign([AssName('tem ... 76 ... self'), 'URMapR2U'))
+newslice: 3365 -> 3371, lineno 329 -> None f: for u in temp152.get ... 458 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1018 ... ]))], None)]), None)
+newslice: 3365 -> 3427, lineno 329 -> 341 f: for u in temp152.get ... 458 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1018 ... ]))], None)]), None)
+newslice: 3371 -> 3371, lineno None -> None f: temp153 = self.OPS  \n  ... 369 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 909 ... , None)]))], None)])
+newslice: 3371 -> 3372, lineno None -> 330 f: temp153 = self.OPS  \n  ... 369 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 909 ... , None)]))], None)])
+newslice: 3372 -> 3376, lineno 330 -> 331 f: temp153 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 3376 -> 3371, lineno 331 -> None f: if op in temp153: \n    ... 349 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 828 ... )], None)]))], None)
+newslice: 3376 -> 3381, lineno 331 -> None f: if op in temp153: \n    ... 349 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 828 ... )], None)]))], None)
+newslice: 3381 -> 3382, lineno None -> 332 f: temp154 = self.OBJS  ... 282 ... p159) \n          \n      \n  
+         Stmt([Assign([AssNam ... 766 ... , None)]))], None)])
+newslice: 3382 -> 3386, lineno 332 -> 333 f: temp154 = self.OBJS  \n  
+         Assign([AssName('tem ... 72 ... me('self'), 'OBJS'))
+newslice: 3386 -> 3391, lineno 333 -> None f: if obj in temp154: \n   ... 261 ... p159) \n          \n      \n  
+         If([(Compare(Name('o ... 684 ... )], None)]))], None)
+newslice: 3391 -> 3392, lineno None -> 334 f: temp156 = (op,obj)  \n  ... 205 ... ve(u, temp159) \n      \n  
+         Stmt([Assign([AssNam ... 621 ...  None))]))], None)])
+newslice: 3392 -> 3397, lineno 334 -> 335 f: temp156 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 3397 -> 3401, lineno 335 -> 336 f: temp155 = self.MapU2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2P_13_1__EXPR__'))
+newslice: 3401 -> 3407, lineno 336 -> 337 f: temp157 = temp155.get(u)  \n  
+         Assign([AssName('tem ... 109 ... ('u')], None, None))
+newslice: 3407 -> 3371, lineno 337 -> None f: if temp156 in temp15 ... 123 ... ve(u, temp159) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3407 -> 3412, lineno 337 -> None f: if temp156 in temp15 ... 123 ... ve(u, temp159) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3407 -> 3431, lineno 337 -> 342 f: if temp156 in temp15 ... 123 ... ve(u, temp159) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3412 -> 3413, lineno None -> 338 f: temp158 = self.MapU2 ... 83 ... .remove(u, temp159) \n  
+         Stmt([Assign([AssNam ... 269 ... 9')], None, None))])
+newslice: 3413 -> 3417, lineno 338 -> 339 f: temp158 = self.MapU2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2P_13_1__EXPR__'))
+newslice: 3417 -> 3422, lineno 339 -> 340 f: temp159 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 342 -> 348, lineno 54 -> 55 f: self.SUMapS2U_10_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 130 ... '), [], None, None))
+newslice: 3427 -> 3427, lineno 341 -> 341 f: temp160 = self.PRMapR2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2P_13_1__EXPR__'))
+newslice: 3431 -> 3436, lineno 342 -> 343 f: temp161 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 3436 -> 3441, lineno 343 -> 344 f: temp160.remove(role, temp161) 
+         CallFunc(Getattr(Nam ... 89 ... p161')], None, None)
+newslice: 3441 -> 3445, lineno 344 -> 345 f: temp162 = self.ROLES  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'ROLES'))
+newslice: 3445 -> 3450, lineno 345 -> None f: if role in temp162: \n  ... 689 ... role, temp172) \n      \n  
+         If([(Compare(Name('r ... 1449 ... e, None))]))], None)
+newslice: 3445 -> 3531, lineno 345 -> 362 f: if role in temp162: \n  ... 689 ... role, temp172) \n      \n  
+         If([(Compare(Name('r ... 1449 ... e, None))]))], None)
+newslice: 3450 -> 3451, lineno None -> 346 f: temp163 = self.SRMap ... 584 ... move(role, temp172) \n  
+         Stmt([Assign([AssNam ... 1385 ... 2')], None, None))])
+newslice: 3451 -> 3455, lineno 346 -> 347 f: temp163 = self.SRMapR2S_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2S_14_1__EXPR__'))
+newslice: 3455 -> 3461, lineno 347 -> None f: for s in temp163.get ... 458 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 1018 ... ]))], None)]), None)
+newslice: 3455 -> 3517, lineno 347 -> 359 f: for s in temp163.get ... 458 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 1018 ... ]))], None)]), None)
+newslice: 3461 -> 3461, lineno None -> None f: temp164 = self.OPS  \n  ... 369 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 909 ... , None)]))], None)])
+newslice: 3461 -> 3462, lineno None -> 348 f: temp164 = self.OPS  \n  ... 369 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 909 ... , None)]))], None)])
+newslice: 3462 -> 3466, lineno 348 -> 349 f: temp164 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 3466 -> 3461, lineno 349 -> None f: if op in temp164: \n    ... 349 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 828 ... )], None)]))], None)
+newslice: 3466 -> 3471, lineno 349 -> None f: if op in temp164: \n    ... 349 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 828 ... )], None)]))], None)
+newslice: 3471 -> 3472, lineno None -> 350 f: temp165 = self.OBJS  ... 282 ... p170) \n          \n      \n  
+         Stmt([Assign([AssNam ... 766 ... , None)]))], None)])
+newslice: 3472 -> 3476, lineno 350 -> 351 f: temp165 = self.OBJS  \n  
+         Assign([AssName('tem ... 72 ... me('self'), 'OBJS'))
+newslice: 3476 -> 3481, lineno 351 -> None f: if obj in temp165: \n   ... 261 ... p170) \n          \n      \n  
+         If([(Compare(Name('o ... 684 ... )], None)]))], None)
+newslice: 348 -> 354, lineno 55 -> 56 f: self.SR = sets.Set()  \n  
+         Assign([AssAttr(Name ... 106 ... '), [], None, None))
+newslice: 3481 -> 3482, lineno None -> 352 f: temp167 = (op,obj)  \n  ... 205 ... ve(s, temp170) \n      \n  
+         Stmt([Assign([AssNam ... 621 ...  None))]))], None)])
+newslice: 3482 -> 3487, lineno 352 -> 353 f: temp167 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 3487 -> 3491, lineno 353 -> 354 f: temp166 = self.MapS2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pS2P_14_1__EXPR__'))
+newslice: 3491 -> 3497, lineno 354 -> 355 f: temp168 = temp166.get(s)  \n  
+         Assign([AssName('tem ... 109 ... ('s')], None, None))
+newslice: 3497 -> 3461, lineno 355 -> None f: if temp167 in temp16 ... 123 ... ve(s, temp170) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3497 -> 3502, lineno 355 -> None f: if temp167 in temp16 ... 123 ... ve(s, temp170) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3497 -> 3521, lineno 355 -> 360 f: if temp167 in temp16 ... 123 ... ve(s, temp170) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 35 -> 36, lineno None -> 7 f: self.OBJS = sets.Set ... 2320 ...  = sets.MultiMap()  \n  
+         Stmt([Assign([AssAtt ... 7400 ... , [], None, None))])
+newslice: 3502 -> 3503, lineno None -> 356 f: temp169 = self.MapS2 ... 83 ... .remove(s, temp170) \n  
+         Stmt([Assign([AssNam ... 269 ... 0')], None, None))])
+newslice: 3503 -> 3507, lineno 356 -> 357 f: temp169 = self.MapS2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pS2P_14_1__EXPR__'))
+newslice: 3507 -> 3512, lineno 357 -> 358 f: temp170 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 3517 -> 3517, lineno 359 -> 359 f: temp171 = self.PRMapR2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2P_14_1__EXPR__'))
+newslice: 3521 -> 3526, lineno 360 -> 361 f: temp172 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 3531 -> 3531, lineno 362 -> 362 f: temp173 = self.PR  \n  
+         Assign([AssName('tem ... 70 ... Name('self'), 'PR'))
+newslice: 3531 -> 3535, lineno 362 -> 363 f: temp173 = self.PR  \n  
+         Assign([AssName('tem ... 70 ... Name('self'), 'PR'))
+newslice: 3535 -> 3542, lineno 363 -> 364 f: temp174 = ((op,obj),role)  \n  
+         Assign([AssName('tem ... 98 ... )]), Name('role')]))
+newslice: 354 -> 360, lineno 56 -> 57 f: self.MapU2P_14_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 128 ... '), [], None, None))
+newslice: 3542 -> 3141, lineno 364 -> None f: temp173.remove(temp174) 
+         CallFunc(Getattr(Nam ... 75 ... p174')], None, None)
+newslice: 3547 -> 3547, lineno 365 -> 365 f: temp175 = self.URMapR2U  \n  
+         Assign([AssName('tem ... 76 ... self'), 'URMapR2U'))
+newslice: 3547 -> 3551, lineno 365 -> 366 f: temp175 = self.URMapR2U  \n  
+         Assign([AssName('tem ... 76 ... self'), 'URMapR2U'))
+newslice: 3551 -> 3557, lineno 366 -> 367 f: temp176 = temp175.get(role)  \n  
+         Assign([AssName('tem ... 112 ... ole')], None, None))
+newslice: 3557 -> 3562, lineno 367 -> None f: for u in temp176.cop ... 1377 ... emove(temp197) \n      \n  
+         For(AssName('u', 'OP ... 3217 ... one, None))]), None)
+newslice: 3557 -> 3742, lineno 367 -> 404 f: for u in temp176.cop ... 1377 ... emove(temp197) \n      \n  
+         For(AssName('u', 'OP ... 3217 ... one, None))]), None)
+newslice: 3562 -> 3562, lineno None -> None f: temp177 = self.ROLES ... 1171 ... 196.remove(temp197) \n  
+         Stmt([Assign([AssNam ... 3119 ... 7')], None, None))])
+newslice: 3562 -> 3563, lineno None -> 368 f: temp177 = self.ROLES ... 1171 ... 196.remove(temp197) \n  
+         Stmt([Assign([AssNam ... 3119 ... 7')], None, None))])
+newslice: 3563 -> 3567, lineno 368 -> 369 f: temp177 = self.ROLES  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'ROLES'))
+newslice: 3567 -> 3572, lineno 369 -> None f: if role in temp177: \n  ... 202 ... role) \n          \n      \n  
+         If([(Compare(Name('r ... 523 ... )], None)]))], None)
+newslice: 3567 -> 3598, lineno 369 -> 375 f: if role in temp177: \n  ... 202 ... role) \n          \n      \n  
+         If([(Compare(Name('r ... 523 ... )], None)]))], None)
+newslice: 3572 -> 3573, lineno None -> 370 f: temp178 = self.MapU2 ... 153 ... emove(u, role) \n      \n  
+         Stmt([Assign([AssNam ... 459 ...  None))]))], None)])
+newslice: 3573 -> 3577, lineno 370 -> 371 f: temp178 = self.MapU2R_5_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apU2R_5_1__EXPR__'))
+newslice: 3577 -> 3583, lineno 371 -> 372 f: temp179 = temp178.get(u)  \n  
+         Assign([AssName('tem ... 109 ... ('u')], None, None))
+newslice: 3583 -> 3588, lineno 372 -> None f: if role in temp179: \n  ... 92 ... emove(u, role) \n      \n  
+         If([(Compare(Name('r ... 252 ... e, None))]))], None)
+newslice: 3583 -> 3602, lineno 372 -> 376 f: if role in temp179: \n  ... 92 ... emove(u, role) \n      \n  
+         If([(Compare(Name('r ... 252 ... e, None))]))], None)
+newslice: 3588 -> 3589, lineno None -> 373 f: temp180 = self.MapU2 ... 59 ... 180.remove(u, role) \n  
+         Stmt([Assign([AssNam ... 188 ... e')], None, None))])
+newslice: 3589 -> 3593, lineno 373 -> 374 f: temp180 = self.MapU2R_5_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apU2R_5_1__EXPR__'))
+newslice: 3598 -> 3598, lineno 375 -> 375 f: temp181 = self.URMapR2U  \n  
+         Assign([AssName('tem ... 76 ... self'), 'URMapR2U'))
+newslice: 36 -> 51, lineno 7 -> 8 f: self.OBJS = sets.Set()  \n  
+         Assign([AssAttr(Name ... 108 ... '), [], None, None))
+newslice: 360 -> 366, lineno 57 -> 58 f: self.SRMapR2S_14_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 130 ... '), [], None, None))
+newslice: 3602 -> 3608, lineno 376 -> 377 f: temp181.remove(role, u) 
+         CallFunc(Getattr(Nam ... 83 ... e('u')], None, None)
+newslice: 3608 -> 3612, lineno 377 -> 378 f: temp182 = self.USERS  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'USERS'))
+newslice: 3612 -> 3617, lineno 378 -> None f: if u in temp182: \n     ... 199 ... e, u) \n          \n      \n  
+         If([(Compare(Name('u ... 520 ... )], None)]))], None)
+newslice: 3612 -> 3643, lineno 378 -> 384 f: if u in temp182: \n     ... 199 ... e, u) \n          \n      \n  
+         If([(Compare(Name('u ... 520 ... )], None)]))], None)
+newslice: 3617 -> 3618, lineno None -> 379 f: temp183 = self.MapR2 ... 153 ... emove(role, u) \n      \n  
+         Stmt([Assign([AssNam ... 459 ...  None))]))], None)])
+newslice: 3618 -> 3622, lineno 379 -> 380 f: temp183 = self.MapR2U_7_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apR2U_7_1__EXPR__'))
+newslice: 3622 -> 3628, lineno 380 -> 381 f: temp184 = temp183.get(role)  \n  
+         Assign([AssName('tem ... 112 ... ole')], None, None))
+newslice: 3628 -> 3633, lineno 381 -> None f: if u in temp184: \n     ... 89 ... emove(role, u) \n      \n  
+         If([(Compare(Name('u ... 249 ... e, None))]))], None)
+newslice: 3628 -> 3647, lineno 381 -> 385 f: if u in temp184: \n     ... 89 ... emove(role, u) \n      \n  
+         If([(Compare(Name('u ... 249 ... e, None))]))], None)
+newslice: 3633 -> 3634, lineno None -> 382 f: temp185 = self.MapR2 ... 59 ... 185.remove(role, u) \n  
+         Stmt([Assign([AssNam ... 188 ... u')], None, None))])
+newslice: 3634 -> 3638, lineno 382 -> 383 f: temp185 = self.MapR2U_7_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apR2U_7_1__EXPR__'))
+newslice: 3643 -> 3643, lineno 384 -> 384 f: temp186 = self.URMapU2R_7_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... apU2R_7_1__EXPR__'))
+newslice: 3647 -> 3652, lineno 385 -> 386 f: temp186.remove(u, role) 
+         CallFunc(Getattr(Nam ... 83 ... role')], None, None)
+newslice: 3652 -> 3656, lineno 386 -> 387 f: temp187 = self.PRMapR2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2P_13_1__EXPR__'))
+newslice: 3656 -> 3664, lineno 387 -> None f: for (op,obj,) in tem ... 466 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1060 ... ]))], None)]), None)
+newslice: 3656 -> 3720, lineno 387 -> 399 f: for (op,obj,) in tem ... 466 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1060 ... ]))], None)]), None)
+newslice: 366 -> 372, lineno 58 -> 59 f: self.SRMapS2R = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 117 ... '), [], None, None))
+newslice: 3664 -> 3664, lineno None -> None f: temp188 = self.OPS  \n  ... 369 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 909 ... , None)]))], None)])
+newslice: 3664 -> 3665, lineno None -> 388 f: temp188 = self.OPS  \n  ... 369 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 909 ... , None)]))], None)])
+newslice: 3665 -> 3669, lineno 388 -> 389 f: temp188 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 3669 -> 3664, lineno 389 -> None f: if op in temp188: \n    ... 349 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 828 ... )], None)]))], None)
+newslice: 3669 -> 3674, lineno 389 -> None f: if op in temp188: \n    ... 349 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 828 ... )], None)]))], None)
+newslice: 3674 -> 3675, lineno None -> 390 f: temp189 = self.OBJS  ... 282 ... p194) \n          \n      \n  
+         Stmt([Assign([AssNam ... 766 ... , None)]))], None)])
+newslice: 3675 -> 3679, lineno 390 -> 391 f: temp189 = self.OBJS  \n  
+         Assign([AssName('tem ... 72 ... me('self'), 'OBJS'))
+newslice: 3679 -> 3684, lineno 391 -> None f: if obj in temp189: \n   ... 261 ... p194) \n          \n      \n  
+         If([(Compare(Name('o ... 684 ... )], None)]))], None)
+newslice: 3684 -> 3685, lineno None -> 392 f: temp191 = (op,obj)  \n  ... 205 ... ve(u, temp194) \n      \n  
+         Stmt([Assign([AssNam ... 621 ...  None))]))], None)])
+newslice: 3685 -> 3690, lineno 392 -> 393 f: temp191 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 3690 -> 3694, lineno 393 -> 394 f: temp190 = self.MapU2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2P_13_1__EXPR__'))
+newslice: 3694 -> 3700, lineno 394 -> 395 f: temp192 = temp190.get(u)  \n  
+         Assign([AssName('tem ... 109 ... ('u')], None, None))
+newslice: 3700 -> 3664, lineno 395 -> None f: if temp191 in temp19 ... 123 ... ve(u, temp194) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3700 -> 3705, lineno 395 -> None f: if temp191 in temp19 ... 123 ... ve(u, temp194) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3700 -> 3724, lineno 395 -> 400 f: if temp191 in temp19 ... 123 ... ve(u, temp194) \n      \n  
+         If([(Compare(Name('t ... 336 ... e, None))]))], None)
+newslice: 3705 -> 3706, lineno None -> 396 f: temp193 = self.MapU2 ... 83 ... .remove(u, temp194) \n  
+         Stmt([Assign([AssNam ... 269 ... 4')], None, None))])
+newslice: 3706 -> 3710, lineno 396 -> 397 f: temp193 = self.MapU2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2P_13_1__EXPR__'))
+newslice: 3710 -> 3715, lineno 397 -> 398 f: temp194 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 372 -> 378, lineno 59 -> 60 f: self.MapR2SU_12_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 129 ... '), [], None, None))
+newslice: 3720 -> 3720, lineno 399 -> 399 f: temp195 = self.URMapR2U  \n  
+         Assign([AssName('tem ... 76 ... self'), 'URMapR2U'))
+newslice: 3724 -> 3729, lineno 400 -> 401 f: temp195.remove(role, u) 
+         CallFunc(Getattr(Nam ... 83 ... e('u')], None, None)
+newslice: 3729 -> 3733, lineno 401 -> 402 f: temp196 = self.UR  \n  
+         Assign([AssName('tem ... 70 ... Name('self'), 'UR'))
+newslice: 3733 -> 3738, lineno 402 -> 403 f: temp197 = (u,role)  \n  
+         Assign([AssName('tem ... 75 ... u'), Name('role')]))
+newslice: 3738 -> 3562, lineno 403 -> None f: temp196.remove(temp197) 
+         CallFunc(Getattr(Nam ... 75 ... p197')], None, None)
+newslice: 3742 -> 3742, lineno 404 -> 404 f: temp198 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... R2SU_12_1__EXPR__'))
+newslice: 3742 -> 3746, lineno 404 -> 405 f: temp198 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... R2SU_12_1__EXPR__'))
+newslice: 3746 -> 3754, lineno 405 -> None f: for (s,u,) in temp19 ... 67 ... eSession(u, s) \n      \n  
+         For(AssTuple([AssNam ... 249 ... one, None))]), None)
+newslice: 3746 -> 4486, lineno 405 -> 1236 f: for (s,u,) in temp19 ... 67 ... eSession(u, s) \n      \n  
+         For(AssTuple([AssNam ... 249 ... one, None))]), None)
+newslice: 3754 -> 3754, lineno None -> None f: self.DeleteSession(u, s) \n  
+         Stmt([Discard(CallFu ... 101 ... s')], None, None))])
+newslice: 3754 -> 3755, lineno None -> 406 f: self.DeleteSession(u, s) \n  
+         Stmt([Discard(CallFu ... 101 ... s')], None, None))])
+newslice: 3755 -> 3760, lineno 406 -> None f: self.DeleteSession(u, s) 
+         CallFunc(Getattr(Nam ... 84 ... e('s')], None, None)
+newslice: 3760 -> 3761, lineno None -> 831 f: temp452 = self.USERS ... 5409 ... 539.remove(session) \n  
+         Stmt([Assign([AssNam ... 12988 ... n')], None, None))])
+newslice: 3761 -> 3769, lineno 831 -> 833 f: temp452 = self.USERS  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'USERS'))
+newslice: 3769 -> 3777, lineno 833 -> 835 f: temp453 = self.SESSIONS  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SESSIONS'))
+newslice: 3777 -> 3782, lineno 835 -> 836 f: temp454 = (session,user)  \n  
+         Assign([AssName('tem ... 81 ... n'), Name('user')]))
+newslice: 378 -> 384, lineno 60 -> 61 f: self.MapUR2S_11_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 129 ... '), [], None, None))
+newslice: 3782 -> 3790, lineno 836 -> 838 f: temp455 = self.SU  \n  
+         Assign([AssName('tem ... 70 ... Name('self'), 'SU'))
+newslice: 3790 -> 3794, lineno 838 -> 839 f: temp456 = self.SESSIONS  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SESSIONS'))
+newslice: 3794 -> 3799, lineno 839 -> None f: if session in temp45 ... 219 ... sion) \n          \n      \n  
+         If([(Compare(Name('s ... 540 ... )], None)]))], None)
+newslice: 3794 -> 3826, lineno 839 -> 845 f: if session in temp45 ... 219 ... sion) \n          \n      \n  
+         If([(Compare(Name('s ... 540 ... )], None)]))], None)
+newslice: 3799 -> 3800, lineno None -> 840 f: temp457 = self.MapU2 ... 167 ... user, session) \n      \n  
+         Stmt([Assign([AssNam ... 473 ...  None))]))], None)])
+newslice: 3800 -> 3804, lineno 840 -> 841 f: temp457 = self.MapU2S_10_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2S_10_1__EXPR__'))
+newslice: 3804 -> 3810, lineno 841 -> 842 f: temp458 = temp457.get(user)  \n  
+         Assign([AssName('tem ... 112 ... ser')], None, None))
+newslice: 3810 -> 3815, lineno 842 -> None f: if session in temp45 ... 102 ... user, session) \n      \n  
+         If([(Compare(Name('s ... 262 ... e, None))]))], None)
+newslice: 3810 -> 3830, lineno 842 -> 846 f: if session in temp45 ... 102 ... user, session) \n      \n  
+         If([(Compare(Name('s ... 262 ... e, None))]))], None)
+newslice: 3815 -> 3816, lineno None -> 843 f: temp459 = self.MapU2 ... 66 ... move(user, session) \n  
+         Stmt([Assign([AssNam ... 195 ... n')], None, None))])
+newslice: 3816 -> 3820, lineno 843 -> 844 f: temp459 = self.MapU2S_10_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2S_10_1__EXPR__'))
+newslice: 3826 -> 3826, lineno 845 -> 845 f: temp460 = self.SUMapS2U_10_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_10_1__EXPR__'))
+newslice: 3830 -> 3835, lineno 846 -> 847 f: temp460.remove(session, user) 
+         CallFunc(Getattr(Nam ... 89 ... user')], None, None)
+newslice: 3835 -> 3839, lineno 847 -> 848 f: temp461 = self.SRMapS2R  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SRMapS2R'))
+newslice: 3839 -> 3845, lineno 848 -> None f: for r in temp461.get ... 287 ... sion) \n          \n      \n  
+         For(AssName('r', 'OP ... 747 ... ]))], None)]), None)
+newslice: 3839 -> 3881, lineno 848 -> 856 f: for r in temp461.get ... 287 ... sion) \n          \n      \n  
+         For(AssName('r', 'OP ... 747 ... ]))], None)]), None)
+newslice: 384 -> 390, lineno 61 -> 62 f: self.SRMapS2R = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 117 ... '), [], None, None))
+newslice: 3845 -> 3845, lineno None -> None f: temp462 = self.MapUR ... 219 ... p466, session) \n      \n  
+         Stmt([Assign([AssNam ... 635 ...  None))]))], None)])
+newslice: 3845 -> 3846, lineno None -> 849 f: temp462 = self.MapUR ... 219 ... p466, session) \n      \n  
+         Stmt([Assign([AssNam ... 635 ...  None))]))], None)])
+newslice: 3846 -> 3850, lineno 849 -> 850 f: temp462 = self.MapUR2S_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... UR2S_11_1__EXPR__'))
+newslice: 3850 -> 3855, lineno 850 -> 851 f: temp463 = (user,r)  \n  
+         Assign([AssName('tem ... 75 ... user'), Name('r')]))
+newslice: 3855 -> 3861, lineno 851 -> 852 f: temp464 = temp462.get(temp463)  \n  
+         Assign([AssName('tem ... 115 ... 463')], None, None))
+newslice: 3861 -> 3845, lineno 852 -> None f: if session in temp46 ... 130 ... p466, session) \n      \n  
+         If([(Compare(Name('s ... 343 ... e, None))]))], None)
+newslice: 3861 -> 3866, lineno 852 -> None f: if session in temp46 ... 130 ... p466, session) \n      \n  
+         If([(Compare(Name('s ... 343 ... e, None))]))], None)
+newslice: 3861 -> 3885, lineno 852 -> 857 f: if session in temp46 ... 130 ... p466, session) \n      \n  
+         If([(Compare(Name('s ... 343 ... e, None))]))], None)
+newslice: 3866 -> 3867, lineno None -> 853 f: temp465 = self.MapUR ... 90 ... e(temp466, session) \n  
+         Stmt([Assign([AssNam ... 276 ... n')], None, None))])
+newslice: 3867 -> 3871, lineno 853 -> 854 f: temp465 = self.MapUR2S_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... UR2S_11_1__EXPR__'))
+newslice: 3871 -> 3876, lineno 854 -> 855 f: temp466 = (user,r)  \n  
+         Assign([AssName('tem ... 75 ... user'), Name('r')]))
+newslice: 3881 -> 3881, lineno 856 -> 856 f: temp467 = self.SUMapS2U_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_11_1__EXPR__'))
+newslice: 3885 -> 3890, lineno 857 -> 858 f: temp467.remove(session, user) 
+         CallFunc(Getattr(Nam ... 89 ... user')], None, None)
+newslice: 3890 -> 3894, lineno 858 -> 859 f: temp468 = self.SESSIONS  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SESSIONS'))
+newslice: 3894 -> 3899, lineno 859 -> None f: if session in temp46 ... 487 ...       \n          \n      \n  
+         If([(Compare(Name('s ... 1047 ... )], None)]))], None)
+newslice: 3894 -> 3956, lineno 859 -> 871 f: if session in temp46 ... 487 ...       \n          \n      \n  
+         If([(Compare(Name('s ... 1047 ... )], None)]))], None)
+newslice: 3899 -> 3900, lineno None -> 860 f: temp469 = self.USERS ... 403 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 980 ... , None)]))], None)])
+newslice: 390 -> 396, lineno 62 -> 63 f: self.MapS2R_6_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 127 ... '), [], None, None))
+newslice: 3900 -> 3904, lineno 860 -> 861 f: temp469 = self.USERS  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'USERS'))
+newslice: 3904 -> 3909, lineno 861 -> None f: if user in temp469: \n  ... 381 ...       \n          \n      \n  
+         If([(Compare(Name('u ... 897 ... ]), None)]))], None)
+newslice: 3909 -> 3910, lineno None -> 862 f: temp470 = self.SRMap ... 312 ... p475) \n          \n      \n  
+         Stmt([Assign([AssNam ... 833 ... )], None)]), None)])
+newslice: 3910 -> 3914, lineno 862 -> 863 f: temp470 = self.SRMapS2R  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SRMapS2R'))
+newslice: 3914 -> 3920, lineno 863 -> None f: for r in temp470.get ... 287 ... p475) \n          \n      \n  
+         For(AssName('r', 'OP ... 747 ... ]))], None)]), None)
+newslice: 3920 -> 3920, lineno None -> None f: temp472 = (session,u ... 219 ... ve(r, temp475) \n      \n  
+         Stmt([Assign([AssNam ... 635 ...  None))]))], None)])
+newslice: 3920 -> 3921, lineno None -> 864 f: temp472 = (session,u ... 219 ... ve(r, temp475) \n      \n  
+         Stmt([Assign([AssNam ... 635 ...  None))]))], None)])
+newslice: 3921 -> 3926, lineno 864 -> 865 f: temp472 = (session,user)  \n  
+         Assign([AssName('tem ... 81 ... n'), Name('user')]))
+newslice: 3926 -> 3930, lineno 865 -> 866 f: temp471 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... R2SU_12_1__EXPR__'))
+newslice: 3930 -> 3936, lineno 866 -> 867 f: temp473 = temp471.get(r)  \n  
+         Assign([AssName('tem ... 109 ... ('r')], None, None))
+newslice: 3936 -> 3920, lineno 867 -> None f: if temp472 in temp47 ... 130 ... ve(r, temp475) \n      \n  
+         If([(Compare(Name('t ... 343 ... e, None))]))], None)
+newslice: 3936 -> 3941, lineno 867 -> None f: if temp472 in temp47 ... 130 ... ve(r, temp475) \n      \n  
+         If([(Compare(Name('t ... 343 ... e, None))]))], None)
+newslice: 3936 -> 3960, lineno 867 -> 872 f: if temp472 in temp47 ... 130 ... ve(r, temp475) \n      \n  
+         If([(Compare(Name('t ... 343 ... e, None))]))], None)
+newslice: 3941 -> 3942, lineno None -> 868 f: temp474 = self.MapR2 ... 90 ... .remove(r, temp475) \n  
+         Stmt([Assign([AssNam ... 276 ... 5')], None, None))])
+newslice: 3942 -> 3946, lineno 868 -> 869 f: temp474 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... R2SU_12_1__EXPR__'))
+newslice: 3946 -> 3951, lineno 869 -> 870 f: temp475 = (session,user)  \n  
+         Assign([AssName('tem ... 81 ... n'), Name('user')]))
+newslice: 3956 -> 3956, lineno 871 -> 871 f: temp476 = self.SUMapS2U_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_12_1__EXPR__'))
+newslice: 396 -> 402, lineno 63 -> 64 f: self.SRMapR2S_6_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 129 ... '), [], None, None))
+newslice: 3960 -> 3965, lineno 872 -> 873 f: temp476.remove(session, user) 
+         CallFunc(Getattr(Nam ... 89 ... user')], None, None)
+newslice: 3965 -> 3969, lineno 873 -> 874 f: temp477 = self.SUMapU2S_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pU2S_12_1__EXPR__'))
+newslice: 3969 -> 3974, lineno 874 -> 875 f: temp477.remove(user, session) 
+         CallFunc(Getattr(Nam ... 89 ... sion')], None, None)
+newslice: 3974 -> 3978, lineno 875 -> 876 f: temp478 = self.SU  \n  
+         Assign([AssName('tem ... 70 ... Name('self'), 'SU'))
+newslice: 3978 -> 3983, lineno 876 -> 877 f: temp479 = (session,user)  \n  
+         Assign([AssName('tem ... 81 ... n'), Name('user')]))
+newslice: 3983 -> 3987, lineno 877 -> 878 f: temp478.remove(temp479) 
+         CallFunc(Getattr(Nam ... 75 ... p479')], None, None)
+newslice: 3987 -> 3991, lineno 878 -> 879 f: temp480 = self.SRMapS2R  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SRMapS2R'))
+newslice: 3991 -> 3997, lineno 879 -> 880 f: temp481 = temp480.get(session)  \n  
+         Assign([AssName('tem ... 115 ... ion')], None, None))
+newslice: 3997 -> 4002, lineno 880 -> None f: for r in temp481.cop ... 2520 ... emove(temp519) \n      \n  
+         For(AssName('r', 'OP ... 5656 ... one, None))]), None)
+newslice: 3997 -> 4317, lineno 880 -> 943 f: for r in temp481.cop ... 2520 ... emove(temp519) \n      \n  
+         For(AssName('r', 'OP ... 5656 ... one, None))]), None)
+newslice: 4 -> 5, lineno 4 -> None f: class coreRBAC: \n      ... 89352 ...  \n         pass  \n      \n  
+         Class('coreRBAC', [] ... 175738 ... , Stmt([Pass()]))]))
+newslice: 4002 -> 4002, lineno None -> None f: temp482 = self.ROLES ... 2186 ... 518.remove(temp519) \n  
+         Stmt([Assign([AssNam ... 5558 ... 9')], None, None))])
+newslice: 4002 -> 4003, lineno None -> 881 f: temp482 = self.ROLES ... 2186 ... 518.remove(temp519) \n  
+         Stmt([Assign([AssNam ... 5558 ... 9')], None, None))])
+newslice: 4003 -> 4007, lineno 881 -> 882 f: temp482 = self.ROLES  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'ROLES'))
+newslice: 4007 -> 4012, lineno 882 -> None f: if r in temp482: \n     ... 358 ...       \n          \n      \n  
+         If([(Compare(Name('r ... 926 ... ]), None)]))], None)
+newslice: 4007 -> 4063, lineno 882 -> 892 f: if r in temp482: \n     ... 358 ...       \n          \n      \n  
+         If([(Compare(Name('r ... 926 ... ]), None)]))], None)
+newslice: 4012 -> 4013, lineno None -> 883 f: temp483 = self.PRMap ... 292 ... 8, r) \n          \n      \n  
+         Stmt([Assign([AssNam ... 865 ... )], None)]), None)])
+newslice: 4013 -> 4017, lineno 883 -> 884 f: temp483 = self.PRMapR2P  \n  
+         Assign([AssName('tem ... 76 ... self'), 'PRMapR2P'))
+newslice: 4017 -> 4025, lineno 884 -> None f: for (op,obj,) in tem ... 267 ... 8, r) \n          \n      \n  
+         For(AssTuple([AssNam ... 779 ... ]))], None)]), None)
+newslice: 402 -> 408, lineno 64 -> 65 f: self.MapSP2R = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 116 ... '), [], None, None))
+newslice: 4025 -> 4025, lineno None -> None f: temp484 = self.MapSP ... 197 ... ve(temp488, r) \n      \n  
+         Stmt([Assign([AssNam ... 631 ...  None))]))], None)])
+newslice: 4025 -> 4026, lineno None -> 885 f: temp484 = self.MapSP ... 197 ... ve(temp488, r) \n      \n  
+         Stmt([Assign([AssNam ... 631 ...  None))]))], None)])
+newslice: 4026 -> 4030, lineno 885 -> 886 f: temp484 = self.MapSP2R  \n  
+         Assign([AssName('tem ... 75 ... 'self'), 'MapSP2R'))
+newslice: 4030 -> 4036, lineno 886 -> 887 f: temp485 = (session,op,obj)  \n  
+         Assign([AssName('tem ... 92 ... op'), Name('obj')]))
+newslice: 4036 -> 4042, lineno 887 -> 888 f: temp486 = temp484.get(temp485)  \n  
+         Assign([AssName('tem ... 115 ... 485')], None, None))
+newslice: 4042 -> 4025, lineno 888 -> None f: if r in temp486: \n     ... 113 ... ve(temp488, r) \n      \n  
+         If([(Compare(Name('r ... 335 ... e, None))]))], None)
+newslice: 4042 -> 4047, lineno 888 -> None f: if r in temp486: \n     ... 113 ... ve(temp488, r) \n      \n  
+         If([(Compare(Name('r ... 335 ... e, None))]))], None)
+newslice: 4042 -> 4067, lineno 888 -> 893 f: if r in temp486: \n     ... 113 ... ve(temp488, r) \n      \n  
+         If([(Compare(Name('r ... 335 ... e, None))]))], None)
+newslice: 4047 -> 4048, lineno None -> 889 f: temp487 = self.MapSP ... 79 ... .remove(temp488, r) \n  
+         Stmt([Assign([AssNam ... 274 ... r')], None, None))])
+newslice: 4048 -> 4052, lineno 889 -> 890 f: temp487 = self.MapSP2R  \n  
+         Assign([AssName('tem ... 75 ... 'self'), 'MapSP2R'))
+newslice: 4052 -> 4058, lineno 890 -> 891 f: temp488 = (session,op,obj)  \n  
+         Assign([AssName('tem ... 92 ... op'), Name('obj')]))
+newslice: 4063 -> 4063, lineno 892 -> 892 f: temp489 = self.SRMapR2S  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SRMapR2S'))
+newslice: 4067 -> 4072, lineno 893 -> 894 f: temp489.remove(r, session) 
+         CallFunc(Getattr(Nam ... 86 ... sion')], None, None)
+newslice: 4072 -> 4076, lineno 894 -> 895 f: temp490 = self.MapS2R_6_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apS2R_6_1__EXPR__'))
+newslice: 4076 -> 4082, lineno 895 -> 896 f: temp491 = temp490.get(session)  \n  
+         Assign([AssName('tem ... 115 ... ion')], None, None))
+newslice: 408 -> 415, lineno 65 -> 1213 f: self.SRMapR2S = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 117 ... '), [], None, None))
+newslice: 4082 -> 4087, lineno 896 -> None f: if r in temp491: \n     ... 92 ... ve(session, r) \n      \n  
+         If([(Compare(Name('r ... 252 ... e, None))]))], None)
+newslice: 4082 -> 4097, lineno 896 -> 899 f: if r in temp491: \n     ... 92 ... ve(session, r) \n      \n  
+         If([(Compare(Name('r ... 252 ... e, None))]))], None)
+newslice: 4087 -> 4088, lineno None -> 897 f: temp492 = self.MapS2 ... 62 ... .remove(session, r) \n  
+         Stmt([Assign([AssNam ... 191 ... r')], None, None))])
+newslice: 4088 -> 4092, lineno 897 -> 898 f: temp492 = self.MapS2R_6_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... apS2R_6_1__EXPR__'))
+newslice: 4097 -> 4097, lineno 899 -> 899 f: temp493 = self.SRMapR2S_6_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... apR2S_6_1__EXPR__'))
+newslice: 4097 -> 4101, lineno 899 -> 900 f: temp493 = self.SRMapR2S_6_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... apR2S_6_1__EXPR__'))
+newslice: 4101 -> 4106, lineno 900 -> 901 f: temp493.remove(r, session) 
+         CallFunc(Getattr(Nam ... 86 ... sion')], None, None)
+newslice: 4106 -> 4110, lineno 901 -> 902 f: temp494 = self.SUMapS2U_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_11_1__EXPR__'))
+newslice: 4110 -> 4116, lineno 902 -> None f: for u in temp494.get ... 281 ... sion) \n          \n      \n  
+         For(AssName('u', 'OP ... 741 ... ]))], None)]), None)
+newslice: 4110 -> 4152, lineno 902 -> 910 f: for u in temp494.get ... 281 ... sion) \n          \n      \n  
+         For(AssName('u', 'OP ... 741 ... ]))], None)]), None)
+newslice: 4116 -> 4116, lineno None -> None f: temp495 = self.MapUR ... 213 ... p499, session) \n      \n  
+         Stmt([Assign([AssNam ... 629 ...  None))]))], None)])
+newslice: 4116 -> 4117, lineno None -> 903 f: temp495 = self.MapUR ... 213 ... p499, session) \n      \n  
+         Stmt([Assign([AssNam ... 629 ...  None))]))], None)])
+newslice: 4117 -> 4121, lineno 903 -> 904 f: temp495 = self.MapUR2S_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... UR2S_11_1__EXPR__'))
+newslice: 4121 -> 4126, lineno 904 -> 905 f: temp496 = (u,r)  \n  
+         Assign([AssName('tem ... 72 ... e('u'), Name('r')]))
+newslice: 4126 -> 4132, lineno 905 -> 906 f: temp497 = temp495.get(temp496)  \n  
+         Assign([AssName('tem ... 115 ... 496')], None, None))
+newslice: 4132 -> 4116, lineno 906 -> None f: if session in temp49 ... 127 ... p499, session) \n      \n  
+         If([(Compare(Name('s ... 340 ... e, None))]))], None)
+newslice: 4132 -> 4137, lineno 906 -> None f: if session in temp49 ... 127 ... p499, session) \n      \n  
+         If([(Compare(Name('s ... 340 ... e, None))]))], None)
+newslice: 4132 -> 4156, lineno 906 -> 911 f: if session in temp49 ... 127 ... p499, session) \n      \n  
+         If([(Compare(Name('s ... 340 ... e, None))]))], None)
+newslice: 4137 -> 4138, lineno None -> 907 f: temp498 = self.MapUR ... 87 ... e(temp499, session) \n  
+         Stmt([Assign([AssNam ... 273 ... n')], None, None))])
+newslice: 4138 -> 4142, lineno 907 -> 908 f: temp498 = self.MapUR2S_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... UR2S_11_1__EXPR__'))
+newslice: 4142 -> 4147, lineno 908 -> 909 f: temp499 = (u,r)  \n  
+         Assign([AssName('tem ... 72 ... e('u'), Name('r')]))
+newslice: 415 -> 419, lineno 1213 -> None f: C.AddUser('mickg') 
+         CallFunc(Getattr(Nam ... 69 ... ickg')], None, None)
+newslice: 4152 -> 4152, lineno 910 -> 910 f: temp500 = self.SRMapS2R  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SRMapS2R'))
+newslice: 4156 -> 4161, lineno 911 -> 912 f: temp500.remove(session, r) 
+         CallFunc(Getattr(Nam ... 86 ... e('r')], None, None)
+newslice: 4161 -> 4165, lineno 912 -> 913 f: temp501 = self.SUMapS2U_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_12_1__EXPR__'))
+newslice: 4165 -> 4171, lineno 913 -> None f: for u in temp501.get ... 478 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1038 ... ]))], None)]), None)
+newslice: 4165 -> 4227, lineno 913 -> 925 f: for u in temp501.get ... 478 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1038 ... ]))], None)]), None)
+newslice: 4171 -> 4171, lineno None -> None f: temp502 = self.SESSI ... 386 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 926 ... , None)]))], None)])
+newslice: 4171 -> 4172, lineno None -> 914 f: temp502 = self.SESSI ... 386 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 926 ... , None)]))], None)])
+newslice: 4172 -> 4176, lineno 914 -> 915 f: temp502 = self.SESSIONS  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SESSIONS'))
+newslice: 4176 -> 4171, lineno 915 -> None f: if session in temp50 ... 361 ...       \n          \n      \n  
+         If([(Compare(Name('s ... 840 ... )], None)]))], None)
+newslice: 4176 -> 4181, lineno 915 -> None f: if session in temp50 ... 361 ...       \n          \n      \n  
+         If([(Compare(Name('s ... 840 ... )], None)]))], None)
+newslice: 4181 -> 4182, lineno None -> 916 f: temp503 = self.USERS ... 289 ... p508) \n          \n      \n  
+         Stmt([Assign([AssNam ... 773 ... , None)]))], None)])
+newslice: 4182 -> 4186, lineno 916 -> 917 f: temp503 = self.USERS  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'USERS'))
+newslice: 4186 -> 4191, lineno 917 -> None f: if u in temp503: \n     ... 267 ... p508) \n          \n      \n  
+         If([(Compare(Name('u ... 690 ... )], None)]))], None)
+newslice: 419 -> 419, lineno None -> None f: temp0 = self.USERS  \n  ... 802 ... user) \n          \n      \n  
+         Stmt([Assign([AssNam ... 2082 ... )], None)]), None)])
+newslice: 419 -> 420, lineno None -> 68 f: temp0 = self.USERS  \n  ... 802 ... user) \n          \n      \n  
+         Stmt([Assign([AssNam ... 2082 ... )], None)]), None)])
+newslice: 4191 -> 4192, lineno None -> 918 f: temp505 = (session,u ... 213 ... ve(r, temp508) \n      \n  
+         Stmt([Assign([AssNam ... 629 ...  None))]))], None)])
+newslice: 4192 -> 4197, lineno 918 -> 919 f: temp505 = (session,u)  \n  
+         Assign([AssName('tem ... 78 ... sion'), Name('u')]))
+newslice: 4197 -> 4201, lineno 919 -> 920 f: temp504 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... R2SU_12_1__EXPR__'))
+newslice: 420 -> 420, lineno 68 -> 68 f: temp0 = self.USERS  \n  
+         Assign([AssName('tem ... 71 ... e('self'), 'USERS'))
+newslice: 420 -> 428, lineno 68 -> 70 f: temp0 = self.USERS  \n  
+         Assign([AssName('tem ... 71 ... e('self'), 'USERS'))
+newslice: 4201 -> 4207, lineno 920 -> 921 f: temp506 = temp504.get(r)  \n  
+         Assign([AssName('tem ... 109 ... ('r')], None, None))
+newslice: 4207 -> 4171, lineno 921 -> None f: if temp505 in temp50 ... 127 ... ve(r, temp508) \n      \n  
+         If([(Compare(Name('t ... 340 ... e, None))]))], None)
+newslice: 4207 -> 4212, lineno 921 -> None f: if temp505 in temp50 ... 127 ... ve(r, temp508) \n      \n  
+         If([(Compare(Name('t ... 340 ... e, None))]))], None)
+newslice: 4207 -> 4231, lineno 921 -> 926 f: if temp505 in temp50 ... 127 ... ve(r, temp508) \n      \n  
+         If([(Compare(Name('t ... 340 ... e, None))]))], None)
+newslice: 4212 -> 4213, lineno None -> 922 f: temp507 = self.MapR2 ... 87 ... .remove(r, temp508) \n  
+         Stmt([Assign([AssNam ... 273 ... 8')], None, None))])
+newslice: 4213 -> 4217, lineno 922 -> 923 f: temp507 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... R2SU_12_1__EXPR__'))
+newslice: 4217 -> 4222, lineno 923 -> 924 f: temp508 = (session,u)  \n  
+         Assign([AssName('tem ... 78 ... sion'), Name('u')]))
+newslice: 4227 -> 4227, lineno 925 -> 925 f: temp509 = self.PRMapR2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2P_14_1__EXPR__'))
+newslice: 4231 -> 4239, lineno 926 -> None f: for (op,obj,) in tem ... 475 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1069 ... ]))], None)]), None)
+newslice: 4231 -> 4295, lineno 926 -> 938 f: for (op,obj,) in tem ... 475 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1069 ... ]))], None)]), None)
+newslice: 4239 -> 4239, lineno None -> None f: temp510 = self.OPS  \n  ... 381 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 921 ... , None)]))], None)])
+newslice: 4239 -> 4240, lineno None -> 927 f: temp510 = self.OPS  \n  ... 381 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 921 ... , None)]))], None)])
+newslice: 4240 -> 4244, lineno 927 -> 928 f: temp510 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 4244 -> 4239, lineno 928 -> None f: if op in temp510: \n    ... 361 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 840 ... )], None)]))], None)
+newslice: 4244 -> 4249, lineno 928 -> None f: if op in temp510: \n    ... 361 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 840 ... )], None)]))], None)
+newslice: 4249 -> 4250, lineno None -> 929 f: temp511 = self.OBJS  ... 294 ... p516) \n          \n      \n  
+         Stmt([Assign([AssNam ... 778 ... , None)]))], None)])
+newslice: 4250 -> 4254, lineno 929 -> 930 f: temp511 = self.OBJS  \n  
+         Assign([AssName('tem ... 72 ... me('self'), 'OBJS'))
+newslice: 4254 -> 4259, lineno 930 -> None f: if obj in temp511: \n   ... 273 ... p516) \n          \n      \n  
+         If([(Compare(Name('o ... 696 ... )], None)]))], None)
+newslice: 4259 -> 4260, lineno None -> 931 f: temp513 = (op,obj)  \n  ... 217 ... sion, temp516) \n      \n  
+         Stmt([Assign([AssNam ... 633 ...  None))]))], None)])
+newslice: 4260 -> 4265, lineno 931 -> 932 f: temp513 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 4265 -> 4269, lineno 932 -> 933 f: temp512 = self.MapS2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pS2P_14_1__EXPR__'))
+newslice: 4269 -> 4275, lineno 933 -> 934 f: temp514 = temp512.get(session)  \n  
+         Assign([AssName('tem ... 115 ... ion')], None, None))
+newslice: 4275 -> 4239, lineno 934 -> None f: if temp513 in temp51 ... 129 ... sion, temp516) \n      \n  
+         If([(Compare(Name('t ... 342 ... e, None))]))], None)
+newslice: 4275 -> 4280, lineno 934 -> None f: if temp513 in temp51 ... 129 ... sion, temp516) \n      \n  
+         If([(Compare(Name('t ... 342 ... e, None))]))], None)
+newslice: 4275 -> 4299, lineno 934 -> 939 f: if temp513 in temp51 ... 129 ... sion, temp516) \n      \n  
+         If([(Compare(Name('t ... 342 ... e, None))]))], None)
+newslice: 428 -> 432, lineno 70 -> 71 f: temp1 = self.USERS  \n  
+         Assign([AssName('tem ... 71 ... e('self'), 'USERS'))
+newslice: 4280 -> 4281, lineno None -> 935 f: temp515 = self.MapS2 ... 89 ... e(session, temp516) \n  
+         Stmt([Assign([AssNam ... 275 ... 6')], None, None))])
+newslice: 4281 -> 4285, lineno 935 -> 936 f: temp515 = self.MapS2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pS2P_14_1__EXPR__'))
+newslice: 4285 -> 4290, lineno 936 -> 937 f: temp516 = (op,obj)  \n  
+         Assign([AssName('tem ... 75 ... op'), Name('obj')]))
+newslice: 4295 -> 4295, lineno 938 -> 938 f: temp517 = self.SRMapR2S_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pR2S_14_1__EXPR__'))
+newslice: 4299 -> 4304, lineno 939 -> 940 f: temp517.remove(r, session) 
+         CallFunc(Getattr(Nam ... 86 ... sion')], None, None)
+newslice: 4304 -> 4308, lineno 940 -> 941 f: temp518 = self.SR  \n  
+         Assign([AssName('tem ... 70 ... Name('self'), 'SR'))
+newslice: 4308 -> 4313, lineno 941 -> 942 f: temp519 = (session,r)  \n  
+         Assign([AssName('tem ... 78 ... sion'), Name('r')]))
+newslice: 4313 -> 4002, lineno 942 -> None f: temp518.remove(temp519) 
+         CallFunc(Getattr(Nam ... 75 ... p519')], None, None)
+newslice: 4317 -> 4317, lineno 943 -> 943 f: temp520 = self.SUMapS2U_10_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_10_1__EXPR__'))
+newslice: 4317 -> 4321, lineno 943 -> 944 f: temp520 = self.SUMapS2U_10_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_10_1__EXPR__'))
+newslice: 432 -> 500, lineno 71 -> 72 f: temp1.add(user) 
+         CallFunc(Getattr(Nam ... 67 ... user')], None, None)
+newslice: 4321 -> 4327, lineno 944 -> None f: for u in temp520.get ... 221 ... sion) \n          \n      \n  
+         For(AssName('u', 'OP ... 579 ... ]))], None)]), None)
+newslice: 4321 -> 4353, lineno 944 -> 950 f: for u in temp520.get ... 221 ... sion) \n          \n      \n  
+         For(AssName('u', 'OP ... 579 ... ]))], None)]), None)
+newslice: 4327 -> 4327, lineno None -> None f: temp521 = self.MapU2 ... 161 ... ve(u, session) \n      \n  
+         Stmt([Assign([AssNam ... 467 ...  None))]))], None)])
+newslice: 4327 -> 4328, lineno None -> 945 f: temp521 = self.MapU2 ... 161 ... ve(u, session) \n      \n  
+         Stmt([Assign([AssNam ... 467 ...  None))]))], None)])
+newslice: 4328 -> 4332, lineno 945 -> 946 f: temp521 = self.MapU2S_10_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2S_10_1__EXPR__'))
+newslice: 4332 -> 4338, lineno 946 -> 947 f: temp522 = temp521.get(u)  \n  
+         Assign([AssName('tem ... 109 ... ('u')], None, None))
+newslice: 4338 -> 4327, lineno 947 -> None f: if session in temp52 ... 99 ... ve(u, session) \n      \n  
+         If([(Compare(Name('s ... 259 ... e, None))]))], None)
+newslice: 4338 -> 4343, lineno 947 -> None f: if session in temp52 ... 99 ... ve(u, session) \n      \n  
+         If([(Compare(Name('s ... 259 ... e, None))]))], None)
+newslice: 4338 -> 4357, lineno 947 -> 951 f: if session in temp52 ... 99 ... ve(u, session) \n      \n  
+         If([(Compare(Name('s ... 259 ... e, None))]))], None)
+newslice: 4343 -> 4344, lineno None -> 948 f: temp523 = self.MapU2 ... 63 ... .remove(u, session) \n  
+         Stmt([Assign([AssNam ... 192 ... n')], None, None))])
+newslice: 4344 -> 4348, lineno 948 -> 949 f: temp523 = self.MapU2S_10_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2S_10_1__EXPR__'))
+newslice: 4353 -> 4353, lineno 950 -> 950 f: temp524 = self.SUMapS2U_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_11_1__EXPR__'))
+newslice: 4357 -> 4363, lineno 951 -> None f: for u in temp524.get ... 386 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 939 ... e)]), None)]), None)
+newslice: 4357 -> 4410, lineno 951 -> 961 f: for u in temp524.get ... 386 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 939 ... e)]), None)]), None)
+newslice: 4363 -> 4363, lineno None -> None f: temp525 = self.SRMap ... 306 ... sion) \n          \n      \n  
+         Stmt([Assign([AssNam ... 827 ... )], None)]), None)])
+newslice: 4363 -> 4364, lineno None -> 952 f: temp525 = self.SRMap ... 306 ... sion) \n          \n      \n  
+         Stmt([Assign([AssNam ... 827 ... )], None)]), None)])
+newslice: 4364 -> 4368, lineno 952 -> 953 f: temp525 = self.SRMapS2R  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SRMapS2R'))
+newslice: 4368 -> 4363, lineno 953 -> None f: for r in temp525.get ... 281 ... sion) \n          \n      \n  
+         For(AssName('r', 'OP ... 741 ... ]))], None)]), None)
+newslice: 4368 -> 4374, lineno 953 -> None f: for r in temp525.get ... 281 ... sion) \n          \n      \n  
+         For(AssName('r', 'OP ... 741 ... ]))], None)]), None)
+newslice: 4374 -> 4374, lineno None -> None f: temp526 = self.MapUR ... 213 ... p530, session) \n      \n  
+         Stmt([Assign([AssNam ... 629 ...  None))]))], None)])
+newslice: 4374 -> 4375, lineno None -> 954 f: temp526 = self.MapUR ... 213 ... p530, session) \n      \n  
+         Stmt([Assign([AssNam ... 629 ...  None))]))], None)])
+newslice: 4375 -> 4379, lineno 954 -> 955 f: temp526 = self.MapUR2S_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... UR2S_11_1__EXPR__'))
+newslice: 4379 -> 4384, lineno 955 -> 956 f: temp527 = (u,r)  \n  
+         Assign([AssName('tem ... 72 ... e('u'), Name('r')]))
+newslice: 4384 -> 4390, lineno 956 -> 957 f: temp528 = temp526.get(temp527)  \n  
+         Assign([AssName('tem ... 115 ... 527')], None, None))
+newslice: 4390 -> 4363, lineno 957 -> None f: if session in temp52 ... 127 ... p530, session) \n      \n  
+         If([(Compare(Name('s ... 340 ... e, None))]))], None)
+newslice: 4390 -> 4374, lineno 957 -> None f: if session in temp52 ... 127 ... p530, session) \n      \n  
+         If([(Compare(Name('s ... 340 ... e, None))]))], None)
+newslice: 4390 -> 4395, lineno 957 -> None f: if session in temp52 ... 127 ... p530, session) \n      \n  
+         If([(Compare(Name('s ... 340 ... e, None))]))], None)
+newslice: 4390 -> 4414, lineno 957 -> 962 f: if session in temp52 ... 127 ... p530, session) \n      \n  
+         If([(Compare(Name('s ... 340 ... e, None))]))], None)
+newslice: 4395 -> 4396, lineno None -> 958 f: temp529 = self.MapUR ... 87 ... e(temp530, session) \n  
+         Stmt([Assign([AssNam ... 273 ... n')], None, None))])
+newslice: 4396 -> 4400, lineno 958 -> 959 f: temp529 = self.MapUR2S_11_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... UR2S_11_1__EXPR__'))
+newslice: 4400 -> 4405, lineno 959 -> 960 f: temp530 = (u,r)  \n  
+         Assign([AssName('tem ... 72 ... e('u'), Name('r')]))
+newslice: 4410 -> 4410, lineno 961 -> 961 f: temp531 = self.SUMapS2U_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 89 ... pS2U_12_1__EXPR__'))
+newslice: 4414 -> 4420, lineno 962 -> None f: for u in temp531.get ... 486 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1083 ... ]))], None)]), None)
+newslice: 4414 -> 4477, lineno 962 -> 974 f: for u in temp531.get ... 486 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1083 ... ]))], None)]), None)
+newslice: 4420 -> 4420, lineno None -> None f: temp532 = self.USERS ... 394 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 971 ... , None)]))], None)])
+newslice: 4420 -> 4421, lineno None -> 963 f: temp532 = self.USERS ... 394 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 971 ... , None)]))], None)])
+newslice: 4421 -> 4425, lineno 963 -> 964 f: temp532 = self.USERS  \n  
+         Assign([AssName('tem ... 73 ... e('self'), 'USERS'))
+newslice: 4425 -> 4420, lineno 964 -> None f: if u in temp532: \n     ... 372 ...       \n          \n      \n  
+         If([(Compare(Name('u ... 888 ... ]), None)]))], None)
+newslice: 4425 -> 4430, lineno 964 -> None f: if u in temp532: \n     ... 372 ...       \n          \n      \n  
+         If([(Compare(Name('u ... 888 ... ]), None)]))], None)
+newslice: 4430 -> 4431, lineno None -> 965 f: temp533 = self.SRMap ... 306 ... p538) \n          \n      \n  
+         Stmt([Assign([AssNam ... 827 ... )], None)]), None)])
+newslice: 4431 -> 4435, lineno 965 -> 966 f: temp533 = self.SRMapS2R  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SRMapS2R'))
+newslice: 4435 -> 4441, lineno 966 -> None f: for r in temp533.get ... 281 ... p538) \n          \n      \n  
+         For(AssName('r', 'OP ... 741 ... ]))], None)]), None)
+newslice: 4441 -> 4441, lineno None -> None f: temp535 = (session,u ... 213 ... ve(r, temp538) \n      \n  
+         Stmt([Assign([AssNam ... 629 ...  None))]))], None)])
+newslice: 4441 -> 4442, lineno None -> 967 f: temp535 = (session,u ... 213 ... ve(r, temp538) \n      \n  
+         Stmt([Assign([AssNam ... 629 ...  None))]))], None)])
+newslice: 4442 -> 4447, lineno 967 -> 968 f: temp535 = (session,u)  \n  
+         Assign([AssName('tem ... 78 ... sion'), Name('u')]))
+newslice: 4447 -> 4451, lineno 968 -> 969 f: temp534 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... R2SU_12_1__EXPR__'))
+newslice: 4451 -> 4457, lineno 969 -> 970 f: temp536 = temp534.get(r)  \n  
+         Assign([AssName('tem ... 109 ... ('r')], None, None))
+newslice: 4457 -> 4420, lineno 970 -> None f: if temp535 in temp53 ... 127 ... ve(r, temp538) \n      \n  
+         If([(Compare(Name('t ... 340 ... e, None))]))], None)
+newslice: 4457 -> 4441, lineno 970 -> None f: if temp535 in temp53 ... 127 ... ve(r, temp538) \n      \n  
+         If([(Compare(Name('t ... 340 ... e, None))]))], None)
+newslice: 4457 -> 4462, lineno 970 -> None f: if temp535 in temp53 ... 127 ... ve(r, temp538) \n      \n  
+         If([(Compare(Name('t ... 340 ... e, None))]))], None)
+newslice: 4457 -> 4481, lineno 970 -> 975 f: if temp535 in temp53 ... 127 ... ve(r, temp538) \n      \n  
+         If([(Compare(Name('t ... 340 ... e, None))]))], None)
+newslice: 4462 -> 4463, lineno None -> 971 f: temp537 = self.MapR2 ... 87 ... .remove(r, temp538) \n  
+         Stmt([Assign([AssNam ... 273 ... 8')], None, None))])
+newslice: 4463 -> 4467, lineno 971 -> 972 f: temp537 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... R2SU_12_1__EXPR__'))
+newslice: 4467 -> 4472, lineno 972 -> 973 f: temp538 = (session,u)  \n  
+         Assign([AssName('tem ... 78 ... sion'), Name('u')]))
+newslice: 4477 -> 4477, lineno 974 -> 974 f: temp539 = self.SESSIONS  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SESSIONS'))
+newslice: 4481 -> 3754, lineno 975 -> None f: temp539.remove(session) 
+         CallFunc(Getattr(Nam ... 75 ... sion')], None, None)
+newslice: 4486 -> 4486, lineno 1236 -> 1236 f: C.CheckAccess('Adder Session', 'add', 3) 
+         CallFunc(Getattr(Nam ... 105 ... nst(3)], None, None)
+newslice: 4486 -> 4493, lineno 1236 -> 1132 f: C.CheckAccess('Adder Session', 'add', 3) 
+         CallFunc(Getattr(Nam ... 105 ... nst(3)], None, None)
+newslice: 4493 -> 4501, lineno 1132 -> 1134 f: temp631 = self.SESSIONS  \n  
+         Assign([AssName('tem ... 76 ... self'), 'SESSIONS'))
+newslice: 4501 -> 4509, lineno 1134 -> 1136 f: temp632 = self.OPS  \n  
+         Assign([AssName('tem ... 71 ... ame('self'), 'OPS'))
+newslice: 4509 -> 4517, lineno 1136 -> 1138 f: temp633 = self.OBJS  \n  
+         Assign([AssName('tem ... 72 ... me('self'), 'OBJS'))
+newslice: 4517 -> 4521, lineno 1138 -> 1139 f: temp634 = self.MapSP2R  \n  
+         Assign([AssName('tem ... 75 ... 'self'), 'MapSP2R'))
+newslice: 4521 -> 4527, lineno 1139 -> 1140 f: temp635 = (session,operation,object)  \n  
+         Assign([AssName('tem ... 102 ... ), Name('object')]))
+newslice: 4527 -> 4533, lineno 1140 -> 1141 f: temp636 = temp634.get(temp635)  \n  
+         Assign([AssName('tem ... 115 ... 635')], None, None))
+newslice: 4533 -> 4577, lineno 1141 -> 1142 f: temp637 = len(temp636)  \n  
+         Assign([AssName('tem ... 95 ... 636')], None, None))
+newslice: 4577 -> 4594, lineno 1142 -> 1237 f: return temp637 != 0 
+         Return(Compare(Name( ... 52 ... [('!=', Const(0))]))
+newslice: 4594 -> 4493, lineno 1237 -> 1132 f: C.CheckAccess('Restorer Session', 'sub', 3) 
+         CallFunc(Getattr(Nam ... 108 ... nst(3)], None, None)
+newslice: 4594 -> 4594, lineno 1237 -> 1237 f: C.CheckAccess('Restorer Session', 'sub', 3) 
+         CallFunc(Getattr(Nam ... 108 ... nst(3)], None, None)
+newslice: 5 -> 6, lineno None -> 6 f: def __init__(self): \n  ... 79819 ... on, obj): \n     pass  \n  
+         Stmt([Function(None, ... 175709 ... e, Stmt([Pass()]))])
+newslice: 500 -> 500, lineno 72 -> 72 f: temp2 = self.SUMapU2S_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2S_12_1__EXPR__'))
+newslice: 500 -> 504, lineno 72 -> 73 f: temp2 = self.SUMapU2S_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... pU2S_12_1__EXPR__'))
+newslice: 504 -> 548, lineno 73 -> None f: for s in temp2.get(u ... 445 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 1042 ... ]))], None)]), None)
+newslice: 504 -> 638, lineno 73 -> 85 f: for s in temp2.get(u ... 445 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 1042 ... ]))], None)]), None)
+newslice: 51 -> 72, lineno 8 -> 9 f: self.MapR2P_8_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 127 ... '), [], None, None))
+newslice: 548 -> 548, lineno None -> None f: temp3 = self.SESSION ... 358 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 935 ... , None)]))], None)])
+newslice: 548 -> 549, lineno None -> 74 f: temp3 = self.SESSION ... 358 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 935 ... , None)]))], None)])
+newslice: 549 -> 553, lineno 74 -> 75 f: temp3 = self.SESSIONS  \n  
+         Assign([AssName('tem ... 74 ... self'), 'SESSIONS'))
+newslice: 553 -> 548, lineno 75 -> None f: if s in temp3: \n     t ... 335 ...       \n          \n      \n  
+         If([(Compare(Name('s ... 851 ... ]), None)]))], None)
+newslice: 553 -> 558, lineno 75 -> None f: if s in temp3: \n     t ... 335 ...       \n          \n      \n  
+         If([(Compare(Name('s ... 851 ... ]), None)]))], None)
+newslice: 558 -> 559, lineno None -> 76 f: temp4 = self.SRMapS2 ... 271 ... emp9) \n          \n      \n  
+         Stmt([Assign([AssNam ... 792 ... )], None)]), None)])
+newslice: 559 -> 563, lineno 76 -> 77 f: temp4 = self.SRMapS2R  \n  
+         Assign([AssName('tem ... 74 ... self'), 'SRMapS2R'))
+newslice: 563 -> 569, lineno 77 -> None f: for r in temp4.get(s ... 248 ... emp9) \n          \n      \n  
+         For(AssName('r', 'OP ... 708 ... ]))], None)]), None)
+newslice: 569 -> 569, lineno None -> None f: temp6 = (s,user)  \n te ... 188 ... .add(r, temp9) \n      \n  
+         Stmt([Assign([AssNam ... 604 ...  None))]))], None)])
+newslice: 569 -> 570, lineno None -> 78 f: temp6 = (s,user)  \n te ... 188 ... .add(r, temp9) \n      \n  
+         Stmt([Assign([AssNam ... 604 ...  None))]))], None)])
+newslice: 570 -> 604, lineno 78 -> 79 f: temp6 = (s,user)  \n  
+         Assign([AssName('tem ... 73 ... s'), Name('user')]))
+newslice: 6 -> 7, lineno 6 -> 67 f: def __init__(self): \n  ... 2581 ... ts.MultiMap()  \n      \n  
+         Function(None, '__in ... 7451 ...  [], None, None))]))
+newslice: 604 -> 608, lineno 79 -> 80 f: temp5 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... R2SU_12_1__EXPR__'))
+newslice: 608 -> 614, lineno 80 -> 81 f: temp7 = temp5.get(r)  \n  
+         Assign([AssName('tem ... 105 ... ('r')], None, None))
+newslice: 614 -> 548, lineno 81 -> None f: if temp6 not in temp ... 113 ... .add(r, temp9) \n      \n  
+         If([(Compare(Name('t ... 326 ... e, None))]))], None)
+newslice: 614 -> 569, lineno 81 -> None f: if temp6 not in temp ... 113 ... .add(r, temp9) \n      \n  
+         If([(Compare(Name('t ... 326 ... e, None))]))], None)
+newslice: 614 -> 619, lineno 81 -> None f: if temp6 not in temp ... 113 ... .add(r, temp9) \n      \n  
+         If([(Compare(Name('t ... 326 ... e, None))]))], None)
+newslice: 614 -> 642, lineno 81 -> 86 f: if temp6 not in temp ... 113 ... .add(r, temp9) \n      \n  
+         If([(Compare(Name('t ... 326 ... e, None))]))], None)
+newslice: 619 -> 620, lineno None -> 82 f: temp8 = self.MapR2SU ... 73 ... temp8.add(r, temp9) \n  
+         Stmt([Assign([AssNam ... 259 ... 9')], None, None))])
+newslice: 620 -> 624, lineno 82 -> 83 f: temp8 = self.MapR2SU_12_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... R2SU_12_1__EXPR__'))
+newslice: 624 -> 629, lineno 83 -> 84 f: temp9 = (s,user)  \n  
+         Assign([AssName('tem ... 73 ... s'), Name('user')]))
+newslice: 638 -> 638, lineno 85 -> 85 f: temp10 = self.URMapU2R_7_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... apU2R_7_1__EXPR__'))
+newslice: 642 -> 648, lineno 86 -> None f: for r in temp10.get( ... 204 ... user) \n          \n      \n  
+         For(AssName('r', 'OP ... 562 ... ]))], None)]), None)
+newslice: 642 -> 678, lineno 86 -> 1214 f: for r in temp10.get( ... 204 ... user) \n          \n      \n  
+         For(AssName('r', 'OP ... 562 ... ]))], None)]), None)
+newslice: 642 -> 682, lineno 86 -> 1215 f: for r in temp10.get( ... 204 ... user) \n          \n      \n  
+         For(AssName('r', 'OP ... 562 ... ]))], None)]), None)
+newslice: 648 -> 648, lineno None -> None f: temp11 = self.MapR2U ... 148 ... 3.add(r, user) \n      \n  
+         Stmt([Assign([AssNam ... 454 ...  None))]))], None)])
+newslice: 648 -> 649, lineno None -> 87 f: temp11 = self.MapR2U ... 148 ... 3.add(r, user) \n      \n  
+         Stmt([Assign([AssNam ... 454 ...  None))]))], None)])
+newslice: 649 -> 653, lineno 87 -> 88 f: temp11 = self.MapR2U_7_1__EXPR__  \n  
+         Assign([AssName('tem ... 85 ... apR2U_7_1__EXPR__'))
+newslice: 653 -> 659, lineno 88 -> 89 f: temp12 = temp11.get(r)  \n  
+         Assign([AssName('tem ... 107 ... ('r')], None, None))
+newslice: 659 -> 419, lineno 89 -> None f: if user not in temp1 ... 90 ... 3.add(r, user) \n      \n  
+         If([(Compare(Name('u ... 250 ... e, None))]))], None)
+newslice: 659 -> 420, lineno 89 -> 68 f: if user not in temp1 ... 90 ... 3.add(r, user) \n      \n  
+         If([(Compare(Name('u ... 250 ... e, None))]))], None)
+newslice: 659 -> 648, lineno 89 -> None f: if user not in temp1 ... 90 ... 3.add(r, user) \n      \n  
+         If([(Compare(Name('u ... 250 ... e, None))]))], None)
+newslice: 659 -> 664, lineno 89 -> None f: if user not in temp1 ... 90 ... 3.add(r, user) \n      \n  
+         If([(Compare(Name('u ... 250 ... e, None))]))], None)
+newslice: 659 -> 686, lineno 89 -> None f: if user not in temp1 ... 90 ... 3.add(r, user) \n      \n  
+         If([(Compare(Name('u ... 250 ... e, None))]))], None)
+newslice: 664 -> 665, lineno None -> 90 f: temp13 = self.MapR2U ... 54 ... temp13.add(r, user) \n  
+         Stmt([Assign([AssNam ... 183 ... r')], None, None))])
+newslice: 665 -> 669, lineno 90 -> 91 f: temp13 = self.MapR2U_7_1__EXPR__  \n  
+         Assign([AssName('tem ... 85 ... apR2U_7_1__EXPR__'))
+newslice: 678 -> 678, lineno 1214 -> 1214 f: C.AddUser('zog') 
+         CallFunc(Getattr(Nam ... 67 ... 'zog')], None, None)
+newslice: 682 -> 682, lineno 1215 -> 1215 f: C.AddRole('Backup Operator') 
+         CallFunc(Getattr(Nam ... 79 ... ator')], None, None)
+newslice: 686 -> 686, lineno None -> None f: temp52 = self.ROLES  ... 2170 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 5307 ... ]), None)]), None)])
+newslice: 686 -> 687, lineno None -> 162 f: temp52 = self.ROLES  ... 2170 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 5307 ... ]), None)]), None)])
+newslice: 687 -> 687, lineno 162 -> 162 f: temp52 = self.ROLES  \n  
+         Assign([AssName('tem ... 72 ... e('self'), 'ROLES'))
+newslice: 687 -> 695, lineno 162 -> 164 f: temp52 = self.ROLES  \n  
+         Assign([AssName('tem ... 72 ... e('self'), 'ROLES'))
+newslice: 695 -> 699, lineno 164 -> 165 f: temp53 = self.ROLES  \n  
+         Assign([AssName('tem ... 72 ... e('self'), 'ROLES'))
+newslice: 699 -> 703, lineno 165 -> 166 f: temp53.add(role) 
+         CallFunc(Getattr(Nam ... 68 ... role')], None, None)
+newslice: 7 -> 8, lineno 67 -> 93 f: def AddUser(self, us ... 952 ...       \n          \n      \n  
+         Function(None, 'AddU ... 2140 ... ], None)]), None)]))
+newslice: 703 -> 703, lineno 166 -> 166 f: temp54 = self.PRMapR2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... pR2P_14_1__EXPR__'))
+newslice: 703 -> 707, lineno 166 -> 167 f: temp54 = self.PRMapR2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... pR2P_14_1__EXPR__'))
+newslice: 707 -> 726, lineno 167 -> None f: for (op,obj,) in tem ... 589 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1252 ... e)]), None)]), None)
+newslice: 707 -> 793, lineno 167 -> 181 f: for (op,obj,) in tem ... 589 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1252 ... e)]), None)]), None)
+newslice: 72 -> 78, lineno 9 -> 10 f: self.OPS = sets.Set()  \n  
+         Assign([AssAttr(Name ... 107 ... '), [], None, None))
+newslice: 726 -> 726, lineno None -> None f: temp55 = self.SRMapR ... 481 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 1102 ... )], None)]), None)])
+newslice: 726 -> 727, lineno None -> 168 f: temp55 = self.SRMapR ... 481 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 1102 ... )], None)]), None)])
+newslice: 727 -> 731, lineno 168 -> 169 f: temp55 = self.SRMapR2S_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... pR2S_14_1__EXPR__'))
+newslice: 731 -> 726, lineno 169 -> None f: for s in temp55.get( ... 444 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 1004 ... ]))], None)]), None)
+newslice: 731 -> 737, lineno 169 -> None f: for s in temp55.get( ... 444 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 1004 ... ]))], None)]), None)
+newslice: 737 -> 737, lineno None -> None f: temp56 = self.OPS  \n i ... 356 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 896 ... , None)]))], None)])
+newslice: 737 -> 738, lineno None -> 170 f: temp56 = self.OPS  \n i ... 356 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 896 ... , None)]))], None)])
+newslice: 738 -> 742, lineno 170 -> 171 f: temp56 = self.OPS  \n  
+         Assign([AssName('tem ... 70 ... ame('self'), 'OPS'))
+newslice: 742 -> 737, lineno 171 -> None f: if op in temp56: \n     ... 337 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 816 ... )], None)]))], None)
+newslice: 742 -> 747, lineno 171 -> None f: if op in temp56: \n     ... 337 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 816 ... )], None)]))], None)
+newslice: 747 -> 748, lineno None -> 172 f: temp57 = self.OBJS  \n  ... 271 ... mp62) \n          \n      \n  
+         Stmt([Assign([AssNam ... 755 ... , None)]))], None)])
+newslice: 748 -> 752, lineno 172 -> 173 f: temp57 = self.OBJS  \n  
+         Assign([AssName('tem ... 71 ... me('self'), 'OBJS'))
+newslice: 752 -> 757, lineno 173 -> None f: if obj in temp57: \n    ... 251 ... mp62) \n          \n      \n  
+         If([(Compare(Name('o ... 674 ... )], None)]))], None)
+newslice: 757 -> 758, lineno None -> 174 f: temp59 = (op,obj)  \n t ... 196 ... add(s, temp62) \n      \n  
+         Stmt([Assign([AssNam ... 612 ...  None))]))], None)])
+newslice: 758 -> 763, lineno 174 -> 175 f: temp59 = (op,obj)  \n  
+         Assign([AssName('tem ... 74 ... op'), Name('obj')]))
+newslice: 763 -> 767, lineno 175 -> 176 f: temp58 = self.MapS2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... pS2P_14_1__EXPR__'))
+newslice: 767 -> 773, lineno 176 -> 177 f: temp60 = temp58.get(s)  \n  
+         Assign([AssName('tem ... 107 ... ('s')], None, None))
+newslice: 773 -> 726, lineno 177 -> None f: if temp59 not in tem ... 118 ... add(s, temp62) \n      \n  
+         If([(Compare(Name('t ... 331 ... e, None))]))], None)
+newslice: 773 -> 737, lineno 177 -> None f: if temp59 not in tem ... 118 ... add(s, temp62) \n      \n  
+         If([(Compare(Name('t ... 331 ... e, None))]))], None)
+newslice: 773 -> 778, lineno 177 -> None f: if temp59 not in tem ... 118 ... add(s, temp62) \n      \n  
+         If([(Compare(Name('t ... 331 ... e, None))]))], None)
+newslice: 773 -> 797, lineno 177 -> 182 f: if temp59 not in tem ... 118 ... add(s, temp62) \n      \n  
+         If([(Compare(Name('t ... 331 ... e, None))]))], None)
+newslice: 778 -> 779, lineno None -> 178 f: temp61 = self.MapS2P ... 76 ... mp61.add(s, temp62) \n  
+         Stmt([Assign([AssNam ... 262 ... 2')], None, None))])
+newslice: 779 -> 783, lineno 178 -> 179 f: temp61 = self.MapS2P_14_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... pS2P_14_1__EXPR__'))
+newslice: 78 -> 84, lineno 10 -> 11 f: self.MapRO2A_9_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 128 ... '), [], None, None))
+newslice: 783 -> 788, lineno 179 -> 180 f: temp62 = (op,obj)  \n  
+         Assign([AssName('tem ... 74 ... op'), Name('obj')]))
+newslice: 793 -> 793, lineno 181 -> 181 f: temp63 = self.PRMapR2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 88 ... pR2P_13_1__EXPR__'))
+newslice: 797 -> 797, lineno 182 -> 182 f: for (op,obj,) in tem ... 576 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1239 ... e)]), None)]), None)
+newslice: 797 -> 805, lineno 182 -> None f: for (op,obj,) in tem ... 576 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1239 ... e)]), None)]), None)
+newslice: 797 -> 872, lineno 182 -> 196 f: for (op,obj,) in tem ... 576 ...       \n          \n      \n  
+         For(AssTuple([AssNam ... 1239 ... e)]), None)]), None)
+newslice: 8 -> 9, lineno 93 -> 161 f: def DeleteUser(self, ... 2667 ... 1.remove(user) \n      \n  
+         Function(None, 'Dele ... 5830 ... ')], None, None))]))
+newslice: 805 -> 805, lineno None -> None f: temp64 = self.URMapR ... 468 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 1089 ... )], None)]), None)])
+newslice: 805 -> 806, lineno None -> 183 f: temp64 = self.URMapR ... 468 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 1089 ... )], None)]), None)])
+newslice: 806 -> 810, lineno 183 -> 184 f: temp64 = self.URMapR2U  \n  
+         Assign([AssName('tem ... 75 ... self'), 'URMapR2U'))
+newslice: 810 -> 805, lineno 184 -> None f: for u in temp64.get( ... 444 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1004 ... ]))], None)]), None)
+newslice: 810 -> 816, lineno 184 -> None f: for u in temp64.get( ... 444 ...       \n          \n      \n  
+         For(AssName('u', 'OP ... 1004 ... ]))], None)]), None)
+newslice: 816 -> 816, lineno None -> None f: temp65 = self.OPS  \n i ... 356 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 896 ... , None)]))], None)])
+newslice: 816 -> 817, lineno None -> 185 f: temp65 = self.OPS  \n i ... 356 ...       \n          \n      \n  
+         Stmt([Assign([AssNam ... 896 ... , None)]))], None)])
+newslice: 817 -> 821, lineno 185 -> 186 f: temp65 = self.OPS  \n  
+         Assign([AssName('tem ... 70 ... ame('self'), 'OPS'))
+newslice: 821 -> 816, lineno 186 -> None f: if op in temp65: \n     ... 337 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 816 ... )], None)]))], None)
+newslice: 821 -> 826, lineno 186 -> None f: if op in temp65: \n     ... 337 ...       \n          \n      \n  
+         If([(Compare(Name('o ... 816 ... )], None)]))], None)
+newslice: 826 -> 827, lineno None -> 187 f: temp66 = self.OBJS  \n  ... 271 ... mp71) \n          \n      \n  
+         Stmt([Assign([AssNam ... 755 ... , None)]))], None)])
+newslice: 827 -> 831, lineno 187 -> 188 f: temp66 = self.OBJS  \n  
+         Assign([AssName('tem ... 71 ... me('self'), 'OBJS'))
+newslice: 831 -> 836, lineno 188 -> None f: if obj in temp66: \n    ... 251 ... mp71) \n          \n      \n  
+         If([(Compare(Name('o ... 674 ... )], None)]))], None)
+newslice: 836 -> 837, lineno None -> 189 f: temp68 = (op,obj)  \n t ... 196 ... add(u, temp71) \n      \n  
+         Stmt([Assign([AssNam ... 612 ...  None))]))], None)])
+newslice: 837 -> 842, lineno 189 -> 190 f: temp68 = (op,obj)  \n  
+         Assign([AssName('tem ... 74 ... op'), Name('obj')]))
+newslice: 84 -> 90, lineno 11 -> 12 f: self.MapRO2A_9_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 128 ... '), [], None, None))
+newslice: 842 -> 846, lineno 190 -> 191 f: temp67 = self.MapU2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... pU2P_13_1__EXPR__'))
+newslice: 846 -> 852, lineno 191 -> 192 f: temp69 = temp67.get(u)  \n  
+         Assign([AssName('tem ... 107 ... ('u')], None, None))
+newslice: 852 -> 805, lineno 192 -> None f: if temp68 not in tem ... 118 ... add(u, temp71) \n      \n  
+         If([(Compare(Name('t ... 331 ... e, None))]))], None)
+newslice: 852 -> 816, lineno 192 -> None f: if temp68 not in tem ... 118 ... add(u, temp71) \n      \n  
+         If([(Compare(Name('t ... 331 ... e, None))]))], None)
+newslice: 852 -> 857, lineno 192 -> None f: if temp68 not in tem ... 118 ... add(u, temp71) \n      \n  
+         If([(Compare(Name('t ... 331 ... e, None))]))], None)
+newslice: 852 -> 876, lineno 192 -> 197 f: if temp68 not in tem ... 118 ... add(u, temp71) \n      \n  
+         If([(Compare(Name('t ... 331 ... e, None))]))], None)
+newslice: 857 -> 858, lineno None -> 193 f: temp70 = self.MapU2P ... 76 ... mp70.add(u, temp71) \n  
+         Stmt([Assign([AssNam ... 262 ... 1')], None, None))])
+newslice: 858 -> 862, lineno 193 -> 194 f: temp70 = self.MapU2P_13_1__EXPR__  \n  
+         Assign([AssName('tem ... 86 ... pU2P_13_1__EXPR__'))
+newslice: 862 -> 867, lineno 194 -> 195 f: temp71 = (op,obj)  \n  
+         Assign([AssName('tem ... 74 ... op'), Name('obj')]))
+newslice: 872 -> 872, lineno 196 -> 196 f: temp72 = self.SRMapR2S_6_1__EXPR__  \n  
+         Assign([AssName('tem ... 87 ... apR2S_6_1__EXPR__'))
+newslice: 876 -> 876, lineno 197 -> 197 f: for s in temp72.get( ... 204 ... role) \n          \n      \n  
+         For(AssName('s', 'OP ... 562 ... ]))], None)]), None)
+newslice: 876 -> 882, lineno 197 -> None f: for s in temp72.get( ... 204 ... role) \n          \n      \n  
+         For(AssName('s', 'OP ... 562 ... ]))], None)]), None)
+newslice: 876 -> 908, lineno 197 -> 203 f: for s in temp72.get( ... 204 ... role) \n          \n      \n  
+         For(AssName('s', 'OP ... 562 ... ]))], None)]), None)
+newslice: 882 -> 882, lineno None -> None f: temp73 = self.MapS2R ... 148 ... 5.add(s, role) \n      \n  
+         Stmt([Assign([AssNam ... 454 ...  None))]))], None)])
+newslice: 882 -> 883, lineno None -> 198 f: temp73 = self.MapS2R ... 148 ... 5.add(s, role) \n      \n  
+         Stmt([Assign([AssNam ... 454 ...  None))]))], None)])
+newslice: 883 -> 887, lineno 198 -> 199 f: temp73 = self.MapS2R_6_1__EXPR__  \n  
+         Assign([AssName('tem ... 85 ... apS2R_6_1__EXPR__'))
+newslice: 887 -> 893, lineno 199 -> 200 f: temp74 = temp73.get(s)  \n  
+         Assign([AssName('tem ... 107 ... ('s')], None, None))
+newslice: 893 -> 882, lineno 200 -> None f: if role not in temp7 ... 90 ... 5.add(s, role) \n      \n  
+         If([(Compare(Name('r ... 250 ... e, None))]))], None)
+newslice: 893 -> 898, lineno 200 -> None f: if role not in temp7 ... 90 ... 5.add(s, role) \n      \n  
+         If([(Compare(Name('r ... 250 ... e, None))]))], None)
+newslice: 893 -> 912, lineno 200 -> 204 f: if role not in temp7 ... 90 ... 5.add(s, role) \n      \n  
+         If([(Compare(Name('r ... 250 ... e, None))]))], None)
+newslice: 898 -> 899, lineno None -> 201 f: temp75 = self.MapS2R ... 54 ... temp75.add(s, role) \n  
+         Stmt([Assign([AssNam ... 183 ... e')], None, None))])
+newslice: 899 -> 903, lineno 201 -> 202 f: temp75 = self.MapS2R_6_1__EXPR__  \n  
+         Assign([AssName('tem ... 85 ... apS2R_6_1__EXPR__'))
+newslice: 9 -> 10, lineno 161 -> 222 f: def AddRole(self, ro ... 2504 ...       \n          \n      \n  
+         Function(None, 'AddR ... 5365 ... ), None)]), None)]))
+newslice: 90 -> 96, lineno 12 -> 13 f: self.MapR2P_8_1__EXPR__ = sets.MultiMap()  \n  
+         Assign([AssAttr(Name ... 127 ... '), [], None, None))
+newslice: 908 -> 908, lineno 203 -> 203 f: temp76 = self.URMapR2U  \n  
+         Assign([AssName('tem ... 75 ... self'), 'URMapR2U'))
+newslice: 912 -> 918, lineno 204 -> None f: for u in temp76.get( ... 204 ... role) \n          \n      \n  
+         For(AssName('u', 'OP ... 562 ... ]))], None)]), None)
+newslice: 912 -> 944, lineno 204 -> 210 f: for u in temp76.get( ... 204 ... role) \n          \n      \n  
+         For(AssName('u', 'OP ... 562 ... ]))], None)]), None)
+newslice: 918 -> 918, lineno None -> None f: temp77 = self.MapU2R ... 148 ... 9.add(u, role) \n      \n  
+         Stmt([Assign([AssNam ... 454 ...  None))]))], None)])
+newslice: 918 -> 919, lineno None -> 205 f: temp77 = self.MapU2R ... 148 ... 9.add(u, role) \n      \n  
+         Stmt([Assign([AssNam ... 454 ...  None))]))], None)])
+newslice: 919 -> 923, lineno 205 -> 206 f: temp77 = self.MapU2R_5_1__EXPR__  \n  
+         Assign([AssName('tem ... 85 ... apU2R_5_1__EXPR__'))
+newslice: 923 -> 929, lineno 206 -> 207 f: temp78 = temp77.get(u)  \n  
+         Assign([AssName('tem ... 107 ... ('u')], None, None))
+newslice: 929 -> 918, lineno 207 -> None f: if role not in temp7 ... 90 ... 9.add(u, role) \n      \n  
+         If([(Compare(Name('r ... 250 ... e, None))]))], None)
+newslice: 929 -> 934, lineno 207 -> None f: if role not in temp7 ... 90 ... 9.add(u, role) \n      \n  
+         If([(Compare(Name('r ... 250 ... e, None))]))], None)
+newslice: 929 -> 948, lineno 207 -> 211 f: if role not in temp7 ... 90 ... 9.add(u, role) \n      \n  
+         If([(Compare(Name('r ... 250 ... e, None))]))], None)
+newslice: 934 -> 935, lineno None -> 208 f: temp79 = self.MapU2R ... 54 ... temp79.add(u, role) \n  
+         Stmt([Assign([AssNam ... 183 ... e')], None, None))])
+newslice: 935 -> 939, lineno 208 -> 209 f: temp79 = self.MapU2R_5_1__EXPR__  \n  
+         Assign([AssName('tem ... 85 ... apU2R_5_1__EXPR__'))
+newslice: 944 -> 944, lineno 210 -> 210 f: temp80 = self.SRMapR2S  \n  
+         Assign([AssName('tem ... 75 ... self'), 'SRMapR2S'))
+newslice: 948 -> 1013, lineno 211 -> 1216 f: for s in temp80.get( ... 354 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 959 ... e)]), None)]), None)
+newslice: 948 -> 1017, lineno 211 -> 1217 f: for s in temp80.get( ... 354 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 959 ... e)]), None)]), None)
+newslice: 948 -> 1021, lineno 211 -> 1218 f: for s in temp80.get( ... 354 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 959 ... e)]), None)]), None)
+newslice: 948 -> 954, lineno 211 -> None f: for s in temp80.get( ... 354 ...       \n          \n      \n  
+         For(AssName('s', 'OP ... 959 ... e)]), None)]), None)
+newslice: 954 -> 954, lineno None -> None f: temp81 = self.PRMapR ... 278 ... role) \n          \n      \n  
+         Stmt([Assign([AssNam ... 851 ... )], None)]), None)])
+newslice: 954 -> 955, lineno None -> 212 f: temp81 = self.PRMapR ... 278 ... role) \n          \n      \n  
+         Stmt([Assign([AssNam ... 851 ... )], None)]), None)])
+newslice: 955 -> 959, lineno 212 -> 213 f: temp81 = self.PRMapR2P  \n  
+         Assign([AssName('tem ... 75 ... self'), 'PRMapR2P'))
+newslice: 959 -> 687, lineno 213 -> 162 f: for (op,obj,) in tem ... 254 ... role) \n          \n      \n  
+         For(AssTuple([AssNam ... 766 ... ]))], None)]), None)
+newslice: 959 -> 954, lineno 213 -> None f: for (op,obj,) in tem ... 254 ... role) \n          \n      \n  
+         For(AssTuple([AssNam ... 766 ... ]))], None)]), None)
+newslice: 959 -> 967, lineno 213 -> None f: for (op,obj,) in tem ... 254 ... role) \n          \n      \n  
+         For(AssTuple([AssNam ... 766 ... ]))], None)]), None)
+newslice: 96 -> 102, lineno 13 -> 14 f: self.USERS = sets.Set()  \n  
+         Assign([AssAttr(Name ... 109 ... '), [], None, None))
+newslice: 967 -> 967, lineno None -> None f: temp82 = self.MapSP2 ... 182 ... (temp86, role) \n      \n  
+         Stmt([Assign([AssNam ... 616 ...  None))]))], None)])
+newslice: 967 -> 968, lineno None -> 214 f: temp82 = self.MapSP2 ... 182 ... (temp86, role) \n      \n  
+         Stmt([Assign([AssNam ... 616 ...  None))]))], None)])
+newslice: 968 -> 972, lineno 214 -> 215 f: temp82 = self.MapSP2R  \n  
+         Assign([AssName('tem ... 74 ... 'self'), 'MapSP2R'))
+newslice: 972 -> 978, lineno 215 -> 216 f: temp83 = (s,op,obj)  \n  
+         Assign([AssName('tem ... 85 ... op'), Name('obj')]))
+newslice: 978 -> 988, lineno 216 -> 217 f: temp84 = temp82.get(temp83)  \n  
+         Assign([AssName('tem ... 112 ... p83')], None, None))
+newslice: 988 -> 1025, lineno 217 -> None f: if role not in temp8 ... 109 ... (temp86, role) \n      \n  
+         If([(Compare(Name('r ... 331 ... e, None))]))], None)
+newslice: 988 -> 686, lineno 217 -> None f: if role not in temp8 ... 109 ... (temp86, role) \n      \n  
+         If([(Compare(Name('r ... 331 ... e, None))]))], None)
+newslice: 988 -> 695, lineno 217 -> 164 f: if role not in temp8 ... 109 ... (temp86, role) \n      \n  
+         If([(Compare(Name('r ... 331 ... e, None))]))], None)
+newslice: 988 -> 954, lineno 217 -> None f: if role not in temp8 ... 109 ... (temp86, role) \n      \n  
+         If([(Compare(Name('r ... 331 ... e, None))]))], None)
+newslice: 988 -> 967, lineno 217 -> None f: if role not in temp8 ... 109 ... (temp86, role) \n      \n  
+         If([(Compare(Name('r ... 331 ... e, None))]))], None)
+newslice: 988 -> 993, lineno 217 -> None f: if role not in temp8 ... 109 ... (temp86, role) \n      \n  
+         If([(Compare(Name('r ... 331 ... e, None))]))], None)
+newslice: 993 -> 994, lineno None -> 218 f: temp85 = self.MapSP2 ... 69 ... 5.add(temp86, role) \n  
+         Stmt([Assign([AssNam ... 264 ... e')], None, None))])
+newslice: 994 -> 998, lineno 218 -> 219 f: temp85 = self.MapSP2R  \n  
+         Assign([AssName('tem ... 74 ... 'self'), 'MapSP2R'))
+newslice: 998 -> 1004, lineno 219 -> 220 f: temp86 = (s,op,obj)  \n  
+         Assign([AssName('tem ... 85 ... op'), Name('obj')]))

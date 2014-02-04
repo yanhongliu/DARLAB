@@ -1,0 +1,473 @@
+1 1 1 None
+Importing RBAC
+ processing input\RBAC.py ...
+ done.
+Success!
+1001 865 865 None
+2001 786 1040 532
+3001 1385 1402 385
+4001 1466 1486 258
+from RBAC import coreRBAC
+C = coreRBAC() 
+temp0 = C.AddUser 
+temp0('mickg')
+temp1 = C.AddUser 
+temp1('zog')
+temp2 = C.AddRole 
+temp2('Backup Operator')
+temp3 = C.AddRole 
+temp3('Restore Operator')
+temp4 = C.AddRole 
+temp4('Grr')
+temp5 = C.AddObject 
+temp5(3)
+temp6 = C.AddObject 
+temp6(2)
+temp7 = C.AddOperation 
+temp7('add')
+temp8 = C.AddOperation 
+temp8('sub')
+temp9 = C.GrantPermission 
+temp9('add', 2, 'Restore Operator')
+temp10 = C.GrantPermission 
+temp10('add', 3, 'Backup Operator')
+temp11 = C.GrantPermission 
+temp11('add', 3, 'Restore Operator')
+temp12 = C.GrantPermission 
+temp12('sub', 2, 'Backup Operator')
+temp13 = C.AssignUser 
+temp13('mickg', 'Backup Operator')
+temp14 = C.AssignUser 
+temp14('mickg', 'Restore Operator')
+temp15 = C.AssignUser 
+temp15('zog', 'Restore Operator')
+temp16 = C.CreateSession 
+temp17 = ['Backup Operator'] 
+temp18 = set(temp17) 
+temp16('mickg', 'Adder Session', temp18)
+temp19 = C.CreateSession 
+temp20 = ['Restore Operator'] 
+temp21 = set(temp20) 
+temp19('zog', 'Restorer Session', temp21)
+temp22 = C.CheckAccess 
+temp23 = temp22('Adder Session', 'add', 3) 
+print temp23
+temp24 = C.CheckAccess 
+temp25 = temp24('Restorer Session', 'sub', 3) 
+print temp25
+
+Computed CFG!
+ Slicing...
+Adding transition between:
+Const('Backup Operator') CallFunc(Name('temp10'), [Const('add'), Const(3), Const('Backup Operator')], None, None)
+Stmt([Assign([AssName('temp83', 'OP_ASSIGN')], Getattr(Name('self'), 'OPS')), Assign([AssName('temp84', 'OP_ASSIGN')], Compare(Name('operation'), [('in', Name('temp83'))])), Assign([AssName('temp85', 'OP_ASSIGN')], Getattr(Name('self'), 'OBJS')), Assign([AssName('temp86', 'OP_ASSIGN')], Compare(Name('object'), [('in', Name('temp85'))])), Assert(And([Name('temp84'), Name('temp86')]), None), Assign([AssName('temp87', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), Assert(Compare(Name('role'), [('in', Name('temp87'))]), None), Assign([AssName('temp88', 'OP_ASSIGN')], Tuple([Name('operation'), Name('object')])), Assign([AssName('temp89', 'OP_ASSIGN')], Tuple([Name('temp88'), Name('role')])), Assign([AssName('temp90', 'OP_ASSIGN')], Getattr(Name('self'), 'PR')), Assert(Compare(Name('temp89'), [('not in', Name('temp90'))]), None), Assign([AssName('temp91', 'OP_ASSIGN')], Getattr(Name('self'), 'PR')), Assign([AssName('temp92', 'OP_ASSIGN')], Getattr(Name('temp91'), 'add')), Assign([AssName('temp93', 'OP_ASSIGN')], Tuple([Name('operation'), Name('object')])), Assign([AssName('temp94', 'OP_ASSIGN')], Tuple([Name('temp93'), Name('role')])), Discard(CallFunc(Name('temp92'), [Name('temp94')], None, None))])
+Adding transition between:
+Const('Restore Operator') CallFunc(Name('temp9'), [Const('add'), Const(2), Const('Restore Operator')], None, None)
+Stmt([Assign([AssName('temp83', 'OP_ASSIGN')], Getattr(Name('self'), 'OPS')), Assign([AssName('temp84', 'OP_ASSIGN')], Compare(Name('operation'), [('in', Name('temp83'))])), Assign([AssName('temp85', 'OP_ASSIGN')], Getattr(Name('self'), 'OBJS')), Assign([AssName('temp86', 'OP_ASSIGN')], Compare(Name('object'), [('in', Name('temp85'))])), Assert(And([Name('temp84'), Name('temp86')]), None), Assign([AssName('temp87', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), Assert(Compare(Name('role'), [('in', Name('temp87'))]), None), Assign([AssName('temp88', 'OP_ASSIGN')], Tuple([Name('operation'), Name('object')])), Assign([AssName('temp89', 'OP_ASSIGN')], Tuple([Name('temp88'), Name('role')])), Assign([AssName('temp90', 'OP_ASSIGN')], Getattr(Name('self'), 'PR')), Assert(Compare(Name('temp89'), [('not in', Name('temp90'))]), None), Assign([AssName('temp91', 'OP_ASSIGN')], Getattr(Name('self'), 'PR')), Assign([AssName('temp92', 'OP_ASSIGN')], Getattr(Name('temp91'), 'add')), Assign([AssName('temp93', 'OP_ASSIGN')], Tuple([Name('operation'), Name('object')])), Assign([AssName('temp94', 'OP_ASSIGN')], Tuple([Name('temp93'), Name('role')])), Discard(CallFunc(Name('temp92'), [Name('temp94')], None, None))])
+Adding transition between:
+Return(Name('temp206')) Stmt([Assign([AssName('temp200', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), Assert(Compare(Name('user'), [('in', Name('temp200'))]), None), Assign([AssName('temp201', 'OP_ASSIGN')], List(())), Assign([AssName('temp204', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), For(AssName('r', 'OP_ASSIGN'), Name('temp204'), Stmt([Assign([AssName('temp202', 'OP_ASSIGN')], Tuple([Name('user'), Name('r')])), Assign([AssName('temp203', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), If([(Compare(Name('temp202'), [('in', Name('temp203'))]), Stmt([Discard(CallFunc(Getattr(Name('temp201'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp205', 'OP_ASSIGN')], Name('temp201')), Assign([AssName('temp206', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp205')], None, None)), Return(Name('temp206'))])
+AssName('temp123', 'OP_ASSIGN')
+Adding transition between:
+Const('Restore Operator') CallFunc(Name('temp14'), [Const('mickg'), Const('Restore Operator')], None, None)
+Stmt([Assign([AssName('temp298', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), Assert(Compare(Name('user'), [('in', Name('temp298'))]), None), Assign([AssName('temp299', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), Assert(Compare(Name('role'), [('in', Name('temp299'))]), None), Assign([AssName('temp300', 'OP_ASSIGN')], Tuple([Name('user'), Name('role')])), Assign([AssName('temp301', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), Assert(Compare(Name('temp300'), [('not in', Name('temp301'))]), None), Assign([AssName('temp302', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), Assign([AssName('temp303', 'OP_ASSIGN')], Getattr(Name('temp302'), 'add')), Assign([AssName('temp304', 'OP_ASSIGN')], Tuple([Name('user'), Name('role')])), Discard(CallFunc(Name('temp303'), [Name('temp304')], None, None)), Assign([AssName('temp305', 'OP_ASSIGN')], Getattr(Name('self'), 'checkSSD')), Discard(CallFunc(Name('temp305'), [], None, None))])
+Adding transition between:
+Const('zog') CallFunc(Name('temp1'), [Const('zog')], None, None)
+Stmt([Assign([AssName('temp19', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), Assert(Compare(Name('user'), [('not in', Name('temp19'))]), None), Assign([AssName('temp20', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), Assign([AssName('temp21', 'OP_ASSIGN')], Getattr(Name('temp20'), 'add')), Discard(CallFunc(Name('temp21'), [Name('user')], None, None))])
+Adding transition between:
+Name('role') CallFunc(Name('temp38'), [Name('role')], None, None)
+Assign([AssName('temp3', 'OP_ASSIGN')], Getattr(Name('C'), 'AddRole'))
+Adding transition between:
+Name('role') CallFunc(Name('temp38'), [Name('role')], None, None)
+Assign([AssName('temp4', 'OP_ASSIGN')], Getattr(Name('C'), 'AddRole'))
+Adding transition between:
+Name('role') CallFunc(Name('temp38'), [Name('role')], None, None)
+Assign([AssName('temp5', 'OP_ASSIGN')], Getattr(Name('C'), 'AddObject'))
+Adding transition between:
+Const('Restore Operator') CallFunc(Name('temp3'), [Const('Restore Operator')], None, None)
+Stmt([Assign([AssName('temp36', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), Assert(Compare(Name('role'), [('not in', Name('temp36'))]), None), Assign([AssName('temp37', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), Assign([AssName('temp38', 'OP_ASSIGN')], Getattr(Name('temp37'), 'add')), Discard(CallFunc(Name('temp38'), [Name('role')], None, None))])
+Adding transition between:
+Const(3) CallFunc(Name('temp5'), [Const(3)], None, None)
+Stmt([Assign([AssName('temp279', 'OP_ASSIGN')], Getattr(Name('self'), 'OBJS')), Assign([AssName('temp280', 'OP_ASSIGN')], Getattr(Name('temp279'), 'add')), Discard(CallFunc(Name('temp280'), [Name('OBJ')], None, None))])
+Adding transition between:
+Const('Backup Operator') CallFunc(Name('temp12'), [Const('sub'), Const(2), Const('Backup Operator')], None, None)
+Stmt([Assign([AssName('temp83', 'OP_ASSIGN')], Getattr(Name('self'), 'OPS')), Assign([AssName('temp84', 'OP_ASSIGN')], Compare(Name('operation'), [('in', Name('temp83'))])), Assign([AssName('temp85', 'OP_ASSIGN')], Getattr(Name('self'), 'OBJS')), Assign([AssName('temp86', 'OP_ASSIGN')], Compare(Name('object'), [('in', Name('temp85'))])), Assert(And([Name('temp84'), Name('temp86')]), None), Assign([AssName('temp87', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), Assert(Compare(Name('role'), [('in', Name('temp87'))]), None), Assign([AssName('temp88', 'OP_ASSIGN')], Tuple([Name('operation'), Name('object')])), Assign([AssName('temp89', 'OP_ASSIGN')], Tuple([Name('temp88'), Name('role')])), Assign([AssName('temp90', 'OP_ASSIGN')], Getattr(Name('self'), 'PR')), Assert(Compare(Name('temp89'), [('not in', Name('temp90'))]), None), Assign([AssName('temp91', 'OP_ASSIGN')], Getattr(Name('self'), 'PR')), Assign([AssName('temp92', 'OP_ASSIGN')], Getattr(Name('temp91'), 'add')), Assign([AssName('temp93', 'OP_ASSIGN')], Tuple([Name('operation'), Name('object')])), Assign([AssName('temp94', 'OP_ASSIGN')], Tuple([Name('temp93'), Name('role')])), Discard(CallFunc(Name('temp92'), [Name('temp94')], None, None))])
+Adding transition between:
+Const('add') CallFunc(Name('temp7'), [Const('add')], None, None)
+Stmt([Assign([AssName('temp277', 'OP_ASSIGN')], Getattr(Name('self'), 'OPS')), Assign([AssName('temp278', 'OP_ASSIGN')], Getattr(Name('temp277'), 'add')), Discard(CallFunc(Name('temp278'), [Name('operation')], None, None))])
+Adding transition between:
+Return(Name('temp448')) Stmt([Assign([AssName('temp432', 'OP_ASSIGN')], List(())), Assign([AssName('temp445', 'OP_ASSIGN')], Getattr(Name('self'), 'SESSIONS')), For(AssName('s', 'OP_ASSIGN'), Name('temp445'), Stmt([Assign([AssName('temp444', 'OP_ASSIGN')], Getattr(Name('self'), 'DsdNC')), For(AssTuple([AssName('name', 'OP_ASSIGN'), AssName('c', 'OP_ASSIGN')]), Name('temp444'), Stmt([Assign([AssName('temp433', 'OP_ASSIGN')], List(())), Assign([AssName('temp436', 'OP_ASSIGN')], List(())), Assign([AssName('temp439', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), For(AssName('r', 'OP_ASSIGN'), Name('temp439'), Stmt([Assign([AssName('temp437', 'OP_ASSIGN')], Tuple([Name('s'), Name('r')])), Assign([AssName('temp438', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), If([(Compare(Name('temp437'), [('in', Name('temp438'))]), Stmt([Discard(CallFunc(Getattr(Name('temp436'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp440', 'OP_ASSIGN')], Name('temp436')), For(AssName('r', 'OP_ASSIGN'), CallFunc(Name('set'), [Name('temp440')], None, None), Stmt([Assign([AssName('temp434', 'OP_ASSIGN')], Tuple([Name('name'), Name('r')])), Assign([AssName('temp435', 'OP_ASSIGN')], Getattr(Name('self'), 'DsdNR')), If([(Compare(Name('temp434'), [('in', Name('temp435'))]), Stmt([Discard(CallFunc(Getattr(Name('temp433'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp441', 'OP_ASSIGN')], Name('temp433')), Assign([AssName('temp442', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp441')], None, None)), Assign([AssName('temp443', 'OP_ASSIGN')], CallFunc(Name('len'), [Name('temp442')], None, None)), If([(Compare(Name('temp443'), [('>', Name('c'))]), Stmt([Discard(CallFunc(Getattr(Name('temp432'), 'append'), [Name('s')], None, None))]))], None)]), None)]), None), Assign([AssName('temp446', 'OP_ASSIGN')], Name('temp432')), Assign([AssName('temp447', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp446')], None, None)), Assign([AssName('temp448', 'OP_ASSIGN')], Not(Name('temp447'))), Return(Name('temp448'))])
+AssName('good', 'OP_ASSIGN')
+Adding transition between:
+Name('temp115') CallFunc(Name('temp115'), [], None, None)
+Stmt([Assign([AssName('temp432', 'OP_ASSIGN')], List(())), Assign([AssName('temp445', 'OP_ASSIGN')], Getattr(Name('self'), 'SESSIONS')), For(AssName('s', 'OP_ASSIGN'), Name('temp445'), Stmt([Assign([AssName('temp444', 'OP_ASSIGN')], Getattr(Name('self'), 'DsdNC')), For(AssTuple([AssName('name', 'OP_ASSIGN'), AssName('c', 'OP_ASSIGN')]), Name('temp444'), Stmt([Assign([AssName('temp433', 'OP_ASSIGN')], List(())), Assign([AssName('temp436', 'OP_ASSIGN')], List(())), Assign([AssName('temp439', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), For(AssName('r', 'OP_ASSIGN'), Name('temp439'), Stmt([Assign([AssName('temp437', 'OP_ASSIGN')], Tuple([Name('s'), Name('r')])), Assign([AssName('temp438', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), If([(Compare(Name('temp437'), [('in', Name('temp438'))]), Stmt([Discard(CallFunc(Getattr(Name('temp436'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp440', 'OP_ASSIGN')], Name('temp436')), For(AssName('r', 'OP_ASSIGN'), CallFunc(Name('set'), [Name('temp440')], None, None), Stmt([Assign([AssName('temp434', 'OP_ASSIGN')], Tuple([Name('name'), Name('r')])), Assign([AssName('temp435', 'OP_ASSIGN')], Getattr(Name('self'), 'DsdNR')), If([(Compare(Name('temp434'), [('in', Name('temp435'))]), Stmt([Discard(CallFunc(Getattr(Name('temp433'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp441', 'OP_ASSIGN')], Name('temp433')), Assign([AssName('temp442', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp441')], None, None)), Assign([AssName('temp443', 'OP_ASSIGN')], CallFunc(Name('len'), [Name('temp442')], None, None)), If([(Compare(Name('temp443'), [('>', Name('c'))]), Stmt([Discard(CallFunc(Getattr(Name('temp432'), 'append'), [Name('s')], None, None))]))], None)]), None)]), None), Assign([AssName('temp446', 'OP_ASSIGN')], Name('temp432')), Assign([AssName('temp447', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp446')], None, None)), Assign([AssName('temp448', 'OP_ASSIGN')], Not(Name('temp447'))), Return(Name('temp448'))])
+Adding transition between:
+Name('coreRBAC') CallFunc(Name('coreRBAC'), [], None, None)
+Stmt([Assign([AssAttr(Name('self'), 'OBJS', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), Assign([AssAttr(Name('self'), 'OPS', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), Assign([AssAttr(Name('self'), 'USERS', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), Assign([AssAttr(Name('self'), 'ROLES', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), Assign([AssAttr(Name('self'), 'PR', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), Assign([AssAttr(Name('self'), 'UR', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), Assign([AssAttr(Name('self'), 'SESSIONS', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), Assign([AssAttr(Name('self'), 'SU', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), Assign([AssAttr(Name('self'), 'SR', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), Assign([AssAttr(Name('self'), 'SsdNAMES', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), Assign([AssAttr(Name('self'), 'SsdNR', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), Assign([AssAttr(Name('self'), 'SsdNC', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), Assign([AssAttr(Name('self'), 'DsdNAMES', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), Assign([AssAttr(Name('self'), 'DsdNR', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), Assign([AssAttr(Name('self'), 'DsdNC', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None))])
+Adding transition between:
+Name('temp18') CallFunc(Name('temp16'), [Const('mickg'), Const('Adder Session'), Name('temp18')], None, None)
+Stmt([Assign([AssName('added', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), For(AssName('role', 'OP_ASSIGN'), Name('ars'), Stmt([Assign([AssName('temp107', 'OP_ASSIGN')], Tuple([Name('session'), Name('role')])), Assign([AssName('temp108', 'OP_ASSIGN')], Getattr(Name('self'), 'SR')), Assign([AssName('temp114', 'OP_ASSIGN')], Compare(Name('temp107'), [('not in', Name('temp108'))])), If([(Name('temp114'), Stmt([Assign([AssName('temp109', 'OP_ASSIGN')], Getattr(Name('self'), 'SR')), Assign([AssName('temp110', 'OP_ASSIGN')], Getattr(Name('temp109'), 'add')), Assign([AssName('temp111', 'OP_ASSIGN')], Tuple([Name('session'), Name('role')])), Discard(CallFunc(Name('temp110'), [Name('temp111')], None, None)), Assign([AssName('temp112', 'OP_ASSIGN')], Getattr(Name('added'), 'add')), Assign([AssName('temp113', 'OP_ASSIGN')], Tuple([Name('session'), Name('role')])), Discard(CallFunc(Name('temp112'), [Name('temp113')], None, None))]))], None)]), None), Assign([AssName('temp115', 'OP_ASSIGN')], Getattr(Name('self'), 'checkDSD')), Assign([AssName('good', 'OP_ASSIGN')], CallFunc(Name('temp115'), [], None, None)), For(AssName('k', 'OP_ASSIGN'), Name('added'), Stmt([Assign([AssName('temp116', 'OP_ASSIGN')], Getattr(Name('self'), 'SR')), Assign([AssName('temp117', 'OP_ASSIGN')], Getattr(Name('temp116'), 'remove')), Assign([AssName('temp118', 'OP_ASSIGN')], Tuple([Subscript(Name('k'), 'OP_APPLY', [Const(0)]), Subscript(Name('k'), 'OP_APPLY', [Const(1)])])), Discard(CallFunc(Name('temp117'), [Name('temp118')], None, None))]), None), Assert(Name('good'), None), Assign([AssName('temp119', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), Assert(Compare(Name('user'), [('in', Name('temp119'))]), None), Assign([AssName('temp120', 'OP_ASSIGN')], Getattr(Name('self'), 'SESSIONS')), Assert(Compare(Name('session'), [('not in', Name('temp120'))]), None), Assign([AssName('temp121', 'OP_ASSIGN')], Getattr(Name('ars'), 'issubset')), Assign([AssName('temp122', 'OP_ASSIGN')], Getattr(Name('self'), 'AssignedRoles')), Assign([AssName('temp123', 'OP_ASSIGN')], CallFunc(Name('temp122'), [Name('user')], None, None)), Assert(CallFunc(Name('temp121'), [Name('temp123')], None, None), None), Assign([AssName('temp124', 'OP_ASSIGN')], Getattr(Name('self'), 'SU')), Assign([AssName('temp125', 'OP_ASSIGN')], Getattr(Name('temp124'), 'add')), Assign([AssName('temp126', 'OP_ASSIGN')], Tuple([Name('session'), Name('user')])), Discard(CallFunc(Name('temp125'), [Name('temp126')], None, None)), For(AssName('r', 'OP_ASSIGN'), Name('ars'), Stmt([Assign([AssName('temp127', 'OP_ASSIGN')], Getattr(Name('self'), 'SR')), Assign([AssName('temp128', 'OP_ASSIGN')], Getattr(Name('temp127'), 'add')), Assign([AssName('temp129', 'OP_ASSIGN')], Tuple([Name('session'), Name('r')])), Discard(CallFunc(Name('temp128'), [Name('temp129')], None, None))]), None), Assign([AssName('temp130', 'OP_ASSIGN')], Getattr(Name('self'), 'SESSIONS')), Assign([AssName('temp131', 'OP_ASSIGN')], Getattr(Name('temp130'), 'add')), Discard(CallFunc(Name('temp131'), [Name('session')], None, None))])
+Adding transition between:
+Name('user') CallFunc(Name('temp122'), [Name('user')], None, None)
+Stmt([Assign([AssName('temp200', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), Assert(Compare(Name('user'), [('in', Name('temp200'))]), None), Assign([AssName('temp201', 'OP_ASSIGN')], List(())), Assign([AssName('temp204', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), For(AssName('r', 'OP_ASSIGN'), Name('temp204'), Stmt([Assign([AssName('temp202', 'OP_ASSIGN')], Tuple([Name('user'), Name('r')])), Assign([AssName('temp203', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), If([(Compare(Name('temp202'), [('in', Name('temp203'))]), Stmt([Discard(CallFunc(Getattr(Name('temp201'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp205', 'OP_ASSIGN')], Name('temp201')), Assign([AssName('temp206', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp205')], None, None)), Return(Name('temp206'))])
+Adding transition between:
+Name('temp192') Return(Name('temp192'))
+AssName('temp23', 'OP_ASSIGN')
+Adding transition between:
+Name('temp192') Return(Name('temp192'))
+AssName('temp25', 'OP_ASSIGN')
+Adding transition between:
+Name('user') CallFunc(Name('temp21'), [Name('user')], None, None)
+Assign([AssName('temp1', 'OP_ASSIGN')], Getattr(Name('C'), 'AddUser'))
+Adding transition between:
+Name('user') CallFunc(Name('temp21'), [Name('user')], None, None)
+Assign([AssName('temp2', 'OP_ASSIGN')], Getattr(Name('C'), 'AddRole'))
+Adding transition between:
+Name('temp297') Return(Name('temp297'))
+Stmt([Assign([AssName('temp298', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), Assert(Compare(Name('user'), [('in', Name('temp298'))]), None), Assign([AssName('temp299', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), Assert(Compare(Name('role'), [('in', Name('temp299'))]), None), Assign([AssName('temp300', 'OP_ASSIGN')], Tuple([Name('user'), Name('role')])), Assign([AssName('temp301', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), Assert(Compare(Name('temp300'), [('not in', Name('temp301'))]), None), Assign([AssName('temp302', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), Assign([AssName('temp303', 'OP_ASSIGN')], Getattr(Name('temp302'), 'add')), Assign([AssName('temp304', 'OP_ASSIGN')], Tuple([Name('user'), Name('role')])), Discard(CallFunc(Name('temp303'), [Name('temp304')], None, None)), Assign([AssName('temp305', 'OP_ASSIGN')], Getattr(Name('self'), 'checkSSD')), Discard(CallFunc(Name('temp305'), [], None, None))])
+Adding transition between:
+Name('temp297') Return(Name('temp297'))
+Assign([AssName('temp14', 'OP_ASSIGN')], Getattr(Name('C'), 'AssignUser'))
+Adding transition between:
+Name('temp297') Return(Name('temp297'))
+Assign([AssName('temp15', 'OP_ASSIGN')], Getattr(Name('C'), 'AssignUser'))
+Adding transition between:
+Name('temp297') Return(Name('temp297'))
+Assign([AssName('temp16', 'OP_ASSIGN')], Getattr(Name('C'), 'CreateSession'))
+Adding transition between:
+Const(3) CallFunc(Name('temp22'), [Const('Adder Session'), Const('add'), Const(3)], None, None)
+Stmt([Assign([AssName('temp179', 'OP_ASSIGN')], Getattr(Name('self'), 'SESSIONS')), Assert(Compare(Name('session'), [('in', Name('temp179'))]), None), Assign([AssName('temp180', 'OP_ASSIGN')], Getattr(Name('self'), 'OPS')), Assert(Compare(Name('operation'), [('in', Name('temp180'))]), None), Assign([AssName('temp181', 'OP_ASSIGN')], Getattr(Name('self'), 'OBJS')), Assert(Compare(Name('object'), [('in', Name('temp181'))]), None), Assign([AssName('temp182', 'OP_ASSIGN')], List(())), Assign([AssName('temp190', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), For(AssName('r', 'OP_ASSIGN'), Name('temp190'), Stmt([Assign([AssName('temp183', 'OP_ASSIGN')], Tuple([Name('session'), Name('r')])), Assign([AssName('temp184', 'OP_ASSIGN')], Getattr(Name('self'), 'SR')), Assign([AssName('temp185', 'OP_ASSIGN')], Compare(Name('temp183'), [('in', Name('temp184'))])), Assign([AssName('temp186', 'OP_ASSIGN')], Tuple([Name('operation'), Name('object')])), Assign([AssName('temp187', 'OP_ASSIGN')], Tuple([Name('temp186'), Name('r')])), Assign([AssName('temp188', 'OP_ASSIGN')], Getattr(Name('self'), 'PR')), Assign([AssName('temp189', 'OP_ASSIGN')], Compare(Name('temp187'), [('in', Name('temp188'))])), If([(And([Name('temp185'), Name('temp189')]), Stmt([Discard(CallFunc(Getattr(Name('temp182'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp191', 'OP_ASSIGN')], Name('temp182')), Assign([AssName('temp192', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp191')], None, None)), Return(Name('temp192'))])
+Adding transition between:
+Const('Restore Operator') CallFunc(Name('temp15'), [Const('zog'), Const('Restore Operator')], None, None)
+Stmt([Assign([AssName('temp298', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), Assert(Compare(Name('user'), [('in', Name('temp298'))]), None), Assign([AssName('temp299', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), Assert(Compare(Name('role'), [('in', Name('temp299'))]), None), Assign([AssName('temp300', 'OP_ASSIGN')], Tuple([Name('user'), Name('role')])), Assign([AssName('temp301', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), Assert(Compare(Name('temp300'), [('not in', Name('temp301'))]), None), Assign([AssName('temp302', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), Assign([AssName('temp303', 'OP_ASSIGN')], Getattr(Name('temp302'), 'add')), Assign([AssName('temp304', 'OP_ASSIGN')], Tuple([Name('user'), Name('role')])), Discard(CallFunc(Name('temp303'), [Name('temp304')], None, None)), Assign([AssName('temp305', 'OP_ASSIGN')], Getattr(Name('self'), 'checkSSD')), Discard(CallFunc(Name('temp305'), [], None, None))])
+Adding transition between:
+Name('self') AssAttr(Name('self'), 'DsdNC', 'OP_ASSIGN')
+AssName('C', 'OP_ASSIGN')
+Adding transition between:
+Const('mickg') CallFunc(Name('temp0'), [Const('mickg')], None, None)
+Stmt([Assign([AssName('temp19', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), Assert(Compare(Name('user'), [('not in', Name('temp19'))]), None), Assign([AssName('temp20', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), Assign([AssName('temp21', 'OP_ASSIGN')], Getattr(Name('temp20'), 'add')), Discard(CallFunc(Name('temp21'), [Name('user')], None, None))])
+Adding transition between:
+Const(3) CallFunc(Name('temp24'), [Const('Restorer Session'), Const('sub'), Const(3)], None, None)
+Stmt([Assign([AssName('temp179', 'OP_ASSIGN')], Getattr(Name('self'), 'SESSIONS')), Assert(Compare(Name('session'), [('in', Name('temp179'))]), None), Assign([AssName('temp180', 'OP_ASSIGN')], Getattr(Name('self'), 'OPS')), Assert(Compare(Name('operation'), [('in', Name('temp180'))]), None), Assign([AssName('temp181', 'OP_ASSIGN')], Getattr(Name('self'), 'OBJS')), Assert(Compare(Name('object'), [('in', Name('temp181'))]), None), Assign([AssName('temp182', 'OP_ASSIGN')], List(())), Assign([AssName('temp190', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), For(AssName('r', 'OP_ASSIGN'), Name('temp190'), Stmt([Assign([AssName('temp183', 'OP_ASSIGN')], Tuple([Name('session'), Name('r')])), Assign([AssName('temp184', 'OP_ASSIGN')], Getattr(Name('self'), 'SR')), Assign([AssName('temp185', 'OP_ASSIGN')], Compare(Name('temp183'), [('in', Name('temp184'))])), Assign([AssName('temp186', 'OP_ASSIGN')], Tuple([Name('operation'), Name('object')])), Assign([AssName('temp187', 'OP_ASSIGN')], Tuple([Name('temp186'), Name('r')])), Assign([AssName('temp188', 'OP_ASSIGN')], Getattr(Name('self'), 'PR')), Assign([AssName('temp189', 'OP_ASSIGN')], Compare(Name('temp187'), [('in', Name('temp188'))])), If([(And([Name('temp185'), Name('temp189')]), Stmt([Discard(CallFunc(Getattr(Name('temp182'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp191', 'OP_ASSIGN')], Name('temp182')), Assign([AssName('temp192', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp191')], None, None)), Return(Name('temp192'))])
+Adding transition between:
+Const('Backup Operator') CallFunc(Name('temp2'), [Const('Backup Operator')], None, None)
+Stmt([Assign([AssName('temp36', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), Assert(Compare(Name('role'), [('not in', Name('temp36'))]), None), Assign([AssName('temp37', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), Assign([AssName('temp38', 'OP_ASSIGN')], Getattr(Name('temp37'), 'add')), Discard(CallFunc(Name('temp38'), [Name('role')], None, None))])
+Adding transition between:
+Const('Grr') CallFunc(Name('temp4'), [Const('Grr')], None, None)
+Stmt([Assign([AssName('temp36', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), Assert(Compare(Name('role'), [('not in', Name('temp36'))]), None), Assign([AssName('temp37', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), Assign([AssName('temp38', 'OP_ASSIGN')], Getattr(Name('temp37'), 'add')), Discard(CallFunc(Name('temp38'), [Name('role')], None, None))])
+Adding transition between:
+Const(2) CallFunc(Name('temp6'), [Const(2)], None, None)
+Stmt([Assign([AssName('temp279', 'OP_ASSIGN')], Getattr(Name('self'), 'OBJS')), Assign([AssName('temp280', 'OP_ASSIGN')], Getattr(Name('temp279'), 'add')), Discard(CallFunc(Name('temp280'), [Name('OBJ')], None, None))])
+Adding transition between:
+Const('Backup Operator') CallFunc(Name('temp13'), [Const('mickg'), Const('Backup Operator')], None, None)
+Stmt([Assign([AssName('temp298', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), Assert(Compare(Name('user'), [('in', Name('temp298'))]), None), Assign([AssName('temp299', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), Assert(Compare(Name('role'), [('in', Name('temp299'))]), None), Assign([AssName('temp300', 'OP_ASSIGN')], Tuple([Name('user'), Name('role')])), Assign([AssName('temp301', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), Assert(Compare(Name('temp300'), [('not in', Name('temp301'))]), None), Assign([AssName('temp302', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), Assign([AssName('temp303', 'OP_ASSIGN')], Getattr(Name('temp302'), 'add')), Assign([AssName('temp304', 'OP_ASSIGN')], Tuple([Name('user'), Name('role')])), Discard(CallFunc(Name('temp303'), [Name('temp304')], None, None)), Assign([AssName('temp305', 'OP_ASSIGN')], Getattr(Name('self'), 'checkSSD')), Discard(CallFunc(Name('temp305'), [], None, None))])
+Adding transition between:
+Const('sub') CallFunc(Name('temp8'), [Const('sub')], None, None)
+Stmt([Assign([AssName('temp277', 'OP_ASSIGN')], Getattr(Name('self'), 'OPS')), Assign([AssName('temp278', 'OP_ASSIGN')], Getattr(Name('temp277'), 'add')), Discard(CallFunc(Name('temp278'), [Name('operation')], None, None))])
+Adding transition between:
+Name('temp21') CallFunc(Name('temp19'), [Const('zog'), Const('Restorer Session'), Name('temp21')], None, None)
+Stmt([Assign([AssName('added', 'OP_ASSIGN')], CallFunc(Name('set'), [], None, None)), For(AssName('role', 'OP_ASSIGN'), Name('ars'), Stmt([Assign([AssName('temp107', 'OP_ASSIGN')], Tuple([Name('session'), Name('role')])), Assign([AssName('temp108', 'OP_ASSIGN')], Getattr(Name('self'), 'SR')), Assign([AssName('temp114', 'OP_ASSIGN')], Compare(Name('temp107'), [('not in', Name('temp108'))])), If([(Name('temp114'), Stmt([Assign([AssName('temp109', 'OP_ASSIGN')], Getattr(Name('self'), 'SR')), Assign([AssName('temp110', 'OP_ASSIGN')], Getattr(Name('temp109'), 'add')), Assign([AssName('temp111', 'OP_ASSIGN')], Tuple([Name('session'), Name('role')])), Discard(CallFunc(Name('temp110'), [Name('temp111')], None, None)), Assign([AssName('temp112', 'OP_ASSIGN')], Getattr(Name('added'), 'add')), Assign([AssName('temp113', 'OP_ASSIGN')], Tuple([Name('session'), Name('role')])), Discard(CallFunc(Name('temp112'), [Name('temp113')], None, None))]))], None)]), None), Assign([AssName('temp115', 'OP_ASSIGN')], Getattr(Name('self'), 'checkDSD')), Assign([AssName('good', 'OP_ASSIGN')], CallFunc(Name('temp115'), [], None, None)), For(AssName('k', 'OP_ASSIGN'), Name('added'), Stmt([Assign([AssName('temp116', 'OP_ASSIGN')], Getattr(Name('self'), 'SR')), Assign([AssName('temp117', 'OP_ASSIGN')], Getattr(Name('temp116'), 'remove')), Assign([AssName('temp118', 'OP_ASSIGN')], Tuple([Subscript(Name('k'), 'OP_APPLY', [Const(0)]), Subscript(Name('k'), 'OP_APPLY', [Const(1)])])), Discard(CallFunc(Name('temp117'), [Name('temp118')], None, None))]), None), Assert(Name('good'), None), Assign([AssName('temp119', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), Assert(Compare(Name('user'), [('in', Name('temp119'))]), None), Assign([AssName('temp120', 'OP_ASSIGN')], Getattr(Name('self'), 'SESSIONS')), Assert(Compare(Name('session'), [('not in', Name('temp120'))]), None), Assign([AssName('temp121', 'OP_ASSIGN')], Getattr(Name('ars'), 'issubset')), Assign([AssName('temp122', 'OP_ASSIGN')], Getattr(Name('self'), 'AssignedRoles')), Assign([AssName('temp123', 'OP_ASSIGN')], CallFunc(Name('temp122'), [Name('user')], None, None)), Assert(CallFunc(Name('temp121'), [Name('temp123')], None, None), None), Assign([AssName('temp124', 'OP_ASSIGN')], Getattr(Name('self'), 'SU')), Assign([AssName('temp125', 'OP_ASSIGN')], Getattr(Name('temp124'), 'add')), Assign([AssName('temp126', 'OP_ASSIGN')], Tuple([Name('session'), Name('user')])), Discard(CallFunc(Name('temp125'), [Name('temp126')], None, None)), For(AssName('r', 'OP_ASSIGN'), Name('ars'), Stmt([Assign([AssName('temp127', 'OP_ASSIGN')], Getattr(Name('self'), 'SR')), Assign([AssName('temp128', 'OP_ASSIGN')], Getattr(Name('temp127'), 'add')), Assign([AssName('temp129', 'OP_ASSIGN')], Tuple([Name('session'), Name('r')])), Discard(CallFunc(Name('temp128'), [Name('temp129')], None, None))]), None), Assign([AssName('temp130', 'OP_ASSIGN')], Getattr(Name('self'), 'SESSIONS')), Assign([AssName('temp131', 'OP_ASSIGN')], Getattr(Name('temp130'), 'add')), Discard(CallFunc(Name('temp131'), [Name('session')], None, None))])
+Adding transition between:
+Name('temp94') CallFunc(Name('temp92'), [Name('temp94')], None, None)
+Assign([AssName('temp10', 'OP_ASSIGN')], Getattr(Name('C'), 'GrantPermission'))
+Adding transition between:
+Name('temp94') CallFunc(Name('temp92'), [Name('temp94')], None, None)
+Assign([AssName('temp11', 'OP_ASSIGN')], Getattr(Name('C'), 'GrantPermission'))
+Adding transition between:
+Name('temp94') CallFunc(Name('temp92'), [Name('temp94')], None, None)
+Assign([AssName('temp13', 'OP_ASSIGN')], Getattr(Name('C'), 'AssignUser'))
+Adding transition between:
+Name('temp94') CallFunc(Name('temp92'), [Name('temp94')], None, None)
+Assign([AssName('temp12', 'OP_ASSIGN')], Getattr(Name('C'), 'GrantPermission'))
+Adding transition between:
+Return(Name('temp192')) Stmt([Assign([AssName('temp179', 'OP_ASSIGN')], Getattr(Name('self'), 'SESSIONS')), Assert(Compare(Name('session'), [('in', Name('temp179'))]), None), Assign([AssName('temp180', 'OP_ASSIGN')], Getattr(Name('self'), 'OPS')), Assert(Compare(Name('operation'), [('in', Name('temp180'))]), None), Assign([AssName('temp181', 'OP_ASSIGN')], Getattr(Name('self'), 'OBJS')), Assert(Compare(Name('object'), [('in', Name('temp181'))]), None), Assign([AssName('temp182', 'OP_ASSIGN')], List(())), Assign([AssName('temp190', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), For(AssName('r', 'OP_ASSIGN'), Name('temp190'), Stmt([Assign([AssName('temp183', 'OP_ASSIGN')], Tuple([Name('session'), Name('r')])), Assign([AssName('temp184', 'OP_ASSIGN')], Getattr(Name('self'), 'SR')), Assign([AssName('temp185', 'OP_ASSIGN')], Compare(Name('temp183'), [('in', Name('temp184'))])), Assign([AssName('temp186', 'OP_ASSIGN')], Tuple([Name('operation'), Name('object')])), Assign([AssName('temp187', 'OP_ASSIGN')], Tuple([Name('temp186'), Name('r')])), Assign([AssName('temp188', 'OP_ASSIGN')], Getattr(Name('self'), 'PR')), Assign([AssName('temp189', 'OP_ASSIGN')], Compare(Name('temp187'), [('in', Name('temp188'))])), If([(And([Name('temp185'), Name('temp189')]), Stmt([Discard(CallFunc(Getattr(Name('temp182'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp191', 'OP_ASSIGN')], Name('temp182')), Assign([AssName('temp192', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp191')], None, None)), Return(Name('temp192'))])
+AssName('temp23', 'OP_ASSIGN')
+Adding transition between:
+Return(Name('temp192')) Stmt([Assign([AssName('temp179', 'OP_ASSIGN')], Getattr(Name('self'), 'SESSIONS')), Assert(Compare(Name('session'), [('in', Name('temp179'))]), None), Assign([AssName('temp180', 'OP_ASSIGN')], Getattr(Name('self'), 'OPS')), Assert(Compare(Name('operation'), [('in', Name('temp180'))]), None), Assign([AssName('temp181', 'OP_ASSIGN')], Getattr(Name('self'), 'OBJS')), Assert(Compare(Name('object'), [('in', Name('temp181'))]), None), Assign([AssName('temp182', 'OP_ASSIGN')], List(())), Assign([AssName('temp190', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), For(AssName('r', 'OP_ASSIGN'), Name('temp190'), Stmt([Assign([AssName('temp183', 'OP_ASSIGN')], Tuple([Name('session'), Name('r')])), Assign([AssName('temp184', 'OP_ASSIGN')], Getattr(Name('self'), 'SR')), Assign([AssName('temp185', 'OP_ASSIGN')], Compare(Name('temp183'), [('in', Name('temp184'))])), Assign([AssName('temp186', 'OP_ASSIGN')], Tuple([Name('operation'), Name('object')])), Assign([AssName('temp187', 'OP_ASSIGN')], Tuple([Name('temp186'), Name('r')])), Assign([AssName('temp188', 'OP_ASSIGN')], Getattr(Name('self'), 'PR')), Assign([AssName('temp189', 'OP_ASSIGN')], Compare(Name('temp187'), [('in', Name('temp188'))])), If([(And([Name('temp185'), Name('temp189')]), Stmt([Discard(CallFunc(Getattr(Name('temp182'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp191', 'OP_ASSIGN')], Name('temp182')), Assign([AssName('temp192', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp191')], None, None)), Return(Name('temp192'))])
+AssName('temp25', 'OP_ASSIGN')
+Adding transition between:
+Const('Restore Operator') CallFunc(Name('temp11'), [Const('add'), Const(3), Const('Restore Operator')], None, None)
+Stmt([Assign([AssName('temp83', 'OP_ASSIGN')], Getattr(Name('self'), 'OPS')), Assign([AssName('temp84', 'OP_ASSIGN')], Compare(Name('operation'), [('in', Name('temp83'))])), Assign([AssName('temp85', 'OP_ASSIGN')], Getattr(Name('self'), 'OBJS')), Assign([AssName('temp86', 'OP_ASSIGN')], Compare(Name('object'), [('in', Name('temp85'))])), Assert(And([Name('temp84'), Name('temp86')]), None), Assign([AssName('temp87', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), Assert(Compare(Name('role'), [('in', Name('temp87'))]), None), Assign([AssName('temp88', 'OP_ASSIGN')], Tuple([Name('operation'), Name('object')])), Assign([AssName('temp89', 'OP_ASSIGN')], Tuple([Name('temp88'), Name('role')])), Assign([AssName('temp90', 'OP_ASSIGN')], Getattr(Name('self'), 'PR')), Assert(Compare(Name('temp89'), [('not in', Name('temp90'))]), None), Assign([AssName('temp91', 'OP_ASSIGN')], Getattr(Name('self'), 'PR')), Assign([AssName('temp92', 'OP_ASSIGN')], Getattr(Name('temp91'), 'add')), Assign([AssName('temp93', 'OP_ASSIGN')], Tuple([Name('operation'), Name('object')])), Assign([AssName('temp94', 'OP_ASSIGN')], Tuple([Name('temp93'), Name('role')])), Discard(CallFunc(Name('temp92'), [Name('temp94')], None, None))])
+Adding transition between:
+Return(Name('temp297')) Stmt([Assign([AssName('temp281', 'OP_ASSIGN')], List(())), Assign([AssName('temp294', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), For(AssName('u', 'OP_ASSIGN'), Name('temp294'), Stmt([Assign([AssName('temp293', 'OP_ASSIGN')], Getattr(Name('self'), 'SsdNC')), For(AssTuple([AssName('name', 'OP_ASSIGN'), AssName('c', 'OP_ASSIGN')]), Name('temp293'), Stmt([Assign([AssName('temp282', 'OP_ASSIGN')], List(())), Assign([AssName('temp285', 'OP_ASSIGN')], List(())), Assign([AssName('temp288', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), For(AssName('r', 'OP_ASSIGN'), Name('temp288'), Stmt([Assign([AssName('temp286', 'OP_ASSIGN')], Tuple([Name('u'), Name('r')])), Assign([AssName('temp287', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), If([(Compare(Name('temp286'), [('in', Name('temp287'))]), Stmt([Discard(CallFunc(Getattr(Name('temp285'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp289', 'OP_ASSIGN')], Name('temp285')), For(AssName('r', 'OP_ASSIGN'), CallFunc(Name('set'), [Name('temp289')], None, None), Stmt([Assign([AssName('temp283', 'OP_ASSIGN')], Tuple([Name('name'), Name('r')])), Assign([AssName('temp284', 'OP_ASSIGN')], Getattr(Name('self'), 'SsdNR')), If([(Compare(Name('temp283'), [('in', Name('temp284'))]), Stmt([Discard(CallFunc(Getattr(Name('temp282'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp290', 'OP_ASSIGN')], Name('temp282')), Assign([AssName('temp291', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp290')], None, None)), Assign([AssName('temp292', 'OP_ASSIGN')], CallFunc(Name('len'), [Name('temp291')], None, None)), If([(Compare(Name('temp292'), [('>', Name('c'))]), Stmt([Discard(CallFunc(Getattr(Name('temp281'), 'append'), [Name('u')], None, None))]))], None)]), None)]), None), Assign([AssName('temp295', 'OP_ASSIGN')], Name('temp281')), Assign([AssName('temp296', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp295')], None, None)), Assign([AssName('temp297', 'OP_ASSIGN')], Not(Name('temp296'))), Return(Name('temp297'))])
+Stmt([Assign([AssName('temp298', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), Assert(Compare(Name('user'), [('in', Name('temp298'))]), None), Assign([AssName('temp299', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), Assert(Compare(Name('role'), [('in', Name('temp299'))]), None), Assign([AssName('temp300', 'OP_ASSIGN')], Tuple([Name('user'), Name('role')])), Assign([AssName('temp301', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), Assert(Compare(Name('temp300'), [('not in', Name('temp301'))]), None), Assign([AssName('temp302', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), Assign([AssName('temp303', 'OP_ASSIGN')], Getattr(Name('temp302'), 'add')), Assign([AssName('temp304', 'OP_ASSIGN')], Tuple([Name('user'), Name('role')])), Discard(CallFunc(Name('temp303'), [Name('temp304')], None, None)), Assign([AssName('temp305', 'OP_ASSIGN')], Getattr(Name('self'), 'checkSSD')), Discard(CallFunc(Name('temp305'), [], None, None))])
+Adding transition between:
+Return(Name('temp297')) Stmt([Assign([AssName('temp281', 'OP_ASSIGN')], List(())), Assign([AssName('temp294', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), For(AssName('u', 'OP_ASSIGN'), Name('temp294'), Stmt([Assign([AssName('temp293', 'OP_ASSIGN')], Getattr(Name('self'), 'SsdNC')), For(AssTuple([AssName('name', 'OP_ASSIGN'), AssName('c', 'OP_ASSIGN')]), Name('temp293'), Stmt([Assign([AssName('temp282', 'OP_ASSIGN')], List(())), Assign([AssName('temp285', 'OP_ASSIGN')], List(())), Assign([AssName('temp288', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), For(AssName('r', 'OP_ASSIGN'), Name('temp288'), Stmt([Assign([AssName('temp286', 'OP_ASSIGN')], Tuple([Name('u'), Name('r')])), Assign([AssName('temp287', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), If([(Compare(Name('temp286'), [('in', Name('temp287'))]), Stmt([Discard(CallFunc(Getattr(Name('temp285'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp289', 'OP_ASSIGN')], Name('temp285')), For(AssName('r', 'OP_ASSIGN'), CallFunc(Name('set'), [Name('temp289')], None, None), Stmt([Assign([AssName('temp283', 'OP_ASSIGN')], Tuple([Name('name'), Name('r')])), Assign([AssName('temp284', 'OP_ASSIGN')], Getattr(Name('self'), 'SsdNR')), If([(Compare(Name('temp283'), [('in', Name('temp284'))]), Stmt([Discard(CallFunc(Getattr(Name('temp282'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp290', 'OP_ASSIGN')], Name('temp282')), Assign([AssName('temp291', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp290')], None, None)), Assign([AssName('temp292', 'OP_ASSIGN')], CallFunc(Name('len'), [Name('temp291')], None, None)), If([(Compare(Name('temp292'), [('>', Name('c'))]), Stmt([Discard(CallFunc(Getattr(Name('temp281'), 'append'), [Name('u')], None, None))]))], None)]), None)]), None), Assign([AssName('temp295', 'OP_ASSIGN')], Name('temp281')), Assign([AssName('temp296', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp295')], None, None)), Assign([AssName('temp297', 'OP_ASSIGN')], Not(Name('temp296'))), Return(Name('temp297'))])
+Assign([AssName('temp15', 'OP_ASSIGN')], Getattr(Name('C'), 'AssignUser'))
+Adding transition between:
+Return(Name('temp297')) Stmt([Assign([AssName('temp281', 'OP_ASSIGN')], List(())), Assign([AssName('temp294', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), For(AssName('u', 'OP_ASSIGN'), Name('temp294'), Stmt([Assign([AssName('temp293', 'OP_ASSIGN')], Getattr(Name('self'), 'SsdNC')), For(AssTuple([AssName('name', 'OP_ASSIGN'), AssName('c', 'OP_ASSIGN')]), Name('temp293'), Stmt([Assign([AssName('temp282', 'OP_ASSIGN')], List(())), Assign([AssName('temp285', 'OP_ASSIGN')], List(())), Assign([AssName('temp288', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), For(AssName('r', 'OP_ASSIGN'), Name('temp288'), Stmt([Assign([AssName('temp286', 'OP_ASSIGN')], Tuple([Name('u'), Name('r')])), Assign([AssName('temp287', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), If([(Compare(Name('temp286'), [('in', Name('temp287'))]), Stmt([Discard(CallFunc(Getattr(Name('temp285'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp289', 'OP_ASSIGN')], Name('temp285')), For(AssName('r', 'OP_ASSIGN'), CallFunc(Name('set'), [Name('temp289')], None, None), Stmt([Assign([AssName('temp283', 'OP_ASSIGN')], Tuple([Name('name'), Name('r')])), Assign([AssName('temp284', 'OP_ASSIGN')], Getattr(Name('self'), 'SsdNR')), If([(Compare(Name('temp283'), [('in', Name('temp284'))]), Stmt([Discard(CallFunc(Getattr(Name('temp282'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp290', 'OP_ASSIGN')], Name('temp282')), Assign([AssName('temp291', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp290')], None, None)), Assign([AssName('temp292', 'OP_ASSIGN')], CallFunc(Name('len'), [Name('temp291')], None, None)), If([(Compare(Name('temp292'), [('>', Name('c'))]), Stmt([Discard(CallFunc(Getattr(Name('temp281'), 'append'), [Name('u')], None, None))]))], None)]), None)]), None), Assign([AssName('temp295', 'OP_ASSIGN')], Name('temp281')), Assign([AssName('temp296', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp295')], None, None)), Assign([AssName('temp297', 'OP_ASSIGN')], Not(Name('temp296'))), Return(Name('temp297'))])
+Assign([AssName('temp16', 'OP_ASSIGN')], Getattr(Name('C'), 'CreateSession'))
+Adding transition between:
+Return(Name('temp297')) Stmt([Assign([AssName('temp281', 'OP_ASSIGN')], List(())), Assign([AssName('temp294', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), For(AssName('u', 'OP_ASSIGN'), Name('temp294'), Stmt([Assign([AssName('temp293', 'OP_ASSIGN')], Getattr(Name('self'), 'SsdNC')), For(AssTuple([AssName('name', 'OP_ASSIGN'), AssName('c', 'OP_ASSIGN')]), Name('temp293'), Stmt([Assign([AssName('temp282', 'OP_ASSIGN')], List(())), Assign([AssName('temp285', 'OP_ASSIGN')], List(())), Assign([AssName('temp288', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), For(AssName('r', 'OP_ASSIGN'), Name('temp288'), Stmt([Assign([AssName('temp286', 'OP_ASSIGN')], Tuple([Name('u'), Name('r')])), Assign([AssName('temp287', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), If([(Compare(Name('temp286'), [('in', Name('temp287'))]), Stmt([Discard(CallFunc(Getattr(Name('temp285'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp289', 'OP_ASSIGN')], Name('temp285')), For(AssName('r', 'OP_ASSIGN'), CallFunc(Name('set'), [Name('temp289')], None, None), Stmt([Assign([AssName('temp283', 'OP_ASSIGN')], Tuple([Name('name'), Name('r')])), Assign([AssName('temp284', 'OP_ASSIGN')], Getattr(Name('self'), 'SsdNR')), If([(Compare(Name('temp283'), [('in', Name('temp284'))]), Stmt([Discard(CallFunc(Getattr(Name('temp282'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp290', 'OP_ASSIGN')], Name('temp282')), Assign([AssName('temp291', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp290')], None, None)), Assign([AssName('temp292', 'OP_ASSIGN')], CallFunc(Name('len'), [Name('temp291')], None, None)), If([(Compare(Name('temp292'), [('>', Name('c'))]), Stmt([Discard(CallFunc(Getattr(Name('temp281'), 'append'), [Name('u')], None, None))]))], None)]), None)]), None), Assign([AssName('temp295', 'OP_ASSIGN')], Name('temp281')), Assign([AssName('temp296', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp295')], None, None)), Assign([AssName('temp297', 'OP_ASSIGN')], Not(Name('temp296'))), Return(Name('temp297'))])
+Assign([AssName('temp14', 'OP_ASSIGN')], Getattr(Name('C'), 'AssignUser'))
+Adding transition between:
+Name('temp448') Return(Name('temp448'))
+AssName('good', 'OP_ASSIGN')
+Adding transition between:
+Name('temp305') CallFunc(Name('temp305'), [], None, None)
+Stmt([Assign([AssName('temp281', 'OP_ASSIGN')], List(())), Assign([AssName('temp294', 'OP_ASSIGN')], Getattr(Name('self'), 'USERS')), For(AssName('u', 'OP_ASSIGN'), Name('temp294'), Stmt([Assign([AssName('temp293', 'OP_ASSIGN')], Getattr(Name('self'), 'SsdNC')), For(AssTuple([AssName('name', 'OP_ASSIGN'), AssName('c', 'OP_ASSIGN')]), Name('temp293'), Stmt([Assign([AssName('temp282', 'OP_ASSIGN')], List(())), Assign([AssName('temp285', 'OP_ASSIGN')], List(())), Assign([AssName('temp288', 'OP_ASSIGN')], Getattr(Name('self'), 'ROLES')), For(AssName('r', 'OP_ASSIGN'), Name('temp288'), Stmt([Assign([AssName('temp286', 'OP_ASSIGN')], Tuple([Name('u'), Name('r')])), Assign([AssName('temp287', 'OP_ASSIGN')], Getattr(Name('self'), 'UR')), If([(Compare(Name('temp286'), [('in', Name('temp287'))]), Stmt([Discard(CallFunc(Getattr(Name('temp285'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp289', 'OP_ASSIGN')], Name('temp285')), For(AssName('r', 'OP_ASSIGN'), CallFunc(Name('set'), [Name('temp289')], None, None), Stmt([Assign([AssName('temp283', 'OP_ASSIGN')], Tuple([Name('name'), Name('r')])), Assign([AssName('temp284', 'OP_ASSIGN')], Getattr(Name('self'), 'SsdNR')), If([(Compare(Name('temp283'), [('in', Name('temp284'))]), Stmt([Discard(CallFunc(Getattr(Name('temp282'), 'append'), [Name('r')], None, None))]))], None)]), None), Assign([AssName('temp290', 'OP_ASSIGN')], Name('temp282')), Assign([AssName('temp291', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp290')], None, None)), Assign([AssName('temp292', 'OP_ASSIGN')], CallFunc(Name('len'), [Name('temp291')], None, None)), If([(Compare(Name('temp292'), [('>', Name('c'))]), Stmt([Discard(CallFunc(Getattr(Name('temp281'), 'append'), [Name('u')], None, None))]))], None)]), None)]), None), Assign([AssName('temp295', 'OP_ASSIGN')], Name('temp281')), Assign([AssName('temp296', 'OP_ASSIGN')], CallFunc(Name('set'), [Name('temp295')], None, None)), Assign([AssName('temp297', 'OP_ASSIGN')], Not(Name('temp296'))), Return(Name('temp297'))])
+Adding transition between:
+Name('OBJ') CallFunc(Name('temp280'), [Name('OBJ')], None, None)
+Assign([AssName('temp6', 'OP_ASSIGN')], Getattr(Name('C'), 'AddObject'))
+Adding transition between:
+Name('OBJ') CallFunc(Name('temp280'), [Name('OBJ')], None, None)
+Assign([AssName('temp7', 'OP_ASSIGN')], Getattr(Name('C'), 'AddOperation'))
+Adding transition between:
+Name('operation') CallFunc(Name('temp278'), [Name('operation')], None, None)
+Assign([AssName('temp8', 'OP_ASSIGN')], Getattr(Name('C'), 'AddOperation'))
+Adding transition between:
+Name('operation') CallFunc(Name('temp278'), [Name('operation')], None, None)
+Assign([AssName('temp9', 'OP_ASSIGN')], Getattr(Name('C'), 'GrantPermission'))
+Adding transition between:
+Name('session') CallFunc(Name('temp131'), [Name('session')], None, None)
+Assign([AssName('temp19', 'OP_ASSIGN')], Getattr(Name('C'), 'CreateSession'))
+Adding transition between:
+Name('session') CallFunc(Name('temp131'), [Name('session')], None, None)
+Assign([AssName('temp22', 'OP_ASSIGN')], Getattr(Name('C'), 'CheckAccess'))
+Adding transition between:
+Name('temp206') Return(Name('temp206'))
+AssName('temp123', 'OP_ASSIGN')
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp92'), [Name('temp94')], None, None) set([Name('temp91')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp14'), [Const('mickg'), Const('Restore Operator')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp1'), [Const('zog')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp3'), [Const('Restore Operator')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp5'), [Const(3)], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp12'), [Const('sub'), Const(2), Const('Backup Operator')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp19'), [Const('zog'), Const('Restorer Session'), Name('temp21')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp112'), [Name('temp113')], None, None) set([Name('added')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp7'), [Const('add')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp21'), [Name('user')], None, None) set([Name('temp20')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp16'), [Const('mickg'), Const('Adder Session'), Name('temp18')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp38'), [Name('role')], None, None) set([Name('temp37')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp280'), [Name('OBJ')], None, None) set([Name('temp279')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp303'), [Name('temp304')], None, None) set([Name('temp302')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp22'), [Const('Adder Session'), Const('add'), Const(3)], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp122'), [Name('user')], None, None) set([Name('self')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp110'), [Name('temp111')], None, None) set([Name('temp109')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp125'), [Name('temp126')], None, None) set([Name('temp124')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp10'), [Const('add'), Const(3), Const('Backup Operator')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp128'), [Name('temp129')], None, None) set([Name('temp127')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp15'), [Const('zog'), Const('Restore Operator')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp115'), [], None, None) set([Name('C'), Name('self')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp0'), [Const('mickg')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp2'), [Const('Backup Operator')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp4'), [Const('Grr')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp6'), [Const(2)], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp8'), [Const('sub')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp13'), [Const('mickg'), Const('Backup Operator')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp131'), [Name('session')], None, None) set([Name('temp130')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp117'), [Name('temp118')], None, None) set([Name('temp116')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp11'), [Const('add'), Const(3), Const('Restore Operator')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp278'), [Name('operation')], None, None) set([Name('temp277')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp121'), [Name('temp123')], None, None) set([Name('self')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp24'), [Const('Restorer Session'), Const('sub'), Const(3)], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp9'), [Const('add'), Const(2), Const('Restore Operator')], None, None) set([Name('C')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp305'), [], None, None) set([Name('self')])
+Building initial workset!
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Name
+>>> Getattr
+>>> Name
+>>> Compare
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Compare
+>>> Getattr
+>>> Getattr
+>>> Name
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Not
+>>> Getattr
+>>> Compare
+>>> Getattr
+>>> Getattr
+>>> Not
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Compare
+>>> Getattr
+>>> Name
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Name
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Compare
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Name
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Name
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Name
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+>>> Getattr
+Node : temp434 = (name,r)   , subid:0
+     (((), 'RBAC.coreRBAC.checkDSD.temp434'), ((), 1206))
+Node : self.SsdNAMES = set()   , subid:0
+     (((), 'RBAC.coreRBAC.__init__.self#SsdNAMES'), ((), 63))
+Node : temp447 = set(temp446)   , subid:0
+     (((), 'RBAC.coreRBAC.checkDSD.temp447'), ((), 1251))
+Node : temp94 = (temp93,role)   , subid:0
+     (((), 'RBAC.coreRBAC.GrantPermission.temp94'), ((), 503))
+Node : temp183 = (session,r)   , subid:0
+     (((), 'RBAC.coreRBAC.CheckAccess.temp183'), ((), 1534))
+Node : temp18 = set(temp17)   , subid:0
+     (((), 'driver.temp18'), ((), 1070))
+Node : temp107 = (session,role)   , subid:0
+     (((), 'RBAC.coreRBAC.CreateSession.temp107'), ((), 1089))
+Node : temp296 = set(temp295)   , subid:0
+     (((), 'RBAC.coreRBAC.checkSSD.temp296'), ((), 987))
+Node : temp118 = (k[0],k[1])   , subid:0
+     (((), 'RBAC.coreRBAC.CreateSession.temp118'), ((), 1275))
+Node : temp442 = set(temp441)   , subid:0
+     (((), 'RBAC.coreRBAC.checkDSD.temp442'), ((), 1228))
+Node : temp20 = ['Restore Operator']   , subid:0
+     (((), 'driver.temp20'), ((), 1474))
+Node : self.SU = set()   , subid:0
+     (((), 'RBAC.coreRBAC.__init__.self#SU'), ((), 53))
+Node : self.PR = set()   , subid:0
+     (((), 'RBAC.coreRBAC.__init__.self#PR'), ((), 38))
+Node : self.SsdNC = set()   , subid:0
+     (((), 'RBAC.coreRBAC.__init__.self#SsdNC'), ((), 73))
+Node : temp187 = (temp186,r)   , subid:0
+     (((), 'RBAC.coreRBAC.CheckAccess.temp187'), ((), 1554))
+Node : temp113 = (session,role)   , subid:0
+     (((), 'RBAC.coreRBAC.CreateSession.temp113'), ((), 1127))
+Node : self.UR = set()   , subid:0
+     (((), 'RBAC.coreRBAC.__init__.self#UR'), ((), 43))
+Node : temp433 = []   , subid:0
+     (((), 'RBAC.coreRBAC.checkDSD.temp433'), ((), 1164))
+Node : temp285 = []   , subid:0
+     (((), 'RBAC.coreRBAC.checkSSD.temp285'), ((), 788))
+Node : temp88 = (operation,object)   , subid:0
+     (((), 'RBAC.coreRBAC.GrantPermission.temp88'), ((), 403))
+Node : temp192 = set(temp191)   , subid:0
+     (((), 'RBAC.coreRBAC.CheckAccess.temp192'), ((), 1581))
+Node : temp126 = (session,user)   , subid:0
+     (((), 'RBAC.coreRBAC.CreateSession.temp126'), ((), 1431))
+Node : temp436 = []   , subid:0
+     (((), 'RBAC.coreRBAC.checkDSD.temp436'), ((), 1167))
+Node : temp21 = set(temp20)   , subid:0
+     (((), 'driver.temp21'), ((), 1478))
+Node : temp129 = (session,r)   , subid:0
+     (((), 'RBAC.coreRBAC.CreateSession.temp129'), ((), 1451))
+Node : self.OPS = set()   , subid:0
+     (((), 'RBAC.coreRBAC.__init__.self#OPS'), ((), 23))
+Node : temp432 = []   , subid:0
+     (((), 'RBAC.coreRBAC.checkDSD.temp432'), ((), 1143))
+Node : temp186 = (operation,object)   , subid:0
+     (((), 'RBAC.coreRBAC.CheckAccess.temp186'), ((), 1549))
+Node : temp291 = set(temp290)   , subid:0
+     (((), 'RBAC.coreRBAC.checkSSD.temp291'), ((), 889))
+Node : temp111 = (session,role)   , subid:0
+     (((), 'RBAC.coreRBAC.CreateSession.temp111'), ((), 1115))
+Node : self.DsdNC = set()   , subid:0
+     (((), 'RBAC.coreRBAC.__init__.self#DsdNC'), ((), 88))
+Node : self.OBJS = set()   , subid:0
+     (((), 'RBAC.coreRBAC.__init__.self#OBJS'), ((), 9))
+Node : temp182 = []   , subid:0
+     (((), 'RBAC.coreRBAC.CheckAccess.temp182'), ((), 1523))
+Node : self.USERS = set()   , subid:0
+     (((), 'RBAC.coreRBAC.__init__.self#USERS'), ((), 28))
+Node : temp201 = []   , subid:0
+     (((), 'RBAC.coreRBAC.AssignedRoles.temp201'), ((), 1375))
+Node : temp304 = (user,role)   , subid:0
+     (((), 'RBAC.coreRBAC.AssignUser.temp304'), ((), 649))
+Node : added = set()   , subid:0
+     (((), 'RBAC.coreRBAC.CreateSession.added'), ((), 1081))
+Node : temp282 = []   , subid:0
+     (((), 'RBAC.coreRBAC.checkSSD.temp282'), ((), 785))
+Node : self.SESSIONS = set()   , subid:0
+     (((), 'RBAC.coreRBAC.__init__.self#SESSIONS'), ((), 48))
+Node : temp437 = (s,r)   , subid:0
+     (((), 'RBAC.coreRBAC.checkDSD.temp437'), ((), 1178))
+Node : temp283 = (name,r)   , subid:0
+     (((), 'RBAC.coreRBAC.checkSSD.temp283'), ((), 867))
+Node : self.SsdNR = set()   , subid:0
+     (((), 'RBAC.coreRBAC.__init__.self#SsdNR'), ((), 68))
+Node : self.DsdNR = set()   , subid:0
+     (((), 'RBAC.coreRBAC.__init__.self#DsdNR'), ((), 83))
+Node : self.SR = set()   , subid:0
+     (((), 'RBAC.coreRBAC.__init__.self#SR'), ((), 58))
+Node : C = coreRBAC()   , subid:0
+     (((), 'driver.C'), ((), 5))
+Node : temp93 = (operation,object)   , subid:0
+     (((), 'RBAC.coreRBAC.GrantPermission.temp93'), ((), 498))
+Node : self.DsdNAMES = set()   , subid:0
+     (((), 'RBAC.coreRBAC.__init__.self#DsdNAMES'), ((), 78))
+Node : temp17 = ['Backup Operator']   , subid:0
+     (((), 'driver.temp17'), ((), 1046))
+Node : temp300 = (user,role)   , subid:0
+     (((), 'RBAC.coreRBAC.AssignUser.temp300'), ((), 628))
+Node : temp89 = (temp88,role)   , subid:0
+     (((), 'RBAC.coreRBAC.GrantPermission.temp89'), ((), 457))
+Node : temp202 = (user,r)   , subid:0
+     (((), 'RBAC.coreRBAC.AssignedRoles.temp202'), ((), 1386))
+Node : temp206 = set(temp205)   , subid:0
+     (((), 'RBAC.coreRBAC.AssignedRoles.temp206'), ((), 1408))
+Node : temp286 = (u,r)   , subid:0
+     (((), 'RBAC.coreRBAC.checkSSD.temp286'), ((), 799))
+Node : temp281 = []   , subid:0
+     (((), 'RBAC.coreRBAC.checkSSD.temp281'), ((), 664))
+Node : self.ROLES = set()   , subid:0
+     (((), 'RBAC.coreRBAC.__init__.self#ROLES'), ((), 33))
+Running workset!
+Items added to alias graph: 73507
+Distinct contexts:          1
+Distinct variables:         103
+Distinct locations:         55

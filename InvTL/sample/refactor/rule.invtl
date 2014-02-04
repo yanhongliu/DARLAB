@@ -1,0 +1,19 @@
+inv $refactor = py{$t}
+if (True)
+(
+		at py{self.$b[$b2]=$e2}
+		if (Class($update)=="TEST") 
+		de in Class($update) (
+				py{
+def $takecq(self,$cq):
+	$scq.add($cq)
+				} 
+			)
+			in Class($update) (
+				py{self.$cq=$e2}
+			)	
+		do py{
+			self.$cq = $e2
+		}
+)
+

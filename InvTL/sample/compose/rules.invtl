@@ -1,0 +1,31 @@
+inv py{$I} = py{$recv.f()}
+at py{$recv.append($x)}
+de in (Class($update)) py{ 
+print 1
+}
+do before py{
+  $J.add($x)
+  $I.add($x)
+}
+
+inv py{$P} = py{$G}
+de in (Class("ZOG")) py{ 
+print "ZOG"
+}
+at py{$I.add($x)}
+do before py{
+  if $t:
+    $G.add($t)
+    print $I, $recv
+}
+
+inv py{$Q} = py{$E}
+de in (Class("ZOG")) py{ 
+print "ZOG"
+}
+at py{$G.add($t)}
+do before py{
+  print $G, $sent
+}	
+
+

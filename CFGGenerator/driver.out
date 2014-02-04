@@ -1,0 +1,247 @@
+1 1 1 None
+Importing types
+ processing analysis\lib\types.py ...
+  Importing sys
+   processing analysis\lib\sys.py ...
+   done.
+  Success!
+ done.
+Success!
+Importing copy_reg
+ processing analysis\lib\copy_reg.py ...
+  Importing types
+   processing analysis\lib\types.py ...
+    Importing sys
+     processing analysis\lib\sys.py ...
+     done.
+    Success!
+   done.
+  Success!
+ done.
+Success!
+Importing copy_reg
+ processing analysis\lib\copy_reg.py ...
+  Importing types
+   processing analysis\lib\types.py ...
+    Importing sys
+     processing analysis\lib\sys.py ...
+     done.
+    Success!
+   done.
+  Success!
+ done.
+Success!
+Importing copy_reg
+ processing analysis\lib\copy_reg.py ...
+  Importing types
+   processing analysis\lib\types.py ...
+    Importing sys
+     processing analysis\lib\sys.py ...
+     done.
+    Success!
+   done.
+  Success!
+ done.
+Success!
+Importing copy_reg
+ processing analysis\lib\copy_reg.py ...
+  Importing types
+   processing analysis\lib\types.py ...
+    Importing sys
+     processing analysis\lib\sys.py ...
+     done.
+    Success!
+   done.
+  Success!
+ done.
+Success!
+Importing marshal
+ processing analysis\lib\marshal.py ...
+ done.
+Success!
+Importing sys
+ processing analysis\lib\sys.py ...
+ done.
+Success!
+Importing struct
+ processing analysis\lib\struct.py ...
+ done.
+Success!
+Importing re
+ processing analysis\lib\re.py ...
+  Importing sre
+   processing analysis\lib\sre.py ...
+    Importing sys
+     processing analysis\lib\sys.py ...
+     done.
+    Success!
+    Importing sre_compile
+     processing analysis\lib\sre_compile.py ...
+      Importing sre_constants
+       processing analysis\lib\sre_constants.py ...
+       done.
+      Success!
+     done.
+    Success!
+   done.
+  Success!
+ done.
+Success!
+Importing warnings
+ processing analysis\lib\warnings.py ...
+  Importing sys
+   processing analysis\lib\sys.py ...
+   done.
+  Success!
+  Importing types
+   processing analysis\lib\types.py ...
+    Importing sys
+     processing analysis\lib\sys.py ...
+     done.
+    Success!
+   done.
+  Success!
+  Importing linecache
+   processing analysis\lib\linecache.py ...
+    Importing sys
+     processing analysis\lib\sys.py ...
+     done.
+    Success!
+    Importing os
+     processing analysis\lib\os.py ...
+      Importing sys
+       processing analysis\lib\sys.py ...
+       done.
+      Success!
+      Importing posixpath
+       processing analysis\lib\posixpath.py ...
+        Importing stat
+         processing analysis\lib\stat.py ...
+         done.
+        Success!
+       done.
+      Success!
+     done.
+    Success!
+   done.
+  Success!
+ done.
+Success!
+Importing org.python.core
+ERROR - module org.python.core could not be found!
+Could not import org.python.core!
+1001 1092 1092 1364
+Importing binascii
+ processing analysis\lib\binascii.py ...
+ done.
+Success!
+Importing cStringIO
+ processing analysis\lib\cStringIO.py ...
+  Importing errno
+   processing analysis\lib\errno.py ...
+   done.
+  Success!
+  Importing sys
+   processing analysis\lib\sys.py ...
+   done.
+  Success!
+ done.
+Success!
+Importing StringIO
+ processing analysis\lib\StringIO.py ...
+  Importing errno
+   processing analysis\lib\errno.py ...
+   done.
+  Success!
+  Importing sys
+   processing analysis\lib\sys.py ...
+   done.
+  Success!
+ done.
+Success!
+Importing doctest
+ processing analysis\lib\doctest.py ...
+ done.
+Success!
+2001 1959 1959 841
+WARNING: dynamic import!
+   __import__(module) at line 782
+WARNING: dynamic import!
+   __import__(module) at line 782
+3001 3201 3201 798
+4001 3888 3888 238
+WARNING: dynamic import!
+   __import__(module) at line 782
+5001 4610 4610 863
+WARNING: dynamic import!
+   __import__(module) at line 782
+6001 1755 5122 207
+WARNING: dynamic import!
+   __import__(module) at line 782
+7001 4577 5122 None
+WARNING: dynamic import!
+   __import__(module) at line 782
+8001 3842 5122 228
+WARNING: dynamic import!
+   __import__(module) at line 782
+9001 4577 5122 None
+WARNING: dynamic import!
+   __import__(module) at line 782
+10001 5196 5202 660
+WARNING: dynamic import!
+   __import__(module) at line 782
+11001 4406 5273 252
+WARNING: dynamic import!
+   __import__(module) at line 782
+12001 2716 5273 189
+WARNING: dynamic import!
+   __import__(module) at line 782
+13001 4406 5273 252
+WARNING: dynamic import!
+   __import__(module) at line 782
+14001 2716 5273 189
+WARNING: dynamic import!
+   __import__(module) at line 782
+15001 2781 5273 200
+WARNING: dynamic import!
+   __import__(module) at line 782
+16001 5078 5273 342
+WARNING: dynamic import!
+   __import__(module) at line 782
+17001 4365 5273 178
+WARNING: dynamic import!
+   __import__(module) at line 782
+18001 4990 5273 324
+WARNING: dynamic import!
+   __import__(module) at line 782
+19001 2357 5309 796
+WARNING: dynamic import!
+   __import__(module) at line 782
+20001 1805 5309 3
+21001 4102 5309 782
+WARNING: dynamic import!
+   __import__(module) at line 782
+WARNING: dynamic import!
+   __import__(module) at line 782
+22001 2729 5309 193
+23001 4102 5309 782
+WARNING: dynamic import!
+   __import__(module) at line 782
+WARNING: dynamic import!
+   __import__(module) at line 782
+24001 2729 5309 193
+25001 1965 5309 842
+WARNING: dynamic import!
+   __import__(module) at line 782
+WARNING: dynamic import!
+   __import__(module) at line 782
+26001 3199 5309 797
+27001 3959 5309 778
+WARNING: dynamic import!
+   __import__(module) at line 782
+WARNING: dynamic import!
+   __import__(module) at line 782
+28001 4794 5309 811
+29001 1811 5309 214
+WARNING: dynamic import!
+   __import__(module) at line 782

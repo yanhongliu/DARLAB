@@ -1,0 +1,3 @@
+#matches ONE literal pattern
+inv $pattern_rule=C{$int $zog}()
+

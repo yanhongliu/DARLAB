@@ -1,0 +1,104 @@
+#MemCov -  InvTS
+#
+#The goal of MemCov is to take a program, intercept calls to malloc and free, and
+#to instrument them as necessary.  This instrumentation may have many goals.
+#For example, memory leak detection.
+#
+#Instrumentation is written as modules that communicate via sockets with the
+#process being instrumented. Usually, a module will perform some action on the
+#instrumented process when it is notified of a malloc or free call.
+#
+#An example is a module that will track memory leaks by monitoring
+#allocated pages, and tagging them based on the time between memory accesses to
+#these pages. This is accomplished by allocation whole pages for each
+#allocation, using the memory protection hardware to detect access to the
+#allocated regions, and using a predictive model controller to adaptively
+#minimize the number of regions 'protected' by the module, thus minimizing the
+#performance penalty of such monitoring.
+#
+#The above relies on reliably detecting all malloc and free calls in the
+#program.  For dynamically linked programs, this could be done by intercepting
+#calls to the malloc and free functions that exist in the C runtime. This
+#approach does not work for statically linked programs. 
+#
+#A trivial approach would be to textually replace all calls to malloc, with our
+#own function, Malloc. This drawback of the above approach is that it does not
+#work when pointers to malloc are stored by the program, as malloc may then be
+#referred to as any other alias.
+#
+#Our approach is to use an internally developed code transformation system,
+#InvTS, to statically generate code to intercept all calls to malloc and free,
+#and to send this information over via sockets to the analyzing module. InvTS
+#supports alias analysis, overcoming the problems of the previous method, and it
+#provides a clean syntax for us to write a transformation rule in. An additional
+#advantage is that it provides additional information obtained by static
+#analysis. This information is not available to us in C, and includes the sites
+#of all calls to any particular function. This information can then be passed on
+#to the module.
+#
+#We implement the following algorithm:
+# 1. When malloc is called, the transformation system substitutes a call to 
+#	Malloc, a user-defined function described above.
+# 2. Malloc calls communicate_malloc, which is a function that is dynamically
+#	loaded into the instrumented program by LD_LOAD.
+# 3. If the function is not dynamically loaded, a standard call to malloc is
+#	processed. Otherwise, the call is propagated by communicate_malloc to the
+#	module, and blocks until the module performs the tasks needed to allocate
+#	the memory region.
+#	The module allocates the needed memory, padding it to the closes page size
+#	if necessary.
+# 4. If the above succeeds, the allocated memory regions is returned to the 
+#	function that called malloc.
+#
+#The InvTS rule that implements the algorithm is shown below. As the rule that
+#handles the calls to free is very similar, it is omitted for clarity.
+#
+#For performance reasons, a large part of the communicate_malloc function may be
+#moved into the rule presented below. 
+#
+#
+#The malloc rule
+#	The rule matches malloc, and replaces is with Malloc
+#    As per InvTL semantics, malloc is matched even if it is a different literal
+#    aliased to malloc.
+#
+#	When it encounters any function, it inserts right after the function
+#	declaration the do after C line. (The function name)
+#    This declares the function_name variable used in the query do clause
+#
+#	Finally, at the beginning of each C file, a Malloc function definition is
+#	added. If multiple same definitions are added, InvTS merges them. Thus,
+#	only one copy of Malloc will exist per file (translation unit, really).
+# 
+#	A very similar rule exists for free (replace malloc with free in the below
+#	rule).
+#
+inv $malloc_rule=C{
+	malloc($x)
+} 
+do instead C{
+	Malloc($x,function_name)
+}
+(
+	at C{
+		$type $funname($arg1)
+	}
+	de in file($update) C{
+		extern void* communicate_malloc(size_t size, const char* message)=0;
+		void* Malloc(size_t size, const char * function_name) {
+			if (!communicate_malloc)
+				return malloc(size);
+			void* allocated=0;
+			allocated=communicate_malloc(size,function_name)
+			if (allocated==0) {
+				printf("remote malloc(%d) failed in %s",malloc_size,function_name);
+			}
+			return allocated;
+		}
+	}
+	do after C{
+		const char * function_name="$funname";
+	}
+)
+
+

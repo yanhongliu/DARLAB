@@ -1,0 +1,417 @@
+inv $RES = py{set($u for $h in self.$H for $u in self.$U if ($h,$param) in self.$F(self.$X) and ($u,$h) in self.$UR)}
+//if (isVar($param))
+de in Class ("CoreRBAC") (
+    py{
+        self.$TRANS=set()
+        self.$MAP1=MultiMap()
+        self.$MAP2=MultiMap()
+        self.$MAP3=MultiMap()
+        self.$MAP4=MultiMap()
+    }
+)
+do instead py{self.$MAP1.get($param)}
+(
+
+    at py{self.$H = set()}
+    if (Class($query)=="CoreRBAC")
+    do py{
+        self.$MAP1 = MultiMap()
+    }
+    
+
+    at py{self.$H.add($s)}
+    do py{
+        for u in self.$MAP2.get($s): #0 or 1 iterations for rbac
+            if u in self.$U:
+                for r in self.$MAP3.get($s):                    
+                    if u not in self.$MAP1.get(r):
+                        self.$MAP1.add(r,u)
+    }
+    
+    at py{self.$H.remove($s)}
+    do before py{
+        for u in self.$MAP2.get($s): #0 or 1 iterations for rbac
+            if u in self.$U:
+                for r in self.$MAP3.get($s):                    
+                    if u in self.$MAP1.get(r):
+                        self.$MAP1.remove(r,u)
+    }
+
+
+    at py{self.$U = set()}
+    if (Class($query)=="CoreRBAC")
+    do py{
+        self.$MAP1 = MultiMap()
+    }
+    
+
+    at py{self.$U.add($u)}
+    do py{
+        for s in self.$MAP4.get($u):
+            if s in self.$H:                                      
+                for r in self.$MAP3.get(s):
+                    if $u not in self.$MAP1.get(r):
+                        self.$MAP1.add(r,$u)
+    }
+
+    at py{self.$U.remove($u)}
+    do before py{
+        for s in self.$MAP4.get($u):
+            if s in self.$H:                                      
+                for r in self.$MAP3.get(s):
+                    if $u in self.$MAP1.get(r):
+                        self.$MAP1.remove(r,$u)
+    }
+    
+
+    at py{self.$UR = set()}
+    if (Class($query)=="CoreRBAC")
+    do py{
+        self.$MAP2 = MultiMap()
+        self.$MAP4 = MultiMap()
+        self.$MAP1 = MultiMap()            
+    }
+    
+
+    at py{self.$UR.add(($u,$s))}
+    do py{            
+        if $s in self.$H:
+            if $u in self.$U:                    
+                for r in self.$MAP3.get($s):
+                    if ($s,$u) not in self.$MAP1.get(r):
+                        self.$MAP1.add(r,$u)
+        self.$MAP2.add($s,$u)
+        self.$MAP4.add($u,$s)
+    }
+
+    at py{self.$UR.remove(($u,$s))}
+    do before py{            
+        if $s in self.$H:
+            if $u in self.$U:                    
+                for r in self.$MAP3.get($s):
+                    if $u in self.$MAP1.get(r):
+                        self.$MAP1.remove(r,$u)
+        self.$MAP2.remove($s,$u)
+        self.$MAP4.remove($u,$s)
+    }
+    
+    at py {self.$X.add($y)}
+    do py {
+        $TNEW=self.$F(self.$X)
+        $TDIFF1=$TNEW-self.$TRANS
+        $TDIFF2=self.$TRANS-$TNEW
+        for (s,r) in $TDIFF1:
+            for u in self.$MAP2.get(s): #0 or 1 iterations for rbac
+                if s in self.$H:
+                    if u in self.$U:
+                        if u not in self.$MAP1.get(r):
+                            self.$MAP1.add(r,u)
+        for (s,r) in $TDIFF2:
+            for u in self.$MAP2.get(s): #0 or 1 iterations for rbac
+                if s in self.$H:
+                    if u in self.$U:
+                        if u in self.$MAP1.get(r):
+                            self.$MAP1.remove(r,u)
+        self.$TRANS=$TNEW
+    }
+
+    at py {self.$X.remove($y)}
+    do py {
+        $TNEW=self.$F(self.$X)
+        $TDIFF1=$TNEW-self.$TRANS
+        $TDIFF2=self.$TRANS-$TNEW
+        for (s,r) in $TDIFF1:
+            for u in self.$MAP2.get(s): #0 or 1 iterations for rbac
+                if s in self.$H:
+                    if u in self.$U:
+                        if u not in self.$MAP1.get(r):
+                            self.$MAP1.add(r,u)
+        for (s,r) in $TDIFF2:
+            for u in self.$MAP2.get(s): #0 or 1 iterations for rbac
+                if s in self.$H:
+                    if u in self.$U:
+                        if u in self.$MAP1.get(r):
+                            self.$MAP1.remove(r,u)
+        self.$TRANS=$TNEW
+    }
+    
+    at py {self.$X = set() }
+    do py {
+        self.$TRANS=self.$F(self.$X)
+        self.$MAP3 = MultiMap()
+        self.$MAP1 = MultiMap()
+    }
+)
+
+
+inv $RES = py{set(($op, $obj) for $bearer in self.$ROLES for $op in self.$OPS for $obj in self.$OBJS if ($role, $bearer) in self.$F(self.$X) and (($op, $obj), $bearer) in self.$PR)}
+do instead py{self.$MapU2P.get($role)  }
+de in Class ("CoreRBAC") (
+    py{
+        self.$TRANS=set()
+        self.$MapU2P=MultiMap()
+        self.$URMapR2U=MultiMap()
+        self.$PRMapR2P=MultiMap()
+    }
+)
+(
+    at py{self.$ROLES = set()}
+    do py{
+        self.$MapU2P = MultiMap()
+        self.$URMapR2U = MultiMap()
+        self.$PRMapR2P = MultiMap()
+    }
+    
+
+    at py{self.$ROLES.add($r)}
+    do py{
+        for (op, obj) in self.$PRMapR2P.get($r):
+            for u in self.$URMapR2U.get($r):
+                if op in self.$OPS:
+                    if obj in self.$OBJS:                       
+                       if (op, obj) not in self.$MapU2P.get(u):
+                            self.$MapU2P.add(u,(op, obj))
+    }
+
+    at py{self.$ROLES.remove($r)}
+    do before py{
+        for (op, obj) in self.$PRMapR2P.get($r):
+            for u in self.$URMapR2U.get($r):
+                if op in self.$OPS:
+                    if obj in self.$OBJS:                       
+                       if (op, obj) in self.$MapU2P.get(u):
+                            self.$MapU2P.remove(u,(op, obj))
+    }
+    
+        
+    at py{self.PR = set()}
+    do py{
+        self.$MapU2P = MultiMap()
+        self.$PRMapR2P = MultiMap()
+    }
+    
+
+    at py{self.PR.add((($op, $obj), $r))}
+    do py{
+        for u in self.$URMapR2U.get($r):
+            if $op in self.$OPS:
+                if $obj in self.$OBJS:
+                    if ($op, $obj) not in self.$MapU2P.get(u):
+                        self.$MapU2P.add(u,($op, $obj))
+        self.$PRMapR2P.add($r,($op,$obj))
+    }
+    
+    at py{self.PR.remove((($op, $obj), $r))}
+    do before py{
+        for u in self.$URMapR2U.get($r):
+            if $op in self.$OPS:
+                if $obj in self.$OBJS:
+                    if ($op, $obj) in self.$MapU2P.get(u):
+                        self.$MapU2P.remove(u,($op, $obj))
+        self.$PRMapR2P.remove($r,($op,$obj))
+    }
+      
+    at py {self.$X.add($y)}
+    do py {
+        $TNEW=self.$F(self.$X)
+        $TDIFF1=$TNEW-self.$TRANS
+        $TDIFF2=self.$TRANS-$TNEW
+        for (u,r) in $TDIFF1: #UR.add
+            for (op, obj) in self.$PRMapR2P.get(r):
+                if op in self.$OPS:
+                    if obj in self.$OBJS:
+                        if (op, obj) not in self.$MapU2P.get(u):
+                            self.$MapU2P.add(u,(op, obj))
+            self.$URMapR2U.add(r,u)
+        for (u,r) in $TDIFF2: $UR.remove
+            for (op, obj) in self.$PRMapR2P.get(r):
+                if op in self.$OPS:
+                    if obj in self.$OBJS:
+                        if (op, obj)  in self.$MapU2P.get(u):
+                            self.$MapU2P.remove(u,(op, obj))
+            self.$URMapR2U.remove(r,u)
+        self.$TRANS=$TNEW
+
+    }
+
+    at py {self.$X.remove($y)}
+    do py {
+        $TNEW=self.$F(self.$X)
+        $TDIFF1=$TNEW-self.$TRANS
+        $TDIFF2=self.$TRANS-$TNEW
+        for (u,r) in $TDIFF1: #UR.add
+            for (op, obj) in self.$PRMapR2P.get(r):
+                if op in self.$OPS:
+                    if obj in self.$OBJS:
+                        if (op, obj) not in self.$MapU2P.get(u):
+                            self.$MapU2P.add(u,(op, obj))
+            self.$URMapR2U.add(r,u)
+        for (u,r) in $TDIFF2: $UR.remove
+            for (op, obj) in self.$PRMapR2P.get(r):
+                if op in self.$OPS:
+                    if obj in self.$OBJS:
+                        if (op, obj)  in self.$MapU2P.get(u):
+                            self.$MapU2P.remove(u,(op, obj))
+            self.$URMapR2U.remove(r,u)
+        self.$TRANS=$TNEW    }
+    
+    at py {self.$X = set() }
+    do py {
+        self.$TRANS=self.$F(self.$X)
+        self.$MapU2P = MultiMap()
+        self.$URMapR2U = MultiMap()
+
+    }
+
+)
+
+inv $RES = py{not bool(set(True for u in self.$USERS for (name,c) in self.$SsdNC if not len(set(r for r in self.AssignedRoles(u) if (name,r) in self.$SsdNR)) <= c))}
+de in Class ("CoreRBAC") (
+    py{
+        self.$NameUser2AR={}
+        self.$NamesInSsdNR=MultiMap()
+        self.$InSsdNC=MultiMap()
+        self.$Names=set()
+        self.$join=set()
+        self.$cnt=0
+    }
+)
+do instead py {self.$cnt==0}
+(
+    at py {self.$SsdNC.add($x)}
+    do py {
+        self.$InSsdNC.add(name,$x[1])
+
+        name=$x[0]
+        for u in self.$USERS:
+            if not self.$NameUser2AR[(u,name)]<=$x[1]:
+                self.$cnt+=1
+    }
+
+    at py {self.$SsdNC.remove($x)}
+    do before py {
+        self.$InSsdNC.remove(name,$x[1])
+        name=$x[0]
+        for u in self.$USERS:
+            if not self.$NameUser2AR[(u,name)]<=$x[1]:
+                self.$cnt-=1
+    }
+
+    at py {self.$NameUser2AR[$x]=$arg}
+    do before py {
+        u=$x[0]
+        name=$x[1]
+        for c in self.$InSsdNC.get(name))
+            if not self.$NameUser2AR[(u,name)]<=c:
+                self.$cnt-=1
+        for c in self.$InSsdNC.get(name))
+            if not $arg<=c:
+                self.$cnt+=1
+    }
+
+    at py {del self.$NameUser2AR[$x]}
+    do before py {
+        u=$x[0]
+        name=$x[1]
+        for c in self.$InSsdNC.get(name))
+            if not self.$NameUser2AR[(u,name)]<=c:
+                self.$cnt-=1
+    }
+
+    at py {self.$SsdNR.add($x)}
+    do py {
+        name=$x[0]
+        if len(self.$NamesInSsdNR.get(name))==0:
+            self.$Names.add(name)
+        self.$NamesInSsdNR.add(name,$x[1])
+        for u in self.$USERS:
+            self.$NameUser2AR[($u,name)]=len(set(r for r in self.AssignedRoles($u) if (name,r) in self.$SsdNR))
+    }
+
+    at py {self.$SsdNR.remove($x)}
+    do before py {
+        if len(self.$NamesInSsdNR.get($x[0]))!=0:
+            self.$NamesInSsdNR.remove($x[0],$x[1])
+            if len(self.$NamesInSsdNR.get($x[0]))==0:
+                self.$Names.remove($x[0])
+        for u in self.$USERS:
+            del self.$NameUser2AR[($u,name)]
+    }
+
+    at py {self.$USERS.add($u)}  
+    do before py {
+        for n in self.$Names:
+            self.$NameUser2AR[($u,n)]=len(set(r for r in self.AssignedRoles($u) if (n,r) in self.$SsdNR))
+    } after py {
+        for $x in self.$SsdNC:
+            name=$x[0]
+            if not self.$NameUser2AR[($u,name)]<=$x[1]:
+                self.$cnt+=1
+    }
+
+    at py {self.$USERS.remove($u)}  
+    do before py {
+        for n in self.$Names:
+            del self.$NameUser2AR[($u,n)]
+        for $x in self.$SsdNC:
+            name=$x[0]
+            if not self.$NameUser2AR[($u,name)]<=$x[1]:
+                self.$cnt-=1
+    }
+
+    at py {self.ROLES.add($r)}
+    do py {
+        for u in self.USERS:
+            for n in self.$Names:
+                self.$NameUser2AR[(u,n)]=len(set(r for r in self.AssignedRoles(u) if (n,r) in self.$SsdNR))
+    }
+
+    at py {self.ROLES.remove($r)}
+    do py {
+        for u in self.USERS:
+            for n in self.$Names:
+                self.$NameUser2AR[(u,n)]=len(set(r for r in self.AssignedRoles(u) if (n,r) in self.$SsdNR))
+    }
+
+    at py {self.UR.add($x)}
+    do py {
+        u=$x[0]:
+        for n in self.$Names:
+            self.$NameUser2AR[(u,n)]=len(set(r for r in self.AssignedRoles(u) if (n,r) in self.$SsdNR))
+    }
+
+    at py {self.UR.remove($x)}
+    do py {
+        u=$x[0]:
+        for n in self.$Names:
+            self.$NameUser2AR[(u,n)]=len(set(r for r in self.AssignedRoles(u) if (n,r) in self.$SsdNR))
+    }
+    
+)
+
+inv $RES = py{$var=$value}
+if (annType($var)==SomeInstance)
+de (
+    py{
+        $refcount=0
+    }
+)
+(
+    at py{$y=$x}
+    if (annAliased($x,$var) and not annAliased($y,$var))  
+    do py {
+        $refcount+=1
+    }
+    
+    at py{$y=$x}
+    if (not annAliased($x,$var) and annAliased($y,$var))
+    do py{
+        refcount-= 1
+    }
+
+    at py{$y=$x}
+    if (annAliased($x,$var) and annAliased($y,$var))
+    do py{
+        pass
+    }
+)

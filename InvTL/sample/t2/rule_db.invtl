@@ -1,0 +1,6 @@
+inv py{$r[$y][$x]} = py{$x+$y}
+do after py {
+  print $r,$x,$y,$v
+}
+()
+

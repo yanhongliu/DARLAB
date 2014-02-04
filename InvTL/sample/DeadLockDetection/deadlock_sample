@@ -1,0 +1,34 @@
+//Assuming we wish to only handle the "pthread_mutex_lock" function.
+inv $r=C{    //Query is our expression
+ if ($C) $E1
+ else $E2
+}
+//We define temp funcitons to be called when necessary
+de in Location(TranslationUnit($query)) 
+C{    
+    void $temp1() {
+    }
+    void $temp2() {
+    }
+}
+do instead C{    //Replace initial code with one that invokes temp functions
+ if ($C) {$temp1();$E1}
+ else {$temp2();$E2}
+}
+(
+    at C{pthread_mutex_lock($lock)}    //Build up the temp1 function
+    if ( ( contains($update,$E2) or function($update) in functionclosure($E2) ) and global($lock) )
+    de in Location(Function($temp1)) C{
+        pthread_mutex_lock-speculate($lock);
+    }
+
+    at C{pthread_mutex_lock($lock)}    //Build up the temp2 function
+    if ( ( contains($update,$E1)  or function($update) in functionclosure($E1) ) and global($lock) )
+    de in Location(Function($temp2)) C{
+        pthread_mutex_lock-speculate($lock);
+    }
+
+    at C{pthread_mutex_lock($lock)}    //Build up the temp1 function
+    if ((contains($update,$E2) or contains($update,$E1)) and not global($lock))
+    warn ("argument to the sync op is non-global")
+)

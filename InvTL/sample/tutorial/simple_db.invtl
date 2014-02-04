@@ -1,0 +1,230 @@
+inv $ignored_result = py { incr('a for a in o.S for a in o.T', o=$o) }
+
+de once at end (find_class($module,'multimap')) py {
+    q_R = multimap(rcset)
+    q_D = dict()
+}
+de once at end (find_class($module,'multimap')) py {
+q_reverse_S = multimap(sets.Set)
+}
+de once at end (find_class($module,'multimap')) py {
+q_reverse_membership = multimap(sets.Set)
+}
+de once at end (find_class($module,'multimap')) py {
+q_reverse_T = multimap(sets.Set)
+}
+
+
+do before py {
+$o_ = o
+
+$o_S_ = $o_.S
+$o_T_ = $o_.T
+for $a_ in $o_S_:
+    if $a_ in $o_T_:
+        q_D[(id($a_), id($o_), id($o_S_), id($o_T_))] = ($a_, $o_, $o_S_, $o_T_)
+
+
+for ($a_inc_q, $o_inc_q, $o_S_inc_q, $o_T_inc_q) in q_D.values():
+    q_R[(id($o_inc_q))].add($a_inc_q)
+q_D.clear()
+}
+instead py { q_R[(id($o))] }
+
+
+at py { $o_S_.remove($a_) } 
+if (may_alias($o_S_, $o.S) and may_alias_values($a_, set_values($o.S)))
+do before py {
+    for $o_ in q_reverse_S[id($o_S_)]:
+        $o_T_ = $o_.T
+        if $a_ in $o_T_:
+            q_D[(id($a_), id($o_), id($o_S_), id($o_T_))] = ($a_, $o_, $o_S_, $o_T_)
+}
+
+
+at py { $o_.S = $ignored }
+if (may_alias($o_, $o))
+do before py {
+    $o_T_ = $o_.T
+    for $a_ in $o_S_:
+        if $a_ in $o_T_:
+            q_D[(id($a_), id($o_), id($o_S_), id($o_T_))] = ($a_, $o_, $o_S_, $o_T_)
+}
+
+
+at py { $o_T_.remove($a_) } 
+if (may_alias($o_T_, $o.T) and may_alias_values($a_, set_values($o.S)))
+do before py {
+    for $o_S_ in q_reverse_membership[id($a_)]:
+        for $o_ in q_reverse_T[id($o_T_)]:
+            $o_S_ = $o_.S
+            q_D[(id($a_), id($o_), id($o_S_), id($o_T_))] = ($a_, $o_, $o_S_, $o_T_)
+}
+
+
+at py { $o_.T = $ignored }
+if (may_alias($o_, $o))
+do before py {
+    $o_S_ = $o_.S
+    for $a_ in $o_T_:
+        if $a_ in $o_S_:
+            q_D[(id($a_), id($o_), id($o_S_), id($o_T_))] = ($a_, $o_, $o_S_, $o_T_)
+}
+
+
+at py { $o_S_.remove($a_) }
+if (may_alias($o_S_, $o.S) and may_alias_values($a_, set_values($o.S)))
+do before py {
+    for ($a_inc_q, $o_inc_q, $o_S_inc_q, $o_T_inc_q) in q_D.values():
+        q_R[(id($o_inc_q))].remove($a_inc_q)
+    q_D.clear()
+}
+
+
+at py { $o_.S = $ignored }
+if (may_alias($o_, $o))
+do before py {
+    for ($a_inc_q, $o_inc_q, $o_S_inc_q, $o_T_inc_q) in q_D.values():
+        q_R[(id($o_inc_q))].remove($a_inc_q)
+    q_D.clear()
+}
+
+
+at py { $o_T_.remove($a_) }
+if (may_alias($o_T_, $o.T) and may_alias_values($a_, set_values($o.S)))
+do before py {
+    for ($a_inc_q, $o_inc_q, $o_S_inc_q, $o_T_inc_q) in q_D.values():
+        q_R[(id($o_inc_q))].remove($a_inc_q)
+    q_D.clear()
+}
+
+
+at py { $o_.T = $ignored }
+if (may_alias($o_, $o))
+do before py {
+    for ($a_inc_q, $o_inc_q, $o_S_inc_q, $o_T_inc_q) in q_D.values():
+        q_R[(id($o_inc_q))].remove($a_inc_q)
+    q_D.clear()
+}
+
+
+at py { $o_.S = $ignored }
+if (may_alias($o_, $o))
+do before py {
+	if hasattr($o_,"S"):
+        q_reverse_S.remove(id($o_), $o_.S)
+}
+
+
+at py { $o_S_.remove($a_) }
+if (may_alias($o_S_, $o.S) and may_alias_values($a_, set_values($o.S)))
+do before py {
+    q_reverse_membership.remove(id($o_S_), $a_)
+}
+
+
+at py { $o_.T = $ignored }
+if (may_alias($o_, $o))
+do before py {
+    q_reverse_T.remove(id($o_), $o_.T)
+}
+
+
+at py { $o_.S = $ignored }
+if (may_alias($o_, $o))
+do after py {
+    q_reverse_S.add(id($o_), $o_.S)
+}
+
+
+at py { $o_S_.add($a_) }
+if (may_alias($o_S_, $o.S) and may_alias_values($a_, set_values($o.S)))
+do after py {
+    q_reverse_membership.add(id($o_S_), $a_)
+}
+
+
+at py { $o_.T = $ignored }
+if (may_alias($o_, $o))
+do after py {
+    q_reverse_T.add(id($o_), $o_.T)
+}
+
+
+at py { $o_S_.add($a_) }
+if (may_alias($o_S_, $o.S) and may_alias_values($a_, set_values($o.S)))
+do after py {
+    for $o_ in q_reverse_S[id($o_S_)]:
+        $o_T_ = $o_.T
+        if $a_ in $o_T_:
+            q_D[(id($a_), id($o_), id($o_S_), id($o_T_))] = ($a_, $o_, $o_S_, $o_T_)
+}
+
+
+at py { $o_.S = $ignored }
+if (may_alias($o_, $o))
+do after py{
+    $o_T_ = $o_.T
+    for $a_ in $o_S_:
+        if $a_ in $o_T_:
+            q_D[(id($a_), id($o_), id($o_S_), id($o_T_))] = ($a_, $o_, $o_S_, $o_T_)
+}
+
+
+at py { $o_T_.add($a_) }
+if (may_alias($o_T_, $o.T) and may_alias_values($a_, set_values($o.S)))
+do after py {
+    for $o_S_ in q_reverse_membership[id($a_)]:
+        for $o_ in q_reverse_T[id($o_T_)]:
+            $o_S_ = $o_.S
+            q_D[(id($a_), id($o_), id($o_S_), id($o_T_))] = ($a_, $o_, $o_S_, $o_T_)
+}
+
+
+at py { $o_.T = $ignored }
+if (may_alias($o_, $o))
+do after py{
+    $o_S_ = $o_.S
+    for $a_ in $o_T_:
+        if $a_ in $o_S_:
+            q_D[(id($a_), id($o_), id($o_S_), id($o_T_))] = ($a_, $o_, $o_S_, $o_T_)
+}
+
+
+at py { $o_S_.add($a_) }
+if (may_alias($o_S_, $o.S) and may_alias_values($a_, set_values($o.S)))
+do after py {
+    for ($a_inc_q, $o_inc_q, $o_S_inc_q, $o_T_inc_q) in q_D.values():
+        q_R[(id($o_inc_q))].add($a_inc_q)
+    q_D.clear()
+}
+
+
+at py { $o_.S = $ignored }
+if (may_alias($o_, $o))
+do after py{
+    for ($a_inc_q, $o_inc_q, $o_S_inc_q, $o_T_inc_q) in q_D.values():
+        q_R[(id($o_inc_q))].add($a_inc_q)
+    q_D.clear()
+}
+
+
+at py { $o_T_.add($a_) }
+if (may_alias($o_T_, $o.T) and may_alias_values($a_, set_values($o.S)))
+do after py {
+    for ($a_inc_q, $o_inc_q, $o_S_inc_q, $o_T_inc_q) in q_D.values():
+        q_R[(id($o_inc_q))].add($a_inc_q)
+    q_D.clear()
+}
+
+
+at py { $o_.T = $ignored }
+if (may_alias($o_, $o))
+do after py{
+    for ($a_inc_q, $o_inc_q, $o_S_inc_q, $o_T_inc_q) in q_D.values():
+        q_R[(id($o_inc_q))].add($a_inc_q)
+    q_D.clear()
+}
+
+
+

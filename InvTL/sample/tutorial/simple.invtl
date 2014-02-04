@@ -1,0 +1,1 @@
+match py { incr('a for a in o.S for a in o.T', o=$o) }

@@ -1,0 +1,4356 @@
+1 1 1 None
+Importing sys
+ processing analysis\lib\sys.py ...
+ done.
+Success!
+Importing os
+ processing analysis\lib\os.py ...
+  Importing sys
+   processing analysis\lib\sys.py ...
+   done.
+  Success!
+  Importing posixpath
+   processing analysis\lib\posixpath.py ...
+    Importing stat
+     processing analysis\lib\stat.py ...
+     done.
+    Success!
+   done.
+  Success!
+ done.
+Success!
+Importing shutil
+ processing analysis\lib\shutil.py ...
+  Importing os
+   processing analysis\lib\os.py ...
+    Importing sys
+     processing analysis\lib\sys.py ...
+     done.
+    Success!
+    Importing posixpath
+     processing analysis\lib\posixpath.py ...
+      Importing stat
+       processing analysis\lib\stat.py ...
+       done.
+      Success!
+     done.
+    Success!
+   done.
+  Success!
+  Importing sys
+   processing analysis\lib\sys.py ...
+   done.
+  Success!
+  Importing stat
+   processing analysis\lib\stat.py ...
+   done.
+  Success!
+  Importing os.path
+   processing analysis\lib\os\path.py ...
+    Importing stat
+     processing analysis\lib\stat.py ...
+     done.
+    Success!
+   done.
+  Success!
+ done.
+Success!
+Importing stat
+ processing analysis\lib\stat.py ...
+ done.
+Success!
+Importing errno
+ processing analysis\lib\errno.py ...
+ done.
+Success!
+Importing time
+ processing analysis\lib\time.py ...
+ done.
+Success!
+Importing struct
+ processing analysis\lib\struct.py ...
+ done.
+Success!
+Importing grp
+ERROR - module grp could not be found!
+Could not import grp!
+Importing pwd
+ERROR - module pwd could not be found!
+Could not import pwd!
+1001 1251 1251 674
+2001 955 1547 66
+3001 1766 2568 740
+4001 2816 2816 1752
+5001 1030 2913 654
+6001 968 3121 68
+7001 968 3121 68
+8001 1110 3394 662
+9001 1393 3394 700
+10001 2947 3394 1774
+11001 968 3394 68
+12001 969 3454 68
+13001 1055 3454 659
+14001 2881 3506 1765
+15001 3119 3506 1793
+16001 1459 3523 34
+17001 1298 3523 682
+18001 2857 3523 1761
+19001 3261 3523 1812
+20001 3144 3523 1795
+21001 4166 4166 911
+22001 1426 4218 26
+23001 912 4218 628
+24001 3296 4218 1938
+25001 3196 4218 1800
+26001 2981 4218 1777
+27001 1216 4218 669
+28001 942 4218 644
+29001 3478 4218 899
+30001 969 4412 68
+31001 1047 4412 657
+32001 4448 4448 949
+33001 2996 4454 1783
+34001 1423 4454 25
+35001 914 4502 629
+36001 3370 4502 1822
+37001 3046 4502 2022
+38001 1277 4511 679
+39001 1053 4511 659
+40001 4302 4511 934
+41001 1490 4511 39
+42001 1323 4511 687
+43001 2826 4512 1753
+44001 3245 4512 1808
+45001 3081 4512 None
+46001 1236 4512 672
+47001 968 4512 68
+48001 3500 4512 903
+49001 1506 4512 40
+50001 1326 4512 688
+51001 2705 4512 865
+52001 3167 4512 75
+53001 1537 4512 797
+54001 1029 4512 654
+55001 2880 4512 1765
+56001 2898 4512 1767
+57001 968 4512 68
+58001 969 4512 68
+59001 4712 4712 1086
+60001 2705 5073 865
+61001 1546 5073 711
+62001 1366 5073 693
+63001 1533 5073 796
+64001 1391 5073 699
+65001 968 5073 68
+66001 2770 5073 875
+67001 3050 5073 2023
+68001 2994 5073 1782
+69001 969 5073 68
+70001 2816 5073 1752
+71001 3244 5073 1808
+72001 1365 5073 693
+73001 1227 5073 671
+74001 2686 5073 860
+75001 3152 5073 72
+76001 1519 5073 707
+77001 972 5073 646
+78001 2819 5073 1752
+79001 2898 5073 1767
+80001 1258 5073 675
+81001 1018 5073 652
+82001 4428 5073 944
+83001 2963 5073 1777
+84001 955 5073 66
+85001 884 5073 621
+86001 3316 5073 1941
+87001 3186 5073 1797
+88001 3959 5073 1049
+89001 1353 5073 691
+90001 1218 5073 669
+91001 4370 5073 202
+92001 2898 5073 1767
+93001 1398 5073 701
+94001 870 5073 618
+95001 3309 5073 1938
+96001 3178 5073 77
+97001 969 5073 68
+98001 1047 5073 657
+99001 4526 5073 109
+100001 2680 5073 859
+101001 2836 5073 1756
+102001 1515 5073 216
+103001 875 5073 619
+104001 3310 5073 1939
+105001 3179 5073 77
+106001 1274 5073 None
+107001 1050 5073 657
+108001 4496 5073 964
+109001 3000 5073 1783
+110001 1427 5073 None
+111001 4934 5073 1119
+112001 2159 5438 767
+113001 1750 6015 736
+114001 1807 6442 748
+115001 1685 6534 725
+116001 2519 6575 774
+117001 2098 6730 766
+118001 2507 6730 77
+119001 5235 6804 216
+120001 7018 7018 1312
+121001 1747 7136 736
+122001 1637 7279 719
+123001 1737 7279 734
+124001 7140 7279 1339
+125001 2538 7288 778
+126001 6507 7288 2012
+127001 3068 7288 2023
+128001 957 7288 66
+129001 2997 7300 1783
+130001 3052 7300 2023
+131001 2991 7300 1781
+132001 1418 7300 705
+133001 968 7300 68
+134001 2817 7300 1752
+135001 3244 7300 1808
+136001 1258 7300 675
+137001 1020 7300 653
+138001 4432 7300 945
+139001 2981 7300 1777
+140001 7297 7300 67
+141001 892 7300 623
+142001 3319 7300 1941
+143001 3192 7300 1799
+144001 955 7300 66
+145001 1038 7300 656
+146001 4291 7300 931
+147001 1468 7300 36
+148001 1311 7300 685
+149001 2814 7300 1751
+150001 3241 7300 1807
+151001 3077 7300 1786
+152001 1230 7300 671
+153001 961 7300 67
+154001 3498 7300 903
+155001 2574 7300 845
+156001 1001 7300 650
+157001 953 7300 None
+158001 1034 7300 655
+159001 2896 7300 1766
+160001 3281 7300 1817
+161001 1465 7300 35
+162001 1307 7300 684
+163001 2687 7300 861
+164001 3153 7300 72
+165001 1522 7300 708
+166001 1013 7300 651
+167001 2864 7300 1763
+168001 3269 7300 1814
+169001 7291 7300 66
+170001 959 7300 67
+171001 2703 7300 864
+172001 3166 7300 75
+173001 1537 7300 797
+174001 901 7300 625
+175001 3362 7300 1820
+176001 3201 7300 1801
+177001 1304 7300 None
+178001 1132 7300 664
+179001 2611 7300 851
+180001 3074 7300 2025
+181001 1462 7300 34
+182001 4960 7300 1126
+183001 1048 7300 657
+184001 864 7300 616
+185001 3296 7300 1938
+186001 1321 7300 686
+187001 1035 7300 655
+188001 2623 7300 854
+189001 3083 7300 1789
+190001 1487 7300 None
+191001 974 7300 646
+192001 2825 7300 1753
+193001 3247 7300 1809
+194001 5278 7316 216
+195001 1942 7316 762
+196001 5370 7316 1286
+197001 1637 7454 719
+198001 2494 7455 75
+199001 2474 7455 73
+200001 2544 7455 779
+201001 6831 7455 1270
+202001 7048 7455 1318
+203001 1797 7455 746
+204001 1781 7455 743
+205001 1858 7455 758
+206001 7234 7455 1349
+207001 6934 7455 1296
+208001 1608 7455 719
+209001 3893 7455 None
+210001 1365 7455 693
+211001 1230 7455 671
+212001 4380 7455 204
+213001 2965 7455 1777
+214001 7295 7455 67
+215001 889 7455 622
+216001 3316 7455 1941
+217001 3189 7455 None
+218001 1293 7455 681
+219001 1111 7455 662
+220001 4549 7455 44
+221001 1642 7455 721
+222001 1741 7455 734
+223001 6584 7455 1340
+224001 2519 7455 774
+225001 7409 7455 2009
+226001 3074 7455 2025
+227001 872 7455 618
+228001 1872 7455 761
+229001 1284 7557 680
+230001 1112 7567 663
+231001 892 7570 623
+232001 3319 7570 1941
+233001 3163 7576 74
+234001 1364 7733 692
+235001 949 7749 645
+236001 7574 7749 1018
+237001 967 7969 67
+238001 2830 8109 1754
+239001 3252 8109 1810
+240001 1444 8165 30
+241001 1054 8371 659
+242001 8372 8372 1003
+243001 3174 8400 76
+244001 1014 8509 652
+245001 8021 8509 1957
+246001 3070 8519 2024
+247001 2906 8519 1770
+248001 7562 8519 1969
+249001 2946 8520 1773
+250001 2881 8520 1765
+251001 3119 8520 1793
+252001 1454 8526 33
+253001 7524 8526 1976
+254001 3051 8526 2023
+255001 1403 8526 702
+256001 8470 8526 1441
+257001 3166 8526 75
+__version__ = '$Revision: 41341 $' 
+version = '0.6.4' 
+__author__ = 'Lars Gust\xe4bel (lars@gustaebel.de)' 
+__date__ = '$Date: 2005-10-28 08:00:51 +0200 (Fr, 28 Okt 2005) $' 
+__cvsid__ = '$Id: tarfile.py 41341 2005-10-28 06:00:51Z neal.norwitz $' 
+__credits__ = 'Gustavo Niemeyer, Niels Gust\xe4bel, Richard Townsend.' 
+import sys
+import os
+import shutil
+import stat
+import errno
+import time
+import struct
+try:
+    import grp
+    import pwd
+    
+except ImportError:
+    pwd = None 
+    grp = pwd 
+    
+
+__all__ = ['TarFile','TarInfo','is_tarfile','TarError'] 
+NUL = '\x00' 
+BLOCKSIZE = 512 
+RECORDSIZE = BLOCKSIZE * 20 
+MAGIC = 'ustar' 
+VERSION = '00' 
+LENGTH_NAME = 100 
+LENGTH_LINK = 100 
+LENGTH_PREFIX = 155 
+MAXSIZE_MEMBER = 8589934591L 
+REGTYPE = '0' 
+AREGTYPE = '\x00' 
+LNKTYPE = '1' 
+SYMTYPE = '2' 
+CHRTYPE = '3' 
+BLKTYPE = '4' 
+DIRTYPE = '5' 
+FIFOTYPE = '6' 
+CONTTYPE = '7' 
+GNUTYPE_LONGNAME = 'L' 
+GNUTYPE_LONGLINK = 'K' 
+GNUTYPE_SPARSE = 'S' 
+SUPPORTED_TYPES = (REGTYPE,AREGTYPE,LNKTYPE,SYMTYPE,DIRTYPE,FIFOTYPE,CONTTYPE,CHRTYPE,BLKTYPE,GNUTYPE_LONGNAME,GNUTYPE_LONGLINK,GNUTYPE_SPARSE) 
+REGULAR_TYPES = (REGTYPE,AREGTYPE,CONTTYPE,GNUTYPE_SPARSE) 
+S_IFLNK = 40960 
+S_IFREG = 32768 
+S_IFBLK = 24576 
+S_IFDIR = 16384 
+S_IFCHR = 8192 
+S_IFIFO = 4096 
+TSUID = 2048 
+TSGID = 1024 
+TSVTX = 512 
+TUREAD = 256 
+TUWRITE = 128 
+TUEXEC = 64 
+TGREAD = 32 
+TGWRITE = 16 
+TGEXEC = 8 
+TOREAD = 4 
+TOWRITE = 2 
+TOEXEC = 1 
+def nts(s):
+    temp0 = s.rstrip 
+    temp1 = temp0(NUL) 
+    return temp1
+def nts(s):
+    temp0 = s.rstrip 
+    temp1 = temp0(NUL) 
+    return temp1
+def nts(s):
+    temp0 = s.rstrip 
+    temp1 = temp0(NUL) 
+    return temp1
+def calc_chksum(buf):
+    chk = 256 
+    for c in buf[:148]:
+        chk += ord(c)
+        
+    for c in buf[156:]:
+        chk += ord(c)
+        
+    return chk
+def calc_chksum(buf):
+    chk = 256 
+    for c in buf[:148]:
+        chk += ord(c)
+        
+    for c in buf[156:]:
+        chk += ord(c)
+        
+    return chk
+def calc_chksum(buf):
+    chk = 256 
+    for c in buf[:148]:
+        chk += ord(c)
+        
+    for c in buf[156:]:
+        chk += ord(c)
+        
+    return chk
+def copyfileobj(src, dst, length=None):
+    temp2 = length == 0 
+    if temp2:
+        return None
+    temp4 = length is None 
+    if temp4:
+        temp3 = shutil.copyfileobj 
+        temp3(src, dst)
+        return None
+    BUFSIZE = 16 * 1024 
+    (blocks,remainder,) = divmod(length, BUFSIZE) 
+    return None
+def copyfileobj(src, dst, length):
+    temp2 = length == 0 
+    if temp2:
+        return None
+    temp4 = length is None 
+    if temp4:
+        temp3 = shutil.copyfileobj 
+        temp3(src, dst)
+        return None
+    BUFSIZE = 16 * 1024 
+    (blocks,remainder,) = divmod(length, BUFSIZE) 
+    return None
+def copyfileobj(src, dst, length):
+    temp2 = length == 0 
+    if temp2:
+        return None
+    temp4 = length is None 
+    if temp4:
+        temp3 = shutil.copyfileobj 
+        temp3(src, dst)
+        return None
+    BUFSIZE = 16 * 1024 
+    (blocks,remainder,) = divmod(length, BUFSIZE) 
+    return None
+temp5 = (S_IFLNK,'l') 
+temp6 = (S_IFREG,'-') 
+temp7 = (S_IFBLK,'b') 
+temp8 = (S_IFDIR,'d') 
+temp9 = (S_IFCHR,'c') 
+temp10 = (S_IFIFO,'p') 
+temp11 = (temp5,temp6,temp7,temp8,temp9,temp10) 
+temp12 = (TUREAD,'r') 
+temp13 = (temp12) 
+temp14 = (TUWRITE,'w') 
+temp15 = (temp14) 
+temp16 = (TUEXEC | TSUID,'s') 
+temp17 = (TSUID,'S') 
+temp18 = (TUEXEC,'x') 
+temp19 = (temp16,temp17,temp18) 
+temp20 = (TGREAD,'r') 
+temp21 = (temp20) 
+temp22 = (TGWRITE,'w') 
+temp23 = (temp22) 
+temp24 = (TGEXEC | TSGID,'s') 
+temp25 = (TSGID,'S') 
+temp26 = (TGEXEC,'x') 
+temp27 = (temp24,temp25,temp26) 
+temp28 = (TOREAD,'r') 
+temp29 = (temp28) 
+temp30 = (TOWRITE,'w') 
+temp31 = (temp30) 
+temp32 = (TOEXEC | TSVTX,'t') 
+temp33 = (TSVTX,'T') 
+temp34 = (TOEXEC,'x') 
+temp35 = (temp32,temp33,temp34) 
+filemode_table = (temp11,temp13,temp15,temp19,temp21,temp23,temp27,temp29,temp31,temp35) 
+def filemode(mode):
+    perm = [] 
+    for table in filemode_table:
+        for (bit,char,) in table:
+            temp36 = mode & bit 
+            temp38 = temp36 == bit 
+            if temp38:
+                temp37 = perm.append 
+                temp37(char)
+                break 
+                
+            
+        else:
+            temp39 = perm.append 
+            temp39('-')
+            
+        
+    temp40 = ''.join 
+    temp41 = temp40(perm) 
+    return temp41
+class TarError(Exception):
+    pass 
+class ExtractError(TarError):
+    pass 
+class ReadError(TarError):
+    pass 
+class CompressionError(TarError):
+    pass 
+class StreamError(TarError):
+    pass 
+class _LowLevelFile:
+    def __init__(self, name, mode):
+        mode = os.O_RDONLY 
+        temp42 = os.open 
+        self.fd = temp42(name, mode) 
+        
+    def __init__(self, name, mode):
+        mode = os.O_RDONLY 
+        temp42 = os.open 
+        self.fd = temp42(name, mode) 
+        
+    def close(self):
+        temp43 = os.close 
+        temp44 = self.fd 
+        temp43(temp44)
+        
+    def read(self, size):
+        temp45 = os.read 
+        temp46 = self.fd 
+        temp47 = temp45(temp46, size) 
+        return temp47
+    def write(self, s):
+        temp48 = os.write 
+        temp49 = self.fd 
+        temp48(temp49, s)
+        
+    
+class _Stream:
+    def __init__(self, name, mode, type, fileobj, bufsize):
+        self._extfileobj = True 
+        temp50 = fileobj is None 
+        if temp50:
+            fileobj = _LowLevelFile(name, mode) 
+            self._extfileobj = False 
+            
+        self.name = name or '' 
+        self.mode = mode 
+        self.type = type 
+        self.fileobj = fileobj 
+        self.bufsize = bufsize 
+        self.buf = '' 
+        self.pos = 0L 
+        self.closed = False 
+        
+    def __init__(self, name, mode, type, fileobj, bufsize):
+        self._extfileobj = True 
+        temp50 = fileobj is None 
+        if temp50:
+            fileobj = _LowLevelFile(name, mode) 
+            self._extfileobj = False 
+            
+        self.name = name or '' 
+        self.mode = mode 
+        self.type = type 
+        self.fileobj = fileobj 
+        self.bufsize = bufsize 
+        self.buf = '' 
+        self.pos = 0L 
+        self.closed = False 
+        
+    def __del__(self):
+        temp51 = self.closed 
+        temp53 =  not temp51 
+        if temp53:
+            temp52 = self.close 
+            temp52()
+            
+        
+    def write(self, s):
+        self.pos += len(s)
+        temp54 = self.type 
+        temp57 = temp54 != 'tar' 
+        if temp57:
+            temp55 = self.cmp 
+            temp56 = temp55.compress 
+            s = temp56(s) 
+            
+        temp58 = self.__write 
+        temp58(s)
+        
+    def __write(self, s):
+        self.buf += s
+        temp59 = self.buf 
+        temp60 = len(temp59) 
+        temp61 = self.bufsize 
+        while temp60 > temp61:
+            temp62 = self.fileobj 
+            temp63 = temp62.write 
+            temp64 = self.buf 
+            temp65 = self.bufsize 
+            temp66 = temp64[:temp65] 
+            temp63(temp66)
+            temp67 = self.buf 
+            temp68 = self.bufsize 
+            self.buf = temp67[temp68:] 
+            temp59 = self.buf 
+            temp60 = len(temp59) 
+            temp61 = self.bufsize 
+            
+        
+    def close(self):
+        temp69 = self.closed 
+        if temp69:
+            return None
+        temp70 = self.mode 
+        temp71 = temp70 == 'w' 
+        temp72 = self.type 
+        temp73 = temp72 != 'tar' 
+        temp76 = temp71 and temp73 
+        if temp76:
+            temp74 = self.cmp 
+            temp75 = temp74.flush 
+            self.buf += temp75()
+            
+        temp77 = self.mode 
+        temp78 = temp77 == 'w' 
+        temp79 = self.buf 
+        temp96 = temp78 and temp79 
+        if temp96:
+            temp80 = self.fileobj 
+            temp81 = temp80.write 
+            temp82 = self.buf 
+            temp81(temp82)
+            self.buf = '' 
+            temp83 = self.type 
+            temp95 = temp83 == 'gz' 
+            if temp95:
+                temp84 = self.fileobj 
+                temp85 = temp84.write 
+                temp86 = struct.pack 
+                temp87 = self.crc 
+                temp88 = temp86('<l', temp87) 
+                temp85(temp88)
+                temp89 = self.fileobj 
+                temp90 = temp89.write 
+                temp91 = struct.pack 
+                temp92 = self.pos 
+                temp93 = temp92 & 4294967295L 
+                temp94 = temp91('<L', temp93) 
+                temp90(temp94)
+                
+            
+        temp97 = self._extfileobj 
+        temp100 =  not temp97 
+        if temp100:
+            temp98 = self.fileobj 
+            temp99 = temp98.close 
+            temp99()
+            
+        self.closed = True 
+        
+    def tell(self):
+        temp101 = self.pos 
+        return temp101
+    def seek(self, pos=0):
+        temp102 = self.pos 
+        temp103 = pos - temp102 
+        temp111 = temp103 >= 0 
+        if temp111:
+            temp104 = self.pos 
+            temp105 = pos - temp104 
+            temp106 = self.bufsize 
+            (blocks,remainder,) = divmod(temp105, temp106) 
+            temp109 = xrange(blocks) 
+            for i in temp109:
+                temp107 = self.read 
+                temp108 = self.bufsize 
+                temp107(temp108)
+                
+            temp110 = self.read 
+            temp110(remainder)
+            
+        else:
+            raise StreamError, 'seeking backwards is not allowed'
+            
+        temp112 = self.pos 
+        return temp112
+    def read(self, size=None):
+        temp119 = size is None 
+        if temp119:
+            t = [] 
+            while True:
+                temp113 = self._read 
+                temp114 = self.bufsize 
+                buf = temp113(temp114) 
+                temp115 =  not buf 
+                if temp115:
+                    break 
+                    
+                temp116 = t.append 
+                temp116(buf)
+                
+            temp117 = ''.join 
+            buf = temp117(t) 
+            
+        else:
+            temp118 = self._read 
+            buf = temp118(size) 
+            
+        self.pos += len(buf)
+        return buf
+    def _read(self, size):
+        temp120 = self.type 
+        temp123 = temp120 == 'tar' 
+        if temp123:
+            temp121 = self.__read 
+            temp122 = temp121(size) 
+            return temp122
+        temp124 = self.dbuf 
+        c = len(temp124) 
+        t = [self.dbuf] 
+        while c < size:
+            temp125 = self.__read 
+            temp126 = self.bufsize 
+            buf = temp125(temp126) 
+            temp127 =  not buf 
+            if temp127:
+                break 
+                
+            temp128 = self.cmp 
+            temp129 = temp128.decompress 
+            buf = temp129(buf) 
+            temp130 = t.append 
+            temp130(buf)
+            c += len(buf)
+            
+        temp131 = ''.join 
+        t = temp131(t) 
+        self.dbuf = t[size:] 
+        temp132 = t[:size] 
+        return temp132
+    def __read(self, size):
+        temp133 = self.buf 
+        c = len(temp133) 
+        t = [self.buf] 
+        while c < size:
+            temp134 = self.fileobj 
+            temp135 = temp134.read 
+            temp136 = self.bufsize 
+            buf = temp135(temp136) 
+            temp137 =  not buf 
+            if temp137:
+                break 
+                
+            temp138 = t.append 
+            temp138(buf)
+            c += len(buf)
+            
+        temp139 = ''.join 
+        t = temp139(t) 
+        self.buf = t[size:] 
+        temp140 = t[:size] 
+        return temp140
+    
+class ExFileObject(object):
+    def __init__(self, tarfile, tarinfo):
+        self.fileobj = tarfile.fileobj 
+        self.name = tarinfo.name 
+        self.mode = 'r' 
+        self.closed = False 
+        self.offset = tarinfo.offset_data 
+        self.size = tarinfo.size 
+        self.pos = 0L 
+        self.linebuffer = '' 
+        temp141 = tarinfo.issparse 
+        temp142 = temp141() 
+        if temp142:
+            self.sparse = tarinfo.sparse 
+            self.read = self._readsparse 
+            
+        else:
+            self.read = self._readnormal 
+            
+        
+    def __init__(self, tarfile, tarinfo):
+        self.fileobj = tarfile.fileobj 
+        self.name = tarinfo.name 
+        self.mode = 'r' 
+        self.closed = False 
+        self.offset = tarinfo.offset_data 
+        self.size = tarinfo.size 
+        self.pos = 0L 
+        self.linebuffer = '' 
+        temp141 = tarinfo.issparse 
+        temp142 = temp141() 
+        if temp142:
+            self.sparse = tarinfo.sparse 
+            self.read = self._readsparse 
+            
+        else:
+            self.read = self._readnormal 
+            
+        
+    def __read(self, size):
+        temp143 = self.fileobj 
+        temp144 = temp143.read 
+        temp145 = temp144(size) 
+        return temp145
+    def readline(self, size=-1):
+        temp146 = size < 0 
+        if temp146:
+            size = sys.maxint 
+            
+        temp147 = self.linebuffer 
+        temp148 = temp147.find 
+        nl = temp148('\n') 
+        temp158 = nl >= 0 
+        if temp158:
+            nl = min(nl, size) 
+            
+        else:
+            temp149 = self.linebuffer 
+            size -= len(temp149)
+            temp150 = nl < 0 
+            temp151 = size > 0 
+            while temp150 and temp151:
+                temp152 = self.read 
+                temp153 = min(size, 100) 
+                buf = temp152(temp153) 
+                temp154 =  not buf 
+                if temp154:
+                    break 
+                    
+                self.linebuffer += buf
+                size -= len(buf)
+                temp155 = self.linebuffer 
+                temp156 = temp155.find 
+                nl = temp156('\n') 
+                temp150 = nl < 0 
+                temp151 = size > 0 
+                
+            temp157 = nl == -1 
+            if temp157:
+                s = self.linebuffer 
+                self.linebuffer = '' 
+                return s
+            
+        temp159 = self.linebuffer 
+        buf = temp159[:nl] 
+        temp160 = self.linebuffer 
+        temp161 = (nl + 1) 
+        self.linebuffer = temp160[temp161:] 
+        temp162 = buf[-1:] 
+        while temp162 == '\r':
+            buf = buf[:-1] 
+            temp162 = buf[-1:] 
+            
+        temp163 = (buf + '\n') 
+        return temp163
+    def readlines(self):
+        result = [] 
+        while True:
+            temp164 = self.readline 
+            line = temp164() 
+            temp165 =  not line 
+            if temp165:
+                break 
+                
+            temp166 = result.append 
+            temp166(line)
+            
+        return result
+    def _readnormal(self, size=None):
+        temp167 = self.closed 
+        if temp167:
+            raise ValueError, 'file is closed'
+            
+        temp168 = self.fileobj 
+        temp169 = temp168.seek 
+        temp170 = self.offset 
+        temp171 = self.pos 
+        temp172 = (temp170 + temp171) 
+        temp169(temp172)
+        temp173 = self.size 
+        temp174 = self.pos 
+        bytesleft = temp173 - temp174 
+        temp175 = size is None 
+        if temp175:
+            bytestoread = bytesleft 
+            
+        else:
+            bytestoread = min(size, bytesleft) 
+            
+        self.pos += bytestoread
+        temp176 = self.__read 
+        temp177 = temp176(bytestoread) 
+        return temp177
+    def _readsparse(self, size=None):
+        temp178 = self.closed 
+        if temp178:
+            raise ValueError, 'file is closed'
+            
+        temp181 = size is None 
+        if temp181:
+            temp179 = self.size 
+            temp180 = self.pos 
+            size = temp179 - temp180 
+            
+        data = [] 
+        while size > 0:
+            temp182 = self._readsparsesection 
+            buf = temp182(size) 
+            temp183 =  not buf 
+            if temp183:
+                break 
+                
+            size -= len(buf)
+            temp184 = data.append 
+            temp184(buf)
+            
+        temp185 = ''.join 
+        temp186 = temp185(data) 
+        return temp186
+    def _readsparsesection(self, size):
+        temp187 = self.sparse 
+        temp188 = temp187.find 
+        temp189 = self.pos 
+        section = temp188(temp189) 
+        temp190 = section is None 
+        if temp190:
+            return ''
+        temp192 = section.offset 
+        temp193 = section.size 
+        temp191 = (temp192 + temp193) 
+        temp194 = self.pos 
+        temp195 = temp191 - temp194 
+        toread = min(size, temp195) 
+        temp207 = isinstance(section, _data) 
+        if temp207:
+            temp197 = section.realpos 
+            temp198 = self.pos 
+            temp196 = (temp197 + temp198) 
+            temp199 = section.offset 
+            realpos = temp196 - temp199 
+            self.pos += toread
+            temp200 = self.fileobj 
+            temp201 = temp200.seek 
+            temp202 = self.offset 
+            temp203 = (temp202 + realpos) 
+            temp201(temp203)
+            temp204 = self.__read 
+            temp205 = temp204(toread) 
+            return temp205
+        else:
+            self.pos += toread
+            temp206 = NUL * toread 
+            return temp206
+        
+    def tell(self):
+        temp208 = self.pos 
+        return temp208
+    def seek(self, pos, whence=0):
+        self.linebuffer = '' 
+        temp211 = whence == 0 
+        if temp211:
+            temp209 = max(pos, 0) 
+            temp210 = self.size 
+            self.pos = min(temp209, temp210) 
+            
+        temp218 = whence == 1 
+        if temp218:
+            temp217 = pos < 0 
+            if temp217:
+                temp212 = self.pos 
+                temp213 = (temp212 + pos) 
+                self.pos = max(temp213, 0) 
+                
+            else:
+                temp214 = self.pos 
+                temp215 = (temp214 + pos) 
+                temp216 = self.size 
+                self.pos = min(temp215, temp216) 
+                
+            
+        temp223 = whence == 2 
+        if temp223:
+            temp219 = self.size 
+            temp220 = (temp219 + pos) 
+            temp221 = self.size 
+            temp222 = min(temp220, temp221) 
+            self.pos = max(temp222, 0) 
+            
+        
+    def close(self):
+        self.closed = True 
+        
+    
+class TarInfo(object):
+    def __init__(self, name=''):
+        self.name = name 
+        self.mode = 438 
+        self.uid = 0 
+        self.gid = 0 
+        self.size = 0 
+        self.mtime = 0 
+        self.chksum = 0 
+        self.type = REGTYPE 
+        self.linkname = '' 
+        self.uname = 'user' 
+        self.gname = 'group' 
+        self.devmajor = 0 
+        self.devminor = 0 
+        self.prefix = '' 
+        self.offset = 0 
+        self.offset_data = 0 
+        
+    def __init__(self, name):
+        self.name = name 
+        self.mode = 438 
+        self.uid = 0 
+        self.gid = 0 
+        self.size = 0 
+        self.mtime = 0 
+        self.chksum = 0 
+        self.type = REGTYPE 
+        self.linkname = '' 
+        self.uname = 'user' 
+        self.gname = 'group' 
+        self.devmajor = 0 
+        self.devminor = 0 
+        self.prefix = '' 
+        self.offset = 0 
+        self.offset_data = 0 
+        
+    def __repr__(self):
+        temp225 = self.__class__ 
+        temp226 = temp225.__name__ 
+        temp227 = id(self) 
+        temp224 = (temp226,self.name,temp227) 
+        temp228 = '<%s %r at %#x>' % temp224 
+        return temp228
+    def frombuf(self, buf):
+        tarinfo = self 
+        temp229 = buf[0:100] 
+        tarinfo.name = nts(temp229) 
+        temp230 = buf[100:108] 
+        tarinfo.mode = int(temp230, 8) 
+        temp231 = buf[108:116] 
+        tarinfo.uid = int(temp231, 8) 
+        temp232 = buf[116:124] 
+        tarinfo.gid = int(temp232, 8) 
+        temp233 = buf[124] 
+        temp234 = chr(128) 
+        temp240 = temp233 != temp234 
+        if temp240:
+            temp235 = buf[124:136] 
+            tarinfo.size = long(temp235, 8) 
+            
+        else:
+            tarinfo.size = 0L 
+            temp239 = range(11) 
+            for i in temp239:
+                temp236 = tarinfo.size 
+                tarinfo.size = temp236 << 8 
+                temp237 = (125 + i) 
+                temp238 = buf[temp237] 
+                tarinfo.size += ord(temp238)
+                
+            
+        temp241 = buf[136:148] 
+        tarinfo.mtime = long(temp241, 8) 
+        temp242 = buf[148:156] 
+        tarinfo.chksum = int(temp242, 8) 
+        tarinfo.type = buf[156:157] 
+        temp243 = buf[157:257] 
+        tarinfo.linkname = nts(temp243) 
+        temp244 = buf[265:297] 
+        tarinfo.uname = nts(temp244) 
+        temp245 = buf[297:329] 
+        tarinfo.gname = nts(temp245) 
+        try:
+            temp246 = buf[329:337] 
+            tarinfo.devmajor = int(temp246, 8) 
+            temp247 = buf[337:345] 
+            tarinfo.devminor = int(temp247, 8) 
+            
+        except ValueError:
+            tarinfo.devmajor = 0 
+            tarinfo.devmajor = tarinfo.devmajor 
+            
+        
+        tarinfo.prefix = buf[345:500] 
+        temp248 = tarinfo.isreg 
+        temp249 = temp248() 
+        temp250 = tarinfo.name 
+        temp251 = temp250.endswith 
+        temp252 = temp251('/') 
+        temp253 = temp249 and temp252 
+        if temp253:
+            tarinfo.type = DIRTYPE 
+            
+        temp254 = tarinfo.type 
+        temp263 = temp254 != GNUTYPE_SPARSE 
+        if temp263:
+            temp255 = os.path 
+            temp256 = temp255.normpath 
+            temp257 = os.path 
+            temp258 = temp257.join 
+            temp259 = tarinfo.prefix 
+            temp260 = nts(temp259) 
+            temp261 = tarinfo.name 
+            temp262 = temp258(temp260, temp261) 
+            tarinfo.name = temp256(temp262) 
+            
+        temp264 = tarinfo.isdir 
+        temp265 = temp264() 
+        if temp265:
+            tarinfo.name += '/'
+            
+        return tarinfo
+    def frombuf(self, buf):
+        tarinfo = self 
+        temp229 = buf[0:100] 
+        tarinfo.name = nts(temp229) 
+        temp230 = buf[100:108] 
+        tarinfo.mode = int(temp230, 8) 
+        temp231 = buf[108:116] 
+        tarinfo.uid = int(temp231, 8) 
+        temp232 = buf[116:124] 
+        tarinfo.gid = int(temp232, 8) 
+        temp233 = buf[124] 
+        temp234 = chr(128) 
+        temp240 = temp233 != temp234 
+        if temp240:
+            temp235 = buf[124:136] 
+            tarinfo.size = long(temp235, 8) 
+            
+        else:
+            tarinfo.size = 0L 
+            temp239 = range(11) 
+            for i in temp239:
+                temp236 = tarinfo.size 
+                tarinfo.size = temp236 << 8 
+                temp237 = (125 + i) 
+                temp238 = buf[temp237] 
+                tarinfo.size += ord(temp238)
+                
+            
+        temp241 = buf[136:148] 
+        tarinfo.mtime = long(temp241, 8) 
+        temp242 = buf[148:156] 
+        tarinfo.chksum = int(temp242, 8) 
+        tarinfo.type = buf[156:157] 
+        temp243 = buf[157:257] 
+        tarinfo.linkname = nts(temp243) 
+        temp244 = buf[265:297] 
+        tarinfo.uname = nts(temp244) 
+        temp245 = buf[297:329] 
+        tarinfo.gname = nts(temp245) 
+        try:
+            temp246 = buf[329:337] 
+            tarinfo.devmajor = int(temp246, 8) 
+            temp247 = buf[337:345] 
+            tarinfo.devminor = int(temp247, 8) 
+            
+        except ValueError:
+            tarinfo.devmajor = 0 
+            tarinfo.devmajor = tarinfo.devmajor 
+            
+        
+        tarinfo.prefix = buf[345:500] 
+        temp248 = tarinfo.isreg 
+        temp249 = temp248() 
+        temp250 = tarinfo.name 
+        temp251 = temp250.endswith 
+        temp252 = temp251('/') 
+        temp253 = temp249 and temp252 
+        if temp253:
+            tarinfo.type = DIRTYPE 
+            
+        temp254 = tarinfo.type 
+        temp263 = temp254 != GNUTYPE_SPARSE 
+        if temp263:
+            temp255 = os.path 
+            temp256 = temp255.normpath 
+            temp257 = os.path 
+            temp258 = temp257.join 
+            temp259 = tarinfo.prefix 
+            temp260 = nts(temp259) 
+            temp261 = tarinfo.name 
+            temp262 = temp258(temp260, temp261) 
+            tarinfo.name = temp256(temp262) 
+            
+        temp264 = tarinfo.isdir 
+        temp265 = temp264() 
+        if temp265:
+            tarinfo.name += '/'
+            
+        return tarinfo
+    def tobuf(self):
+        temp266 = self.size 
+        temp272 = temp266 <= MAXSIZE_MEMBER 
+        if temp272:
+            temp267 = self.size 
+            size = '%011o' % temp267 
+            
+        else:
+            s = self.size 
+            size = '' 
+            temp270 = range(11) 
+            for i in temp270:
+                temp269 = s & 255 
+                temp268 = chr(temp269) 
+                size = (temp268 + size) 
+                s = s >> 8 
+                
+            temp271 = chr(128) 
+            size = (temp271 + size) 
+            
+        parts = [] 
+        temp273 = (self.name,100) 
+        temp275 = self.mode 
+        temp274 = temp275 & 4095 
+        temp276 = '%07o' % temp274 
+        temp277 = (temp276,8) 
+        temp278 = self.uid 
+        temp279 = '%07o' % temp278 
+        temp280 = (temp279,8) 
+        temp281 = self.gid 
+        temp282 = '%07o' % temp281 
+        temp283 = (temp282,8) 
+        temp284 = (size,12) 
+        temp285 = self.mtime 
+        temp286 = '%011o' % temp285 
+        temp287 = (temp286,12) 
+        temp288 = ('        ',8) 
+        temp289 = (self.type,1) 
+        temp290 = (self.linkname,100) 
+        temp291 = (MAGIC,6) 
+        temp292 = (VERSION,2) 
+        temp293 = (self.uname,32) 
+        temp294 = (self.gname,32) 
+        temp295 = self.devmajor 
+        temp296 = '%07o' % temp295 
+        temp297 = (temp296,8) 
+        temp298 = self.devminor 
+        temp299 = '%07o' % temp298 
+        temp300 = (temp299,8) 
+        temp301 = (self.prefix,155) 
+        temp307 = (temp273,temp277,temp280,temp283,temp284,temp287,temp288,temp289,temp290,temp291,temp292,temp293,temp294,temp297,temp300,temp301) 
+        for (value,fieldsize,) in temp307:
+            l = len(value) 
+            temp302 = parts.append 
+            temp303 = value[:fieldsize] 
+            temp305 = fieldsize - l 
+            temp304 = temp305 * NUL 
+            temp306 = (temp303 + temp304) 
+            temp302(temp306)
+            
+        temp308 = ''.join 
+        buf = temp308(parts) 
+        chksum = calc_chksum(buf) 
+        temp310 = buf[:148] 
+        temp311 = '%06o\x00' % chksum 
+        temp309 = (temp310 + temp311) 
+        temp312 = buf[155:] 
+        buf = (temp309 + temp312) 
+        temp314 = len(buf) 
+        temp313 = BLOCKSIZE - temp314 
+        buf += temp313 * NUL
+        self.buf = buf 
+        return buf
+    def tobuf(self):
+        temp266 = self.size 
+        temp272 = temp266 <= MAXSIZE_MEMBER 
+        if temp272:
+            temp267 = self.size 
+            size = '%011o' % temp267 
+            
+        else:
+            s = self.size 
+            size = '' 
+            temp270 = range(11) 
+            for i in temp270:
+                temp269 = s & 255 
+                temp268 = chr(temp269) 
+                size = (temp268 + size) 
+                s = s >> 8 
+                
+            temp271 = chr(128) 
+            size = (temp271 + size) 
+            
+        parts = [] 
+        temp273 = (self.name,100) 
+        temp275 = self.mode 
+        temp274 = temp275 & 4095 
+        temp276 = '%07o' % temp274 
+        temp277 = (temp276,8) 
+        temp278 = self.uid 
+        temp279 = '%07o' % temp278 
+        temp280 = (temp279,8) 
+        temp281 = self.gid 
+        temp282 = '%07o' % temp281 
+        temp283 = (temp282,8) 
+        temp284 = (size,12) 
+        temp285 = self.mtime 
+        temp286 = '%011o' % temp285 
+        temp287 = (temp286,12) 
+        temp288 = ('        ',8) 
+        temp289 = (self.type,1) 
+        temp290 = (self.linkname,100) 
+        temp291 = (MAGIC,6) 
+        temp292 = (VERSION,2) 
+        temp293 = (self.uname,32) 
+        temp294 = (self.gname,32) 
+        temp295 = self.devmajor 
+        temp296 = '%07o' % temp295 
+        temp297 = (temp296,8) 
+        temp298 = self.devminor 
+        temp299 = '%07o' % temp298 
+        temp300 = (temp299,8) 
+        temp301 = (self.prefix,155) 
+        temp307 = (temp273,temp277,temp280,temp283,temp284,temp287,temp288,temp289,temp290,temp291,temp292,temp293,temp294,temp297,temp300,temp301) 
+        for (value,fieldsize,) in temp307:
+            l = len(value) 
+            temp302 = parts.append 
+            temp303 = value[:fieldsize] 
+            temp305 = fieldsize - l 
+            temp304 = temp305 * NUL 
+            temp306 = (temp303 + temp304) 
+            temp302(temp306)
+            
+        temp308 = ''.join 
+        buf = temp308(parts) 
+        chksum = calc_chksum(buf) 
+        temp310 = buf[:148] 
+        temp311 = '%06o\x00' % chksum 
+        temp309 = (temp310 + temp311) 
+        temp312 = buf[155:] 
+        buf = (temp309 + temp312) 
+        temp314 = len(buf) 
+        temp313 = BLOCKSIZE - temp314 
+        buf += temp313 * NUL
+        self.buf = buf 
+        return buf
+    def isreg(self):
+        temp315 = self.type 
+        temp316 = temp315 in REGULAR_TYPES 
+        return temp316
+    def isreg(self):
+        temp315 = self.type 
+        temp316 = temp315 in REGULAR_TYPES 
+        return temp316
+    def isfile(self):
+        temp317 = self.isreg 
+        temp318 = temp317() 
+        return temp318
+    def isdir(self):
+        temp319 = self.type 
+        temp320 = temp319 == DIRTYPE 
+        return temp320
+    def isdir(self):
+        temp319 = self.type 
+        temp320 = temp319 == DIRTYPE 
+        return temp320
+    def issym(self):
+        temp321 = self.type 
+        temp322 = temp321 == SYMTYPE 
+        return temp322
+    def issym(self):
+        temp321 = self.type 
+        temp322 = temp321 == SYMTYPE 
+        return temp322
+    def islnk(self):
+        temp323 = self.type 
+        temp324 = temp323 == LNKTYPE 
+        return temp324
+    def islnk(self):
+        temp323 = self.type 
+        temp324 = temp323 == LNKTYPE 
+        return temp324
+    def ischr(self):
+        temp325 = self.type 
+        temp326 = temp325 == CHRTYPE 
+        return temp326
+    def isblk(self):
+        temp327 = self.type 
+        temp328 = temp327 == BLKTYPE 
+        return temp328
+    def isfifo(self):
+        temp329 = self.type 
+        temp330 = temp329 == FIFOTYPE 
+        return temp330
+    def issparse(self):
+        temp331 = self.type 
+        temp332 = temp331 == GNUTYPE_SPARSE 
+        return temp332
+    def issparse(self):
+        temp331 = self.type 
+        temp332 = temp331 == GNUTYPE_SPARSE 
+        return temp332
+    def isdev(self):
+        temp333 = self.type 
+        temp334 = (CHRTYPE,BLKTYPE,FIFOTYPE) 
+        temp335 = temp333 in temp334 
+        return temp335
+    
+class TarFile(object):
+    debug = 0 
+    dereference = False 
+    ignore_zeros = False 
+    errorlevel = 0 
+    posix = False 
+    fileobject = ExFileObject 
+    def __init__(self, name=None, mode='r', fileobj=None):
+        self.name = name 
+        temp336 = len(mode) 
+        temp337 = temp336 > 1 
+        temp338 = mode not in 'raw' 
+        temp339 = temp337 or temp338 
+        if temp339:
+            raise ValueError, "mode must be 'r', 'a' or 'w'"
+            
+        self._mode = mode 
+        temp340 = {'r' : 'rb' , 'a' : 'r+b' , 'w' : 'wb'}  
+        self.mode = temp340[mode] 
+        temp348 =  not fileobj 
+        if temp348:
+            temp341 = self.name 
+            temp342 = self.mode 
+            fileobj = file(temp341, temp342) 
+            self._extfileobj = False 
+            
+        else:
+            temp343 = self.name 
+            temp344 = temp343 is None 
+            temp345 = hasattr(fileobj, 'name') 
+            temp346 = temp344 and temp345 
+            if temp346:
+                self.name = fileobj.name 
+                
+            temp347 = hasattr(fileobj, 'mode') 
+            if temp347:
+                self.mode = fileobj.mode 
+                
+            self._extfileobj = True 
+            
+        self.fileobj = fileobj 
+        self.closed = False 
+        self.members = [] 
+        self._loaded = False 
+        self.offset = 0L 
+        self.inodes = {}  
+        temp349 = self._mode 
+        temp351 = temp349 == 'r' 
+        if temp351:
+            self.firstmember = None 
+            temp350 = self.next 
+            self.firstmember = temp350() 
+            
+        temp352 = self._mode 
+        temp360 = temp352 == 'a' 
+        if temp360:
+            self.firstmember = None 
+            while True:
+                try:
+                    temp353 = self.next 
+                    tarinfo = temp353() 
+                    
+                except ReadError:
+                    temp354 = self.fileobj 
+                    temp355 = temp354.seek 
+                    temp355(0)
+                    break 
+                    
+                
+                temp359 = tarinfo is None 
+                if temp359:
+                    temp356 = self.fileobj 
+                    temp357 = temp356.seek 
+                    temp358 = -BLOCKSIZE 
+                    temp357(temp358, 1)
+                    break 
+                    
+                
+            
+        temp361 = self._mode 
+        temp362 = temp361 in 'aw' 
+        if temp362:
+            self._loaded = True 
+            
+        
+    def __init__(self, name, mode, fileobj):
+        self.name = name 
+        temp336 = len(mode) 
+        temp337 = temp336 > 1 
+        temp338 = mode not in 'raw' 
+        temp339 = temp337 or temp338 
+        if temp339:
+            raise ValueError, "mode must be 'r', 'a' or 'w'"
+            
+        self._mode = mode 
+        temp340 = {'r' : 'rb' , 'a' : 'r+b' , 'w' : 'wb'}  
+        self.mode = temp340[mode] 
+        temp348 =  not fileobj 
+        if temp348:
+            temp341 = self.name 
+            temp342 = self.mode 
+            fileobj = file(temp341, temp342) 
+            self._extfileobj = False 
+            
+        else:
+            temp343 = self.name 
+            temp344 = temp343 is None 
+            temp345 = hasattr(fileobj, 'name') 
+            temp346 = temp344 and temp345 
+            if temp346:
+                self.name = fileobj.name 
+                
+            temp347 = hasattr(fileobj, 'mode') 
+            if temp347:
+                self.mode = fileobj.mode 
+                
+            self._extfileobj = True 
+            
+        self.fileobj = fileobj 
+        self.closed = False 
+        self.members = [] 
+        self._loaded = False 
+        self.offset = 0L 
+        self.inodes = {}  
+        temp349 = self._mode 
+        temp351 = temp349 == 'r' 
+        if temp351:
+            self.firstmember = None 
+            temp350 = self.next 
+            self.firstmember = temp350() 
+            
+        temp352 = self._mode 
+        temp360 = temp352 == 'a' 
+        if temp360:
+            self.firstmember = None 
+            while True:
+                try:
+                    temp353 = self.next 
+                    tarinfo = temp353() 
+                    
+                except ReadError:
+                    temp354 = self.fileobj 
+                    temp355 = temp354.seek 
+                    temp355(0)
+                    break 
+                    
+                
+                temp359 = tarinfo is None 
+                if temp359:
+                    temp356 = self.fileobj 
+                    temp357 = temp356.seek 
+                    temp358 = -BLOCKSIZE 
+                    temp357(temp358, 1)
+                    break 
+                    
+                
+            
+        temp361 = self._mode 
+        temp362 = temp361 in 'aw' 
+        if temp362:
+            self._loaded = True 
+            
+        
+    def open(cls, name=None, mode='r', fileobj=None, bufsize=20 * 512):
+        temp363 =  not name 
+        temp364 =  not fileobj 
+        temp365 = temp363 and temp364 
+        if temp365:
+            raise ValueError, 'nothing to open'
+            
+        temp374 = ':' in mode 
+        if temp374:
+            filemode = mode 
+            comptype = mode 
+            filemode = filemode or 'r' 
+            comptype = comptype or 'tar' 
+            T = TarFile() 
+            temp366 = os.open 
+            T.fid = temp366(name, filemode) 
+            return T
+        else:
+            temp373 = '|' in mode 
+            if temp373:
+                filemode = mode 
+                comptype = mode 
+                filemode = filemode or 'r' 
+                comptype = comptype or 'tar' 
+                temp367 = filemode not in 'rw' 
+                if temp367:
+                    raise ValueError, "mode must be 'r' or 'w'"
+                    
+                s = _Stream(name, filemode, comptype, fileobj, bufsize) 
+                t = TarFile() 
+                t._extfileobj = False 
+                return t
+            else:
+                temp372 = mode == 'r' 
+                if temp372:
+                    temp368 = open(cls, name, 'r', fileobj) 
+                    return temp368raise ReadError, 'file could not be opened successfully'
+                    
+                else:
+                    temp371 = mode in 'aw' 
+                    if temp371:
+                        T = TarFile() 
+                        temp369 = T.taropen 
+                        temp370 = temp369(name, mode, fileobj) 
+                        return temp370
+                    
+                
+            
+        raise ValueError, 'undiscernible mode'
+        
+    def open(cls, name, mode, fileobj, bufsize):
+        temp363 =  not name 
+        temp364 =  not fileobj 
+        temp365 = temp363 and temp364 
+        if temp365:
+            raise ValueError, 'nothing to open'
+            
+        temp374 = ':' in mode 
+        if temp374:
+            filemode = mode 
+            comptype = mode 
+            filemode = filemode or 'r' 
+            comptype = comptype or 'tar' 
+            T = TarFile() 
+            temp366 = os.open 
+            T.fid = temp366(name, filemode) 
+            return T
+        else:
+            temp373 = '|' in mode 
+            if temp373:
+                filemode = mode 
+                comptype = mode 
+                filemode = filemode or 'r' 
+                comptype = comptype or 'tar' 
+                temp367 = filemode not in 'rw' 
+                if temp367:
+                    raise ValueError, "mode must be 'r' or 'w'"
+                    
+                s = _Stream(name, filemode, comptype, fileobj, bufsize) 
+                t = TarFile() 
+                t._extfileobj = False 
+                return t
+            else:
+                temp372 = mode == 'r' 
+                if temp372:
+                    temp368 = open(cls, name, 'r', fileobj) 
+                    return temp368raise ReadError, 'file could not be opened successfully'
+                    
+                else:
+                    temp371 = mode in 'aw' 
+                    if temp371:
+                        T = TarFile() 
+                        temp369 = T.taropen 
+                        temp370 = temp369(name, mode, fileobj) 
+                        return temp370
+                    
+                
+            
+        raise ValueError, 'undiscernible mode'
+        
+    def taropen(self, name, mode='r', fileobj=None):
+        temp375 = len(mode) 
+        temp376 = temp375 > 1 
+        temp377 = mode not in 'raw' 
+        temp378 = temp376 or temp377 
+        if temp378:
+            raise ValueError, "mode must be 'r', 'a' or 'w'"
+            
+        temp379 = TarFile(name, mode, fileobj) 
+        return temp379
+    def taropen(self, name, mode, fileobj):
+        temp375 = len(mode) 
+        temp376 = temp375 > 1 
+        temp377 = mode not in 'raw' 
+        temp378 = temp376 or temp377 
+        if temp378:
+            raise ValueError, "mode must be 'r', 'a' or 'w'"
+            
+        temp379 = TarFile(name, mode, fileobj) 
+        return temp379
+    OPEN_METH = {'tar' : 'taropen' , 'gz' : 'gzopen' , 'bz2' : 'bz2open'}  
+    def close(self):
+        temp380 = self.closed 
+        if temp380:
+            return None
+        temp381 = self._mode 
+        temp392 = temp381 in 'aw' 
+        if temp392:
+            temp382 = self.fileobj 
+            temp383 = temp382.write 
+            temp384 = BLOCKSIZE * 2 
+            temp385 = NUL * temp384 
+            temp383(temp385)
+            self.offset += BLOCKSIZE * 2
+            temp386 = self.offset 
+            (blocks,remainder,) = divmod(temp386, RECORDSIZE) 
+            temp391 = remainder > 0 
+            if temp391:
+                temp387 = self.fileobj 
+                temp388 = temp387.write 
+                temp389 = RECORDSIZE - remainder 
+                temp390 = NUL * temp389 
+                temp388(temp390)
+                
+            
+        temp393 = self._extfileobj 
+        temp396 =  not temp393 
+        if temp396:
+            temp394 = self.fileobj 
+            temp395 = temp394.close 
+            temp395()
+            
+        self.closed = True 
+        
+    def getmember(self, name):
+        temp397 = self._getmember 
+        tarinfo = temp397(name) 
+        temp398 = tarinfo is None 
+        if temp398:
+            raise KeyError, 'filename %r not found' % name
+            
+        return tarinfo
+    def getmember(self, name):
+        temp397 = self._getmember 
+        tarinfo = temp397(name) 
+        temp398 = tarinfo is None 
+        if temp398:
+            raise KeyError, 'filename %r not found' % name
+            
+        return tarinfo
+    def getmember(self, name):
+        temp397 = self._getmember 
+        tarinfo = temp397(name) 
+        temp398 = tarinfo is None 
+        if temp398:
+            raise KeyError, 'filename %r not found' % name
+            
+        return tarinfo
+    def getmembers(self):
+        temp399 = self._check 
+        temp399()
+        temp400 = self._loaded 
+        temp402 =  not temp400 
+        if temp402:
+            temp401 = self._load 
+            temp401()
+            
+        temp403 = self.members 
+        return temp403
+    def getmembers(self):
+        temp399 = self._check 
+        temp399()
+        temp400 = self._loaded 
+        temp402 =  not temp400 
+        if temp402:
+            temp401 = self._load 
+            temp401()
+            
+        temp403 = self.members 
+        return temp403
+    def getnames(self):
+        temp404 = [] 
+        temp406 = self.getmembers 
+        for tarinfo in temp406():
+            temp405 = tarinfo.name 
+            temp404.append(temp405)
+            
+        return temp404
+    def gettarinfo(self, name=None, arcname=None, fileobj=None):
+        temp407 = self._check 
+        temp407('aw')
+        temp408 = fileobj is not None 
+        if temp408:
+            name = fileobj.name 
+            
+        temp409 = arcname is None 
+        if temp409:
+            arcname = name 
+            
+        temp410 = os.path 
+        temp411 = temp410.normpath 
+        arcname = temp411(arcname) 
+        temp412 = os.path 
+        temp413 = temp412.splitdrive 
+        (drv,arcname,) = temp413(arcname) 
+        temp414 = arcname[0:1] 
+        while temp414 == '/':
+            arcname = arcname[1:] 
+            temp414 = arcname[0:1] 
+            
+        tarinfo = TarInfo() 
+        temp422 = fileobj is None 
+        if temp422:
+            temp415 = hasattr(os, 'lstat') 
+            temp416 = self.dereference 
+            temp417 =  not temp416 
+            temp420 = temp415 and temp417 
+            if temp420:
+                temp418 = os.lstat 
+                statres = temp418(name) 
+                
+            else:
+                temp419 = os.stat 
+                statres = temp419(name) 
+                
+            
+        else:
+            fileobj = open('*tarfile') 
+            temp421 = os.fstat 
+            statres = temp421(fileobj) 
+            
+        linkname = '' 
+        stmd = statres.st_mode 
+        temp423 = stat.S_ISREG 
+        temp447 = temp423(stmd) 
+        if temp447:
+            inode = (statres.st_ino,statres.st_dev) 
+            temp424 = self.dereference 
+            temp425 =  not temp424 
+            temp426 = statres.st_nlink 
+            temp427 = temp426 > 1 
+            temp428 = self.inodes 
+            temp429 = inode in temp428 
+            temp433 = temp425 and temp427 and temp429 
+            if temp433:
+                type = LNKTYPE 
+                temp430 = self.inodes 
+                linkname = temp430[inode] 
+                
+            else:
+                type = REGTYPE 
+                temp432 = inode[0] 
+                if temp432:
+                    temp431 = self.inodes 
+                    temp431[inode] = arcname 
+                    
+                
+            
+        else:
+            temp434 = stat.S_ISDIR 
+            temp446 = temp434(stmd) 
+            if temp446:
+                type = DIRTYPE 
+                temp435 = arcname[-1:] 
+                temp436 = temp435 != '/' 
+                if temp436:
+                    arcname += '/'
+                    
+                
+            else:
+                temp437 = stat.S_ISFIFO 
+                temp445 = temp437(stmd) 
+                if temp445:
+                    type = FIFOTYPE 
+                    
+                else:
+                    temp438 = stat.S_ISLNK 
+                    temp444 = temp438(stmd) 
+                    if temp444:
+                        type = SYMTYPE 
+                        temp439 = os.readlink 
+                        linkname = temp439(name) 
+                        
+                    else:
+                        temp440 = stat.S_ISCHR 
+                        temp443 = temp440(stmd) 
+                        if temp443:
+                            type = CHRTYPE 
+                            
+                        else:
+                            temp441 = stat.S_ISBLK 
+                            temp442 = temp441(stmd) 
+                            if temp442:
+                                type = BLKTYPE 
+                                
+                            else:
+                                return None
+                            
+                        
+                    
+                
+            
+        tarinfo.name = arcname 
+        tarinfo.mode = stmd 
+        tarinfo.uid = statres.st_uid 
+        tarinfo.gid = statres.st_gid 
+        temp448 = stat.S_ISREG 
+        temp449 = temp448(stmd) 
+        if temp449:
+            tarinfo.size = statres.st_size 
+            
+        else:
+            tarinfo.size = 0L 
+            
+        tarinfo.mtime = statres.st_mtime 
+        tarinfo.type = type 
+        tarinfo.linkname = linkname 
+        temp450 = (CHRTYPE,BLKTYPE) 
+        temp458 = type in temp450 
+        if temp458:
+            temp451 = hasattr(os, 'major') 
+            temp452 = hasattr(os, 'minor') 
+            temp457 = temp451 and temp452 
+            if temp457:
+                temp453 = os.major 
+                temp454 = statres.st_rdev 
+                tarinfo.devmajor = temp453(temp454) 
+                temp455 = os.minor 
+                temp456 = statres.st_rdev 
+                tarinfo.devminor = temp455(temp456) 
+                
+            
+        return tarinfo
+    def gettarinfo(self, name, arcname, fileobj):
+        temp407 = self._check 
+        temp407('aw')
+        temp408 = fileobj is not None 
+        if temp408:
+            name = fileobj.name 
+            
+        temp409 = arcname is None 
+        if temp409:
+            arcname = name 
+            
+        temp410 = os.path 
+        temp411 = temp410.normpath 
+        arcname = temp411(arcname) 
+        temp412 = os.path 
+        temp413 = temp412.splitdrive 
+        (drv,arcname,) = temp413(arcname) 
+        temp414 = arcname[0:1] 
+        while temp414 == '/':
+            arcname = arcname[1:] 
+            temp414 = arcname[0:1] 
+            
+        tarinfo = TarInfo() 
+        temp422 = fileobj is None 
+        if temp422:
+            temp415 = hasattr(os, 'lstat') 
+            temp416 = self.dereference 
+            temp417 =  not temp416 
+            temp420 = temp415 and temp417 
+            if temp420:
+                temp418 = os.lstat 
+                statres = temp418(name) 
+                
+            else:
+                temp419 = os.stat 
+                statres = temp419(name) 
+                
+            
+        else:
+            fileobj = open('*tarfile') 
+            temp421 = os.fstat 
+            statres = temp421(fileobj) 
+            
+        linkname = '' 
+        stmd = statres.st_mode 
+        temp423 = stat.S_ISREG 
+        temp447 = temp423(stmd) 
+        if temp447:
+            inode = (statres.st_ino,statres.st_dev) 
+            temp424 = self.dereference 
+            temp425 =  not temp424 
+            temp426 = statres.st_nlink 
+            temp427 = temp426 > 1 
+            temp428 = self.inodes 
+            temp429 = inode in temp428 
+            temp433 = temp425 and temp427 and temp429 
+            if temp433:
+                type = LNKTYPE 
+                temp430 = self.inodes 
+                linkname = temp430[inode] 
+                
+            else:
+                type = REGTYPE 
+                temp432 = inode[0] 
+                if temp432:
+                    temp431 = self.inodes 
+                    temp431[inode] = arcname 
+                    
+                
+            
+        else:
+            temp434 = stat.S_ISDIR 
+            temp446 = temp434(stmd) 
+            if temp446:
+                type = DIRTYPE 
+                temp435 = arcname[-1:] 
+                temp436 = temp435 != '/' 
+                if temp436:
+                    arcname += '/'
+                    
+                
+            else:
+                temp437 = stat.S_ISFIFO 
+                temp445 = temp437(stmd) 
+                if temp445:
+                    type = FIFOTYPE 
+                    
+                else:
+                    temp438 = stat.S_ISLNK 
+                    temp444 = temp438(stmd) 
+                    if temp444:
+                        type = SYMTYPE 
+                        temp439 = os.readlink 
+                        linkname = temp439(name) 
+                        
+                    else:
+                        temp440 = stat.S_ISCHR 
+                        temp443 = temp440(stmd) 
+                        if temp443:
+                            type = CHRTYPE 
+                            
+                        else:
+                            temp441 = stat.S_ISBLK 
+                            temp442 = temp441(stmd) 
+                            if temp442:
+                                type = BLKTYPE 
+                                
+                            else:
+                                return None
+                            
+                        
+                    
+                
+            
+        tarinfo.name = arcname 
+        tarinfo.mode = stmd 
+        tarinfo.uid = statres.st_uid 
+        tarinfo.gid = statres.st_gid 
+        temp448 = stat.S_ISREG 
+        temp449 = temp448(stmd) 
+        if temp449:
+            tarinfo.size = statres.st_size 
+            
+        else:
+            tarinfo.size = 0L 
+            
+        tarinfo.mtime = statres.st_mtime 
+        tarinfo.type = type 
+        tarinfo.linkname = linkname 
+        temp450 = (CHRTYPE,BLKTYPE) 
+        temp458 = type in temp450 
+        if temp458:
+            temp451 = hasattr(os, 'major') 
+            temp452 = hasattr(os, 'minor') 
+            temp457 = temp451 and temp452 
+            if temp457:
+                temp453 = os.major 
+                temp454 = statres.st_rdev 
+                tarinfo.devmajor = temp453(temp454) 
+                temp455 = os.minor 
+                temp456 = statres.st_rdev 
+                tarinfo.devminor = temp455(temp456) 
+                
+            
+        return tarinfo
+    def list(self, verbose=True):
+        temp459 = self._check 
+        temp459()
+        for tarinfo in self:
+            if verbose:
+                temp460 = tarinfo.mode 
+                temp461 = filemode(temp460) 
+                print temp461temp463 = tarinfo.uname 
+                temp464 = tarinfo.uid 
+                temp465 = temp463 or temp464 
+                temp466 = tarinfo.gname 
+                temp467 = tarinfo.gid 
+                temp468 = temp466 or temp467 
+                temp462 = (temp465,temp468) 
+                temp469 = '%s/%s' % temp462 
+                print temp469temp470 = tarinfo.ischr 
+                temp471 = temp470() 
+                temp472 = tarinfo.isblk 
+                temp473 = temp472() 
+                temp479 = temp471 or temp473 
+                if temp479:
+                    temp475 = (tarinfo.devmajor,tarinfo.devminor) 
+                    temp474 = '%d,%d' % temp475 
+                    temp476 = '%10s' % temp474 
+                    print temp476
+                else:
+                    temp477 = tarinfo.size 
+                    temp478 = '%10d' % temp477 
+                    print temp478
+                temp481 = time.localtime 
+                temp482 = tarinfo.mtime 
+                temp483 = temp481(temp482) 
+                temp480 = temp483[:6] 
+                temp484 = '%d-%02d-%02d %02d:%02d:%02d' % temp480 
+                print temp484
+            print tarinfo.nameif verbose:
+                temp485 = tarinfo.issym 
+                temp486 = temp485() 
+                if temp486:
+                    print '->'print tarinfo.linkname
+                temp487 = tarinfo.islnk 
+                temp488 = temp487() 
+                if temp488:
+                    print 'link to'print tarinfo.linkname
+                
+            
+        
+    def add(self, name, arcname=None, recursive=True):
+        temp489 = self._check 
+        temp489('aw')
+        temp490 = arcname is None 
+        if temp490:
+            arcname = name 
+            
+        temp491 = self.name 
+        temp492 = temp491 is not None 
+        temp493 = os.path 
+        temp494 = temp493.abspath 
+        temp498 = temp494(name) 
+        temp495 = os.path 
+        temp496 = temp495.abspath 
+        temp497 = self.name 
+        temp499 = temp496(temp497) 
+        temp500 = temp498 == temp499 
+        temp503 = temp492 and temp500 
+        if temp503:
+            temp501 = self._dbg 
+            temp502 = 'tarfile: Skipped %r' % name 
+            temp501(2, temp502)
+            return None
+        temp504 = name == '.' 
+        if temp504:
+            return None
+        temp505 = self._dbg 
+        temp505(1, name)
+        temp506 = self.gettarinfo 
+        tarinfo = temp506(name, arcname) 
+        temp509 = tarinfo is None 
+        if temp509:
+            temp507 = self._dbg 
+            temp508 = 'tarfile: Unsupported type %r' % name 
+            temp507(1, temp508)
+            return None
+        temp510 = tarinfo.isreg 
+        temp517 = temp510() 
+        if temp517:
+            f = file(name, 'rb') 
+            temp511 = self.addfile 
+            temp511(tarinfo, f)
+            temp512 = f.close 
+            temp512()
+            
+        else:
+            temp513 = tarinfo.isdir 
+            temp516 = temp513() 
+            if temp516:
+                temp514 = self.addfile 
+                temp514(tarinfo)
+                
+            else:
+                temp515 = self.addfile 
+                temp515(tarinfo)
+                
+            
+        
+    def add(self, name, arcname, recursive):
+        temp489 = self._check 
+        temp489('aw')
+        temp490 = arcname is None 
+        if temp490:
+            arcname = name 
+            
+        temp491 = self.name 
+        temp492 = temp491 is not None 
+        temp493 = os.path 
+        temp494 = temp493.abspath 
+        temp498 = temp494(name) 
+        temp495 = os.path 
+        temp496 = temp495.abspath 
+        temp497 = self.name 
+        temp499 = temp496(temp497) 
+        temp500 = temp498 == temp499 
+        temp503 = temp492 and temp500 
+        if temp503:
+            temp501 = self._dbg 
+            temp502 = 'tarfile: Skipped %r' % name 
+            temp501(2, temp502)
+            return None
+        temp504 = name == '.' 
+        if temp504:
+            return None
+        temp505 = self._dbg 
+        temp505(1, name)
+        temp506 = self.gettarinfo 
+        tarinfo = temp506(name, arcname) 
+        temp509 = tarinfo is None 
+        if temp509:
+            temp507 = self._dbg 
+            temp508 = 'tarfile: Unsupported type %r' % name 
+            temp507(1, temp508)
+            return None
+        temp510 = tarinfo.isreg 
+        temp517 = temp510() 
+        if temp517:
+            f = file(name, 'rb') 
+            temp511 = self.addfile 
+            temp511(tarinfo, f)
+            temp512 = f.close 
+            temp512()
+            
+        else:
+            temp513 = tarinfo.isdir 
+            temp516 = temp513() 
+            if temp516:
+                temp514 = self.addfile 
+                temp514(tarinfo)
+                
+            else:
+                temp515 = self.addfile 
+                temp515(tarinfo)
+                
+            
+        
+    def addfile(self, tarinfo, fileobj=None):
+        temp518 = self._check 
+        temp518('aw')
+        temp519 = os.path 
+        temp520 = temp519.normpath 
+        temp521 = tarinfo.name 
+        tarinfo.name = temp520(temp521) 
+        temp522 = tarinfo.isdir 
+        temp523 = temp522() 
+        if temp523:
+            tarinfo.name += '/'
+            
+        temp527 = tarinfo.linkname 
+        if temp527:
+            temp524 = os.path 
+            temp525 = temp524.normpath 
+            temp526 = tarinfo.linkname 
+            tarinfo.linkname = temp525(temp526) 
+            
+        temp528 = tarinfo.size 
+        temp531 = temp528 > MAXSIZE_MEMBER 
+        if temp531:
+            temp530 = self.posix 
+            if temp530:
+                raise ValueError, 'file is too large (>= 8 GB)'
+                
+            else:
+                temp529 = self._dbg 
+                temp529(2, 'tarfile: Created GNU tar largefile header')
+                
+            
+        temp532 = tarinfo.linkname 
+        temp533 = len(temp532) 
+        temp540 = temp533 > LENGTH_LINK 
+        if temp540:
+            temp539 = self.posix 
+            if temp539:
+                raise ValueError, 'linkname is too long (>%d)' % LENGTH_LINK
+                
+            else:
+                temp534 = self._create_gnulong 
+                temp535 = tarinfo.linkname 
+                temp534(temp535, GNUTYPE_LONGLINK)
+                temp536 = tarinfo.linkname 
+                temp537 = LENGTH_LINK - 1 
+                tarinfo.linkname = temp536[:temp537] 
+                temp538 = self._dbg 
+                temp538(2, 'tarfile: Created GNU tar extension LONGLINK')
+                
+            
+        temp541 = tarinfo.name 
+        temp542 = len(temp541) 
+        temp559 = temp542 > LENGTH_NAME 
+        if temp559:
+            temp558 = self.posix 
+            if temp558:
+                temp543 = tarinfo.name 
+                temp544 = (LENGTH_PREFIX + 1) 
+                prefix = temp543[:temp544] 
+                temp545 = prefix[-1] 
+                temp546 = temp545 != '/' 
+                while prefix and temp546:
+                    prefix = prefix[:-1] 
+                    temp545 = prefix[-1] 
+                    temp546 = temp545 != '/' 
+                    
+                temp547 = tarinfo.name 
+                temp548 = len(prefix) 
+                name = temp547[temp548:] 
+                prefix = prefix[:-1] 
+                temp549 =  not prefix 
+                temp550 = len(name) 
+                temp551 = temp550 > LENGTH_NAME 
+                temp552 = temp549 or temp551 
+                if temp552:
+                    raise ValueError, 'name is too long (>%d)' % LENGTH_NAME
+                    
+                tarinfo.name = name 
+                tarinfo.prefix = prefix 
+                
+            else:
+                temp553 = self._create_gnulong 
+                temp554 = tarinfo.name 
+                temp553(temp554, GNUTYPE_LONGNAME)
+                temp555 = tarinfo.name 
+                temp556 = LENGTH_NAME - 1 
+                tarinfo.name = temp555[:temp556] 
+                temp557 = self._dbg 
+                temp557(2, 'tarfile: Created GNU tar extension LONGNAME')
+                
+            
+        temp560 = self.fileobj 
+        temp561 = temp560.write 
+        temp562 = tarinfo.tobuf 
+        temp563 = temp562() 
+        temp561(temp563)
+        self.offset += BLOCKSIZE
+        temp572 = fileobj is not None 
+        if temp572:
+            temp564 = self.fileobj 
+            temp565 = tarinfo.size 
+            copyfileobj(fileobj, temp564, temp565)
+            temp566 = tarinfo.size 
+            (blocks,remainder,) = divmod(temp566, BLOCKSIZE) 
+            temp571 = remainder > 0 
+            if temp571:
+                temp567 = self.fileobj 
+                temp568 = temp567.write 
+                temp569 = BLOCKSIZE - remainder 
+                temp570 = NUL * temp569 
+                temp568(temp570)
+                blocks += 1
+                
+            self.offset += blocks * BLOCKSIZE
+            
+        temp573 = self.members 
+        temp574 = temp573.append 
+        temp574(tarinfo)
+        
+    def addfile(self, tarinfo, fileobj):
+        temp518 = self._check 
+        temp518('aw')
+        temp519 = os.path 
+        temp520 = temp519.normpath 
+        temp521 = tarinfo.name 
+        tarinfo.name = temp520(temp521) 
+        temp522 = tarinfo.isdir 
+        temp523 = temp522() 
+        if temp523:
+            tarinfo.name += '/'
+            
+        temp527 = tarinfo.linkname 
+        if temp527:
+            temp524 = os.path 
+            temp525 = temp524.normpath 
+            temp526 = tarinfo.linkname 
+            tarinfo.linkname = temp525(temp526) 
+            
+        temp528 = tarinfo.size 
+        temp531 = temp528 > MAXSIZE_MEMBER 
+        if temp531:
+            temp530 = self.posix 
+            if temp530:
+                raise ValueError, 'file is too large (>= 8 GB)'
+                
+            else:
+                temp529 = self._dbg 
+                temp529(2, 'tarfile: Created GNU tar largefile header')
+                
+            
+        temp532 = tarinfo.linkname 
+        temp533 = len(temp532) 
+        temp540 = temp533 > LENGTH_LINK 
+        if temp540:
+            temp539 = self.posix 
+            if temp539:
+                raise ValueError, 'linkname is too long (>%d)' % LENGTH_LINK
+                
+            else:
+                temp534 = self._create_gnulong 
+                temp535 = tarinfo.linkname 
+                temp534(temp535, GNUTYPE_LONGLINK)
+                temp536 = tarinfo.linkname 
+                temp537 = LENGTH_LINK - 1 
+                tarinfo.linkname = temp536[:temp537] 
+                temp538 = self._dbg 
+                temp538(2, 'tarfile: Created GNU tar extension LONGLINK')
+                
+            
+        temp541 = tarinfo.name 
+        temp542 = len(temp541) 
+        temp559 = temp542 > LENGTH_NAME 
+        if temp559:
+            temp558 = self.posix 
+            if temp558:
+                temp543 = tarinfo.name 
+                temp544 = (LENGTH_PREFIX + 1) 
+                prefix = temp543[:temp544] 
+                temp545 = prefix[-1] 
+                temp546 = temp545 != '/' 
+                while prefix and temp546:
+                    prefix = prefix[:-1] 
+                    temp545 = prefix[-1] 
+                    temp546 = temp545 != '/' 
+                    
+                temp547 = tarinfo.name 
+                temp548 = len(prefix) 
+                name = temp547[temp548:] 
+                prefix = prefix[:-1] 
+                temp549 =  not prefix 
+                temp550 = len(name) 
+                temp551 = temp550 > LENGTH_NAME 
+                temp552 = temp549 or temp551 
+                if temp552:
+                    raise ValueError, 'name is too long (>%d)' % LENGTH_NAME
+                    
+                tarinfo.name = name 
+                tarinfo.prefix = prefix 
+                
+            else:
+                temp553 = self._create_gnulong 
+                temp554 = tarinfo.name 
+                temp553(temp554, GNUTYPE_LONGNAME)
+                temp555 = tarinfo.name 
+                temp556 = LENGTH_NAME - 1 
+                tarinfo.name = temp555[:temp556] 
+                temp557 = self._dbg 
+                temp557(2, 'tarfile: Created GNU tar extension LONGNAME')
+                
+            
+        temp560 = self.fileobj 
+        temp561 = temp560.write 
+        temp562 = tarinfo.tobuf 
+        temp563 = temp562() 
+        temp561(temp563)
+        self.offset += BLOCKSIZE
+        temp572 = fileobj is not None 
+        if temp572:
+            temp564 = self.fileobj 
+            temp565 = tarinfo.size 
+            copyfileobj(fileobj, temp564, temp565)
+            temp566 = tarinfo.size 
+            (blocks,remainder,) = divmod(temp566, BLOCKSIZE) 
+            temp571 = remainder > 0 
+            if temp571:
+                temp567 = self.fileobj 
+                temp568 = temp567.write 
+                temp569 = BLOCKSIZE - remainder 
+                temp570 = NUL * temp569 
+                temp568(temp570)
+                blocks += 1
+                
+            self.offset += blocks * BLOCKSIZE
+            
+        temp573 = self.members 
+        temp574 = temp573.append 
+        temp574(tarinfo)
+        
+    def addfile(self, tarinfo, fileobj):
+        temp518 = self._check 
+        temp518('aw')
+        temp519 = os.path 
+        temp520 = temp519.normpath 
+        temp521 = tarinfo.name 
+        tarinfo.name = temp520(temp521) 
+        temp522 = tarinfo.isdir 
+        temp523 = temp522() 
+        if temp523:
+            tarinfo.name += '/'
+            
+        temp527 = tarinfo.linkname 
+        if temp527:
+            temp524 = os.path 
+            temp525 = temp524.normpath 
+            temp526 = tarinfo.linkname 
+            tarinfo.linkname = temp525(temp526) 
+            
+        temp528 = tarinfo.size 
+        temp531 = temp528 > MAXSIZE_MEMBER 
+        if temp531:
+            temp530 = self.posix 
+            if temp530:
+                raise ValueError, 'file is too large (>= 8 GB)'
+                
+            else:
+                temp529 = self._dbg 
+                temp529(2, 'tarfile: Created GNU tar largefile header')
+                
+            
+        temp532 = tarinfo.linkname 
+        temp533 = len(temp532) 
+        temp540 = temp533 > LENGTH_LINK 
+        if temp540:
+            temp539 = self.posix 
+            if temp539:
+                raise ValueError, 'linkname is too long (>%d)' % LENGTH_LINK
+                
+            else:
+                temp534 = self._create_gnulong 
+                temp535 = tarinfo.linkname 
+                temp534(temp535, GNUTYPE_LONGLINK)
+                temp536 = tarinfo.linkname 
+                temp537 = LENGTH_LINK - 1 
+                tarinfo.linkname = temp536[:temp537] 
+                temp538 = self._dbg 
+                temp538(2, 'tarfile: Created GNU tar extension LONGLINK')
+                
+            
+        temp541 = tarinfo.name 
+        temp542 = len(temp541) 
+        temp559 = temp542 > LENGTH_NAME 
+        if temp559:
+            temp558 = self.posix 
+            if temp558:
+                temp543 = tarinfo.name 
+                temp544 = (LENGTH_PREFIX + 1) 
+                prefix = temp543[:temp544] 
+                temp545 = prefix[-1] 
+                temp546 = temp545 != '/' 
+                while prefix and temp546:
+                    prefix = prefix[:-1] 
+                    temp545 = prefix[-1] 
+                    temp546 = temp545 != '/' 
+                    
+                temp547 = tarinfo.name 
+                temp548 = len(prefix) 
+                name = temp547[temp548:] 
+                prefix = prefix[:-1] 
+                temp549 =  not prefix 
+                temp550 = len(name) 
+                temp551 = temp550 > LENGTH_NAME 
+                temp552 = temp549 or temp551 
+                if temp552:
+                    raise ValueError, 'name is too long (>%d)' % LENGTH_NAME
+                    
+                tarinfo.name = name 
+                tarinfo.prefix = prefix 
+                
+            else:
+                temp553 = self._create_gnulong 
+                temp554 = tarinfo.name 
+                temp553(temp554, GNUTYPE_LONGNAME)
+                temp555 = tarinfo.name 
+                temp556 = LENGTH_NAME - 1 
+                tarinfo.name = temp555[:temp556] 
+                temp557 = self._dbg 
+                temp557(2, 'tarfile: Created GNU tar extension LONGNAME')
+                
+            
+        temp560 = self.fileobj 
+        temp561 = temp560.write 
+        temp562 = tarinfo.tobuf 
+        temp563 = temp562() 
+        temp561(temp563)
+        self.offset += BLOCKSIZE
+        temp572 = fileobj is not None 
+        if temp572:
+            temp564 = self.fileobj 
+            temp565 = tarinfo.size 
+            copyfileobj(fileobj, temp564, temp565)
+            temp566 = tarinfo.size 
+            (blocks,remainder,) = divmod(temp566, BLOCKSIZE) 
+            temp571 = remainder > 0 
+            if temp571:
+                temp567 = self.fileobj 
+                temp568 = temp567.write 
+                temp569 = BLOCKSIZE - remainder 
+                temp570 = NUL * temp569 
+                temp568(temp570)
+                blocks += 1
+                
+            self.offset += blocks * BLOCKSIZE
+            
+        temp573 = self.members 
+        temp574 = temp573.append 
+        temp574(tarinfo)
+        
+    def extract(self, member, path=''):
+        temp575 = self._check 
+        temp575('r')
+        temp577 = isinstance(member, TarInfo) 
+        if temp577:
+            tarinfo = member 
+            
+        else:
+            temp576 = self.getmember 
+            tarinfo = temp576(member) 
+            
+        temp578 = tarinfo.islnk 
+        temp582 = temp578() 
+        if temp582:
+            temp579 = os.path 
+            temp580 = temp579.join 
+            temp581 = tarinfo.linkname 
+            tarinfo._link_target = temp580(path, temp581) 
+            
+        try:
+            temp583 = self._extract_member 
+            temp584 = os.path 
+            temp585 = temp584.join 
+            temp586 = tarinfo.name 
+            temp587 = temp585(path, temp586) 
+            temp583(tarinfo, temp587)
+            
+        except EnvironmentError, e:
+            temp588 = self.errorlevel 
+            temp597 = temp588 > 0 
+            if temp597:
+                raise 
+                
+            else:
+                temp589 = e.filename 
+                temp596 = temp589 is None 
+                if temp596:
+                    temp590 = self._dbg 
+                    temp591 = e.strerror 
+                    temp592 = 'tarfile: %s' % temp591 
+                    temp590(1, temp592)
+                    
+                else:
+                    temp593 = self._dbg 
+                    temp594 = (e.strerror,e.filename) 
+                    temp595 = 'tarfile: %s %r' % temp594 
+                    temp593(1, temp595)
+                    
+                
+            
+        except ExtractError, e:
+            temp598 = self.errorlevel 
+            temp601 = temp598 > 1 
+            if temp601:
+                raise 
+                
+            else:
+                temp599 = self._dbg 
+                temp600 = 'tarfile: %s' % e 
+                temp599(1, temp600)
+                
+            
+        
+        
+    def extractfile(self, member):
+        temp602 = self._check 
+        temp602('r')
+        temp604 = isinstance(member, TarInfo) 
+        if temp604:
+            tarinfo = member 
+            
+        else:
+            temp603 = self.getmember 
+            tarinfo = temp603(member) 
+            
+        temp605 = tarinfo.isreg 
+        temp624 = temp605() 
+        if temp624:
+            temp606 = self.fileobject 
+            temp607 = temp606(self, tarinfo) 
+            return temp607
+        else:
+            temp608 = tarinfo.type 
+            temp623 = temp608 not in SUPPORTED_TYPES 
+            if temp623:
+                temp609 = self.fileobject 
+                temp610 = temp609(self, tarinfo) 
+                return temp610
+            else:
+                temp611 = tarinfo.islnk 
+                temp612 = temp611() 
+                temp613 = tarinfo.issym 
+                temp614 = temp613() 
+                temp622 = temp612 or temp614 
+                if temp622:
+                    temp615 = self.fileobj 
+                    temp621 = isinstance(temp615, _Stream) 
+                    if temp621:
+                        raise StreamError, 'cannot extract (sym)link as file object'
+                        
+                    else:
+                        temp616 = self.extractfile 
+                        temp617 = self._getmember 
+                        temp618 = tarinfo.linkname 
+                        temp619 = temp617(temp618, tarinfo) 
+                        temp620 = temp616(temp619) 
+                        return temp620
+                    
+                else:
+                    return None
+                
+            
+        
+    def extractfile(self, member):
+        temp602 = self._check 
+        temp602('r')
+        temp604 = isinstance(member, TarInfo) 
+        if temp604:
+            tarinfo = member 
+            
+        else:
+            temp603 = self.getmember 
+            tarinfo = temp603(member) 
+            
+        temp605 = tarinfo.isreg 
+        temp624 = temp605() 
+        if temp624:
+            temp606 = self.fileobject 
+            temp607 = temp606(self, tarinfo) 
+            return temp607
+        else:
+            temp608 = tarinfo.type 
+            temp623 = temp608 not in SUPPORTED_TYPES 
+            if temp623:
+                temp609 = self.fileobject 
+                temp610 = temp609(self, tarinfo) 
+                return temp610
+            else:
+                temp611 = tarinfo.islnk 
+                temp612 = temp611() 
+                temp613 = tarinfo.issym 
+                temp614 = temp613() 
+                temp622 = temp612 or temp614 
+                if temp622:
+                    temp615 = self.fileobj 
+                    temp621 = isinstance(temp615, _Stream) 
+                    if temp621:
+                        raise StreamError, 'cannot extract (sym)link as file object'
+                        
+                    else:
+                        temp616 = self.extractfile 
+                        temp617 = self._getmember 
+                        temp618 = tarinfo.linkname 
+                        temp619 = temp617(temp618, tarinfo) 
+                        temp620 = temp616(temp619) 
+                        return temp620
+                    
+                else:
+                    return None
+                
+            
+        
+    def extractfile(self, member):
+        temp602 = self._check 
+        temp602('r')
+        temp604 = isinstance(member, TarInfo) 
+        if temp604:
+            tarinfo = member 
+            
+        else:
+            temp603 = self.getmember 
+            tarinfo = temp603(member) 
+            
+        temp605 = tarinfo.isreg 
+        temp624 = temp605() 
+        if temp624:
+            temp606 = self.fileobject 
+            temp607 = temp606(self, tarinfo) 
+            return temp607
+        else:
+            temp608 = tarinfo.type 
+            temp623 = temp608 not in SUPPORTED_TYPES 
+            if temp623:
+                temp609 = self.fileobject 
+                temp610 = temp609(self, tarinfo) 
+                return temp610
+            else:
+                temp611 = tarinfo.islnk 
+                temp612 = temp611() 
+                temp613 = tarinfo.issym 
+                temp614 = temp613() 
+                temp622 = temp612 or temp614 
+                if temp622:
+                    temp615 = self.fileobj 
+                    temp621 = isinstance(temp615, _Stream) 
+                    if temp621:
+                        raise StreamError, 'cannot extract (sym)link as file object'
+                        
+                    else:
+                        temp616 = self.extractfile 
+                        temp617 = self._getmember 
+                        temp618 = tarinfo.linkname 
+                        temp619 = temp617(temp618, tarinfo) 
+                        temp620 = temp616(temp619) 
+                        return temp620
+                    
+                else:
+                    return None
+                
+            
+        
+    def _extract_member(self, tarinfo, targetpath):
+        temp625 = targetpath[-1:] 
+        temp626 = temp625 == '/' 
+        if temp626:
+            targetpath = targetpath[:-1] 
+            
+        temp627 = os.path 
+        temp628 = temp627.normpath 
+        targetpath = temp628(targetpath) 
+        temp629 = os.path 
+        temp630 = temp629.dirname 
+        upperdirs = temp630(targetpath) 
+        temp631 = os.path 
+        temp632 = temp631.exists 
+        temp633 = temp632(upperdirs) 
+        temp634 =  not temp633 
+        temp637 = upperdirs and temp634 
+        if temp637:
+            ti = TarInfo() 
+            ti.name = upperdirs 
+            ti.type = DIRTYPE 
+            ti.mode = 511 
+            ti.mtime = tarinfo.mtime 
+            ti.uid = tarinfo.uid 
+            ti.gid = tarinfo.gid 
+            ti.uname = tarinfo.uname 
+            ti.gname = tarinfo.gname 
+            try:
+                temp635 = self._extract_member 
+                temp636 = ti.name 
+                temp635(ti, temp636)
+                
+            except:
+                pass 
+            
+            
+        temp638 = tarinfo.islnk 
+        temp639 = temp638() 
+        temp640 = tarinfo.issym 
+        temp641 = temp640() 
+        temp647 = temp639 or temp641 
+        if temp647:
+            temp642 = self._dbg 
+            temp643 = (tarinfo.name,tarinfo.linkname) 
+            temp644 = '%s -> %s' % temp643 
+            temp642(1, temp644)
+            
+        else:
+            temp645 = self._dbg 
+            temp646 = tarinfo.name 
+            temp645(1, temp646)
+            
+        temp648 = tarinfo.isreg 
+        temp672 = temp648() 
+        if temp672:
+            temp649 = self.makefile 
+            temp649(tarinfo, targetpath)
+            
+        else:
+            temp650 = tarinfo.isdir 
+            temp671 = temp650() 
+            if temp671:
+                temp651 = self.makedir 
+                temp651(tarinfo, targetpath)
+                
+            else:
+                temp652 = tarinfo.isfifo 
+                temp670 = temp652() 
+                if temp670:
+                    temp653 = self.makefifo 
+                    temp653(tarinfo, targetpath)
+                    
+                else:
+                    temp654 = tarinfo.ischr 
+                    temp655 = temp654() 
+                    temp656 = tarinfo.isblk 
+                    temp657 = temp656() 
+                    temp669 = temp655 or temp657 
+                    if temp669:
+                        temp658 = self.makedev 
+                        temp658(tarinfo, targetpath)
+                        
+                    else:
+                        temp659 = tarinfo.islnk 
+                        temp660 = temp659() 
+                        temp661 = tarinfo.issym 
+                        temp662 = temp661() 
+                        temp668 = temp660 or temp662 
+                        if temp668:
+                            temp663 = self.makelink 
+                            temp663(tarinfo, targetpath)
+                            
+                        else:
+                            temp664 = tarinfo.type 
+                            temp667 = temp664 not in SUPPORTED_TYPES 
+                            if temp667:
+                                temp665 = self.makeunknown 
+                                temp665(tarinfo, targetpath)
+                                
+                            else:
+                                temp666 = self.makefile 
+                                temp666(tarinfo, targetpath)
+                                
+                            
+                        
+                    
+                
+            
+        temp673 = self.chown 
+        temp673(tarinfo, targetpath)
+        temp674 = tarinfo.issym 
+        temp675 = temp674() 
+        temp678 =  not temp675 
+        if temp678:
+            temp676 = self.chmod 
+            temp676(tarinfo, targetpath)
+            temp677 = self.utime 
+            temp677(tarinfo, targetpath)
+            
+        
+    def makedir(self, tarinfo, targetpath):
+        try:
+            temp679 = os.mkdir 
+            temp679(targetpath)
+            
+        except EnvironmentError, e:
+            temp680 = e.errno 
+            temp681 = errno.EEXIST 
+            temp682 = temp680 != temp681 
+            if temp682:
+                raise 
+                
+            
+        
+        
+    def makefile(self, tarinfo, targetpath):
+        temp683 = self.extractfile 
+        source = temp683(tarinfo) 
+        target = file(targetpath, 'wb') 
+        copyfileobj(source, target)
+        temp684 = source.close 
+        temp684()
+        temp685 = target.close 
+        temp685()
+        
+    def makeunknown(self, tarinfo, targetpath):
+        temp686 = self.makefile 
+        temp686(tarinfo, targetpath)
+        temp687 = self._dbg 
+        temp688 = tarinfo.type 
+        temp689 = 'tarfile: Unknown file type %r, extracted as regular file.' % temp688 
+        temp687(1, temp689)
+        
+    def makefifo(self, tarinfo, targetpath):
+        temp691 = hasattr(os, 'mkfifo') 
+        if temp691:
+            temp690 = os.mkfifo 
+            temp690(targetpath)
+            
+        else:
+            raise ExtractError, 'fifo not supported by system'
+            
+        
+    def makedev(self, tarinfo, targetpath):
+        temp692 = hasattr(os, 'mknod') 
+        temp693 =  not temp692 
+        temp694 = hasattr(os, 'makedev') 
+        temp695 =  not temp694 
+        temp696 = temp693 or temp695 
+        if temp696:
+            raise ExtractError, 'special devices not supported by system'
+            
+        mode = tarinfo.mode 
+        temp697 = tarinfo.isblk 
+        temp698 = temp697() 
+        if temp698:
+            mode |= stat.S_IFBLK
+            
+        else:
+            mode |= stat.S_IFCHR
+            
+        temp699 = os.mknod 
+        temp700 = os.makedev 
+        temp701 = tarinfo.devmajor 
+        temp702 = tarinfo.devminor 
+        temp703 = temp700(temp701, temp702) 
+        temp699(targetpath, mode, temp703)
+        
+    def makelink(self, tarinfo, targetpath):
+        linkpath = tarinfo.linkname 
+        try:
+            temp704 = tarinfo.issym 
+            temp708 = temp704() 
+            if temp708:
+                temp705 = os.symlink 
+                temp705(linkpath, targetpath)
+                
+            else:
+                temp706 = os.link 
+                temp707 = tarinfo._link_target 
+                temp706(temp707, targetpath)
+                
+            
+        except AttributeError:
+            temp709 = tarinfo.issym 
+            temp718 = temp709() 
+            if temp718:
+                temp710 = os.path 
+                temp711 = temp710.join 
+                temp712 = os.path 
+                temp713 = temp712.dirname 
+                temp714 = tarinfo.name 
+                temp715 = temp713(temp714) 
+                linkpath = temp711(temp715, linkpath) 
+                temp716 = os.path 
+                temp717 = temp716.normpath 
+                linkpath = temp717(linkpath) 
+                
+            try:
+                temp719 = self._extract_member 
+                temp720 = self.getmember 
+                temp721 = temp720(linkpath) 
+                temp719(temp721, targetpath)
+                
+            except (EnvironmentError,KeyError), e:
+                temp722 = os.path 
+                temp723 = temp722.normpath 
+                linkpath = temp723(linkpath) 
+                try:
+                    temp724 = shutil.copy2 
+                    temp724(linkpath, targetpath)
+                    
+                except EnvironmentError, e:
+                    raise IOError, 'link could not be created'
+                    
+                
+                
+            
+            
+        
+        
+    def chown(self, tarinfo, targetpath):
+        temp725 = hasattr(os, 'geteuid') 
+        temp726 = os.geteuid 
+        temp727 = temp726() 
+        temp728 = temp727 == 0 
+        temp751 = pwd and temp725 and temp728 
+        if temp751:
+            try:
+                temp729 = grp.getgrnam 
+                temp730 = tarinfo.gname 
+                temp731 = temp729(temp730) 
+                g = temp731[2] 
+                
+            except KeyError:
+                try:
+                    temp732 = grp.getgrgid 
+                    temp733 = tarinfo.gid 
+                    temp734 = temp732(temp733) 
+                    g = temp734[2] 
+                    
+                except KeyError:
+                    temp735 = os.getgid 
+                    g = temp735() 
+                    
+                
+                
+            
+            try:
+                temp736 = pwd.getpwnam 
+                temp737 = tarinfo.uname 
+                temp738 = temp736(temp737) 
+                u = temp738[2] 
+                
+            except KeyError:
+                try:
+                    temp739 = pwd.getpwuid 
+                    temp740 = tarinfo.uid 
+                    temp741 = temp739(temp740) 
+                    u = temp741[2] 
+                    
+                except KeyError:
+                    temp742 = os.getuid 
+                    u = temp742() 
+                    
+                
+                
+            
+            try:
+                temp743 = tarinfo.issym 
+                temp744 = temp743() 
+                temp745 = hasattr(os, 'lchown') 
+                temp750 = temp744 and temp745 
+                if temp750:
+                    temp746 = os.lchown 
+                    temp746(targetpath, u, g)
+                    
+                else:
+                    temp747 = sys.platform 
+                    temp749 = temp747 != 'os2emx' 
+                    if temp749:
+                        temp748 = os.chown 
+                        temp748(targetpath, u, g)
+                        
+                    
+                
+            except EnvironmentError, e:
+                raise ExtractError, 'could not change owner'
+                
+            
+            
+        
+    def chmod(self, tarinfo, targetpath):
+        temp754 = hasattr(os, 'chmod') 
+        if temp754:
+            try:
+                temp752 = os.chmod 
+                temp753 = tarinfo.mode 
+                temp752(targetpath, temp753)
+                
+            except EnvironmentError, e:
+                raise ExtractError, 'could not change mode'
+                
+            
+            
+        
+    def utime(self, tarinfo, targetpath):
+        temp755 = hasattr(os, 'utime') 
+        temp756 =  not temp755 
+        if temp756:
+            return None
+        temp757 = sys.platform 
+        temp758 = temp757 == 'win32' 
+        temp759 = tarinfo.isdir 
+        temp760 = temp759() 
+        temp761 = temp758 and temp760 
+        if temp761:
+            return None
+        try:
+            temp762 = os.utime 
+            temp763 = (tarinfo.mtime,tarinfo.mtime) 
+            temp762(targetpath, temp763)
+            
+        except EnvironmentError, e:
+            raise ExtractError, 'could not change modification time'
+            
+        
+        
+    def next(self):
+        temp764 = self.firstmember 
+        temp765 = temp764 is not None 
+        if temp765:
+            m = self.firstmember 
+            self.firstmember = None 
+            return m
+        temp766 = self.fileobj 
+        temp767 = temp766.seek 
+        temp768 = self.offset 
+        temp767(temp768)
+        while True:
+            temp769 = self.fileobj 
+            temp770 = temp769.read 
+            buf = temp770(BLOCKSIZE) 
+            temp771 =  not buf 
+            if temp771:
+                return None
+            try:
+                temp772 = TarInfo() 
+                temp773 = temp772.frombuf 
+                tarinfo = temp773(buf) 
+                
+            except ValueError:
+                temp782 = self.ignore_zeros 
+                if temp782:
+                    temp774 = buf.count 
+                    temp775 = temp774(NUL) 
+                    temp776 = temp775 == BLOCKSIZE 
+                    if temp776:
+                        adj = 'empty' 
+                        
+                    else:
+                        adj = 'invalid' 
+                        
+                    temp777 = self._dbg 
+                    temp778 = (self.offset,adj) 
+                    temp779 = '0x%X: %s block' % temp778 
+                    temp777(2, temp779)
+                    self.offset += BLOCKSIZE
+                    continue 
+                else:
+                    temp780 = self.offset 
+                    temp781 = temp780 == 0 
+                    if temp781:
+                        raise ReadError, 'empty, unreadable or compressed file'
+                        
+                    return None
+                
+            
+            break 
+            
+        temp783 = tarinfo.chksum 
+        temp784 = calc_chksum(buf) 
+        temp788 = temp783 != temp784 
+        if temp788:
+            temp785 = self._dbg 
+            temp786 = tarinfo.name 
+            temp787 = 'tarfile: Bad Checksum %r' % temp786 
+            temp785(1, temp787)
+            
+        tarinfo.offset = self.offset 
+        self.offset += BLOCKSIZE
+        temp789 = tarinfo.type 
+        temp790 = self.TYPE_METH 
+        temp791 = temp789 in temp790 
+        if temp791:
+            return tarinfo
+        tarinfo.offset_data = self.offset 
+        temp792 = tarinfo.isreg 
+        temp793 = temp792() 
+        temp794 = tarinfo.type 
+        temp795 = temp794 not in SUPPORTED_TYPES 
+        temp798 = temp793 or temp795 
+        if temp798:
+            temp796 = self._block 
+            temp797 = tarinfo.size 
+            self.offset += temp796(temp797)
+            
+        temp799 = self.members 
+        temp800 = temp799.append 
+        temp800(tarinfo)
+        return tarinfo
+    def next(self):
+        temp764 = self.firstmember 
+        temp765 = temp764 is not None 
+        if temp765:
+            m = self.firstmember 
+            self.firstmember = None 
+            return m
+        temp766 = self.fileobj 
+        temp767 = temp766.seek 
+        temp768 = self.offset 
+        temp767(temp768)
+        while True:
+            temp769 = self.fileobj 
+            temp770 = temp769.read 
+            buf = temp770(BLOCKSIZE) 
+            temp771 =  not buf 
+            if temp771:
+                return None
+            try:
+                temp772 = TarInfo() 
+                temp773 = temp772.frombuf 
+                tarinfo = temp773(buf) 
+                
+            except ValueError:
+                temp782 = self.ignore_zeros 
+                if temp782:
+                    temp774 = buf.count 
+                    temp775 = temp774(NUL) 
+                    temp776 = temp775 == BLOCKSIZE 
+                    if temp776:
+                        adj = 'empty' 
+                        
+                    else:
+                        adj = 'invalid' 
+                        
+                    temp777 = self._dbg 
+                    temp778 = (self.offset,adj) 
+                    temp779 = '0x%X: %s block' % temp778 
+                    temp777(2, temp779)
+                    self.offset += BLOCKSIZE
+                    continue 
+                else:
+                    temp780 = self.offset 
+                    temp781 = temp780 == 0 
+                    if temp781:
+                        raise ReadError, 'empty, unreadable or compressed file'
+                        
+                    return None
+                
+            
+            break 
+            
+        temp783 = tarinfo.chksum 
+        temp784 = calc_chksum(buf) 
+        temp788 = temp783 != temp784 
+        if temp788:
+            temp785 = self._dbg 
+            temp786 = tarinfo.name 
+            temp787 = 'tarfile: Bad Checksum %r' % temp786 
+            temp785(1, temp787)
+            
+        tarinfo.offset = self.offset 
+        self.offset += BLOCKSIZE
+        temp789 = tarinfo.type 
+        temp790 = self.TYPE_METH 
+        temp791 = temp789 in temp790 
+        if temp791:
+            return tarinfo
+        tarinfo.offset_data = self.offset 
+        temp792 = tarinfo.isreg 
+        temp793 = temp792() 
+        temp794 = tarinfo.type 
+        temp795 = temp794 not in SUPPORTED_TYPES 
+        temp798 = temp793 or temp795 
+        if temp798:
+            temp796 = self._block 
+            temp797 = tarinfo.size 
+            self.offset += temp796(temp797)
+            
+        temp799 = self.members 
+        temp800 = temp799.append 
+        temp800(tarinfo)
+        return tarinfo
+    def proc_gnulong(self, tarinfo):
+        buf = '' 
+        count = tarinfo.size 
+        while count > 0:
+            temp801 = self.fileobj 
+            temp802 = temp801.read 
+            block = temp802(BLOCKSIZE) 
+            buf += block
+            self.offset += BLOCKSIZE
+            count -= BLOCKSIZE
+            
+        temp803 = self.next 
+        next = temp803() 
+        next.offset = tarinfo.offset 
+        temp804 = tarinfo.type 
+        temp807 = temp804 == GNUTYPE_LONGNAME 
+        if temp807:
+            next.name = nts(buf) 
+            
+        else:
+            temp805 = tarinfo.type 
+            temp806 = temp805 == GNUTYPE_LONGLINK 
+            if temp806:
+                next.linkname = nts(buf) 
+                
+            
+        return next
+    def proc_sparse(self, tarinfo):
+        temp808 = tarinfo.tobuf 
+        buf = temp808() 
+        sp = _ringbuffer() 
+        pos = 386 
+        lastpos = 0L 
+        realpos = 0L 
+        temp820 = xrange(4) 
+        for i in temp820:
+            try:
+                temp809 = (pos + 12) 
+                temp810 = buf[pos:temp809] 
+                offset = int(temp810, 8) 
+                temp811 = (pos + 12) 
+                temp812 = (pos + 24) 
+                temp813 = buf[temp811:temp812] 
+                numbytes = int(temp813, 8) 
+                
+            except ValueError:
+                break 
+                
+            
+            temp817 = offset > lastpos 
+            if temp817:
+                temp814 = sp.append 
+                temp815 = offset - lastpos 
+                temp816 = _hole(lastpos, temp815) 
+                temp814(temp816)
+                
+            temp818 = sp.append 
+            temp819 = _data(offset, numbytes, realpos) 
+            temp818(temp819)
+            realpos += numbytes
+            lastpos = (offset + numbytes) 
+            pos += 24
+            
+        temp821 = buf[482] 
+        isextended = ord(temp821) 
+        temp822 = buf[483:495] 
+        origsize = int(temp822, 8) 
+        while isextended == 1:
+            temp823 = self.fileobj 
+            temp824 = temp823.read 
+            buf = temp824(BLOCKSIZE) 
+            self.offset += BLOCKSIZE
+            pos = 0 
+            temp836 = xrange(21) 
+            for i in temp836:
+                try:
+                    temp825 = (pos + 12) 
+                    temp826 = buf[pos:temp825] 
+                    offset = int(temp826, 8) 
+                    temp827 = (pos + 12) 
+                    temp828 = (pos + 24) 
+                    temp829 = buf[temp827:temp828] 
+                    numbytes = int(temp829, 8) 
+                    
+                except ValueError:
+                    break 
+                    
+                
+                temp833 = offset > lastpos 
+                if temp833:
+                    temp830 = sp.append 
+                    temp831 = offset - lastpos 
+                    temp832 = _hole(lastpos, temp831) 
+                    temp830(temp832)
+                    
+                temp834 = sp.append 
+                temp835 = _data(offset, numbytes, realpos) 
+                temp834(temp835)
+                realpos += numbytes
+                lastpos = (offset + numbytes) 
+                pos += 24
+                
+            temp837 = buf[504] 
+            isextended = ord(temp837) 
+            
+        temp841 = lastpos < origsize 
+        if temp841:
+            temp838 = sp.append 
+            temp839 = origsize - lastpos 
+            temp840 = _hole(lastpos, temp839) 
+            temp838(temp840)
+            
+        tarinfo.sparse = sp 
+        tarinfo.offset_data = self.offset 
+        temp842 = self._block 
+        temp843 = tarinfo.size 
+        self.offset += temp842(temp843)
+        tarinfo.size = origsize 
+        temp844 = self.members 
+        temp845 = temp844.append 
+        temp845(tarinfo)
+        return tarinfo
+    TYPE_METH = {GNUTYPE_LONGNAME : proc_gnulong , GNUTYPE_LONGLINK : proc_gnulong , GNUTYPE_SPARSE : proc_sparse}  
+    def _block(self, count):
+        (blocks,remainder,) = divmod(count, BLOCKSIZE) 
+        if remainder:
+            blocks += 1
+            
+        temp846 = blocks * BLOCKSIZE 
+        return temp846
+    def _block(self, count):
+        (blocks,remainder,) = divmod(count, BLOCKSIZE) 
+        if remainder:
+            blocks += 1
+            
+        temp846 = blocks * BLOCKSIZE 
+        return temp846
+    def _getmember(self, name, tarinfo=None):
+        temp847 = self.getmembers 
+        members = temp847() 
+        temp849 = tarinfo is None 
+        if temp849:
+            end = len(members) 
+            
+        else:
+            temp848 = members.index 
+            end = temp848(tarinfo) 
+            
+        temp850 = end - 1 
+        temp855 = xrange(temp850, -1, -1) 
+        for i in temp855:
+            temp851 = members[i] 
+            temp852 = temp851.name 
+            temp854 = name == temp852 
+            if temp854:
+                temp853 = members[i] 
+                return temp853
+            
+        
+    def _getmember(self, name, tarinfo):
+        temp847 = self.getmembers 
+        members = temp847() 
+        temp849 = tarinfo is None 
+        if temp849:
+            end = len(members) 
+            
+        else:
+            temp848 = members.index 
+            end = temp848(tarinfo) 
+            
+        temp850 = end - 1 
+        temp855 = xrange(temp850, -1, -1) 
+        for i in temp855:
+            temp851 = members[i] 
+            temp852 = temp851.name 
+            temp854 = name == temp852 
+            if temp854:
+                temp853 = members[i] 
+                return temp853
+            
+        
+    def _getmember(self, name, tarinfo):
+        temp847 = self.getmembers 
+        members = temp847() 
+        temp849 = tarinfo is None 
+        if temp849:
+            end = len(members) 
+            
+        else:
+            temp848 = members.index 
+            end = temp848(tarinfo) 
+            
+        temp850 = end - 1 
+        temp855 = xrange(temp850, -1, -1) 
+        for i in temp855:
+            temp851 = members[i] 
+            temp852 = temp851.name 
+            temp854 = name == temp852 
+            if temp854:
+                temp853 = members[i] 
+                return temp853
+            
+        
+    def _getmember(self, name, tarinfo):
+        temp847 = self.getmembers 
+        members = temp847() 
+        temp849 = tarinfo is None 
+        if temp849:
+            end = len(members) 
+            
+        else:
+            temp848 = members.index 
+            end = temp848(tarinfo) 
+            
+        temp850 = end - 1 
+        temp855 = xrange(temp850, -1, -1) 
+        for i in temp855:
+            temp851 = members[i] 
+            temp852 = temp851.name 
+            temp854 = name == temp852 
+            if temp854:
+                temp853 = members[i] 
+                return temp853
+            
+        
+    def _load(self):
+        while True:
+            temp856 = self.next 
+            tarinfo = temp856() 
+            temp857 = tarinfo is None 
+            if temp857:
+                break 
+                
+            
+        self._loaded = True 
+        
+    def _load(self):
+        while True:
+            temp856 = self.next 
+            tarinfo = temp856() 
+            temp857 = tarinfo is None 
+            if temp857:
+                break 
+                
+            
+        self._loaded = True 
+        
+    def _check(self, mode=None):
+        temp858 = self.closed 
+        if temp858:
+            pass 
+        
+    def _check(self, mode):
+        temp858 = self.closed 
+        if temp858:
+            pass 
+        
+    def _check(self, mode):
+        temp858 = self.closed 
+        if temp858:
+            pass 
+        
+    def __iter__(self):
+        temp862 = self._loaded 
+        if temp862:
+            temp859 = self.members 
+            temp860 = iter(temp859) 
+            return temp860
+        else:
+            temp861 = TarIter(self) 
+            return temp861
+        
+    def _create_gnulong(self, name, type):
+        name = NUL 
+        tarinfo = TarInfo() 
+        tarinfo.name = '././@LongLink' 
+        tarinfo.type = type 
+        tarinfo.mode = 0 
+        tarinfo.size = len(name) 
+        temp863 = self.fileobj 
+        temp864 = temp863.write 
+        temp865 = tarinfo.tobuf 
+        temp866 = temp865() 
+        temp864(temp866)
+        self.offset += BLOCKSIZE
+        temp867 = self.fileobj 
+        temp868 = temp867.write 
+        temp868(name)
+        temp869 = tarinfo.size 
+        (blocks,remainder,) = divmod(temp869, BLOCKSIZE) 
+        temp874 = remainder > 0 
+        if temp874:
+            temp870 = self.fileobj 
+            temp871 = temp870.write 
+            temp872 = BLOCKSIZE - remainder 
+            temp873 = NUL * temp872 
+            temp871(temp873)
+            blocks += 1
+            
+        self.offset += blocks * BLOCKSIZE
+        
+    def _create_gnulong(self, name, type):
+        name = NUL 
+        tarinfo = TarInfo() 
+        tarinfo.name = '././@LongLink' 
+        tarinfo.type = type 
+        tarinfo.mode = 0 
+        tarinfo.size = len(name) 
+        temp863 = self.fileobj 
+        temp864 = temp863.write 
+        temp865 = tarinfo.tobuf 
+        temp866 = temp865() 
+        temp864(temp866)
+        self.offset += BLOCKSIZE
+        temp867 = self.fileobj 
+        temp868 = temp867.write 
+        temp868(name)
+        temp869 = tarinfo.size 
+        (blocks,remainder,) = divmod(temp869, BLOCKSIZE) 
+        temp874 = remainder > 0 
+        if temp874:
+            temp870 = self.fileobj 
+            temp871 = temp870.write 
+            temp872 = BLOCKSIZE - remainder 
+            temp873 = NUL * temp872 
+            temp871(temp873)
+            blocks += 1
+            
+        self.offset += blocks * BLOCKSIZE
+        
+    def _create_gnulong(self, name, type):
+        name = NUL 
+        tarinfo = TarInfo() 
+        tarinfo.name = '././@LongLink' 
+        tarinfo.type = type 
+        tarinfo.mode = 0 
+        tarinfo.size = len(name) 
+        temp863 = self.fileobj 
+        temp864 = temp863.write 
+        temp865 = tarinfo.tobuf 
+        temp866 = temp865() 
+        temp864(temp866)
+        self.offset += BLOCKSIZE
+        temp867 = self.fileobj 
+        temp868 = temp867.write 
+        temp868(name)
+        temp869 = tarinfo.size 
+        (blocks,remainder,) = divmod(temp869, BLOCKSIZE) 
+        temp874 = remainder > 0 
+        if temp874:
+            temp870 = self.fileobj 
+            temp871 = temp870.write 
+            temp872 = BLOCKSIZE - remainder 
+            temp873 = NUL * temp872 
+            temp871(temp873)
+            blocks += 1
+            
+        self.offset += blocks * BLOCKSIZE
+        
+    def _create_gnulong(self, name, type):
+        name = NUL 
+        tarinfo = TarInfo() 
+        tarinfo.name = '././@LongLink' 
+        tarinfo.type = type 
+        tarinfo.mode = 0 
+        tarinfo.size = len(name) 
+        temp863 = self.fileobj 
+        temp864 = temp863.write 
+        temp865 = tarinfo.tobuf 
+        temp866 = temp865() 
+        temp864(temp866)
+        self.offset += BLOCKSIZE
+        temp867 = self.fileobj 
+        temp868 = temp867.write 
+        temp868(name)
+        temp869 = tarinfo.size 
+        (blocks,remainder,) = divmod(temp869, BLOCKSIZE) 
+        temp874 = remainder > 0 
+        if temp874:
+            temp870 = self.fileobj 
+            temp871 = temp870.write 
+            temp872 = BLOCKSIZE - remainder 
+            temp873 = NUL * temp872 
+            temp871(temp873)
+            blocks += 1
+            
+        self.offset += blocks * BLOCKSIZE
+        
+    def _dbg(self, level, msg):
+        temp875 = self.debug 
+        temp876 = level <= temp875 
+        if temp876:
+            print msg >> sys.stderr
+            
+        
+    def _dbg(self, level, msg):
+        temp875 = self.debug 
+        temp876 = level <= temp875 
+        if temp876:
+            print msg >> sys.stderr
+            
+        
+    
+class TarIter:
+    def __init__(self, tarfile):
+        self.tarfile = tarfile 
+        self.index = 0 
+        
+    def __iter__(self):
+        return self
+    def next(self):
+        temp877 = self.tarfile 
+        temp878 = temp877._loaded 
+        temp886 =  not temp878 
+        if temp886:
+            temp879 = self.tarfile 
+            temp880 = temp879.next 
+            tarinfo = temp880() 
+            temp882 =  not tarinfo 
+            if temp882:
+                temp881 = self.tarfile 
+                temp881._loaded = True 
+                raise StopIteration
+                
+            
+        else:
+            try:
+                temp883 = self.tarfile 
+                temp884 = temp883.members 
+                temp885 = self.index 
+                tarinfo = temp884[temp885] 
+                
+            except IndexError:
+                raise StopIteration
+                
+            
+            
+        self.index += 1
+        return tarinfo
+    
+class _section:
+    def __init__(self, offset, size):
+        self.offset = offset 
+        self.size = size 
+        
+    def __contains__(self, offset):
+        temp887 = self.offset 
+        temp888 = temp887 <= offset < (self.offset + self.size) 
+        return temp888
+    
+class _data(_section):
+    def __init__(self, offset, size, realpos):
+        temp889 = _section.__init__ 
+        temp889(self, offset, size)
+        self.realpos = realpos 
+        
+    
+class _hole(_section):
+    pass 
+class _ringbuffer(list):
+    def __init__(self):
+        self.idx = 0 
+        
+    def find(self, offset):
+        idx = self.idx 
+        while True:
+            item = self[idx] 
+            temp890 = offset in item 
+            if temp890:
+                break 
+                
+            idx += 1
+            temp891 = len(self) 
+            temp892 = idx == temp891 
+            if temp892:
+                idx = 0 
+                
+            temp893 = self.idx 
+            temp894 = idx == temp893 
+            if temp894:
+                return None
+            
+        self.idx = idx 
+        return item
+    
+TAR_PLAIN = 0 
+TAR_GZIPPED = 8 
+class TarFileCompat:
+    def __init__(self, file, mode='r', compression=TAR_PLAIN):
+        temp896 = compression == TAR_PLAIN 
+        if temp896:
+            temp895 = TarFile.taropen 
+            self.tarfile = temp895(file, mode) 
+            
+        else:
+            raise ValueError, 'unknown compression constant'
+            
+        temp897 = mode[0:1] 
+        temp905 = temp897 == 'r' 
+        if temp905:
+            temp898 = self.tarfile 
+            temp899 = temp898.getmembers 
+            members = temp899() 
+            temp900 = len(members) 
+            temp904 = xrange(temp900) 
+            for i in temp904:
+                m = members[i] 
+                m.filename = m.name 
+                m.file_size = m.size 
+                temp901 = time.gmtime 
+                temp902 = m.mtime 
+                temp903 = temp901(temp902) 
+                m.date_time = temp903[:6] 
+                
+            
+        
+    def namelist(self):
+        def temp906(m):
+            temp907 = m.name 
+            return temp907
+        temp908 = temp906 
+        temp909 = self.infolist 
+        temp910 = temp909() 
+        temp911 = map(temp908, temp910) 
+        return temp911
+    def infolist(self):
+        def temp912(m):
+            temp913 = m.type 
+            temp914 = temp913 in REGULAR_TYPES 
+            return temp914
+        temp915 = temp912 
+        temp916 = self.tarfile 
+        temp917 = temp916.getmembers 
+        temp918 = temp917() 
+        temp919 = filter(temp915, temp918) 
+        return temp919
+    def printdir(self):
+        temp920 = self.tarfile 
+        temp921 = temp920.list 
+        temp921()
+        
+    def testzip(self):
+        return None
+    def getinfo(self, name):
+        temp922 = self.tarfile 
+        temp923 = temp922.getmember 
+        temp924 = temp923(name) 
+        return temp924
+    def read(self, name):
+        temp925 = self.tarfile 
+        temp926 = temp925.extractfile 
+        temp927 = self.tarfile 
+        temp928 = temp927.getmember 
+        temp929 = temp928(name) 
+        temp930 = temp926(temp929) 
+        temp931 = temp930.read 
+        temp932 = temp931() 
+        return temp932
+    def write(self, filename, arcname=None, compress_type=None):
+        temp933 = self.tarfile 
+        temp934 = temp933.add 
+        temp934(filename, arcname)
+        
+    def writestr(self, zinfo, bytes):
+        import StringIO
+        import calendar
+        zinfo.name = zinfo.filename 
+        zinfo.size = zinfo.file_size 
+        temp935 = calendar.timegm 
+        temp936 = zinfo.date_time 
+        zinfo.mtime = temp935(temp936) 
+        temp937 = self.tarfile 
+        temp938 = temp937.addfile 
+        temp939 = StringIO.StringIO 
+        temp940 = temp939(bytes) 
+        temp938(zinfo, temp940)
+        
+    def close(self):
+        temp941 = self.tarfile 
+        temp942 = temp941.close 
+        temp942()
+        
+    
+def is_tarfile(name):
+    try:
+        t = open(name) 
+        temp943 = t.close 
+        temp943()
+        return True
+    except TarError:
+        return False
+    
+    
+open = TarFile.open 
+i = TarInfo() 
+temp944 = i.frombuf 
+temp944('DSA')
+temp945 = i.tobuf 
+temp945()
+t = TarFile() 
+temp946 = t.add 
+temp946('file')
+temp947 = t.extractfile 
+temp947('file')
+
+Computed CFG!
+ Slicing...
+Building initial workset!
+set([])
+Node : temp772 = TarInfo()   , subid:0
+     (((1, 2571, 2809), 'tarfile.TarFile.next.temp772'), ((1, 2571, 2809), 2903))
+Node : temp7 = (S_IFBLK,'b')   , subid:0
+     (((1,), 'tarfile.temp7'), ((1,), 293))
+Node : temp340 = {'r' : 'rb ... 53 ... b' , 'w' : 'wb'}    , subid:0
+     (((1, 2571, 3453, 2809), 'tarfile.TarFile.__init__.temp340'), ((1, 2571, 3453, 2809), 2627))
+Node : temp300 = (temp299,8)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp300'), ((1, 1553), 1862))
+Node : self.inodes = {}    , subid:0
+     (((1, 2571, 2809, 3453), 'tarfile.TarFile.__init__.self#inodes'), ((1, 2571, 2809, 3453), 2784))
+Node : temp239, subid:0
+     (((1, 2571, 3453, 2911), 'tarfile.TarInfo.frombuf.temp239'), ((1, 2571, 3453, 2911), 1057))
+Node : temp15 = (temp14)   , subid:0
+     (((1,), 'tarfile.temp15'), ((1,), 356))
+Node : temp30 = (TOWRITE,'w')   , subid:0
+     (((1,), 'tarfile.temp30'), ((1,), 446))
+Node : temp18 = (TUEXEC,'x')   , subid:0
+     (((1,), 'tarfile.temp18'), ((1,), 385))
+Node : temp270, subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp270'), ((1, 1553), 1647))
+Node : fileobj = file(temp341, temp342)   , subid:0
+     (((1, 2571, 2809), 'tarfile.TarFile.__init__.fileobj'), ((1, 2571, 2809), 2688))
+Node : temp290 = (self.linkname,100)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp290'), ((1, 1553), 1811))
+Node : temp280 = (temp279,8)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp280'), ((1, 1553), 1762))
+Node : temp25 = (TSGID,'S')   , subid:0
+     (((1,), 'tarfile.temp25'), ((1,), 421))
+Node : temp23 = (temp22)   , subid:0
+     (((1,), 'tarfile.temp23'), ((1,), 410))
+Node : temp273 = (self.name,100)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp273'), ((1, 1553), 1728))
+Node : fileobj = file(temp341, temp342)   , subid:0
+     (((1, 2571, 3453), 'tarfile.TarFile.__init__.fileobj'), ((1, 2571, 3453), 2688))
+Node : self.members = []   , subid:0
+     (((1, 2571, 2809, 3453), 'tarfile.TarFile.__init__.self#members'), ((1, 2571, 2809, 3453), 2772))
+Node : temp32 = (TOEXEC | TSVTX,'t')   , subid:0
+     (((1,), 'tarfile.temp32'), ((1,), 455))
+Node : temp340 = {'r' : 'rb ... 53 ... b' , 'w' : 'wb'}    , subid:0
+     (((1, 2571), 'tarfile.TarFile.__init__.temp340'), ((1, 2571), 2627))
+Node : temp28 = (TOREAD,'r')   , subid:0
+     (((1,), 'tarfile.temp28'), ((1,), 437))
+Node : temp291 = (MAGIC,6)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp291'), ((1, 1553), 1817))
+Node : OPEN_METH = {'tar' : ... 73 ... z2' : 'bz2open'}    , subid:0
+     (((1,), 'tarfile.TarFile.OPEN_METH'), ((1,), 584))
+Node : temp294 = (self.gname,32)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp294'), ((1, 1553), 1833))
+Node : temp24 = (TGEXEC | TSGID,'s')   , subid:0
+     (((1,), 'tarfile.temp24'), ((1,), 414))
+Node : temp11 = (temp5,temp ... 50 ... mp8,temp9,temp10)   , subid:0
+     (((1,), 'tarfile.temp11'), ((1,), 313))
+Node : temp27 = (temp24,temp25,temp26)   , subid:0
+     (((1,), 'tarfile.temp27'), ((1,), 431))
+Node : parts = []   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.parts'), ((1, 1553), 1725))
+Node : temp772 = TarInfo()   , subid:0
+     (((1, 2571, 3453), 'tarfile.TarFile.next.temp772'), ((1, 2571, 3453), 2903))
+Node : SUPPORTED_TYPES = (R ... 146 ... K,GNUTYPE_SPARSE)   , subid:0
+     (((1,), 'tarfile.SUPPORTED_TYPES'), ((1,), 155))
+Node : self.inodes = {}    , subid:0
+     (((1, 2571), 'tarfile.TarFile.__init__.self#inodes'), ((1, 2571), 2784))
+Node : temp239, subid:0
+     (((1, 2571, 2809, 2911), 'tarfile.TarInfo.frombuf.temp239'), ((1, 2571, 2809, 2911), 1057))
+Node : filemode_table = (te ... 91 ... 29,temp31,temp35)   , subid:0
+     (((1,), 'tarfile.filemode_table'), ((1,), 478))
+Node : temp19 = (temp16,temp17,temp18)   , subid:0
+     (((1,), 'tarfile.temp19'), ((1,), 390))
+Node : __all__ = ['TarFile' ... 58 ... file','TarError']   , subid:0
+     (((1,), 'tarfile.__all__'), ((1,), 41))
+Node : temp31 = (temp30)   , subid:0
+     (((1,), 'tarfile.temp31'), ((1,), 451))
+Node : temp289 = (self.type,1)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp289'), ((1, 1553), 1805))
+Node : temp16 = (TUEXEC | TSUID,'s')   , subid:0
+     (((1,), 'tarfile.temp16'), ((1,), 360))
+Node : temp5 = (S_IFLNK,'l')   , subid:0
+     (((1,), 'tarfile.temp5'), ((1,), 263))
+Node : temp778 = (self.offset,adj)   , subid:0
+     (((1, 2571, 2809), 'tarfile.TarFile.next.temp778'), ((1, 2571, 2809), 2997))
+Node : temp772 = TarInfo()   , subid:0
+     (((1, 2571, 3453, 2809), 'tarfile.TarFile.next.temp772'), ((1, 2571, 3453, 2809), 2903))
+Node : temp284 = (size,12)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp284'), ((1, 1553), 1781))
+Node : self.members = []   , subid:0
+     (((1, 2571, 3453), 'tarfile.TarFile.__init__.self#members'), ((1, 2571, 3453), 2772))
+Node : temp340 = {'r' : 'rb ... 53 ... b' , 'w' : 'wb'}    , subid:0
+     (((1, 2571, 2809, 3453), 'tarfile.TarFile.__init__.temp340'), ((1, 2571, 2809, 3453), 2627))
+Node : temp34 = (TOEXEC,'x')   , subid:0
+     (((1,), 'tarfile.temp34'), ((1,), 467))
+Node : temp293 = (self.uname,32)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp293'), ((1, 1553), 1827))
+Node : REGULAR_TYPES = (REG ... 61 ... E,GNUTYPE_SPARSE)   , subid:0
+     (((1,), 'tarfile.REGULAR_TYPES'), ((1,), 199))
+Node : temp239, subid:0
+     (((1, 2571, 3453, 2809, 2911), 'tarfile.TarInfo.frombuf.temp239'), ((1, 2571, 3453, 2809, 2911), 1057))
+Node : temp21 = (temp20)   , subid:0
+     (((1,), 'tarfile.temp21'), ((1,), 401))
+Node : temp9 = (S_IFCHR,'c')   , subid:0
+     (((1,), 'tarfile.temp9'), ((1,), 303))
+Node : temp277 = (temp276,8)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp277'), ((1, 1553), 1748))
+Node : self.inodes = {}    , subid:0
+     (((1, 2571, 2809), 'tarfile.TarFile.__init__.self#inodes'), ((1, 2571, 2809), 2784))
+Node : temp33 = (TSVTX,'T')   , subid:0
+     (((1,), 'tarfile.temp33'), ((1,), 462))
+Node : fileobj = file(temp341, temp342)   , subid:0
+     (((1, 2571, 3453, 2809), 'tarfile.TarFile.__init__.fileobj'), ((1, 2571, 3453, 2809), 2688))
+Node : temp12 = (TUREAD,'r')   , subid:0
+     (((1,), 'tarfile.temp12'), ((1,), 342))
+Node : temp283 = (temp282,8)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp283'), ((1, 1553), 1776))
+Node : temp772 = TarInfo()   , subid:0
+     (((1, 2571, 2809, 3453), 'tarfile.TarFile.next.temp772'), ((1, 2571, 2809, 3453), 2903))
+Node : temp239, subid:0
+     (((1, 2571, 2809, 3453, 2911), 'tarfile.TarInfo.frombuf.temp239'), ((1, 2571, 2809, 3453, 2911), 1057))
+Node : temp13 = (temp12)   , subid:0
+     (((1,), 'tarfile.temp13'), ((1,), 347))
+Node : temp22 = (TGWRITE,'w')   , subid:0
+     (((1,), 'tarfile.temp22'), ((1,), 405))
+Node : temp307 = (temp273,t ... 142 ... ,temp300,temp301)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp307'), ((1, 1553), 1873))
+Node : temp340 = {'r' : 'rb ... 53 ... b' , 'w' : 'wb'}    , subid:0
+     (((1, 2571, 2809), 'tarfile.TarFile.__init__.temp340'), ((1, 2571, 2809), 2627))
+Node : temp6 = (S_IFREG,'-')   , subid:0
+     (((1,), 'tarfile.temp6'), ((1,), 288))
+Node : self.members = []   , subid:0
+     (((1, 2571, 3453, 2809), 'tarfile.TarFile.__init__.self#members'), ((1, 2571, 3453, 2809), 2772))
+Node : temp239, subid:0
+     (((1, 932), 'tarfile.TarInfo.frombuf.temp239'), ((1, 932), 1057))
+Node : temp10 = (S_IFIFO,'p')   , subid:0
+     (((1,), 'tarfile.temp10'), ((1,), 308))
+Node : temp288 = ('        ',8)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp288'), ((1, 1553), 1800))
+Node : temp340 = {'r' : 'rb ... 53 ... b' , 'w' : 'wb'}    , subid:0
+     (((1, 2571, 3453), 'tarfile.TarFile.__init__.temp340'), ((1, 2571, 3453), 2627))
+Node : temp778 = (self.offset,adj)   , subid:0
+     (((1, 2571, 2809, 3453), 'tarfile.TarFile.next.temp778'), ((1, 2571, 2809, 3453), 2997))
+Node : fileobj = file(temp341, temp342)   , subid:0
+     (((1, 2571), 'tarfile.TarFile.__init__.fileobj'), ((1, 2571), 2688))
+Node : temp35 = (temp32,temp33,temp34)   , subid:0
+     (((1,), 'tarfile.temp35'), ((1,), 472))
+Node : temp17 = (TSUID,'S')   , subid:0
+     (((1,), 'tarfile.temp17'), ((1,), 380))
+Node : temp26 = (TGEXEC,'x')   , subid:0
+     (((1,), 'tarfile.temp26'), ((1,), 426))
+Node : temp303, subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp303'), ((1, 1553), 1967))
+Node : temp292 = (VERSION,2)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp292'), ((1, 1553), 1822))
+Node : temp29 = (temp28)   , subid:0
+     (((1,), 'tarfile.temp29'), ((1,), 442))
+Node : temp778 = (self.offset,adj)   , subid:0
+     (((1, 2571, 3453, 2809), 'tarfile.TarFile.next.temp778'), ((1, 2571, 3453, 2809), 2997))
+Node : TYPE_METH = {GNUTYPE ... 114 ... E : proc_sparse}    , subid:0
+     (((1,), 'tarfile.TarFile.TYPE_METH'), ((1,), 687))
+Node : temp297 = (temp296,8)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp297'), ((1, 1553), 1848))
+Node : self.inodes = {}    , subid:0
+     (((1, 2571, 3453), 'tarfile.TarFile.__init__.self#inodes'), ((1, 2571, 3453), 2784))
+Node : temp20 = (TGREAD,'r')   , subid:0
+     (((1,), 'tarfile.temp20'), ((1,), 396))
+Node : temp14 = (TUWRITE,'w')   , subid:0
+     (((1,), 'tarfile.temp14'), ((1,), 351))
+Node : temp287 = (temp286,12)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp287'), ((1, 1553), 1795))
+Node : self.members = []   , subid:0
+     (((1, 2571, 2809), 'tarfile.TarFile.__init__.self#members'), ((1, 2571, 2809), 2772))
+Node : i = TarInfo()   , subid:0
+     (((1,), 'tarfile.i'), ((1,), 858))
+Node : self.inodes = {}    , subid:0
+     (((1, 2571, 3453, 2809), 'tarfile.TarFile.__init__.self#inodes'), ((1, 2571, 3453, 2809), 2784))
+Node : temp8 = (S_IFDIR,'d')   , subid:0
+     (((1,), 'tarfile.temp8'), ((1,), 298))
+Node : temp301 = (self.prefix,155)   , subid:0
+     (((1, 1553), 'tarfile.TarInfo.tobuf.temp301'), ((1, 1553), 1867))
+Node : temp778 = (self.offset,adj)   , subid:0
+     (((1, 2571, 3453), 'tarfile.TarFile.next.temp778'), ((1, 2571, 3453), 2997))
+Node : fileobj = file(temp341, temp342)   , subid:0
+     (((1, 2571, 2809, 3453), 'tarfile.TarFile.__init__.fileobj'), ((1, 2571, 2809, 3453), 2688))
+Node : self.members = []   , subid:0
+     (((1, 2571), 'tarfile.TarFile.__init__.self#members'), ((1, 2571), 2772))
+Node : t = TarFile()   , subid:0
+     (((1,), 'tarfile.t'), ((1,), 2571))
+Running workset!
+Processed 10000 workset elements, 8565.120193 el/sec
+Processed 20000 workset elements, 8489.016703 el/sec
+Processed 30000 workset elements, 8190.149704 el/sec
+Processed 40000 workset elements, 9859.957511 el/sec
+Processed 50000 workset elements, 8021.485583 el/sec
+Processed 60000 workset elements, 7967.341774 el/sec
+Processed 70000 workset elements, 10122.670531 el/sec
+Processed 80000 workset elements, 7599.906845 el/sec
+Processed 90000 workset elements, 7543.731884 el/sec
+Processed 100000 workset elements, 10017.117426 el/sec
+Processed 110000 workset elements, 7429.126831 el/sec
+Processed 120000 workset elements, 6982.113987 el/sec
+Processed 130000 workset elements, 9883.484386 el/sec
+Processed 140000 workset elements, 6876.753755 el/sec
+Processed 150000 workset elements, 9916.921685 el/sec
+Processed 160000 workset elements, 6659.252552 el/sec
+Processed 170000 workset elements, 6600.715445 el/sec
+Processed 180000 workset elements, 10277.781176 el/sec
+Processed 190000 workset elements, 6354.521253 el/sec
+Processed 200000 workset elements, 10301.744992 el/sec
+Processed 210000 workset elements, 6376.397823 el/sec
+Processed 220000 workset elements, 10424.440877 el/sec
+Processed 230000 workset elements, 6189.890104 el/sec
+Processed 240000 workset elements, 10120.778232 el/sec
+Processed 250000 workset elements, 6076.356846 el/sec
+Processed 260000 workset elements, 10056.209800 el/sec
+Processed 270000 workset elements, 5832.382225 el/sec
+Processed 280000 workset elements, 5742.819326 el/sec
+Processed 290000 workset elements, 10051.889511 el/sec
+Processed 300000 workset elements, 5634.978612 el/sec
+Processed 310000 workset elements, 10354.412814 el/sec
+Processed 320000 workset elements, 5536.560382 el/sec
+Processed 330000 workset elements, 10425.935001 el/sec
+Processed 340000 workset elements, 4911.734056 el/sec
+Processed 350000 workset elements, 9940.144766 el/sec
+Processed 360000 workset elements, 5351.186650 el/sec
+Processed 370000 workset elements, 5148.578118 el/sec
+Processed 380000 workset elements, 10263.316371 el/sec
+Processed 390000 workset elements, 5026.221220 el/sec
+Processed 400000 workset elements, 9990.508760 el/sec
+Processed 410000 workset elements, 4964.396099 el/sec
+Processed 420000 workset elements, 9954.446711 el/sec
+Processed 430000 workset elements, 5008.144528 el/sec
+Processed 440000 workset elements, 10217.691036 el/sec
+Processed 450000 workset elements, 4847.009143 el/sec
+Processed 460000 workset elements, 10105.343709 el/sec
+Processed 470000 workset elements, 4782.102822 el/sec
+Processed 480000 workset elements, 4773.567443 el/sec
+Processed 490000 workset elements, 10297.940088 el/sec
+Processed 500000 workset elements, 4640.223802 el/sec
+Processed 510000 workset elements, 10417.914329 el/sec
+Processed 520000 workset elements, 4714.903109 el/sec
+Processed 530000 workset elements, 10457.343640 el/sec
+Processed 540000 workset elements, 4411.946584 el/sec
+Processed 550000 workset elements, 9719.569660 el/sec
+Processed 560000 workset elements, 4340.602285 el/sec
+Processed 570000 workset elements, 4303.839350 el/sec
+Processed 580000 workset elements, 10336.862788 el/sec
+Processed 590000 workset elements, 4235.338815 el/sec
+Processed 600000 workset elements, 10196.535087 el/sec
+Processed 610000 workset elements, 4212.330141 el/sec
+Processed 620000 workset elements, 10431.372549 el/sec
+Processed 630000 workset elements, 4150.185944 el/sec
+Processed 640000 workset elements, 10351.827949 el/sec
+Processed 650000 workset elements, 4006.483878 el/sec
+Processed 660000 workset elements, 4000.669815 el/sec
+Processed 670000 workset elements, 10437.342837 el/sec
+Processed 680000 workset elements, 3969.886584 el/sec
+Processed 690000 workset elements, 3921.873965 el/sec
+Processed 700000 workset elements, 10479.086614 el/sec
+Processed 710000 workset elements, 10501.411404 el/sec
+Processed 720000 workset elements, 3806.082623 el/sec
+Processed 730000 workset elements, 10712.847362 el/sec
+Processed 740000 workset elements, 10411.974566 el/sec
+Processed 750000 workset elements, 3781.873167 el/sec
+Processed 760000 workset elements, 10509.514554 el/sec
+Processed 770000 workset elements, 3749.422463 el/sec
+Processed 780000 workset elements, 10281.928429 el/sec
+Processed 790000 workset elements, 3650.615616 el/sec
+Processed 800000 workset elements, 10222.227282 el/sec
+Processed 810000 workset elements, 3662.097166 el/sec
+Processed 820000 workset elements, 10534.913431 el/sec
+Processed 830000 workset elements, 10641.165202 el/sec
+Processed 840000 workset elements, 3624.188516 el/sec
+Processed 850000 workset elements, 10296.808122 el/sec
+Processed 860000 workset elements, 3540.148069 el/sec
+Processed 870000 workset elements, 10176.894143 el/sec
+Processed 880000 workset elements, 3479.227231 el/sec
+Processed 890000 workset elements, 10207.786272 el/sec
+Processed 900000 workset elements, 3496.890567 el/sec
+Processed 910000 workset elements, 10208.242438 el/sec
+Processed 920000 workset elements, 10411.129555 el/sec
+Processed 930000 workset elements, 3398.625458 el/sec
+Processed 940000 workset elements, 10211.733058 el/sec
+Processed 950000 workset elements, 3402.149118 el/sec
+Processed 960000 workset elements, 10294.711791 el/sec
+Processed 970000 workset elements, 3383.285209 el/sec
+Processed 980000 workset elements, 10378.954970 el/sec
+Processed 990000 workset elements, 10323.025134 el/sec
+Processed 1000000 workset elements, 3373.514516 el/sec
+Processed 1010000 workset elements, 10365.928658 el/sec
+Processed 1020000 workset elements, 3393.093211 el/sec
+Processed 1030000 workset elements, 10438.740235 el/sec
+Processed 1040000 workset elements, 10312.927455 el/sec
+Processed 1050000 workset elements, 3246.653347 el/sec
+Processed 1060000 workset elements, 9840.995595 el/sec
+Processed 1070000 workset elements, 3025.631320 el/sec
+Processed 1080000 workset elements, 10604.056689 el/sec
+Processed 1090000 workset elements, 3216.458092 el/sec
+Processed 1100000 workset elements, 10463.638000 el/sec
+Processed 1110000 workset elements, 10481.617302 el/sec
+Processed 1120000 workset elements, 3139.858212 el/sec
+Processed 1130000 workset elements, 10147.647345 el/sec
+Processed 1140000 workset elements, 10258.998202 el/sec
+Processed 1150000 workset elements, 2988.444042 el/sec
+Processed 1160000 workset elements, 9783.795014 el/sec
+Processed 1170000 workset elements, 2968.414643 el/sec
+Processed 1180000 workset elements, 10291.949196 el/sec
+Processed 1190000 workset elements, 9954.663609 el/sec
+Processed 1200000 workset elements, 2776.604928 el/sec
+Processed 1210000 workset elements, 10080.785175 el/sec
+Processed 1220000 workset elements, 10240.287782 el/sec
+Processed 1230000 workset elements, 3054.097783 el/sec
+Processed 1240000 workset elements, 10607.127655 el/sec
+Processed 1250000 workset elements, 10413.569223 el/sec
+Processed 1260000 workset elements, 3033.652747 el/sec
+Processed 1270000 workset elements, 10364.402182 el/sec
+Processed 1280000 workset elements, 10525.167094 el/sec
+Processed 1290000 workset elements, 2931.015989 el/sec
+Processed 1300000 workset elements, 10480.339152 el/sec
+Processed 1310000 workset elements, 2981.663640 el/sec
+Processed 1320000 workset elements, 10392.553202 el/sec
+Processed 1330000 workset elements, 2934.419476 el/sec
+Processed 1340000 workset elements, 10393.279055 el/sec
+Processed 1350000 workset elements, 2905.516111 el/sec
+Processed 1360000 workset elements, 10305.964632 el/sec
+Processed 1370000 workset elements, 10275.100635 el/sec
+Processed 1380000 workset elements, 2903.425702 el/sec
+Processed 1390000 workset elements, 10479.727606 el/sec
+Processed 1400000 workset elements, 2870.610759 el/sec
+Processed 1410000 workset elements, 10761.785154 el/sec
+Processed 1420000 workset elements, 2824.720442 el/sec
+Processed 1430000 workset elements, 10482.127806 el/sec
+Processed 1440000 workset elements, 10268.160438 el/sec
+Processed 1450000 workset elements, 2782.243956 el/sec
+Processed 1460000 workset elements, 10390.396980 el/sec
+Processed 1470000 workset elements, 2801.836460 el/sec
+Processed 1480000 workset elements, 10628.643962 el/sec
+Processed 1490000 workset elements, 10424.148780 el/sec
+Processed 1500000 workset elements, 2770.854855 el/sec
+Processed 1510000 workset elements, 10364.002073 el/sec
+Processed 1520000 workset elements, 9982.910360 el/sec
+Processed 1530000 workset elements, 2760.960924 el/sec
+Processed 1540000 workset elements, 10670.741327 el/sec
+Processed 1550000 workset elements, 10575.204995 el/sec
+Processed 1560000 workset elements, 2743.276516 el/sec
+Processed 1570000 workset elements, 9940.285153 el/sec
+Processed 1580000 workset elements, 2688.133139 el/sec
+Processed 1590000 workset elements, 10898.495846 el/sec
+Processed 1600000 workset elements, 2651.535670 el/sec
+Processed 1610000 workset elements, 2603.431606 el/sec
+Processed 1620000 workset elements, 2643.108941 el/sec
+Processed 1630000 workset elements, 10377.540448 el/sec
+Processed 1640000 workset elements, 2606.481402 el/sec
+Processed 1650000 workset elements, 10425.392392 el/sec
+Processed 1660000 workset elements, 2579.450276 el/sec
+Processed 1670000 workset elements, 2513.428602 el/sec
+Processed 1680000 workset elements, 10456.562626 el/sec
+Processed 1690000 workset elements, 2441.941141 el/sec
+Processed 1700000 workset elements, 2488.797905 el/sec
+Processed 1710000 workset elements, 2452.594666 el/sec
+Processed 1720000 workset elements, 10038.772868 el/sec
+Processed 1730000 workset elements, 2440.264524 el/sec
+Processed 1740000 workset elements, 2358.080010 el/sec
+Processed 1750000 workset elements, 2337.682739 el/sec
+Processed 1760000 workset elements, 2314.635362 el/sec
+Processed 1770000 workset elements, 2297.511578 el/sec
+Processed 1780000 workset elements, 9496.972000 el/sec
+Processed 1790000 workset elements, 2299.702812 el/sec
+Processed 1800000 workset elements, 2233.094586 el/sec
+Processed 1810000 workset elements, 2266.629367 el/sec
+Processed 1820000 workset elements, 2225.079467 el/sec
+Processed 1830000 workset elements, 2185.534887 el/sec
+Processed 1840000 workset elements, 9733.749176 el/sec
+Processed 1850000 workset elements, 2171.962292 el/sec
+Processed 1860000 workset elements, 2123.406155 el/sec
+Processed 1870000 workset elements, 2131.612114 el/sec
+Processed 1880000 workset elements, 2098.255778 el/sec
+Processed 1890000 workset elements, 2069.134785 el/sec
+Processed 1900000 workset elements, 2041.515002 el/sec
+Processed 1910000 workset elements, 9282.167719 el/sec
+Processed 1920000 workset elements, 2013.940607 el/sec
+Processed 1930000 workset elements, 1981.679279 el/sec
+Processed 1940000 workset elements, 1966.913965 el/sec
+Processed 1950000 workset elements, 1959.388956 el/sec
+Processed 1960000 workset elements, 1952.299579 el/sec
+Processed 1970000 workset elements, 1940.600980 el/sec
+Processed 1980000 workset elements, 9707.953197 el/sec
+Processed 1990000 workset elements, 1893.030620 el/sec
+Processed 2000000 workset elements, 1885.168568 el/sec
+Processed 2010000 workset elements, 1876.275505 el/sec
+Processed 2020000 workset elements, 9692.513717 el/sec
+Processed 2030000 workset elements, 1872.601353 el/sec
+Processed 2040000 workset elements, 1845.446103 el/sec
+Processed 2050000 workset elements, 1842.908037 el/sec
+Processed 2060000 workset elements, 1796.900072 el/sec
+Processed 2070000 workset elements, 1784.243035 el/sec
+Processed 2080000 workset elements, 1795.522494 el/sec
+Processed 2090000 workset elements, 9673.129684 el/sec
+Processed 2100000 workset elements, 1777.310345 el/sec
+Processed 2110000 workset elements, 1748.152438 el/sec
+Processed 2120000 workset elements, 1755.021001 el/sec
+Processed 2130000 workset elements, 1738.322210 el/sec
+Processed 2140000 workset elements, 1726.051511 el/sec
+Processed 2150000 workset elements, 9306.326425 el/sec
+Processed 2160000 workset elements, 1697.395212 el/sec
+Processed 2170000 workset elements, 1699.443143 el/sec
+Processed 2180000 workset elements, 1688.511967 el/sec
+Items added to alias graph: 4371420
+Distinct contexts:          72
+Distinct variables:         150
+Distinct locations:         66

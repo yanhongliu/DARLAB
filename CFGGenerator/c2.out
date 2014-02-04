@@ -1,0 +1,496 @@
+1 1 1 None
+Importing struct
+ processing analysis\lib\struct.py ...
+ done.
+Success!
+1001 897 1284 110
+2001 1018 1324 122
+class Chunk:
+    def __init__(self, file, align=True, bigendian=True, inclheader=False):
+        import struct
+        self.closed = False 
+        self.align = align 
+        if bigendian:
+            strflag = '>' 
+            
+        else:
+            strflag = '<' 
+            
+        self.file = file 
+        temp0 = file.read 
+        self.chunkname = temp0(4) 
+        temp1 = self.chunkname 
+        temp2 = len(temp1) 
+        temp3 = temp2 < 4 
+        if temp3:
+            raise EOFError
+            
+        try:
+            temp4 = struct.unpack 
+            temp5 = (strflag + 'L') 
+            temp6 = file.read 
+            temp7 = temp6(4) 
+            temp8 = temp4(temp5, temp7) 
+            self.chunksize = temp8[0] 
+            
+        except struct.error:
+            raise EOFError
+            
+        
+        if inclheader:
+            temp9 = self.chunksize 
+            self.chunksize = temp9 - 8 
+            
+        self.size_read = 0 
+        try:
+            temp10 = self.file 
+            temp11 = temp10.tell 
+            self.offset = temp11() 
+            
+        except (AttributeError,IOError):
+            self.seekable = False 
+            
+        
+        
+    def __init__(self, file, align, bigendian, inclheader):
+        import struct
+        self.closed = False 
+        self.align = align 
+        if bigendian:
+            strflag = '>' 
+            
+        else:
+            strflag = '<' 
+            
+        self.file = file 
+        temp0 = file.read 
+        self.chunkname = temp0(4) 
+        temp1 = self.chunkname 
+        temp2 = len(temp1) 
+        temp3 = temp2 < 4 
+        if temp3:
+            raise EOFError
+            
+        try:
+            temp4 = struct.unpack 
+            temp5 = (strflag + 'L') 
+            temp6 = file.read 
+            temp7 = temp6(4) 
+            temp8 = temp4(temp5, temp7) 
+            self.chunksize = temp8[0] 
+            
+        except struct.error:
+            raise EOFError
+            
+        
+        if inclheader:
+            temp9 = self.chunksize 
+            self.chunksize = temp9 - 8 
+            
+        self.size_read = 0 
+        try:
+            temp10 = self.file 
+            temp11 = temp10.tell 
+            self.offset = temp11() 
+            
+        except (AttributeError,IOError):
+            self.seekable = False 
+            
+        
+        
+    def getname(self):
+        temp12 = self.chunkname 
+        return temp12
+    def getsize(self):
+        temp13 = self.chunksize 
+        return temp13
+    def close(self):
+        temp14 = self.closed 
+        temp16 =  not temp14 
+        if temp16:
+            temp15 = self.skip 
+            temp15()
+            self.closed = True 
+            
+        
+    def isatty(self):
+        temp17 = self.closed 
+        if temp17:
+            raise ValueError, 'I/O operation on closed file'
+            
+        return False
+    def seek(self, pos, whence=0):
+        temp18 = self.closed 
+        if temp18:
+            raise ValueError, 'I/O operation on closed file'
+            
+        temp19 = self.seekable 
+        temp20 =  not temp19 
+        if temp20:
+            raise IOError, 'cannot seek'
+            
+        temp24 = whence == 1 
+        if temp24:
+            temp21 = self.size_read 
+            pos = (pos + temp21) 
+            
+        else:
+            temp23 = whence == 2 
+            if temp23:
+                temp22 = self.chunksize 
+                pos = (pos + temp22) 
+                
+            
+        temp25 = pos < 0 
+        temp26 = self.chunksize 
+        temp27 = pos > temp26 
+        temp28 = temp25 or temp27 
+        if temp28:
+            raise RuntimeError
+            
+        temp29 = self.file 
+        temp30 = temp29.seek 
+        temp31 = self.offset 
+        temp32 = (temp31 + pos) 
+        temp30(temp32, 0)
+        self.size_read = pos 
+        
+    def seek(self, pos, whence):
+        temp18 = self.closed 
+        if temp18:
+            raise ValueError, 'I/O operation on closed file'
+            
+        temp19 = self.seekable 
+        temp20 =  not temp19 
+        if temp20:
+            raise IOError, 'cannot seek'
+            
+        temp24 = whence == 1 
+        if temp24:
+            temp21 = self.size_read 
+            pos = (pos + temp21) 
+            
+        else:
+            temp23 = whence == 2 
+            if temp23:
+                temp22 = self.chunksize 
+                pos = (pos + temp22) 
+                
+            
+        temp25 = pos < 0 
+        temp26 = self.chunksize 
+        temp27 = pos > temp26 
+        temp28 = temp25 or temp27 
+        if temp28:
+            raise RuntimeError
+            
+        temp29 = self.file 
+        temp30 = temp29.seek 
+        temp31 = self.offset 
+        temp32 = (temp31 + pos) 
+        temp30(temp32, 0)
+        self.size_read = pos 
+        
+    def tell(self):
+        temp33 = self.closed 
+        if temp33:
+            raise ValueError, 'I/O operation on closed file'
+            
+        temp34 = self.size_read 
+        return temp34
+    def read(self, size=-1):
+        temp35 = self.closed 
+        if temp35:
+            raise ValueError, 'I/O operation on closed file'
+            
+        temp36 = self.size_read 
+        temp37 = self.chunksize 
+        temp38 = temp36 >= temp37 
+        if temp38:
+            return ''
+        temp41 = size < 0 
+        if temp41:
+            temp39 = self.chunksize 
+            temp40 = self.size_read 
+            size = temp39 - temp40 
+            
+        temp42 = self.chunksize 
+        temp43 = self.size_read 
+        temp44 = temp42 - temp43 
+        temp47 = size > temp44 
+        if temp47:
+            temp45 = self.chunksize 
+            temp46 = self.size_read 
+            size = temp45 - temp46 
+            
+        temp48 = self.file 
+        temp49 = temp48.read 
+        data = temp49(size) 
+        temp50 = self.size_read 
+        temp51 = len(data) 
+        self.size_read = (temp50 + temp51) 
+        temp52 = self.size_read 
+        temp53 = self.chunksize 
+        temp54 = temp52 == temp53 
+        temp55 = self.align 
+        temp56 = self.chunksize 
+        temp57 = temp56 & 1 
+        temp62 = temp54 and temp55 and temp57 
+        if temp62:
+            temp58 = self.file 
+            temp59 = temp58.read 
+            dummy = temp59(1) 
+            temp60 = self.size_read 
+            temp61 = len(dummy) 
+            self.size_read = (temp60 + temp61) 
+            
+        return data
+    def read(self, size):
+        temp35 = self.closed 
+        if temp35:
+            raise ValueError, 'I/O operation on closed file'
+            
+        temp36 = self.size_read 
+        temp37 = self.chunksize 
+        temp38 = temp36 >= temp37 
+        if temp38:
+            return ''
+        temp41 = size < 0 
+        if temp41:
+            temp39 = self.chunksize 
+            temp40 = self.size_read 
+            size = temp39 - temp40 
+            
+        temp42 = self.chunksize 
+        temp43 = self.size_read 
+        temp44 = temp42 - temp43 
+        temp47 = size > temp44 
+        if temp47:
+            temp45 = self.chunksize 
+            temp46 = self.size_read 
+            size = temp45 - temp46 
+            
+        temp48 = self.file 
+        temp49 = temp48.read 
+        data = temp49(size) 
+        temp50 = self.size_read 
+        temp51 = len(data) 
+        self.size_read = (temp50 + temp51) 
+        temp52 = self.size_read 
+        temp53 = self.chunksize 
+        temp54 = temp52 == temp53 
+        temp55 = self.align 
+        temp56 = self.chunksize 
+        temp57 = temp56 & 1 
+        temp62 = temp54 and temp55 and temp57 
+        if temp62:
+            temp58 = self.file 
+            temp59 = temp58.read 
+            dummy = temp59(1) 
+            temp60 = self.size_read 
+            temp61 = len(dummy) 
+            self.size_read = (temp60 + temp61) 
+            
+        return data
+    def skip(self):
+        temp63 = self.closed 
+        if temp63:
+            raise ValueError, 'I/O operation on closed file'
+            
+        temp73 = self.seekable 
+        if temp73:
+            try:
+                temp64 = self.chunksize 
+                temp65 = self.size_read 
+                n = temp64 - temp65 
+                temp66 = self.align 
+                temp67 = self.chunksize 
+                temp68 = temp67 & 1 
+                temp69 = temp66 and temp68 
+                if temp69:
+                    n = (n + 1) 
+                    
+                temp70 = self.file 
+                temp71 = temp70.seek 
+                temp71(n, 1)
+                temp72 = self.size_read 
+                self.size_read = (temp72 + n) 
+                return None
+            except IOError:
+                pass 
+            
+            
+        temp74 = self.size_read 
+        temp75 = self.chunksize 
+        while temp74 < temp75:
+            temp76 = self.chunksize 
+            temp77 = self.size_read 
+            temp78 = temp76 - temp77 
+            n = min(8192, temp78) 
+            temp79 = self.read 
+            dummy = temp79(n) 
+            temp80 =  not dummy 
+            if temp80:
+                raise EOFError
+                
+            temp74 = self.size_read 
+            temp75 = self.chunksize 
+            
+        
+    def skip(self):
+        temp63 = self.closed 
+        if temp63:
+            raise ValueError, 'I/O operation on closed file'
+            
+        temp73 = self.seekable 
+        if temp73:
+            try:
+                temp64 = self.chunksize 
+                temp65 = self.size_read 
+                n = temp64 - temp65 
+                temp66 = self.align 
+                temp67 = self.chunksize 
+                temp68 = temp67 & 1 
+                temp69 = temp66 and temp68 
+                if temp69:
+                    n = (n + 1) 
+                    
+                temp70 = self.file 
+                temp71 = temp70.seek 
+                temp71(n, 1)
+                temp72 = self.size_read 
+                self.size_read = (temp72 + n) 
+                return None
+            except IOError:
+                pass 
+            
+            
+        temp74 = self.size_read 
+        temp75 = self.chunksize 
+        while temp74 < temp75:
+            temp76 = self.chunksize 
+            temp77 = self.size_read 
+            temp78 = temp76 - temp77 
+            n = min(8192, temp78) 
+            temp79 = self.read 
+            dummy = temp79(n) 
+            temp80 =  not dummy 
+            if temp80:
+                raise EOFError
+                
+            temp74 = self.size_read 
+            temp75 = self.chunksize 
+            
+        
+    
+temp81 = open('23') 
+c = Chunk(temp81) 
+temp82 = c.skip 
+temp82()
+temp83 = c.read 
+d = temp83() 
+temp84 = c.seek 
+temp84(12)
+
+Computed CFG!
+ Slicing...
+Adding transition between:
+While(Compare(Name('temp74'), [('<', Name('temp75'))]), Stmt([Assign([AssName('temp76', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp77', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp78', 'OP_ASSIGN')], Sub((Name('temp76'), Name('temp77')))), Assign([AssName('n', 'OP_ASSIGN')], CallFunc(Name('min'), [Const(8192), Name('temp78')], None, None)), Assign([AssName('temp79', 'OP_ASSIGN')], Getattr(Name('self'), 'read')), Assign([AssName('dummy', 'OP_ASSIGN')], CallFunc(Name('temp79'), [Name('n')], None, None)), Assign([AssName('temp80', 'OP_ASSIGN')], Not(Name('dummy'))), If([(Name('temp80'), Stmt([Raise(Name('EOFError'), None, None)]))], None), Assign([AssName('temp74', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp75', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize'))]), None) Stmt([Assign([AssName('temp63', 'OP_ASSIGN')], Getattr(Name('self'), 'closed')), If([(Name('temp63'), Stmt([Raise(Name('ValueError'), Const('I/O operation on closed file'), None)]))], None), Assign([AssName('temp73', 'OP_ASSIGN')], Getattr(Name('self'), 'seekable')), If([(Name('temp73'), Stmt([TryExcept(Stmt([Assign([AssName('temp64', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp65', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('n', 'OP_ASSIGN')], Sub((Name('temp64'), Name('temp65')))), Assign([AssName('temp66', 'OP_ASSIGN')], Getattr(Name('self'), 'align')), Assign([AssName('temp67', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp68', 'OP_ASSIGN')], Bitand([Name('temp67'), Const(1)])), Assign([AssName('temp69', 'OP_ASSIGN')], And([Name('temp66'), Name('temp68')])), If([(Name('temp69'), Stmt([Assign([AssName('n', 'OP_ASSIGN')], Add((Name('n'), Const(1))))]))], None), Assign([AssName('temp70', 'OP_ASSIGN')], Getattr(Name('self'), 'file')), Assign([AssName('temp71', 'OP_ASSIGN')], Getattr(Name('temp70'), 'seek')), Discard(CallFunc(Name('temp71'), [Name('n'), Const(1)], None, None)), Assign([AssName('temp72', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssAttr(Name('self'), 'size_read', 'OP_ASSIGN')], Add((Name('temp72'), Name('n')))), Return(Const(None))]), [(Name('IOError'), None, Stmt([Pass()]))], None)]))], None), Assign([AssName('temp74', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp75', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), While(Compare(Name('temp74'), [('<', Name('temp75'))]), Stmt([Assign([AssName('temp76', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp77', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp78', 'OP_ASSIGN')], Sub((Name('temp76'), Name('temp77')))), Assign([AssName('n', 'OP_ASSIGN')], CallFunc(Name('min'), [Const(8192), Name('temp78')], None, None)), Assign([AssName('temp79', 'OP_ASSIGN')], Getattr(Name('self'), 'read')), Assign([AssName('dummy', 'OP_ASSIGN')], CallFunc(Name('temp79'), [Name('n')], None, None)), Assign([AssName('temp80', 'OP_ASSIGN')], Not(Name('dummy'))), If([(Name('temp80'), Stmt([Raise(Name('EOFError'), None, None)]))], None), Assign([AssName('temp74', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp75', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize'))]), None)])
+Assign([AssName('temp83', 'OP_ASSIGN')], Getattr(Name('c'), 'read'))
+Adding transition between:
+AssName('temp75', 'OP_ASSIGN') Assign([AssName('temp75', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize'))
+Assign([AssName('temp83', 'OP_ASSIGN')], Getattr(Name('c'), 'read'))
+Adding transition between:
+Name('temp83') CallFunc(Name('temp83'), [], None, None)
+Const(1)
+Adding transition between:
+Name('self') AssAttr(Name('self'), 'seekable', 'OP_ASSIGN')
+AssName('c', 'OP_ASSIGN')
+Adding transition between:
+Name('data') Return(Name('data'))
+AssName('dummy', 'OP_ASSIGN')
+Adding transition between:
+Name('data') Return(Name('data'))
+AssName('d', 'OP_ASSIGN')
+Adding transition between:
+Const(12) CallFunc(Name('temp84'), [Const(12)], None, None)
+Const(0)
+Adding transition between:
+Return(Name('data')) Stmt([Assign([AssName('temp35', 'OP_ASSIGN')], Getattr(Name('self'), 'closed')), If([(Name('temp35'), Stmt([Raise(Name('ValueError'), Const('I/O operation on closed file'), None)]))], None), Assign([AssName('temp36', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp37', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp38', 'OP_ASSIGN')], Compare(Name('temp36'), [('>=', Name('temp37'))])), If([(Name('temp38'), Stmt([Return(Const(''))]))], None), Assign([AssName('temp41', 'OP_ASSIGN')], Compare(Name('size'), [('<', Const(0))])), If([(Name('temp41'), Stmt([Assign([AssName('temp39', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp40', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('size', 'OP_ASSIGN')], Sub((Name('temp39'), Name('temp40'))))]))], None), Assign([AssName('temp42', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp43', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp44', 'OP_ASSIGN')], Sub((Name('temp42'), Name('temp43')))), Assign([AssName('temp47', 'OP_ASSIGN')], Compare(Name('size'), [('>', Name('temp44'))])), If([(Name('temp47'), Stmt([Assign([AssName('temp45', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp46', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('size', 'OP_ASSIGN')], Sub((Name('temp45'), Name('temp46'))))]))], None), Assign([AssName('temp48', 'OP_ASSIGN')], Getattr(Name('self'), 'file')), Assign([AssName('temp49', 'OP_ASSIGN')], Getattr(Name('temp48'), 'read')), Assign([AssName('data', 'OP_ASSIGN')], CallFunc(Name('temp49'), [Name('size')], None, None)), Assign([AssName('temp50', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp51', 'OP_ASSIGN')], CallFunc(Name('len'), [Name('data')], None, None)), Assign([AssAttr(Name('self'), 'size_read', 'OP_ASSIGN')], Add((Name('temp50'), Name('temp51')))), Assign([AssName('temp52', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp53', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp54', 'OP_ASSIGN')], Compare(Name('temp52'), [('==', Name('temp53'))])), Assign([AssName('temp55', 'OP_ASSIGN')], Getattr(Name('self'), 'align')), Assign([AssName('temp56', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp57', 'OP_ASSIGN')], Bitand([Name('temp56'), Const(1)])), Assign([AssName('temp62', 'OP_ASSIGN')], And([Name('temp54'), Name('temp55'), Name('temp57')])), If([(Name('temp62'), Stmt([Assign([AssName('temp58', 'OP_ASSIGN')], Getattr(Name('self'), 'file')), Assign([AssName('temp59', 'OP_ASSIGN')], Getattr(Name('temp58'), 'read')), Assign([AssName('dummy', 'OP_ASSIGN')], CallFunc(Name('temp59'), [Const(1)], None, None)), Assign([AssName('temp60', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp61', 'OP_ASSIGN')], CallFunc(Name('len'), [Name('dummy')], None, None)), Assign([AssAttr(Name('self'), 'size_read', 'OP_ASSIGN')], Add((Name('temp60'), Name('temp61'))))]))], None), Return(Name('data'))])
+AssName('dummy', 'OP_ASSIGN')
+Adding transition between:
+Return(Name('data')) Stmt([Assign([AssName('temp35', 'OP_ASSIGN')], Getattr(Name('self'), 'closed')), If([(Name('temp35'), Stmt([Raise(Name('ValueError'), Const('I/O operation on closed file'), None)]))], None), Assign([AssName('temp36', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp37', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp38', 'OP_ASSIGN')], Compare(Name('temp36'), [('>=', Name('temp37'))])), If([(Name('temp38'), Stmt([Return(Const(''))]))], None), Assign([AssName('temp41', 'OP_ASSIGN')], Compare(Name('size'), [('<', Const(0))])), If([(Name('temp41'), Stmt([Assign([AssName('temp39', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp40', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('size', 'OP_ASSIGN')], Sub((Name('temp39'), Name('temp40'))))]))], None), Assign([AssName('temp42', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp43', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp44', 'OP_ASSIGN')], Sub((Name('temp42'), Name('temp43')))), Assign([AssName('temp47', 'OP_ASSIGN')], Compare(Name('size'), [('>', Name('temp44'))])), If([(Name('temp47'), Stmt([Assign([AssName('temp45', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp46', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('size', 'OP_ASSIGN')], Sub((Name('temp45'), Name('temp46'))))]))], None), Assign([AssName('temp48', 'OP_ASSIGN')], Getattr(Name('self'), 'file')), Assign([AssName('temp49', 'OP_ASSIGN')], Getattr(Name('temp48'), 'read')), Assign([AssName('data', 'OP_ASSIGN')], CallFunc(Name('temp49'), [Name('size')], None, None)), Assign([AssName('temp50', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp51', 'OP_ASSIGN')], CallFunc(Name('len'), [Name('data')], None, None)), Assign([AssAttr(Name('self'), 'size_read', 'OP_ASSIGN')], Add((Name('temp50'), Name('temp51')))), Assign([AssName('temp52', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp53', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp54', 'OP_ASSIGN')], Compare(Name('temp52'), [('==', Name('temp53'))])), Assign([AssName('temp55', 'OP_ASSIGN')], Getattr(Name('self'), 'align')), Assign([AssName('temp56', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp57', 'OP_ASSIGN')], Bitand([Name('temp56'), Const(1)])), Assign([AssName('temp62', 'OP_ASSIGN')], And([Name('temp54'), Name('temp55'), Name('temp57')])), If([(Name('temp62'), Stmt([Assign([AssName('temp58', 'OP_ASSIGN')], Getattr(Name('self'), 'file')), Assign([AssName('temp59', 'OP_ASSIGN')], Getattr(Name('temp58'), 'read')), Assign([AssName('dummy', 'OP_ASSIGN')], CallFunc(Name('temp59'), [Const(1)], None, None)), Assign([AssName('temp60', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp61', 'OP_ASSIGN')], CallFunc(Name('len'), [Name('dummy')], None, None)), Assign([AssAttr(Name('self'), 'size_read', 'OP_ASSIGN')], Add((Name('temp60'), Name('temp61'))))]))], None), Return(Name('data'))])
+AssName('d', 'OP_ASSIGN')
+Adding transition between:
+Name('temp81') CallFunc(Name('Chunk'), [Name('temp81')], None, None)
+Name('True')
+Adding transition between:
+Name('temp6') Return(Name('temp6'))
+AssName('temp8', 'OP_ASSIGN')
+Adding transition between:
+Name('n') CallFunc(Name('temp79'), [Name('n')], None, None)
+Const(1)
+Adding transition between:
+Return(Name('temp6')) Stmt([Assign([AssName('temp1', 'OP_ASSIGN')], CallFunc(Name('int'), [], None, None)), Assign([AssName('temp2', 'OP_ASSIGN')], CallFunc(Name('float'), [], None, None)), Assign([AssName('temp3', 'OP_ASSIGN')], CallFunc(Name('string'), [], None, None)), Assign([AssName('temp4', 'OP_ASSIGN')], CallFunc(Name('tuple'), [], None, None)), Assign([AssName('temp5', 'OP_ASSIGN')], CallFunc(Name('list'), [], None, None)), Assign([AssName('temp6', 'OP_ASSIGN')], Tuple([Name('temp1'), Name('temp2'), Name('temp3'), Name('temp4'), Name('temp5')])), Return(Name('temp6'))])
+AssName('temp8', 'OP_ASSIGN')
+Adding transition between:
+Return(Const('')) Stmt([Return(Const(''))])
+AssName('dummy', 'OP_ASSIGN')
+Adding transition between:
+Return(Const('')) Stmt([Return(Const(''))])
+AssName('d', 'OP_ASSIGN')
+Adding transition between:
+Const('r') Function(None, 'open', ['name', 'mode'], [Const('r')], 0, None, Stmt([Assign([AssName('c', 'OP_ASSIGN')], CallFunc(Name('file'), [], None, None)), Discard(CallFunc(Getattr(Name('c'), 'open'), [Name('name'), Name('mode')], None, None)), Return(Name('c'))]))
+AssName('temp81', 'OP_ASSIGN')
+Adding transition between:
+Name('temp7') CallFunc(Name('temp4'), [Name('temp5'), Name('temp7')], None, None)
+Stmt([Assign([AssName('temp1', 'OP_ASSIGN')], CallFunc(Name('int'), [], None, None)), Assign([AssName('temp2', 'OP_ASSIGN')], CallFunc(Name('float'), [], None, None)), Assign([AssName('temp3', 'OP_ASSIGN')], CallFunc(Name('string'), [], None, None)), Assign([AssName('temp4', 'OP_ASSIGN')], CallFunc(Name('tuple'), [], None, None)), Assign([AssName('temp5', 'OP_ASSIGN')], CallFunc(Name('list'), [], None, None)), Assign([AssName('temp6', 'OP_ASSIGN')], Tuple([Name('temp1'), Name('temp2'), Name('temp3'), Name('temp4'), Name('temp5')])), Return(Name('temp6'))])
+Adding transition between:
+Const('23') CallFunc(Name('open'), [Const('23')], None, None)
+Const('r')
+Adding transition between:
+Name('temp82') CallFunc(Name('temp82'), [], None, None)
+Stmt([Assign([AssName('temp63', 'OP_ASSIGN')], Getattr(Name('self'), 'closed')), If([(Name('temp63'), Stmt([Raise(Name('ValueError'), Const('I/O operation on closed file'), None)]))], None), Assign([AssName('temp73', 'OP_ASSIGN')], Getattr(Name('self'), 'seekable')), If([(Name('temp73'), Stmt([TryExcept(Stmt([Assign([AssName('temp64', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp65', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('n', 'OP_ASSIGN')], Sub((Name('temp64'), Name('temp65')))), Assign([AssName('temp66', 'OP_ASSIGN')], Getattr(Name('self'), 'align')), Assign([AssName('temp67', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp68', 'OP_ASSIGN')], Bitand([Name('temp67'), Const(1)])), Assign([AssName('temp69', 'OP_ASSIGN')], And([Name('temp66'), Name('temp68')])), If([(Name('temp69'), Stmt([Assign([AssName('n', 'OP_ASSIGN')], Add((Name('n'), Const(1))))]))], None), Assign([AssName('temp70', 'OP_ASSIGN')], Getattr(Name('self'), 'file')), Assign([AssName('temp71', 'OP_ASSIGN')], Getattr(Name('temp70'), 'seek')), Discard(CallFunc(Name('temp71'), [Name('n'), Const(1)], None, None)), Assign([AssName('temp72', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssAttr(Name('self'), 'size_read', 'OP_ASSIGN')], Add((Name('temp72'), Name('n')))), Return(Const(None))]), [(Name('IOError'), None, Stmt([Pass()]))], None)]))], None), Assign([AssName('temp74', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp75', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), While(Compare(Name('temp74'), [('<', Name('temp75'))]), Stmt([Assign([AssName('temp76', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize')), Assign([AssName('temp77', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp78', 'OP_ASSIGN')], Sub((Name('temp76'), Name('temp77')))), Assign([AssName('n', 'OP_ASSIGN')], CallFunc(Name('min'), [Const(8192), Name('temp78')], None, None)), Assign([AssName('temp79', 'OP_ASSIGN')], Getattr(Name('self'), 'read')), Assign([AssName('dummy', 'OP_ASSIGN')], CallFunc(Name('temp79'), [Name('n')], None, None)), Assign([AssName('temp80', 'OP_ASSIGN')], Not(Name('dummy'))), If([(Name('temp80'), Stmt([Raise(Name('EOFError'), None, None)]))], None), Assign([AssName('temp74', 'OP_ASSIGN')], Getattr(Name('self'), 'size_read')), Assign([AssName('temp75', 'OP_ASSIGN')], Getattr(Name('self'), 'chunksize'))]), None)])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp59'), [Const(1)], None, None) set([Name('temp58')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp11'), [], None, None) set([Name('temp10')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp79'), [Name('n')], None, None) set([Name('self')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp0'), [Const(4)], None, None) set([Name('file')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp30'), [Name('temp32'), Const(0)], None, None) set([Name('temp29')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp49'), [Name('size')], None, None) set([Name('temp48')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp84'), [Const(12)], None, None) set([Name('c')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp71'), [Name('n'), Const(1)], None, None) set([Name('temp70')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp83'), [], None, None) set([Name('c')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp6'), [Const(4)], None, None) set([Name('file')])
+>> HandleCallFunc in selfsearch in FixpointSelfSearch >> Added self! CallFunc(Name('temp82'), [], None, None) set([Name('c')])
+Building initial workset!
+175 input/chunk.py
+251 input/chunk.py
+289 input/chunk.py
+330 input/chunk.py
+340 input/chunk.py
+354 input/chunk.py
+325 input/chunk.py
+330 input/chunk.py
+318 input/chunk.py
+337 input/chunk.py
+323 input/chunk.py
+298 input/chunk.py
+313 input/chunk.py
+246 input/chunk.py
+205 input/chunk.py
+143 input/chunk.py
+26 input/chunk.py
+set([])
+Node : c = Chunk(temp81)   , subid:0
+     (((15,), 'chunk.c'), ((15,), 35))
+Node : temp4 = tuple()   , subid:0
+     (((15, 35, 70, 89, 150, 155, 161, 165, 169), 'struct.unpack.temp4'), ((15, 35, 70, 89, 150, 155, 161, 165, 169), 173))
+Node : temp6 = (temp1,temp2,temp3,temp4,temp5)   , subid:0
+     (((15, 35, 70, 89, 150, 155, 161, 165, 169, 173, 186), 'struct.unpack.temp6'), ((15, 35, 70, 89, 150, 155, 161, 165, 169, 173, 186), 199))
+Node : temp5 = list()   , subid:0
+     (((15, 35, 70, 89, 150, 155, 161, 165, 169, 173), 'struct.unpack.temp5'), ((15, 35, 70, 89, 150, 155, 161, 165, 169, 173), 186))
+Running workset!
+Items added to alias graph: 3100884
+Distinct contexts:          8
+Distinct variables:         10
+Distinct locations:         4

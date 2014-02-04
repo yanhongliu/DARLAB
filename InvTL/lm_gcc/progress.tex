@@ -1,0 +1,736 @@
+\documentclass[11pt,letterpaper]{article}
+
+\title{INVTL/C Project Outline}
+
+\section{Goal of the Project}
+The aim of the project is to let the programmer write easy instrumentation or 
+transformation code for C, using rules. Without a rule-based language to do this 
+in, it is a very time-complex and error-prone task.
+
+Our goal is to have a system, that, when given set of InvTL rules, and a subject 
+program (in C) to be transformed, will perform the necessary static analysis of 
+the subject program, and transform it in accordance to the InvTL rules.
+
+For example, we wish to print out when files are opened for future fprintfs.
+The following short rule would accomplish that task.
+
+\begin<verbatim>
+inv $r=C{fprintf($fd,$params)}
+at C{$fd=fopen($fname,$mode)}
+do before C{
+    printf("Opened $fname for future write at $r");
+}
+\end{verbatim}
+
+\section{Project Implementation Overview}
+*******************************************************************
+Terminology
+*******************************************************************
+GCC:       The GCC 4.1.2 compiler, with the C/C++ modules
+Python:    Python 2.4
+ELSA:      Elsa-derived C++ parser, with support for patterns
+*******************************************************************
+
+The project boils down to designing and implementing InvTL/C, a C
+transformation module for InvTS. 
+
+Rule application is done in several steps, in the following sequence:
+    A) Rules are read in and analyzed
+    B) Subject program is read in and analyzed
+    C) Rules are applied, taking into account the results of B.
+
+Due to the structure of InvTS described prior, we implement the C parsing, 
+pattern matching, analysis, and replacement as a language module for InvTS.
+
+To implement this module, we would have to accomplish the following tasks:
+    1. Parse the patterns, which are incomplete C code
+    2. Parse subject C code (Which may be very complex, and must take into 
+        account preprocessing)
+    3. Perform matching of patterns against the subject program.
+    4. Perform static analysis of subject program for application of if-clauses, 
+        and update site detection.
+    5. Determine update sites.
+    6. Perform replacements on the subject code where necessary 
+        (at update sites).
+
+Step 1 requires a C parser that can parse incomplete C statements, with
+wildcards. As the GNU C grammar is context and type sensitive, developing this
+parser from scratch is unfeasible. ELSA was chosen as a basis, and augmented so
+that it emits alternatives where multiple interpretations due to lacking
+context exist. We call the module responsible for this the C Parser & Query
+Generation Module (C->GIMPLE). The reason to not use the GCC parser and
+framework (such as GCC-XML) is that GCC cannot compile incomplete C, as it
+type-checks during the compilation phase.
+
+Steps 2-6 require knowledge of how the program is preprocessed, the order in
+which it is compiled, etc... This, coupled with the complexity of doing type
+checking and static analysis for GNU C, made us decide to use the GCC
+infrastructure itself. To this end, there are 2 programs that perform steps
+2-5.  The 1st program is a GCC plugin (We have extended GCC with a plugin
+architecture) which has access to the GCC internals, and which exposes a
+predefined interface to the GCC LM written in Python. This part is called the
+Python Plugin.  Step 2 is thus performed entirely by GCC, as the subject
+program is presumably complete, and compilable prior to the transformation.
+
+Step 3 involves matching 2 ASTs, one of which contains wildcards and
+alternatives. The 1st part of this step (taking a AST of a pattern, and
+converting it to a representation that is easily matched to GIMPLE) is
+performed by the Query Generation Module (C->GIMPLE), which is written in
+Python. The query is then executed by the backend, which is a module in the GCC
+plugin.  This architecture allows us to write complex queries while increasing
+the complexity of only the GCC LM, which is written in Python. For example, we
+can integrate arbitrary parts of if clauses into the query. The backend (in C)
+is called the Query Module, while the front-end  (in Python) is called the
+Query Generation Module.
+
+Step 4 is performed entirely in GCC, using the analysis infrastructure 
+available. The results of the analysis are used to annotate the GIMPLE 
+representation. This results GIMPLE code looking like:
+    $a=b {aliases:{...},cfgnode_prior:_some_node_, ....}$
+The GCC plugin exposes an API to query for annotations of GIMPLE statements. 
+This API is used by the GCC LM to implement the functions available in the if 
+and de clauses. This part is called the Analysis Module.
+
+Step 5 is performed by the GCC LM, which uses the GCC plugin API to query all
+syntactic matches. This mainly involves querying the annotations on the matched
+GIMPLE expressions. As this step becomes more and more sophisticated, its
+implementation in Python (and not in C) pays off more and more, due to the
+development speed differential.
+
+Step 6 is performed by the GCC plugin, whose API function to replace code are
+called (without much complicated logic, once update sites are located and
+metavariables bound) are called by the GCC LM. This module is called the Rule
+Application Module.
+
+After this point the rule has been applied, the GCC Plugin relinquishes control
+to GCC, and GCC continues to compile the program.
+
+
+\section{Architecture Overview}
+=============================================================================
+Architecture of InvTS/GCC
+1. Overall Architecture:
+	GCC (The Backend)
+		Plugin Architecture
+		Python Plugin
+		Analysis Module
+		Query Module (Pattern matching backend)
+		Rule Application Module 
+	InvTS (The Frontend)
+		C Parser & Query Generation Module (C->GIMPLE)
+		Inter-invocation module (via database)
+		InvTL LM
+	Both
+		Various LM/GCC Functions
+
+Description of individual parts:
+GCC - A Plugin Architecture:
+	This module uses the ability to load plug-ins (written in C) into GCC.
+	A plugin, once loaded, has functions executed at:
+		Beginning of translation of a translation unit (c file).
+		Beginning of translation of each function.
+		End of translation of each translation unit.
+    The plugin has access to all compile-time and run-time information available
+    to GCC during the GIMPLE optimization phase.  It acts as a normal optimization
+    and can perform arbitrary modifications on a per-function basis.
+
+GCC - Python Plugin
+	This particular plugin has the Python binary linked into it, allowing it to 
+	execute arbitrary Python programs within the translation phase of GCC.
+	It also exports a Python module (GCC) which allows the Python program to 
+	call functions exposed by the plugin, such as match, and others. 
+    The plugin passes user-specified arguments to a linked-in Python script that
+    in turn locates and invokes the InvTS core and provides those arguments to it.	
+    
+GCC - Analysis Module:
+    This module forms a part of the interface provided by the GCC plugin. Its 
+    main purpose is to 	maintain a map from each GIMPLE statement to a database 
+    of analysis data that can later be queried by the Python plugin. There are 
+    several analyses it needs to perform:
+		Control-flow analysis
+		Local Alias Analysis (Intraprocedural)
+		Global Alias Analysis (Interprocedural)
+		Data-flow analysis
+		.. and some others (To be determined, as needed)
+
+GCC - Query Module (Pattern matching frontend/backend)
+	This module mainly exports a function find_locs(query, metavariable_bindings).
+	This function returns a set of tuples, consisting of 
+	(opaque object, delta-bindings), where the "opaque object" is some sort of 
+	reference to the GIMPLE construct that was matched by the query with the 
+	bindings, and delta-bindings is the set of modified bindings due to the 
+	match.
+	_query_ has the format of a list of tuples, where each tuple consists of the 
+	GIMPLE construct to match, the compile-time evaluable constraints in CNR 
+	form, and a callback function that is called by GIMPLE to determine whether 
+	the match is successful. The GIMPLE construct is stored as a tree. 
+	The constraints are stored as a list of of lists, in prefix notation. 
+	Overall, it looks like: 
+	find_locs((
+		(GIMPLE_TREE,( (is_integer,blah_variable), (is_float,t_variable)),None),
+		(GIMPLE_TREE, ...),
+		...
+	)
+	The order of the trees in the list is the order in which constructs must 
+	occur in the target code to be matched.
+
+GCC - Rule Application Module 
+	This module exports 3 functions: 
+		apply_before(location,code)
+		apply_after(location,code)
+		apply_instead(location,code)
+	We describe the apply_before function, as the other are similar.
+	The function inserts the code before location, and then lets GCC proceed 
+	with the compilation.
+	location is the "opaque object" returned by query.
+	code is the C code, with all metavariables bound and substituted.
+	If possible, the module will compile code separately, and then insert the 
+	resulting GIMPLE code (before/after/instead of) location. If not possible,
+	the function is recompiled, with the code textually inserted.
+
+InvTS - C Parser
+	The parser is based on ELSA. Its main goal is to take a C expression, and to
+	generate a (preferably typed) AST that can be converted into a query for 
+	_query_. As the argument to query is not a GIMPLE AST, but an object 
+	resembling the AST, and as GCC cannot even parse truly incomplete code, the
+	parser is independent of GCC, and generates its own AST and typing rules.
+	The parser then performs typing according to C typing rules, and infers 
+	concrete types, where possible. If concrete types are impossible to infer, 
+	but the type equations are not degenerate, the parser infers typing rules 
+	via deduced types. For example, a.x+1 infers that a.x<int|long|float|...>
+	where ... is all the types to which one can add a one.
+	Further, elaboration is done where possible, thus, types are not just a<int>, 
+	but a<int[1,2]> , which means that a is an int with values 1 and 2. Clearly,
+	it is not always possible to infer such things, and at that point, the 
+	parser drops back to inferring just types. 
+
+InvTS - Query Generation Module	 
+	This AST is then converted into the query form by a slicing procedure, 
+	followed by a transformation done via a traversal. The slicing procedure 
+	removes the parts of the generated AST that are irrelevant to the query, 
+	but needed for typing and semantic elaboration.	The transformation is just 
+	a single pass that renames and reorders AST nodes to better match what can 
+	be easily queried over GIMPLE ASTs. Metavariables are replaced by wildcards 
+	with bindings, and ambiguities are expanded into multiple queries.
+	
+InvTS - Inter-invocation module (via database)
+	The need for an inter-invocation module is exemplified by the following 
+	compilation procedure (pseudo-code):
+		gcc a.c -output a.o
+		gcc b.c -output b.o
+		link a.o b.o
+	This means that during the invocation of InvTS for a.c, it does not know 
+	about b.c.
+	This presents a problem if an at clause for an inv matched in a.c is matched 
+	in b.c.
+	The solution is to maintain state in the database, and require 2 invocations
+	of InvTS. The first invocation computes all the inv sites (and the bindings 
+	at them), and the 2nd invocation then actually computes the at sites, and 
+	performs the transformation. 
+	The required magic to get make to understand this is still to in 
+	development. The main idea, though, is to set the date of the to file after 
+	the first invocation to the past, so that make will be forced to rebuild it 
+	for the 2nd invocation.
+	
+InvTS - InvTL LM
+	The LM handles the interaction between the GCC Python plugin and InvTL. It 
+	is implemented according to the spec in the docs (Manual/Python LM.pdf).
+
+Various LM/GCC Functions	
+	These functions must be implemented in the backend, for the InvTL GCC LM to
+	query them when needed. (Usually, for the evaluation of either the inv, at 
+	or if clauses of the rules).
+	incallgraph(p1,p2)		Determines if p2 can be reached from p1.
+	aliased_local(p1,p2)	Determines if p2 is locally the same as p1.
+	prior(p1,p2)			Determines if p2 occurs prior to p1, in a single function.
+	after(p1,p2)			Determines if p2 occurs after to p1, in a single function.
+	reachable(p1,p2)		Determines if p2 is reachable from p1, in a single function.
+	correct(p1)
+	istype(p1,p2|type-expr)	Determines if p1 has the same type as p2.
+	isclass(p1,{numeric|literal|var|ref|function|type})
+							Self-explanatory
+	must_aliased(p1,p2)		Self-explanatory
+	may_aliased(p1,p2)		Self-explanatory
+
+
+\section{GCC - A Plugin Architecture}
+\TODO{Insert Sean's description here}
+ 
+\section{A Python Plugin for GCC}
+\TODO{Insert Sean's plugin description here}
+
+\section{Static Analysis for C in GCC}
+For precise update detection, we need certain analyses of C code. These analysis 
+include: 
+\begin{list}
+	\item Control-flow analysis
+	\item Data-flow analysis
+	\item Interprocedural alias analysis
+	\item Intraprocedural alias analysis
+\end{list}
+The resultant information is stored in separate data structures to which each
+GIMPLE node has a reference.
+
+\subsection{Control Flow Analysis}
+Control flow data is used in several places inside InvTS:
+\begin{list}
+	\item Refinement of interprocedural alias analysis.
+	\item Localization of do before and do after locations.
+	\item Localization of de locations.
+	\item Reduction of search space for matching conditional patterns.
+	\item Various helper functions from the LM depend on it.
+\end{list}
+
+\paragraph{Algorithm.}
+Control flow analysis of C code is relatively straightforward, with a single
+caveat: function pointers.  The algorithm used is rapid type analysis
+\cite{Bacon and Sweeney; OOPSLA’96}, which resolves about 80\% of all
+function-pointer-based calls correctly, due to type signature analysis. We have
+extended this analysis to use aliasing information that is obtained by local
+and global alias analysis.
+
+The algorithm first runs without aliasing information, as it's output is used
+in the alias analysis algorithms.
+
+Once the alias analysis algorithms have ran, the results are used to re-run
+control flow analysis, with aliasing information. This resolves up to 93\% of
+function calls that are due to function pointers. This refined control-flow
+graph is then fed into interprocedural alias analysis. This results in smaller
+may-alias sets.
+
+The analysis time for each run is O(N*Log(N)\^3), N being the number of basic
+blocks in the program being analyzed.
+
+\paragraph{Representation.}
+The results of CFA are represented as a graph, with each GIMPLE statement
+containing a pointer to the node of the CFG which it is contained in. Thus,
+each GIMPLE statement annotation contains a key ``CFG_NODE'', the value of
+which is the pointer to the proper CFG node.
+
+\subsection{Local Alias Analysis - Intraprocedural Alias Analysis}
+Local alias analysis is required as GIMPLE introduces new variables that are
+used as temporaries in complex C expressions. 
+
+\paragraph{Usage.}
+Local aliasing information is used in 2 places in the program:
+\begin{list}
+	\item Determining update locations.
+	\item Output used in interprocedural (global) alias analysis
+\end{list}
+
+\paragraph{Algorithm.}
+As functions are small, we use a variant of Choi's \cite{choi99} analysis,
+which is $O(N^3)$. The algorithm is context and flow-sensitive. We extend the
+algorithm to include input and output quantifiers. The idea of input
+quantifiers was taken from \cite{Henkel05}, and was extended by us to produce
+output quantifiers.
+
+As the algorithm depends on control-flow information, we run CFA prior to it,
+and use the results in computing may-alias sets. Unfortunately, the CFA is not
+100\% precise, which results alias sets that are too conservative. To handle
+this, we use iterative passes of (CFA,Local Alias Analysis, Global Alias
+Analysis). Theoretically, one could run the above triple until a fixed point or
+cycle is reached, but this is too time-consuming in practice. We choose to do
+2 passes of the algorithms, which empirically gives us good results
+\TODO{Experiments}, and an acceptable running time.
+
+\subsection{Global Alias Analysis - Interprocedural Alias Analysis} 
+\TODO{A Work in Progress}
+We use a cloning-based analysis that uses bdds as representation of contexts.
+Running time is currently $O(N^(3+Log(N)))$ for N being the number of basic
+blocks in the program. 
+\TODO{This is TOO SLOW, fix this}
+
+
+\section{Query Engine - A Query Engine for GIMPLE}
+The GIMPLE Query engine (GQE) is called by the query frontend of InvTS/GCC. It
+evaluates queries, and returns matching GIMPLE subtrees as a list.
+
+This module mainly exports a function find_locts.  This function returns a set
+of tuples, consisting of (opaque object, delta-bindings), where the "opaque
+object" is some sort of reference to the GIMPLE construct that was matched by
+the query with the bindings, and delta-bindings is the set of modified bindings
+due to the match.  _query_ has the format of a list of tuples, where each tuple
+consists of the GIMPLE construct to match, the compile-time evaluable
+constraints in CNR form, and a callback function that is called by GIMPLE to
+determine whether the match is successful. The GIMPLE construct is stored as a
+tree.  The constraints are stored as a list of of lists, in prefix notation. 
+
+Overall, it looks like: 
+find_locs((
+	(GIMPLE_TREE,( (is_integer,blah_variable), (is_float,t_variable)),None),
+	(GIMPLE_TREE, ...),
+	...
+)
+The order of the trees in the list is the order in which constructs must occur
+in the target code to be matched.
+
+
+\subsection{API.}
+The GQE implements a simple API consisting of 2 functions:
+    
+def find_locs(query,boundvars)
+	"Unconstrained search. See find_locs_constrained"
+def find_locs_constrained(query,scope,boundvars)
+        "Given a query, and bound variables in it, returns all matches in scope"
+
+\subparagraph{Parameters.}
+query: a tuple, consisting of a construct based on patterns, a condition list, and a
+callback function.
+
+construct: See Semantics paragraph
+
+pattern: expressed as a nested dict.
+\verb| $type a; | 
+would look like:
+\begin{verbatim}
+	spec : TS_name:
+	  name : PQ_name:
+		name : "$type"
+	  typenameUsed : false
+	decllist: 1
+	  0 : Declarator
+		context : DC_UNKNOWN
+		decl : D_name
+		  name : PQ_name
+			name : "a"
+		init : null
+		ctorStatement : null
+		dtorStatement : null     
+\end{verbatim}
+	
+
+\verb| $c.$d($c->x,12) |
+would look like:
+\begin{verbatim}
+	spec : TS_simple:
+	  id : <implicit-int>
+	decllist: 1
+	  0 : Declarator
+		context : DC_UNKNOWN
+		decl : D_name
+		  name : PQ_name
+			name : "blah"
+		init : IN_expr
+		  e : E_funCall
+			func : E_fieldAcc
+			  field: null
+			  obj : E_variable
+				var: null
+				name : PQ_name
+				  name : "$c"
+			  fieldName : PQ_name
+				name : "$d"
+			args: 2
+			  0 : ArgExpression
+				expr : E_arrow
+				  obj : E_variable
+					var: null
+					name : PQ_name
+					  name : "$c"
+				  fieldName : PQ_name
+					name : "x"
+			  1 : ArgExpression
+				expr : E_intLit
+				  i: 0
+				  text : "12"
+			retObj : null
+		ctorStatement : null
+		dtorStatement : null     
+\end{verbatim}
+
+condition-list: A list of conditions, in CNR form.
+
+callback function: A function pointer to a python function to be called on each
+potential match.
+
+boundvars: a dict with keys being variables (strings), and values being 
+match-objects. (See below)
+
+scope: either a string constant "file", or "function", or a scope returned 
+as a match. (See below)
+
+\subparagraph{Return Values}:
+Matches are returned as lists of tuples: 
+	(Scope-object,match-object,new-boundvars)
+Scope-object: opaque, but with the requirement that:
+	find_locs_constrained(pattern,boundvars,scope-object) 
+		subset 
+	find_locs_constrained(pattern,boundvars,original-scope)
+Match-object: entirely opaque.
+new-boundvars: a dict with keys being variables (strings), and values being 
+match-objects.
+Scope and match-object are of instances of class gcc.GIMPLE.
+
+\paragraph{GIMPLE Objects}
+Valid GIMPLE objects are defined by the following:
+
+\begin{verbatim}
+#define ALL_EXPRS	COMPONENT_REF, BIT_FIELD_REF, INDIRECT_REF, ALIGN_INDIRECT_REF, MISALIGNED_INDIRECT_REF, ARRAY_REF, ARRAY_RANGE_REF, OBJ_TYPE_REF, \
+			EXC_PTR_EXPR, FILTER_EXPR, CONSTRUCTOR, COMPOUND_EXPR, MODIFY_EXPR, INIT_EXPR, TARGET_EXPR, COND_EXPR, VEC_COND_EXPR, BIND_EXPR, CALL_EXPR, WITH_CLEANUP_EXPR, \
+			CLEANUP_POINT_EXPR, PLACEHOLDER_EXPR, \
+			PLUS_EXPR, MINUS_EXPR, MULT_EXPR, TRUNC_DIV_EXPR, CEIL_DIV_EXPR, FLOOR_DIV_EXPR, ROUND_DIV_EXPR, TRUNC_MOD_EXPR, CEIL_MOD_EXPR, FLOOR_MOD_EXPR, ROUND_MOD_EXPR, RDIV_EXPR, \
+			EXACT_DIV_EXPR, \
+			FIX_TRUNC_EXPR, FIX_CEIL_EXPR, FIX_FLOOR_EXPR, FIX_ROUND_EXPR, \
+			FLOAT_EXPR, NEGATE_EXPR, MIN_EXPR, MAX_EXPR, ABS_EXPR, \
+			LSHIFT_EXPR, RSHIFT_EXPR, LROTATE_EXPR, RROTATE_EXPR, \
+			BIT_IOR_EXPR, BIT_XOR_EXPR, BIT_AND_EXPR, BIT_NOT_EXPR, \
+			TRUTH_ANDIF_EXPR, TRUTH_ORIF_EXPR, TRUTH_AND_EXPR, TRUTH_OR_EXPR, TRUTH_XOR_EXPR, TRUTH_NOT_EXPR, \
+			LT_EXPR, LE_EXPR, GT_EXPR, GE_EXPR, EQ_EXPR, NE_EXPR, \
+			UNORDERED_EXPR, ORDERED_EXPR, \
+			UNLT_EXPR, UNLE_EXPR, UNGT_EXPR, UNGE_EXPR, UNEQ_EXPR, \
+			LTGT_EXPR, \
+			RANGE_EXPR, CONVERT_EXPR, NOP_EXPR, NON_LVALUE_EXPR, VIEW_CONVERT_EXPR, SAVE_EXPR, ADDR_EXPR, FDESC_EXPR, FDESC_EXPR, COMPLEX_EXPR, CONJ_EXPR, \
+			REALPART_EXPR, IMAGPART_EXPR, \
+			PREDECREMENT_EXPR, PREINCREMENT_EXPR, POSTDECREMENT_EXPR, POSTINCREMENT_EXPR, \
+			VA_ARG_EXPR, TRY_CATCH_EXPR, TRY_FINALLY_EXPR, DECL_EXPR, LABEL_EXPR, GOTO_EXPR, RETURN_EXPR, EXIT_EXPR, LOOP_EXPR, \
+			SWITCH_EXPR, CASE_LABEL_EXPR, \
+			RESX_EXPR, ASM_EXPR, CATCH_EXPR, EH_FILTER_EXPR, ASSERT_EXPR, WITH_SIZE_EXPR, REALIGN_LOAD_EXPR, TARGET_MEM_REF, \
+			REDUC_MAX_EXPR, REDUC_MIN_EXPR, REDUC_PLUS_EXPR, \
+			VEC_LSHIFT_EXPR, VEC_RSHIFT_EXPR
+
+#define ALL_TYPES	OFFSET_TYPE, ENUMERAL_TYPE, BOOLEAN_TYPE, CHAR_TYPE, INTEGER_TYPE, REAL_TYPE, POINTER_TYPE, REFERENCE_TYPE, COMPLEX_TYPE, VECTOR_TYPE, ARRAY_TYPE, RECORD_TYPE, UNION_TYPE, \
+			QUAL_UNION_TYPE, VOID_TYPE, FUNCTION_TYPE, METHOD_TYPE, LANG_TYPE
+
+#define ALL_CSTS	INTEGER_CST, REAL_CST, COMPLEX_CST, VECTOR_CST, STRING_CST
+
+#define ALL_DECLS	FUNCTION_DECL, LABEL_DECL, FIELD_DECL, VAR_DECL, CONST_DECL, PARM_DECL, TYPE_DECL, RESULT_DECL, NAMESPACE_DECL, TRANSLATION_UNIT_DECL
+
+#define RDONLY	1
+#define RDWR	2
+
+DEFTREEPARAMETER(identifier_length,		RDONLY,	SIZE_T,			IDENTIFIER_LENGTH,	IDENTIFIER_NODE)
+DEFTREEPARAMETER(identifier_pointer,		RDONLY,	STRING,			IDENTIFIER_POINTER,	IDENTIFIER_NODE)
+DEFTREEPARAMETER(tree_chain,			RDWR,	TREE,			TREE_CHAIN,		TREE_LIST, ENUMERAL_TYPE, RECORD_TYPE, UNION_TYPE, QUAL_UNION_TYPE)
+DEFTREEPARAMETER(tree_value,			RDWR,	TREE,			TREE_VALUE,		TREE_LIST)
+DEFTREEPARAMETER(tree_purpose,			RDWR,	TREE,			TREE_PURPOSE,		TREE_LIST)
+DEFTREEPARAMETER(tree_vec_length,		RDWR,	SIZE_T,			TREE_VEC_LENGTH,	TREE_VEC)
+DEFTREEPARAM_VECTOR(tree_vec_elts,		RDWR,	TREE,	TREE_VEC_ELT,	TREE_VEC_LENGTH,	TREE_VEC)
+DEFTREEPARAMETER(block_vars,			RDWR,	TREE,			BLOCK_VARS,		BLOCK)
+DEFTREEPARAMETER(block_chain,			RDWR,	TREE,			BLOCK_CHAIN,		BLOCK)
+DEFTREEPARAMETER(block_abstract_origin,		RDWR,	TREE,			BLOCK_ABSTRACT_ORIGIN,	BLOCK)
+DEFTREEPARAMETER(block_abstract,		RDWR,	BOOL,			BLOCK_ABSTRACT,		BLOCK)
+DEFTREEPARAMETER(tree_asm_written,		RDWR,	BOOL,			TREE_ASM_WRITTEN,	BLOCK)
+DEFTREEPARAMETER(type_size,			RDWR,	TREE,			TYPE_SIZE,		ALL_TYPES)
+DEFTREEPARAMETER(type_mode,			RDWR,	MACHINE_MODE,		TYPE_MODE,		ALL_TYPES)
+DEFTREEPARAMETER(type_pointer_to,		RDWR,	TREE,			TYPE_POINTER_TO,	ALL_TYPES)
+DEFTREEPARAMETER(type_next_variant,		RDWR,	TREE,			TYPE_NEXT_VARIANT,	ALL_TYPES)
+DEFTREEPARAMETER(type_main_variant,		RDWR,	TREE,			TYPE_MAIN_VARIANT,	ALL_TYPES)
+DEFTREEPARAMETER(type_name,			RDWR,	TREE,			TYPE_NAME,		ALL_TYPES)
+DEFTREEPARAMETER(type_context,			RDWR,	TREE,			TYPE_CONTEXT,		ALL_TYPES)
+DEFTREEPARAMETER(type_offset_basetype,		RDWR,	TREE,			TYPE_OFFSET_BASETYPE,	OFFSET_TYPE)
+DEFTREEPARAMETER(type_values,			RDWR,	TREE,			TYPE_VALUES,		ENUMERAL_TYPE)
+DEFTREEPARAMETER(type_min_value,		RDWR,	TREE,			TYPE_MIN_VALUE,		INTEGER_TYPE)
+DEFTREEPARAMETER(type_max_value,		RDWR,	TREE,			TYPE_MAX_VALUE,		INTEGER_TYPE)
+DEFTREEPARAMETER(type_precision,		RDWR,	SIZE_T,			TYPE_PRECISION,		INTEGER_TYPE, REAL_TYPE, VECTOR_TYPE)
+DEFTREEPARAMETER(tree_type,			RDWR,	TREE,			TREE_TYPE,		INTEGER_TYPE, POINTER_TYPE, REFERENCE_TYPE, COMPLEX_TYPE, VECTOR_TYPE, ALL_CSTS, FUNCTION_DECL, \
+													FIELD_DECL, VAR_DECL, CONST_DECL, PARM_DECL, TYPE_DECL, RESULT_DECL, NAMESPACE_DECL, \
+													TRANSLATION_UNIT_DECL, ALL_EXPRS)
+DEFTREEPARAMETER(type_domain,			RDWR,	TREE,			TYPE_DOMAIN,		ARRAY_TYPE)
+DEFTREEPARAMETER(type_fields,			RDWR,	TREE,			TYPE_FIELDS,		RECORD_TYPE, UNION_TYPE, QUAL_UNION_TYPE)
+DEFTREEPARAMETER(type_method_basetype,		RDWR,	TREE,			TYPE_METHOD_BASETYPE,	METHOD_TYPE)
+DEFTREEPARAMETER(type_arg_types,		RDWR,	TREE,			TYPE_ARG_TYPES,		METHOD_TYPE)
+DEFTREEPARAMETER(tree_int_cst_low,		RDWR,	INT_CST_LOW,		TREE_INT_CST_LOW,	INTEGER_CST)
+DEFTREEPARAMETER(tree_int_cst_high,		RDWR,	INT_CST_HIGH,		TREE_INT_CST_HIGH,	INTEGER_CST)
+DEFTREEPARAMETER(tree_real_cst,			RDWR,	REAL,			TREE_REAL_CST,		REAL_CST)
+DEFTREEPARAMETER(tree_realpart,			RDWR,	TREE,			TREE_REALPART,		COMPLEX_CST)
+DEFTREEPARAMETER(tree_imagpart,			RDWR,	TREE,			TREE_IMAGPART,		COMPLEX_CST)
+DEFTREEPARAMETER(tree_vector_cst_elts,		RDWR,	TREE,			TREE_VECTOR_CST_ELTS,	VECTOR_CST)
+DEFTREEPARAMETER(tree_string_length,		RDONLY,	SIZE_T,			TREE_STRING_LENGTH,	STRING_CST)
+DEFTREEPARAMETER(tree_string_pointer,		RDONLY,	STRING,			TREE_STRING_POINTER,	STRING_CST)
+DEFTREEPARAMETER(decl_name,			RDWR,	TREE,			DECL_NAME,		ALL_DECLS)
+DEFTREEPARAMETER(decl_context,			RDWR,	TREE,			DECL_CONTEXT,		ALL_DECLS)
+DEFTREEPARAMETER(decl_abstract_origin,		RDWR,	TREE,			DECL_ABSTRACT_ORIGIN,	ALL_DECLS)
+DEFTREEPARAMETER(decl_align,			RDWR,	SIZE_T,			DECL_ALIGN,		FUNCTION_DECL, FIELD_DECL, VAR_DECL, PARM_DECL, RESULT_DECL, NAMESPACE_DECL, TRANSLATION_UNIT_DECL)
+DEFTREEPARAMETER(decl_size,			RDWR,	TREE,			DECL_SIZE,		FUNCTION_DECL, FIELD_DECL, VAR_DECL, PARM_DECL, RESULT_DECL, NAMESPACE_DECL, TRANSLATION_UNIT_DECL)
+DEFTREEPARAMETER(decl_mode,			RDWR,	MACHINE_MODE,		DECL_MODE,		FUNCTION_DECL, FIELD_DECL, VAR_DECL, PARM_DECL, RESULT_DECL, NAMESPACE_DECL, TRANSLATION_UNIT_DECL)
+DEFTREEPARAMETER(decl_field_bit_offset,		RDWR,	TREE,			DECL_FIELD_BIT_OFFSET,	FIELD_DECL, PARM_DECL)
+DEFTREEPARAMETER(decl_initial,			RDWR,	TREE,			DECL_INITIAL,		VAR_DECL, CONST_DECL, FUNCTION_DECL, LABEL_DECL)
+DEFTREEPARAMETER(decl_arg_type,			RDWR,	TREE,			DECL_ARG_TYPE,		PARM_DECL)
+DEFTREEPARAMETER(decl_arguments,		RDWR,	TREE,			DECL_ARGUMENTS,		FUNCTION_DECL)
+DEFTREEPARAMETER(decl_result,			RDWR,	TREE,			DECL_RESULT,		FUNCTION_DECL)
+DEFTREEPARAMETER(decl_function_code,		RDWR,	BUILT_IN_FUNCTION,	DECL_FUNCTION_CODE,	FUNCTION_DECL)
+DEFTREEPARAMETER(decl_source_file,		RDONLY,	STRING,			DECL_SOURCE_FILE,	ALL_DECLS)
+DEFTREEPARAMETER(decl_source_line,		RDONLY,	OFF_T,			DECL_SOURCE_LINE,	ALL_DECLS)
+DEFTREEPARAMETER(decl_abstract,			RDWR,	BOOL,			DECL_ABSTRACT,		ALL_DECLS)
+DEFTREEPARAMETER(bit_field_ref_unsigned,	RDWR,	BOOL,			BIT_FIELD_REF_UNSIGNED,	BIT_FIELD_REF)
+DEFTREEPARAMETER(tree_addressable,		RDWR,	BOOL,			TREE_ADDRESSABLE,	VAR_DECL, VIEW_CONVERT_EXPR)
+DEFTREEPARAMETER(phi_result,			RDONLY,	TREE,			PHI_RESULT,		PHI_NODE)
+DEFTREEPARAMETER(phi_arg_length,		RDONLY,	SIZE_T,			PHI_ARG_LENGTH,		PHI_NODE)
+DEFTREEPARAM_VECTOR(phi_arg_elts,		RDONLY,	PHI_ARG, PHI_ARG_ELT,	PHI_ARG_LENGTH,		PHI_NODE)
+
+#undef ALL_EXPRS
+#undef ALL_TYPES
+#undef ALL_CSTS
+#undef ALL_DECLS 
+\end{verbatim}
+	
+\subsection{Semantics.}
+The match semantics are such that a list of patterns must be matched in
+sequence, the sequence being any ordered possible traversal along the control
+flow graph of the program. We define a language we use to specify a match: 
+G        GIMPLE Object
+G'       GIMPLE Object
+G F G'   G is Followed by G' sometime in the future (G' is a possible successor
+         to G in the CFG)
+G I G'   G is Immediately followed by G' (G' is the immediate successor to G in
+         the CFG)
+G#Cond   G that obeys a condition Cond. Cond may contain not, and, or. 
+G|G'     G or G'
+
+Thus, $c=a+b$ becomes 
+   $(\$temp=a+b I c=\$temp)|(\$temp=a+b F \$X#( not Assign(\$temp,\$ANY)) F c=\$temp)$.
+
+An expression in the above languages is sent to the GQE to be evaluated, with
+variable bindings being sent out of band.
+
+
+
+\section{Rule Application Module}
+\TODO{Add Sean's description of modification engine here.}
+We apply rules by modifying GIMPLE code directly, via the GCC plugin. It
+exports certain functions, such as:
+\begin{list}
+	\item $apply_before(location,code)$
+	\item $apply_after(location,code)$
+	\item $apply_instead(location,code)$
+\end{list}
+
+These functions force recompilation of the involved GIMPLE function, and the
+update of all analysis results. The efficient implementation of that requires
+that all analyses involved be incremental, in some way. This section describes
+the details.
+
+\paragraph{Making CFG generation incremental.} When code changes, we update the
+underlying CFG. When no function pointers are involved, this is trivial to do.
+If function pointers are involved, type analysis is used to restrict possible
+target functions. Using this information, and labels on aliasing workstation
+updates, the alias analysis results are recomputed. After this, the CFG is
+re-updated again, and the final alias results are computed.
+
+\paragraph{Making Choi's analysis incremental.} We follow in the steps of Hind
+\cite{hind01} in making Choi's analysis use a worklist. We then continue by
+adapting Goyal's work \cite{goyal02}, which cements the use of a work-set
+algorithm. Our modification, as described in the previous section, primarily
+involve the use of pre- and post-function information, as we restrict the
+analysis to the insides of a single function.
+
+The incrementalization comes from labelling all modifications with change
+labels. Change labels specify precisely what the current modification to the
+worklist depends on. Thus, when a code-modifying event happens, locate all
+modifications to the worklist that depended on the code that was modified, and
+we propagate the change by recomputing only what is necessary. Unfortunately,
+even minor changes in variable assignments may significantly change may-alias
+sets. For examples, assuming may-alias sets (a1,a2,a3) and (a4,a5,a6), the
+addition of the alias pair (a1,a4) fundamentally changes the may-alias sets to
+(a1,a2,a3,a4,a5,a6). Thus, it is impossible to state that incrementalization is
+an asymptotic win in all cases. In practice, though, this approach provides
+very significant speedups. \TODO{Experiments.} 
+
+\paragraph{Incrementalizing Interprocedural Alias Analysis.} 
+\TODO{Add this, after implementation.}
+
+
+\section{Parser for C Patterns.} 
+The parser is based on ELSA. Its main goal is to take a C expression, and to
+generate a (preferably typed) AST that can be converted into a query for
+\query. As the argument to query is not a GIMPLE AST, but an object resembling
+the AST, and as GCC cannot even parse truly incomplete code, the parser is
+independent of GCC, and generates its own AST and typing rules. 
+
+\paragraph{Accepted Grammar.}
+The accepted grammar is the ISO C99 grammar, with the following extension:
+\begin{verbatim}
+Any identifier or expression may be replaced with $E, where E is a valid
+identifier name in ISO C99.
+
+Multiple statements may be replaced by a single $E.
+\end{verbatim}
+
+\paragraph{Type Inference.} Typing is performed according to C typing rules,
+and infers concrete types, where possible. If concrete types are impossible to
+infer, but the type equations are not degenerate, the parser infers typing
+rules via deduced types.  For example, a.x+1 infers that
+a.x<int|long|float|...> where ... is all the types to which one can add a one.
+Further, elaboration is done where possible, thus, types are not just a<int>,
+but a<int[1,2]> , which means that a is an int with values 1 and 2. Clearly, it
+is not always possible to infer such things, and at that point, the parser
+drops back to inferring just types. 
+
+Type equations are represented as a constraint system, and solved according to
+the work of Wang and Smith, \cite{Smith01ecoop}, though simplified, as C
+contains no explicit subtyping. Pointers are treated as references, with the
+given type as a concrete type, and void being the root type of all types. The
+algorithm is Agesen's Cartesian Product Algorithm (CPA).
+
+***********************************************************************
+END OF VALID DOCUMENT
+***********************************************************************
+Conversion from C patterns to patterns:
+1. Patterns are evaluated by ELSA, with alternatives being generated. 
+2. Using backtracking, all complete versions of patterns (w/out alternatives) are generated.
+For each complete (w/out alternatives) pattern:
+    3. Typecalling is performed on patterns (i.e., type equations are written up for the pattern)
+    4. Type equations are solved, to the least genericity possible.
+    5. Solutions of type equations are used to generate conditions on all appropriate nodes in the pattern dict.
+    6. The _if clause_ is converted to conjunctive form, and each element of the conjunction is added to all appropriate nodes in the pattern dict.
+
+7. All pattern dicts are merged, with alternates introduced where they diverge.
+
+This results in a complete pattern dict that can be sent to GCC.
+
+
+InvTS - Query Generation Module	 
+	This AST is then converted into the query form by a slicing procedure, 
+	followed by a transformation done via a traversal. The slicing procedure 
+	removes the parts of the generated AST that are irrelevant to the query, 
+	but needed for typing and semantic elaboration.	The transformation is just 
+	a single pass that renames and reorders AST nodes to better match what can 
+	be easily queried over GIMPLE ASTs. Metavariables are replaced by wildcards 
+	with bindings, and ambiguities are expanded into multiple queries.
+	
+InvTS - Inter-invocation module (via database)
+	The need for an inter-invocation module is exemplified by the following 
+	compilation procedure (pseudo-code):
+		gcc a.c -output a.o
+		gcc b.c -output b.o
+		link a.o b.o
+	This means that during the invocation of InvTS for a.c, it does not know 
+	about b.c.
+	This presents a problem if an at clause for an inv matched in a.c is matched 
+	in b.c.
+	The solution is to maintain state in the database, and require 2 invocations
+	of InvTS. The first invocation computes all the inv sites (and the bindings 
+	at them), and the 2nd invocation then actually computes the at sites, and 
+	performs the transformation. 
+	The required magic to get make to understand this is still to in 
+	development. The main idea, though, is to set the date of the to file after 
+	the first invocation to the past, so that make will be forced to rebuild it 
+	for the 2nd invocation.
+	
+InvTS - InvTL LM
+	The LM handles the interaction between the GCC Python plugin and InvTL. It 
+	is implemented according to the spec in the docs (Manual/Python LM.pdf).
+
+
+================================================================================
+================================================================================
+Matching pattern dicts in GCC (Overall):
+Nodes are recursively matched against the GIMPLE tree.
+Each node is considered it's own stackframe, with the local space being the bound metavariables.
+
+Each type of possible key in a dict is considered an op, which is executed with the parameter being its value. Most of these ops are just simple recursive matching. Some special ones worth mentioning include:
+name 
+    This node matches either a literal, of if prefixed with "$", a metavariable.
+    The match of a metavariable depends on whether it is fully bound or not.
+    If it is fully bound, a pattern dict is generated based on the binding site, and matched.
+    If not, a new biding site is created in the stackframe, and the variable is stored in the local space.
+condition
+    A condition is evaluated by passing it to the Python GCC LM, where it is converted to Python bytecode, and evaluated. 
+aternative
+    A simple backtracking algorithm is used to match alternates within alternates.
+    
+    
+
+
+

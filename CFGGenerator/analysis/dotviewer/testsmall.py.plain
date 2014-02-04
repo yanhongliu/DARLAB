@@ -1,0 +1,45 @@
+graph 1.000 6.722 38.389
+node 13  3.583 8.986 2.062 1.414 "\lid(13) at line=-1\l\lreturn c\l" solid ellipse black lightgrey
+node 14  3.556 7.069 1.964 1.414 "\lid(14) at line=4\l\lreturn c\l" solid ellipse black lightgrey
+node 12  3.583 10.903 1.964 1.414 "\lid(12) at line=3\l\lbeta\l" solid ellipse black lightgrey
+node 16  5.750 7.069 1.964 1.414 "\lid(16) at line=5\l\lreturn a\l" solid ellipse black lightgrey
+node 20  2.458 5.000 1.964 1.728 "\lid(20) at line=8\l\lprint _z__og_\l\l" solid ellipse black lightgrey
+node 21  2.458 2.931 1.964 1.414 "\lid(21) at line=8\l\l_z__og_\l" solid ellipse black lightgrey
+node 6  2.667 25.264 1.827 1.414 "\lid(6) at line=7\l\l1\l" solid ellipse black lightgrey
+node 7  2.667 23.028 3.221 2.043 "\lid(7) at line=-1\l\lif alpha->\l    if bet ... 61 ...    return a\lreturn b\l" solid ellipse black lightgrey
+node 18  1.333 8.986 1.964 1.414 "\lid(18) at line=6\l\lreturn b\l" solid ellipse black lightgrey
+node 19  1.361 7.069 1.964 1.414 "\lid(19) at line=6\l\lb\l" solid ellipse black lightgrey
+node 8  2.667 20.319 2.809 2.357 "\lid(8) at line=2\l\lif alpha->\l    if bet ... 53 ... turn c\l    return a\l\l" solid ellipse black lightgrey
+node 25  2.458 0.861 2.180 1.728 "\lid(25) at line=9\l\lprint _as[]{\\%d_\l\l" solid ellipse black lightgrey
+node 3  2.667 31.486 2.770 2.357 "\lid(3) at line=1\l\ldef f(t)->\l    if alp ... 92 ... turn a\l    return b\l\l" solid ellipse black lightgrey
+node 4  2.667 29.097 1.827 1.414 "\lid(4) at line=7\l\lf(1)\l" solid ellipse black lightgrey
+node 2  2.667 34.347 2.436 2.357 "\lid(2) at line=-1\l\ldef f(t)->\l    if alp ... 221 ... _\lprint _as[]{\\%d_\l\l" solid ellipse black lightgrey
+node 5  2.667 27.181 1.827 1.414 "\lid(5) at line=7\l\lf\l" solid ellipse black lightgrey
+node 9  2.667 17.931 1.827 1.414 "\lid(9) at line=2\l\lalpha\l" solid ellipse black lightgrey
+node 10  3.069 15.694 2.062 2.043 "\lid(10) at line=-1\l\lif beta->\l    return c\lreturn a\l" solid ellipse black lightgrey
+node 1  2.667 37.208 2.436 2.357 "\lid(1) at line=-1\l\ldef f(t)->\l    if alp ... 221 ... _\lprint _as[]{\\%d_\l\l" solid ellipse black lightgrey
+node 11  3.167 13.139 1.964 2.043 "\lid(11) at line=3\l\lif beta->\l    return c\l\l" solid ellipse black lightgrey
+edge 13 14 4 3.569 8.278 3.569 8.153 3.569 8.042 3.569 7.917 solid black
+edge 14 20 4 3.208 6.403 3.125 6.250 3.028 6.069 2.944 5.903 solid black
+edge 12 13 4 3.583 10.194 3.583 10.069 3.583 9.958 3.583 9.833 solid black
+edge 12 16 7 4.194 10.347 4.389 10.153 4.583 9.931 4.736 9.694 5.083 9.125 5.347 8.444 5.514 7.903 solid black
+edge 16 20 7 5.028 6.597 4.903 6.514 4.778 6.431 4.653 6.361 4.236 6.097 3.778 5.806 3.389 5.556 solid black
+edge 20 21 4 2.458 4.139 2.458 4.014 2.458 3.903 2.458 3.778 solid black
+edge 21 25 4 2.458 2.222 2.458 2.097 2.458 1.986 2.458 1.861 solid black
+edge 6 7 4 2.667 24.556 2.667 24.431 2.667 24.319 2.667 24.194 solid black
+edge 7 8 4 2.667 22.000 2.667 21.875 2.667 21.764 2.667 21.639 solid black
+edge 18 20 10 0.708 8.444 0.528 8.250 0.361 8.028 0.264 7.778 0.042 7.181 -0.042 6.903 0.264 6.361 0.514 5.903 0.972 5.583 1.417 5.375 solid black
+edge 18 19 4 1.347 8.278 1.347 8.153 1.347 8.042 1.347 7.917 solid black
+edge 19 20 4 1.708 6.403 1.792 6.250 1.889 6.069 1.972 5.903 solid black
+edge 8 9 4 2.667 19.139 2.667 19.028 2.667 18.903 2.667 18.778 solid black
+edge 25 25 7 3.431 1.236 3.639 1.194 3.792 1.069 3.792 0.861 3.792 0.708 3.708 0.597 3.569 0.528 solid black
+edge 3 4 4 2.667 30.306 2.667 30.194 2.667 30.069 2.667 29.944 solid black
+edge 4 5 4 2.667 28.389 2.667 28.264 2.667 28.153 2.667 28.028 solid black
+edge 2 3 4 2.667 33.167 2.667 33.042 2.667 32.931 2.667 32.806 solid black
+edge 5 6 4 2.667 26.472 2.667 26.347 2.667 26.236 2.667 26.111 solid black
+edge 9 18 7 2.208 17.306 2.097 17.125 1.986 16.931 1.917 16.722 1.139 14.319 1.194 11.292 1.264 9.833 solid black
+edge 9 10 4 2.792 17.222 2.806 17.097 2.847 16.972 2.861 16.833 solid black
+edge 10 11 4 3.111 14.667 3.111 14.542 3.125 14.431 3.125 14.306 solid black
+edge 1 2 4 2.667 36.028 2.667 35.903 2.667 35.792 2.667 35.667 solid black
+edge 11 12 4 3.361 12.139 3.375 12.014 3.403 11.875 3.431 11.750 solid black
+stop

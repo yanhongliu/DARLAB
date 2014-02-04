@@ -1,0 +1,229 @@
+#The aim of the project is to let the programmer write easy instrumentation or 
+#transformation code for C, using rules. Without a rule-based language to do this 
+#in, it is a very time-complex and error-prone task.
+
+We wish to have a system, that, given a set of InvTL rules, and a subject 
+program (in C) to be transformed, will perform the necessary static analysis of 
+the subject program, and transform it in accordance to the InvTL rules.
+
+For example, we wish to print out when files are opened for future fprintfs:
+inv $r=C{fprintf($fd,$params)}
+at C{$fd=fopen($fname,$mode)}
+do before C{
+    printf("Opened $fname for future write at $r");
+}
+
+This boils down to designing and implementing InvTL/C, a C transformation module 
+for InvTS. 
+
+Rule application is done in several steps:
+    A) Rules are read in and analyzed
+    B) Subject program is read in and analyzed
+    C) Rules are applied, taking into account the results of B.
+
+Due to the structure of InvTS described prior, we implement the C parsing, 
+pattern matching, analysis, and replacement as a language module for InvTS.
+
+To implement this module, we would have to accomplish the following tasks:
+    1. Parse the patterns, which are incomplete C code
+    2. Parse subject C code (Which may be very complex, and must take into 
+        account preprocessing)
+    3. Perform matching of patterns against the subject program.
+    4. Perform static analysis of subject program for application of if-clauses, 
+        and update site detection.
+    5. Determine update sites.
+    6. Perform replacements on the subject code where necessary 
+        (at update sites).
+
+Step 1 requires a C parser that can parse incomplete C statements, with 
+wildcards. As the GNU C grammar is context and type sensitive, developing this 
+parser from scratch is unfeasible. ELSA was chosen as a basis, and augmented so 
+that it emits alternatives where multiple interpretations due to lacking context
+exist. We call the module responsible for this the C Parser & Query Generation 
+Module (C->GIMPLE). The reason to not use the GCC parser and framework (such as 
+GCC-XML) is that GCC cannot compile incomplete C, as it type-checks during the 
+compilation phase.
+
+Steps 2-6 require knowledge of how the program is preprocessed, the order in 
+which it is compiled, etc... This, coupled with the complexity of doing type 
+checking and static analysis for GNU C, made us decide to use the GCC 
+infrastructure itself. To this end, there are 2 programs that perform steps 2-5.
+The 1st program is a GCC plugin (We have extended GCC with a plugin 
+architecture) which has access to the GCC internals, and which exposes a 
+predefined interface to the GCC LM written in Python. This part is called the 
+Python Plugin.
+Step 2 is thus performed entirely by GCC, as the subject program is presumably
+complete, and compilable prior to the transformation.
+
+Step 3 involves matching 2 ASTs, one of which contains wildcards and 
+alternatives. The 1st part of this step (taking a AST of a pattern, and 
+converting it to a representation that is easily matched to GIMPLE) is performed
+by the Query Generation Module (C->GIMPLE), which is written in Python. The 
+query is then executed by the backend, which is a module in the GCC plugin.
+This architecture allows us to write complex queries while increasing the 
+complexity of only the GCC LM, which is written in Python. For example, we can 
+integrate arbitrary parts of if clauses into the query. The backend (in C) is 
+called the Query Module, while the front-end  (in Python) is called the Query 
+Generation Module.
+
+Step 4 is performed entirely in GCC, using the analysis infrastructure 
+available. The results of the analysis are used to annotate the GIMPLE 
+representation. This results GIMPLE code looking like:
+    a=b {aliases:{...},cfgnode_prior:_some_node_, ....}
+The GCC plugin exposes an API to query for annotations of GIMPLE statements. 
+This API is used by the GCC LM to implement the functions available in the if 
+and de clauses. This part is called the Analysis Module.
+
+Step 5 is performed by the GCC LM, which uses the GCC plugin API to query all 
+syntactic matches. This mainly involves querying the annotations on the matched 
+GIMPLE expressions. As this step becomes more and more sophisticated, its 
+implementation in Python (and not in C) pays off more and more, due to the 
+development speed differential.
+
+Step 6 is performed by the GCC plugin, whose API function to replace code are 
+called (without much complicated logic, once update sites are located and 
+metavariables bound) are called by the GCC LM. This module is called the Rule 
+Application Module.
+
+After this point the rule has been applied, the GCC Plugin relinquishes control 
+to GCC, and GCC continues to compile the program.
+
+Architecture of InvTS/GCC
+1. Overall Architecture:
+	GCC (The Backend)
+		Plugin Architecture
+		Python Plugin
+		Analysis Module
+		Query Module (Pattern matching backend)
+		Rule Application Module 
+	InvTS (The Frontend)
+		C Parser & Query Generation Module (C->GIMPLE)
+		Inter-invocation module (via database)
+		InvTL LM
+	Both
+		Various LM/GCC Functions
+
+Description of individual parts:
+GCC - A Plugin Architecture:
+	This module uses the ability to load plug-ins (written in C) into GCC.
+	A plugin, once loaded, has functions executed at:
+		Beginning of translation of a translation unit (c file).
+		Beginning of translation of each function.
+		End of translation of each translation unit.
+    The plugin has access to all compile-time and run-time information available
+    to GCC during the GIMPLE optimization phase.  It acts as a normal optimization
+    and can perform arbitrary modifications on a per-function basis.
+
+GCC - Python Plugin
+	This particular plugin has the Python binary linked into it, allowing it to 
+	execute arbitrary Python programs within the translation phase of GCC.
+	It also exports a Python module (GCC) which allows the Python program to 
+	call functions exposed by the plugin, such as match, and others. 
+    The plugin passes user-specified arguments to a linked-in Python script that
+    in turn locates and invokes the InvTS core and provides those arguments to it.	
+    
+GCC - Analysis Module:
+    This module forms a part of the interface provided by the GCC plugin. Its 
+    main purpose is to 	maintain a map from each GIMPLE statement to a database 
+    of analysis data that can later be queried by the Python plugin. There are 
+    several analyses it needs to perform:
+		Control-flow analysis
+		Local Alias Analysis (Intraprocedural)
+		Global Alias Analysis (Interprocedural)
+		Data-flow analysis
+		.. and some others (To be determined, as needed)
+
+GCC - Query Module (Pattern matching backend)
+	This module mainly exports a function query(query, metavariable_bindings).
+	This function returns a set of tuples, consisting of 
+	(opaque object, delta-bindings), where the "opaque object" is some sort of 
+	reference to the GIMPLE construct that was matched by the query with the 
+	bindings, and delta-bindings is the set of modified bindings due to the 
+	match.
+	_query_ has the format of a list of tuples, where each tuple consists of the 
+	GIMPLE construct to match, and the compile-time evaluable constraints, in 
+	CNR form. The GIMPLE construct is stored as a tree. 
+	The constraints are stored as a list of of lists, in prefix notation. 
+	Overall, it looks like: 
+	query((GIMPLE_TREE,( (is_integer,blah_variable), (is_float,t_variable))))
+	The order of the trees in the list is the order in which constructs must 
+	occur in the target code to be matched.
+
+GCC - Rule Application Module 
+	This module exports 3 functions: 
+		apply_before(location,code)
+		apply_after(location,code)
+		apply_instead(location,code)
+	We describe the apply_before function, as the other are similar.
+	The function inserts the code before location, and then lets GCC proceed 
+	with the compilation.
+	location is the "opaque object" returned by query.
+	code is the C code, with all metavariables bound and substituted.
+	If possible, the module will compile code separately, and then insert the 
+	resulting GIMPLE code (before/after/instead of) location. If not possible,
+	the function is recompiled, with the code textually inserted.
+
+InvTS - C Parser
+	The parser is based on ELSA. Its main goal is to take a C expression, and to
+	generate a (preferably typed) AST that can be converted into a query for 
+	_query_. As the argument to query is not a GIMPLE AST, but an object 
+	resembling the AST, and as GCC cannot even parse truly incomplete code, the
+	parser is independent of GCC, and generates its own AST and typing rules.
+	The parser then performs typing according to C typing rules, and infers 
+	concrete types, where possible. If concrete types are impossible to infer, 
+	but the type equations are not degenerate, the parser infers typing rules 
+	via deduced types. For example, a.x+1 infers that a.x<int|long|float|...>
+	where ... is all the types to which one can add a one.
+	Further, elaboration is done where possible, thus, types are not just a<int>, 
+	but a<int[1,2]> , which means that a is an int with values 1 and 2. Clearly,
+	it is not always possible to infer such things, and at that point, the 
+	parser drops back to inferring just types. 
+
+InvTS - Query Generation Module	 
+	This AST is then converted into the query form by a slicing procedure, 
+	followed by a transformation done via a traversal. The slicing procedure 
+	removes the parts of the generated AST that are irrelevant to the query, 
+	but needed for typing and semantic elaboration.	The transformation is just 
+	a single pass that renames and reorders AST nodes to better match what can 
+	be easily queried over GIMPLE ASTs. Metavariables are replaced by wildcards 
+	with bindings, and ambiguities are expanded into multiple queries.
+	
+InvTS - Inter-invocation module (via database)
+	The need for an inter-invocation module is exemplified by the following 
+	compilation procedure (pseudo-code):
+		gcc a.c -output a.o
+		gcc b.c -output b.o
+		link a.o b.o
+	This means that during the invocation of InvTS for a.c, it does not know 
+	about b.c.
+	This presents a problem if an at clause for an inv matched in a.c is matched 
+	in b.c.
+	The solution is to maintain state in the database, and require 2 invocations
+	of InvTS. The first invocation computes all the inv sites (and the bindings 
+	at them), and the 2nd invocation then actually computes the at sites, and 
+	performs the transformation. 
+	The required magic to get make to understand this is still to in 
+	development. The main idea, though, is to set the date of the to file after 
+	the first invocation to the past, so that make will be forced to rebuild it 
+	for the 2nd invocation.
+	
+InvTS - InvTL LM
+	The LM handles the interaction between the GCC Python plugin and InvTL. It 
+	is implemented according to the spec in the docs (Manual/Python LM.pdf).
+
+Various LM/GCC Functions	
+	These functions must be implemented in the backend, for the InvTL GCC LM to
+	query them when needed. (Usually, for the evaluation of either the inv, at 
+	or if clauses of the rules).
+	incallgraph(p1,p2)		Determines if p2 can be reached from p1.
+	aliased_local(p1,p2)	Determines if p2 is locally the same as p1.
+	prior(p1,p2)			Determines if p2 occurs prior to p1, in a single function.
+	after(p1,p2)			Determines if p2 occurs after to p1, in a single function.
+	reachable(p1,p2)		Determines if p2 is reachable from p1, in a single function.
+	correct(p1)
+	istype(p1,p2|type-expr)	Determines if p1 has the same type as p2.
+	isclass(p1,{numeric|literal|var|ref|function|type})
+							Self-explanatory
+	must_aliased(p1,p2)		Self-explanatory
+	may_aliased(p1,p2)		Self-explanatory
+

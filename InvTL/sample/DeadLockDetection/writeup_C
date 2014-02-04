@@ -1,0 +1,80 @@
+Implementing deadlock analysis.
+Last Modified By:    $Author: mickg $
+On:                  $Date: 2006-12-21 00:18:00 -0500 (Thu, 21 Dec 2006) $
+Version:             $Rev: 25 $
+
+PROGRAM ANALYSIS AND INSTRUMENTATION FOR LOOKAHEAD
+
+there are two analysis phases followed by an instrumentation phase.
+
+ANALYSIS PHASE 1: PROCEDURE SUMMARIES
+
+P1
+Requires parsing C, and determining function boundaries.            Trivial
+For parameter analysis, requires propagation of intraprocedural     1-2 weeks
+aliasing info, at least.
+Need to enumerate all possible structures which manipulate locks    Trivial
+Requires control-flow analysis of C code to work right (all         1-2 weeks
+branches of a function need to be analyzed)
+    This is hard, as GCC supports both things like "x=condition?:else", which
+    is hard to implement right (and has undefined semantics if x is true), 
+    "goto *x[y]", which are jumps, in effect, etc...
+    For example, this is valid C (insane C, in my opinion, but ...):
+        return ({goto L; 0;}) && ({L: 5;});
+        (the above returns 1)
+
+Computing transitive call graph                                     ? (2+ weeks)
+    Requires analyzing function pointers. This is basically a giant mess. For 
+    example, sendmail uses a union with both an integer and a function pointer,
+    and modifies/uses both.
+
+P2
+Determination of global variables. Doable, but still requires       1 week
+alias analysis.
+
+P3
+Quote: """
+arg is not updated between the beginning of the procedure and the
+sync op.  for simplicity, we ignore aliasing here, and simply check for
+explicit assignments to the variable used in arg.
+"""
+Assuming no aliasing, this still requires sane control-flow construction.
+Quite difficult, due to GCC extensions, and general weirdness of conditionals:
+A conditional on ((1 - sizeof(int)) >> 32) always fails, for example, as it 
+returns 0, and not -1. Why? Well, because sizeof is unsigned, thus the result of 
+the subtraction is unsigned, thus the shift is logical.
+                                                                    2-3 weeks
+
+In general (The following is a quote):
+I thought this would take 2 weeks. Exactly a year has passed since then and I 
+am still fixing bugs in it. This gross underestimate was due to the fact that I 
+thought parsing and making sense of C is simple. You probably think the same. 
+What I did not expect was how many dark corners this language has, especially 
+if you want to parse real-world programs such as those written for GCC or if 
+you are more ambitious and you want to parse the Linux or Windows NT sources 
+(both of these were written without any respect for the standard and with the 
+expectation that compilers will be changed to accommodate the program). 
+
+ANALYSIS PHASE 2: BRANCH SUMMARIES
+The code for phase 1 should make this doable in a week              1 week
+We already have to have CFG generation, scope analysis, etc...
+
+
+INSTRUMENTATION PHASE: WRAPPERS
+Excepting code like:
+    *f=pthread_mutex_lock;
+    store(f,string)
+    ...
+    *g=load(string)
+    *g(lock)
+
+The above code would be very hard to instrument correctly. 
+As a matter of fact, I will make absolutely no claims about InvTL 
+doing this right, either.
+
+Excepting things like the above, should not be that hard to do, as we already 
+have to detect things in the source. The vast majority of time would be spent 
+chasing edge cases, in my opinion.
+                                                                    2-3 weeks
+                                                                    
+

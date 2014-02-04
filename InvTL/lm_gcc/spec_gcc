@@ -1,0 +1,101 @@
+Specification for the Python GCC Module:
+Proposed name for module: gcc
+Currently, 2 functions families are required:
+1 (Very Required) Matching a pattern
+    def find_locs(pattern,boundvars)
+	"Unconstrained search. See find_locs_constrained"
+    def find_locs_constrained(pattern,scope,boundvars)
+        "Given a pattern, and bound variables in it, returns all matches in scope"
+    
+    PARAMETERS:
+    pattern: a pattern, expressed as a nested dict.
+    "$type a;" would look like:
+        spec : TS_name:
+          name : PQ_name:
+            name : "$type"
+          typenameUsed : false
+        decllist: 1
+          0 : Declarator
+            context : DC_UNKNOWN
+            decl : D_name
+              name : PQ_name
+                name : "a"
+            init : null
+            ctorStatement : null
+            dtorStatement : null     
+
+    $c.$d($c->x,12)             would look like:
+        spec : TS_simple:
+          id : <implicit-int>
+        decllist: 1
+          0 : Declarator
+            context : DC_UNKNOWN
+            decl : D_name
+              name : PQ_name
+                name : "blah"
+            init : IN_expr
+              e : E_funCall
+                func : E_fieldAcc
+                  field: null
+                  obj : E_variable
+                    var: null
+                    name : PQ_name
+                      name : "$c"
+                  fieldName : PQ_name
+                    name : "$d"
+                args: 2
+                  0 : ArgExpression
+                    expr : E_arrow
+                      obj : E_variable
+                        var: null
+                        name : PQ_name
+                          name : "$c"
+                      fieldName : PQ_name
+                        name : "x"
+                  1 : ArgExpression
+                    expr : E_intLit
+                      i: 0
+                      text : "12"
+                retObj : null
+            ctorStatement : null
+            dtorStatement : null     
+    And so on.
+
+    boundvars: a dict with keys being variables (strings), and values being 
+    match-objects. (See below)
+    
+    scope: either a string constant "file", or "function", or a scope returned 
+    as a match. (See below)
+    
+    RETURN VALUES:
+    Matches are returned as lists of tuples: 
+        (Scope-object,match-object,new-boundvars)
+    Scope-object: opaque, but with the requirement that:
+        find_locs_constrained(pattern,boundvars,scope-object) 
+            subset 
+        find_locs_constrained(pattern,boundvars,original-scope)
+    Match-object: entirely opaque.
+    new-boundvars: a dict with keys being variables (strings), and values being 
+    match-objects.
+    Scope and match-object are of instances of class gcc.GIMPLE.
+    
+2: Replacing a pattern
+I am still figuring out the precise semantics for this one, but overall:
+
+def do_instead(match_object,code,bound_vars)
+def do_before(match_object,code,bound_vars)
+def do_after(match_object,code,bound_vars)
+
+match_object was described prior.
+bound_vars likewise.
+code may either be a match_object (which makes things simple), or a C code 
+string. And I am still not sure how we would handle the code strings.
+
+3: Calling interface
+When invoking InvTS from withing gcc, do not invoke main.
+Invoke init_main(argv), then store its result in a variable, such as res.
+
+Then, for each piece of code you wish to apply the rules for, call 
+	res=do_rules(*res)
+
+Finally, call finish(*res) to finalize.

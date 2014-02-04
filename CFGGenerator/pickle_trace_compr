@@ -1,0 +1,23 @@
+1 1 1 None
+Importing types
+ processing analysis\lib\types.py ...
+  Importing sys
+   processing analysis\lib\sys.py ...
+   done.
+  Success!
+ done.
+Success!
+Importing copy_reg
+ processing analysis\lib\copy_reg.py ...
+  Importing types
+   processing analysis\lib\types.py ...
+    Importing sys
+     processing analysis\lib\sys.py ...
+     done.
+    Success!
+   done.
+  Success!
+ done.
+Success!
+Importing copy_reg
+ processing analysis\lib\copy_reg.py ...

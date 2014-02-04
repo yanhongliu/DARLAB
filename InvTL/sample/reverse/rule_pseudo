@@ -1,0 +1,100 @@
+Annie Liu wrote:
+> the rules are complicated, even the second.
+> i need you to explain, perhaps on Sunday or Tuesday.
+>
+> try to find the full coordination as I said, with
+> the example of finding all coordinated changes of a map and updates of the inverse map for rbac.
+>
+> annie
+Does the following make it clearer?
+
+Pseudocode follows:
+
+
+
+
+mickg
+
+/////////////
+//This is the generic pseudocode for detecting invariants that
+//are of the form:
+//For a variable X, there exists a variable Y, such that:
+//  operation O_1 on X is always followed by O_1' on Y
+//  operation O_2 on X is always followed by O_2' on Y
+//  ...
+//  operation O_n on X is always followed by O_n' on Y
+//It first detects all following things, and then
+// detects miscoordination
+//Thus, it reports only coordinated updates.
+//I am still working on making InvTL code out of this
+//It looks like it will work.
+
+//As far as discussion, we really should go over
+//this over a printout :)
+
+//This is to be done per pair O_k, O_k'
+//For this example, O_1 is =set and O_1' is =multimap
+//This step takes all A=set and B=multimap, and
+//converts them to preliminary(...)
+//for all A=... that are followed by B=...
+//preliminary is the records all possible mappings between
+//A and B, assuming A and B are metavariables.
+at A=set
+  at B=multimap
+  if B mustfollow A
+  ::do instead
+    preliminary(A,set,"A=set",B,multimap,"B=multimap")
+  do instead
+    preliminary(B,multimap,"B=multimap",A,set,"A=set")
+    at A'=set
+    if A'==A
+    do instead
+      at B'=multimap and B'==B
+      if B' mustfollow A'
+      ::do instead
+        preliminary(A',set,"A'=set",B',multimap,"B'=multimap")
+      do instead
+        preliminary(B',multimap,"B'=multimap",A',set,"A'=set")
+
+
+//this converts preliminary to undone if any
+//code that was supposed to be followed was not
+//I.e., after prev. step, if any A=set is left,
+//then all related Bs must not be part of the
+//invariant. The 2nd at clause is symmetric for
+//B's
+at preliminary(a1,a2,arg,b1,b2,brg)
+  at arg'
+  if arg==arg'
+    at preliminary(a1',a2',arg'',b1',b2',brg'')
+    if arg'==arg'' and brg'==brg''
+    do instead
+      undone(a1',a2',arg'',b1',b2',brg'')
+  at brg'
+  if brg==brg'
+    at preliminary(a1',a2',arg'',b1',b2',brg'')
+    if arg'==arg'' and brg'==brg''
+    do instead
+      undone(a1',a2',arg'',b1',b2',brg'')
+
+//Convert all preliminaries to sametime
+
+at preliminary(a1,a2,arg,b1,b2,brg)
+do instead
+  sametime(a1,b1,arg)
+
+
+//Undo all undones.
+at undone(a1,a2,arg,b1,b2,brg)
+  at undone(a1',a2',arg',b1',b2',brg')
+  if a1==a1' and b2==b2'
+  do instead
+    arg'
+
+//All sametimes are actualy invarinats.
+//Their 1st and 2nd argument gives us the
+// variables that are related, i.e., X and Y.
+
+
+
+

@@ -1,0 +1,6 @@
+match py{self.UR -= set((user,r) for r in self.ROLES)}
+match py{self.UR -= set((u,role) for u in self.USERS)}
+match py{self.SR -= set((session,r) for r in self.ROLES)}
+match py{self.PR -= set(((op,obj),role) for op in self.OPS for obj in self.OBJS)}
+match py{set($Q for $Q in self.$ROLES if ($session,$Q) in self.$SR and (($operation,$object),$Q) in self.$PR)} if (isVar($session))
+

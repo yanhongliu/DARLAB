@@ -1,0 +1,97 @@
+#Rule library used to test InvTS/C
+#The rules in the following rule library are used to test InvTS/C
+#The should test all features of InvTS/C, and will be part of the future test
+#suite.
+#
+#As such, Each of these rules should be documented, insofar as what precisely 
+#they do. The rules should eventually be exhaustive w.r.t. features of InvTS/C
+#
+#Documentation along the lines of (1->2) means 1 is replaced by 2
+#
+#
+#See the vim highlighting file in $InvTSroot/vim
+
+#############################
+# The rules below only match #
+##############################
+
+#Empty rule
+#Tests the overall workflow
+inv $emptyrule=C{}()
+
+#matches ONE literal pattern
+inv $pattern_rule=C{void main(int argc, char ** argv)}()
+
+#matches MANY literal patterns
+inv $pattern_rule_complex=C{1}()
+
+#matches a metavariable pattern
+inv $pattern_rule_meta=C{void main(int $argc, char **$argv)}()
+
+##########################################
+# The rules below only trivially replace #
+##########################################
+
+#Trivial replacement (argv->arguements)
+inv $replace_rule=C{void main(int argc, char **argv)}
+do instead C{void main(int argc, char **arguements)}
+()
+
+#Less trivial replacement (Many matches) (1->2)
+inv $replace_rule_many=C{1}
+do instead C{2}
+()
+
+#Metavariable replacement (Many matches,simple) ($x+$y -> ($x+$y+1))
+inv $replace_rule_many_simple=C{$x+$y}
+do instead C{($x+$y+1)}
+()
+
+###########################################################
+# The rules below only replace with more complex semantics#
+###########################################################
+
+#Metavariable replacement (More Complex) (malloc($x)->Malloc($x))
+inv $replace_rule_malloc_replace=C{malloc($x)}
+##de does not work yet, when it does, uncomment it.
+##Currently, must declare Malloc manually
+#de in file($query) C{ 
+#  void* Malloc(size_t s) {
+#    printf("%d\n",s);
+#    return malloc(s);
+#  }
+do instead C{Malloc($x)}
+()
+
+#Metavariable replacement (More Complex) (malloc($x)->echo "Allocating $x",malloc)
+#This tests localization of statement insertion points
+#As C_EXPR; is a statement, it cannot be inserted right before the $query
+#It needs to be inserted after the 1st statement before the query
+#Semantics question: in the following case: a=f(malloc(1000),malloc(2000));
+#Should the order of printf inserts be deterministic?
+#  (It is not currently)
+#  If so, what should it be (I am assuming   
+inv $replace_rule_malloc_simple=C{malloc($x)}
+do before  C{printf("%d\n",$x);}
+do instead C{malloc($x)}
+()
+
+##########################################
+# The rules below test the 'at' commands #
+##########################################
+
+
+#Test the trivial at clause
+#Gives the following question
+#Does $x inside the string  expand to the name of value of the metavariable $x?
+#  Currently, it does not.
+#  In my opinion, it should.
+inv $at_rule_simple=C{int $x} 
+(
+	at C{$x+=$y}
+	do before C{
+		printf("Adding %d to $x",$y);
+	}
+)
+
+
